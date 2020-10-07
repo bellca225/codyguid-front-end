@@ -74,7 +74,13 @@ const Coordi = () => {
     return (
       <div style={back}>
         <h4>상의 : </h4>
+
         {dress1.top[index3]}
+
+        <img
+          src="../../clothesIcon/01상의 긴팔 후드.svg"
+          alt="상의 긴팔 후드"
+        />
         <h4>하의 : </h4>
         {dress1.pants[index2]}
         <h4>악세서리 : </h4>

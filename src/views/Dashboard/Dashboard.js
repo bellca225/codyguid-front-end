@@ -80,21 +80,20 @@ export default function Dashboard() {
             <CurrentWeather />
 
             <CardBody>
-              <h4 className={classes.cardTitle} style={{ display: "inline" }}>
-                현재 위치 :
-              </h4>
+              <h4
+                className={classes.cardTitle}
+                style={{ display: "inline" }}
+              ></h4>
               <p className={classes.cardCategory} style={{ display: "inline" }}>
-                현재 시각 :
                 <span className={classes.successText}>
-                  {" "}
-                  현재 시각
                   {/* <ArrowUpward className={classes.upArrowCardCategory} /> */}
-                </span>{" "}
+                </span>
               </p>
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> 현재 위치 및 시각 :
+                <AccessTime /> 현재 위치 및 시각 기준 :{" "}
+                <span style={{ color: "#00acc1" }}>2020.10.08</span>
               </div>
             </CardFooter>
           </Card>

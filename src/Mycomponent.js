@@ -34,10 +34,10 @@ const options = {
   disableDefaultUI: true,
   zoomControl: true,
 };
-const center = {
-  lat: 37.47979,
-  lng: 126.88394,
-};
+// const center = {
+//   lat: 37.47979,
+//   lng: 126.88394,
+// };
 
 export default function Mycomonent() {
   const { isLoaded, loadError } = useLoadScript({
@@ -114,11 +114,6 @@ export default function Mycomonent() {
   );
 }
 
-//
-
-//
-//
-
 // function reducer(state, action) {
 //   switch (action.type) {
 //     case "INCREMENT":
@@ -138,12 +133,12 @@ function Locate({ panTo }) {
       className="locate"
       onClick={() => {
         navigator.geolocation.getCurrentPosition(
-          (position) => {
-            console.log(position.coords.latitude, position.coords.longitude);
+          (pos) => {
+            console.log(pos.coords.latitude, pos.coords.longitude);
 
             panTo({
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
+              lat: pos.coords.latitude,
+              lng: pos.coords.longitude,
             });
           },
           () => null
@@ -154,6 +149,11 @@ function Locate({ panTo }) {
     </button>
   );
 }
+
+const center = {
+  lat: 37.47979,
+  lng: 126.88394,
+};
 
 // function Locate({ panTo }) {
 //   return (
@@ -204,7 +204,7 @@ function Search({ panTo }) {
     try {
       const results = await getGeocode({ address });
       const { lat, lng } = await getLatLng(results[0]);
-      console.log(lat, lng);
+      console.log(lat, lng); // 검색 위도, 경도
       panTo({ lat, lng });
     } catch (error) {
       console.log("Error: ", error);

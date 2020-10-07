@@ -54,11 +54,7 @@ export default function TableList(props) {
           <Card>
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>코디 커뮤니티</h4>
-<<<<<<< HEAD
-              <p className={classes.cardCategoryWhite}>coordi board</p>
-=======
               <p className={classes.cardCategoryWhite}>coordi community</p>
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
             </CardHeader>
             <CardBody>
               <Table />

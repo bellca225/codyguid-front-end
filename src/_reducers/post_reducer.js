@@ -22,11 +22,7 @@ export const deletePosting = (id) => {
 const initialState = [
   {
     id: 1,
-<<<<<<< HEAD
-    header: "팁",
-=======
     header: "여행 TIP",
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
     title: "코디 Tip",
     contents: "옷을 겹겹이 입는게 더 따뜻합니다.",
     writer: "test1",
@@ -34,11 +30,7 @@ const initialState = [
   },
   {
     id: 2,
-<<<<<<< HEAD
-    header: "자유 게시판.",
-=======
     header: "자유 게시판",
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
     title: "질문합니다",
     contents: "내일 여행가는데 반팔에 반바지만 챙겨도 괜찮나요?",
     writer: "test2",

@@ -1,19 +1,11 @@
 import { Cookies } from "react-cookie";
 import { LOGIN_USER, REGISTER_USER } from "../actions/types";
 
-<<<<<<< HEAD
-import axios from "axios";
-
-// export function loginUser(dataToSubmit) {
-//   const request = axios
-//     .post("/api/auth/login", dataToSubmit)
-=======
 // import axios from "axios";
 
 // export function loginUser(dataToSubmit) {
 //   const request = axios
 //     .post("http://localhost:8000/member/sign-up", dataToSubmit)
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
 //     .then((response) => response.data);
 
 //   return {
@@ -24,10 +16,6 @@ import axios from "axios";
 
 // export function registerUser(dataToSubmit) {
 //   const request = axios
-<<<<<<< HEAD
-//     .post("/api/users/register", dataToSubmit)
-//     .then((response) => response.data);
-=======
 //     .post("http://localhost:8000/member/sign-up", dataToSubmit)
 //     .then((response) => {
 //       console.log("데이터 등록 완료", response.data);
@@ -36,7 +24,6 @@ import axios from "axios";
 //     .catch((response) => {
 //       console.error(response);
 //     });
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
 
 //   return {
 //     type: REGISTER_USER,
@@ -46,22 +33,13 @@ import axios from "axios";
 
 export const registerUser = (member) => ({
   type: REGISTER_USER,
-<<<<<<< HEAD
-  member: member,
-=======
   member,
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
 });
 
 export const loginUser = (memberId, memberPwd) => ({
   type: LOGIN_USER,
-<<<<<<< HEAD
-  memberId: memberId,
-  memberPwd: memberPwd,
-=======
   memberId,
   memberPwd,
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
 });
 
 const initialState = {
@@ -97,13 +75,6 @@ const initialState = {
 //   }
 // }
 
-<<<<<<< HEAD
-export default function (state = initialState, action) {
-  switch (action.type) {
-    case REGISTER_USER:
-      return { ...state, members: state.members.concat(action.member) };
-    case LOGIN_USER:
-=======
 const member = (state = initialState, action) => {
   const setSession = (user) => {
     const cookies = new Cookies();
@@ -114,7 +85,6 @@ const member = (state = initialState, action) => {
     case REGISTER_USER:
       return { ...state, members: state.members.concat(action.member) };
     case LOGIN_USER: {
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
       const loginMember = state.members.filter(
         (user) =>
           user.memberId == action.memberId && user.memberPwd == action.memberPwd
@@ -130,22 +100,9 @@ const member = (state = initialState, action) => {
         cookies.remove("user");
         return state;
       }
-<<<<<<< HEAD
-    default:
-      return state;
-  }
-}
-
-const setSession = (user) => {
-  const cookies = new Cookies();
-  if (user) cookies.set("user", JSON.stringify(user), { path: "/" });
-  else cookies.remove("user");
-};
-=======
     }
     default:
       return state;
   }
 };
 export default member;
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455

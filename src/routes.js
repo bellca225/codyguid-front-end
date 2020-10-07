@@ -32,13 +32,10 @@ import Typography from "views/Typography/Typography.js";
 import AddPost from "views/TableList/AddPost.js";
 import EditTable from "views/TableList/EditTable.js";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
-<<<<<<< HEAD
-=======
 import Gallery from "views/CoordiGallery/Gallery.js";
 // import Gallery from "components/CoordiGallery/Gallery.js";
 import AddGallery from "views/CoordiGallery/AddGallery.js";
 import GalleryDetail from "views/CoordiGallery/GalleryDetail.js";
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
 
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
@@ -114,8 +111,6 @@ const dashboardRoutes = [
   },
 
   {
-<<<<<<< HEAD
-=======
     path: "/gallery",
     name: "코디 갤러리",
     rtlName: "ملف تعريفي للمستخدم",
@@ -144,7 +139,6 @@ const dashboardRoutes = [
   },
 
   {
->>>>>>> 8e7e16d4fc75d61415269dda68efc4dd4d8f6455
     path: "/user",
     name: "마이 페이지",
     rtlName: "ملف تعريفي للمستخدم",
@@ -185,14 +179,14 @@ const dashboardRoutes = [
   //   component: RTLPage,
   //   layout: "/rtl"
   // },
-  {
-    path: "/upgrade-to-pro",
-    name: "Sns 공유하기",
-    rtlName: "التطور للاحترافية",
-    icon: Unarchive,
-    component: UpgradeToPro,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/upgrade-to-pro",
+  //   name: "Sns 공유하기",
+  //   rtlName: "التطور للاحترافية",
+  //   icon: Unarchive,
+  //   component: UpgradeToPro,
+  //   layout: "/admin",
+  // },
 ];
 
 export default dashboardRoutes;
