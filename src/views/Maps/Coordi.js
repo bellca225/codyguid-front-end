@@ -1,10 +1,10 @@
-import "./Cody.css";
 import React from "react";
 
 import vest from "../../clothesIcon/02상의 정장 베스트조끼.svg";
 import suitset from "../../clothesIcon/02상의 정장세트.svg";
 
 import hoodlong from "../../clothesIcon/01상의 긴팔 후드.svg";
+import "./Cody.css";
 import shirtlong from "../../clothesIcon/01상의-긴팔 셔츠.svg";
 import top from "../../clothesIcon/01상의-나시탑.svg";
 import sleeveless from "../../clothesIcon/01상의-나시티.svg";
