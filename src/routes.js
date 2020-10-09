@@ -42,10 +42,12 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 import LoginPage from "member/Login.js";
 import RegisterPage from "member/Register.js";
 
+// import pantshort from "./clothesIcon";
+
 const dashboardRoutes = [
   {
     path: "/dashboard",
-    name: " 날씨 코디",
+    name: "코디 가이드",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,

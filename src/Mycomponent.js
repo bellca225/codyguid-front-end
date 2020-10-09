@@ -30,7 +30,7 @@ const mapContainerStyle = {
   margin: "0 auto",
 };
 const options = {
-  // styles: mapStyles,
+  // 0s: mapStyles,
   disableDefaultUI: true,
   zoomControl: true,
 };
@@ -127,29 +127,6 @@ export default function Mycomonent() {
 // const [number, dispatch] = useReducer(reducer, 0);
 // dispatch({ type: "INCREMENT" });
 
-function Locate({ panTo }) {
-  return (
-    <button
-      className="locate"
-      onClick={() => {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            console.log(pos.coords.latitude, pos.coords.longitude);
-
-            panTo({
-              lat: pos.coords.latitude,
-              lng: pos.coords.longitude,
-            });
-          },
-          () => null
-        );
-      }}
-    >
-      <img src="/compass.svg" alt="현재위치" />
-    </button>
-  );
-}
-
 const center = {
   lat: 37.47979,
   lng: 126.88394,
@@ -232,5 +209,29 @@ function Search({ panTo }) {
         </ComboboxPopover>
       </Combobox>
     </div>
+  );
+}
+
+function Locate({ panTo }) {
+  return (
+    <button
+      className="locate"
+      style={{ backgroundColor: "#fff", border: "none" }}
+      onClick={() => {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            console.log(pos.coords.latitude, pos.coords.longitude);
+
+            panTo({
+              lat: pos.coords.latitude,
+              lng: pos.coords.longitude,
+            });
+          },
+          () => null
+        );
+      }}
+    >
+      현재 위치로 이동하기
+    </button>
   );
 }
