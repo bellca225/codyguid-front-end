@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useReducer } from "react";
+import "./_reducers/latlon";
 import {
   GoogleMap,
   useLoadScript,
@@ -29,14 +30,14 @@ const mapContainerStyle = {
   margin: "0 auto",
 };
 const options = {
-  // styles: mapStyles,
+  // 0s: mapStyles,
   disableDefaultUI: true,
   zoomControl: true,
 };
-const center = {
-  lat: 37.47979,
-  lng: 126.88394,
-};
+// const center = {
+//   lat: 37.47979,
+//   lng: 126.88394,
+// };
 
 export default function Mycomonent() {
   const { isLoaded, loadError } = useLoadScript({
@@ -122,19 +123,10 @@ function Locate({ panTo }) {
           (position) => {
             console.log(position.coords.latitude, position.coords.longitude);
 
-            panTo({
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            });
-          },
-          () => null
-        );
-      }}
-    >
-      <img src="/compass.svg" alt="현재위치" />
-    </button>
-  );
-}
+const center = {
+  lat: 37.47979,
+  lng: 126.88394,
+};
 
 // function Locate({ panTo }) {
 //   return (
@@ -185,7 +177,7 @@ function Search({ panTo }) {
     try {
       const results = await getGeocode({ address });
       const { lat, lng } = await getLatLng(results[0]);
-      console.log(lat, lng);
+      console.log(lat, lng); // 검색 위도, 경도
       panTo({ lat, lng });
     } catch (error) {
       console.log("Error: ", error);
@@ -213,5 +205,29 @@ function Search({ panTo }) {
         </ComboboxPopover>
       </Combobox>
     </div>
+  );
+}
+
+function Locate({ panTo }) {
+  return (
+    <button
+      className="locate"
+      style={{ backgroundColor: "#fff", border: "none" }}
+      onClick={() => {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            console.log(pos.coords.latitude, pos.coords.longitude);
+
+            panTo({
+              lat: pos.coords.latitude,
+              lng: pos.coords.longitude,
+            });
+          },
+          () => null
+        );
+      }}
+    >
+      현재 위치로 이동하기
+    </button>
   );
 }

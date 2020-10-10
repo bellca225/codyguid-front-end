@@ -47,7 +47,7 @@ export default function Footer(props) {
               target="_blank"
               className={classes.a}
             >
-              Weather Coordi
+              Cody Guide
             </a>
             , made with WooPark
           </span>

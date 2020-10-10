@@ -46,12 +46,19 @@ import CustomInput from "components/CustomInput/CustomInput";
 import Mycomonent from "Mycomponent";
 import Coordi from "views/Maps/Coordi";
 
+let today = new Date();
+
+let year = today.getFullYear(); // 년도
+let month = today.getMonth() + 1; // 월
+let date = today.getDate(); // 날짜
+let day = today.getDay(); // 요일
+
 const useStyles = makeStyles(styles);
 
 export default function Dashboard() {
   const classes = useStyles();
 
-  const height = { height: "50px" };
+  const height = { height: "40px" };
 
   return (
     <div>
@@ -74,27 +81,30 @@ export default function Dashboard() {
       </div> */}
       <div style={height}></div>
 
+      <Mycomonent />
+
       <GridContainer>
         <GridItem xs={12} sm={12} md={6}>
           <Card chart>
             <CurrentWeather />
 
             <CardBody>
-              <h4 className={classes.cardTitle} style={{ display: "inline" }}>
-                현재 위치 :
-              </h4>
+              <h4
+                className={classes.cardTitle}
+                style={{ display: "inline" }}
+              ></h4>
               <p className={classes.cardCategory} style={{ display: "inline" }}>
-                현재 시각 :
                 <span className={classes.successText}>
-                  {" "}
-                  현재 시각
                   {/* <ArrowUpward className={classes.upArrowCardCategory} /> */}
-                </span>{" "}
+                </span>
               </p>
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> 현재 위치 및 시각 :
+                <AccessTime /> 현재 위치 및 시각 기준 :
+                <span style={{ color: "#00acc1" }}>
+                  {year}.{month}.{date} {day}
+                </span>
               </div>
             </CardFooter>
           </Card>
@@ -208,9 +218,7 @@ export default function Dashboard() {
           </Card>
         </GridItem>
 
-        <GridItem xs={12} sm={12} md={12}>
-          <Mycomonent />
-        </GridItem>
+        <GridItem xs={12} sm={12} md={12}></GridItem>
       </GridContainer>
       <GridContainer>
         {/* <GridItem xs={12} sm={12} md={6}>

@@ -44,7 +44,7 @@ ReactDOM.render(
     <Router history={hist}>
       <Switch>
         <Route path="/admin" component={Admin} />
-        {/* <Route path="/rtl" component={RTL} /> */}
+        <Route path="/rtl" component={RTL} />
         {/* 여기 주석처리해야 나옴 */}
         <Redirect from="/" to="/admin/dashboard" />
       </Switch>

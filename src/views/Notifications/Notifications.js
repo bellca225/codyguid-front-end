@@ -134,7 +134,7 @@ export default function Notifications() {
           </a>{" "}
           and styled by{" "}
           <a target="_blank" href="#">
-            Weather Coordi1
+            Cody Guide1
           </a>
           . Please checkout the{" "}
           <a href="#pablo" target="_blank">

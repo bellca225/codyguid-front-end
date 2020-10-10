@@ -42,10 +42,12 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 import LoginPage from "member/Login.js";
 import RegisterPage from "member/Register.js";
 
+// import pantshort from "./clothesIcon";
+
 const dashboardRoutes = [
   {
     path: "/dashboard",
-    name: " 날씨 코디",
+    name: "코디 가이드",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
@@ -179,14 +181,14 @@ const dashboardRoutes = [
   //   component: RTLPage,
   //   layout: "/rtl"
   // },
-  {
-    path: "/upgrade-to-pro",
-    name: "Sns 공유하기",
-    rtlName: "التطور للاحترافية",
-    icon: Unarchive,
-    component: UpgradeToPro,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/upgrade-to-pro",
+  //   name: "Sns 공유하기",
+  //   rtlName: "التطور للاحترافية",
+  //   icon: Unarchive,
+  //   component: UpgradeToPro,
+  //   layout: "/admin",
+  // },
 ];
 
 export default dashboardRoutes;
