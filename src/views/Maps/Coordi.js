@@ -367,6 +367,17 @@ const Coordi = () => {
     borderRadius: "10px",
     backgroundColor: "#fff",
     width: "160px",
+    height: "300px",
+    marginRight: "5px 20px",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+  };
+
+  const frame2 = {
+    // border: "3px solid #eee",
+    borderRadius: "10px",
+    backgroundColor: "#fff",
+    width: "30%",
+    height: "160px",
     marginRight: "5px 20px",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
   };
@@ -406,12 +417,25 @@ const Coordi = () => {
     paddingTop: "20px",
   };
 
+  const titlefont2 = {
+    color: "#888",
+    fontSize: "0.9em",
+    fontWeight: "300",
+    textAlign: "center",
+  };
+
   if (weather > 27) {
     return (
       <>
         <div style={back}>
           <h4 style={nowCody}>NOW CODY</h4>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexFlow: "row wrap",
+            }}
+          >
             <div style={frame}>
               <h4 style={titlefont}>TOP</h4>
               {dress1.top[index3]}
@@ -423,6 +447,21 @@ const Coordi = () => {
 
             <div style={frame}>
               <h4 style={titlefont}> ATC </h4>
+              {dress1.accessories[index4]}
+            </div>
+
+            <div style={frame2} className="frame2">
+              {/* <h4 style={titlefont2}> ATC </h4> */}
+              {dress1.accessories[index4]}
+            </div>
+
+            <div style={frame2} className="frame2">
+              {/* <h4 style={titlefont2}> ATC </h4> */}
+              {dress1.accessories[index4]}
+            </div>
+
+            <div style={frame2} className="frame2">
+              {/* <h4 style={titlefont2}> ATC </h4> */}
               {dress1.accessories[index4]}
             </div>
           </div>

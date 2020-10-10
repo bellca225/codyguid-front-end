@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../assets/css/WeatherIcons/css/WeatherIcons.css";
 import "../../assets/css/WeatherIcons/css/WeatherIconsWind.css";
+import "./currentweather.css";
 
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
@@ -88,16 +89,24 @@ const CurrentWeather = () => {
 
   const titlefont = { color: "#888", fontSize: "1em", fontWeight: "300" };
 
-  const frame = {
-    // border: "3px solid #eee",
-  };
-
   const vertical = {
     borderRadius: "10px",
     backgroundColor: "#fff",
-    width: "180px",
+    width: "45%",
+    height: "110px",
+    margin: "5% 5% 0 0",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-    padding: "40px 40px 0px 40px",
+    // padding: "40px 40px 0px 40px",
+  };
+
+  const vertical2 = {
+    borderRadius: "10px",
+    backgroundColor: "#00acc1",
+    width: "45%",
+    height: "80px",
+    margin: "5% 5% 0 0",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    // padding: "40px 40px 0px 40px",
   };
 
   const Countrytext = { fontSize: "1.5em", color: "#333" };
@@ -117,57 +126,54 @@ const CurrentWeather = () => {
             style={{
               display: "flex",
               justifyContent: "space-between",
+              flexFlow: "row wrap",
+              justifyContent: "center",
             }}
           >
-            <div style={vertical}>
+            <div style={vertical} className="ver1">
               <div style={main}>{Math.round(data.current.temp - 273.15)}℃</div>
               <div style={maintext}>현재 온도</div>
             </div>
-            <div style={vertical}>
+            <div style={vertical} className="ver1">
               <div style={main}>
                 {Math.round(data.current.feels_like - 273.15)}℃
               </div>
               <div style={maintext}>체감온도 </div>
             </div>
-            <div style={vertical}>
+            <div style={vertical} className="ver">
               <div style={main}>{data.current.humidity}% </div>
               <div style={maintext}>습도</div>
             </div>
-            <div style={vertical}>
+            <div style={vertical} className="ver">
               <div style={main}>{data.current.uvi}</div>
               <div style={maintext}>자외선</div>
             </div>
-            <div style={vertical}>
+            <div style={vertical} className="ver">
               <div style={main}>{data.current.clouds}</div>
               <div style={maintext}> 구름양</div>
             </div>
-            <div style={vertical}>
+            <div style={vertical} className="ver">
               <div style={main}>{data.current.wind_speed}</div>
               <div style={maintext}>바람 속도</div>
             </div>
 
-            <div style={vertical}>
+            <div style={vertical} className="ver">
               <div style={main}>{data.current.weather[0].main} </div>
               <div style={maintext}>날씨</div>
             </div>
 
-            <div style={vertical}>
-              <CardIcon color="info">
-                <i
-                  className="wi wi-cloud"
-                  color="info"
-                  style={{
-                    fontSize: "60px",
-
-                    color: "#fff",
-                    // backgroundColor: "#00acc1",
-                    padding: "15px",
-                  }}
-                ></i>
-              </CardIcon>
+            <div style={vertical2} className="ver">
+              <i
+                className="wi wi-cloud"
+                color="info"
+                style={{
+                  fontSize: "60px",
+                  color: "#fff",
+                  // backgroundColor: "#00acc1",
+                }}
+              ></i>
+              <div style={maintext}>{data.current.weather[0].description}</div>
             </div>
-
-            <div style={maintext}>{data.current.weather[0].description}</div>
           </div>
 
           <h3 style={titlefont}>위치 정보</h3>
