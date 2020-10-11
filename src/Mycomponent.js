@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React from "react";
 import "./_reducers/latlon";
 import {
   GoogleMap,
@@ -39,7 +39,7 @@ const options = {
 //   lng: 126.88394,
 // };
 
-export default function Mycomonent() {
+function Mycomonent() {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: "AIzaSyC54MBKa78_EDw3PV0QHVU77Bo4VfOp1R4",
     libraries,
@@ -114,14 +114,14 @@ export default function Mycomonent() {
   );
 }
 
-function Locate({ panTo }) {
-  return (
-    <button
-      className="locate"
-      onClick={() => {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            console.log(position.coords.latitude, position.coords.longitude);
+// function Locate({ panTo }) {
+//   return (
+//     <button
+//       className="locate"
+//       onClick={() => {
+//         navigator.geolocation.getCurrentPosition(
+//           (position) => {
+//             console.log(position.coords.latitude, position.coords.longitude);
 
 const center = {
   lat: 37.47979,
@@ -150,7 +150,6 @@ const center = {
 //     </button>
 //   );
 // }
-//
 
 function Search({ panTo }) {
   const {
@@ -231,3 +230,4 @@ function Locate({ panTo }) {
     </button>
   );
 }
+export default Mycomonent;
