@@ -560,12 +560,12 @@ const Coordi = ({ data }) => {
             {dress3.pants[index6]}
           </div>
           <div style={frame}>
-            <h4 style={titlefont}>악세서리 : </h4>
-            {dress3.accessories[index2]}
-          </div>
-          <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
             {dress3.outer[index2]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>악세서리 : </h4>
+            {dress3.accessories[index2]}
           </div>
         </div>
         <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>

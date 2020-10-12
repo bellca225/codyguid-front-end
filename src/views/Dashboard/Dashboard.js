@@ -41,7 +41,8 @@ import {
 } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
-import CurrentWeather from "./CurrentWeather";
+// import CurrentWeather from "./CurrentWeather";
+import CurrentWeather from "./WeatherContainer";
 import CustomInput from "components/CustomInput/CustomInput";
 import Mycomonent from "Mycomponent";
 import Coordi from "views/Maps/CodyContainer";
