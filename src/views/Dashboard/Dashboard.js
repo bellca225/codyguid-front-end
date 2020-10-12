@@ -59,8 +59,6 @@ const useStyles = makeStyles(styles);
 export default function Dashboard() {
   const classes = useStyles();
 
-  const height = { height: "40px" };
-
   return (
     <div>
       {/* <div className={classes.searchWrapper}>
@@ -80,7 +78,6 @@ export default function Dashboard() {
           <Search />
         </Button>
       </div> */}
-      <div style={height}></div>
 
       <Mycomonent />
 
@@ -144,7 +141,7 @@ export default function Dashboard() {
         </GridItem> */}
       </GridContainer>
       <GridContainer>
-        <GridItem xs={12} sm={6} md={3}>
+        {/* <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
@@ -217,7 +214,7 @@ export default function Dashboard() {
               </div>
             </CardFooter>
           </Card>
-        </GridItem>
+        </GridItem> */}
 
         <GridItem xs={12} sm={12} md={12}></GridItem>
       </GridContainer>

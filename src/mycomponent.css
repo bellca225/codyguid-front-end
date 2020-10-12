@@ -4,12 +4,12 @@ code {
 }
 
 .search {
-  position: absolute;
   /* left: 50%;
-  margin-left: -49%; */
-  top: 80px;
-  width: 92%;
-  z-index: 10;
+  /* margin-left: -49%; */
+  /* position: absolute;
+  top: 80px; */
+  /* width: 92%; */
+  /* z-index: 10; */
 }
 
 .search-bar {

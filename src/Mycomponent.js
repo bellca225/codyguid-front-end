@@ -22,6 +22,8 @@ import "@reach/combobox/styles.css";
 // import mapStyles from "./mapStyles";
 
 import "mycomponent.css";
+import { Card } from "@material-ui/core";
+import GridItem from "./components/Grid/GridItem.js";
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -124,8 +126,8 @@ function Mycomonent() {
 //             console.log(position.coords.latitude, position.coords.longitude);
 
 const center = {
-  lat: 37.47979,
-  lng: 126.88394,
+  lat: 37.566482,
+  lng: 126.977859,
 };
 
 // function Locate({ panTo }) {
@@ -186,13 +188,18 @@ function Search({ panTo }) {
   return (
     <div>
       <Combobox onSelect={handleSelect}>
-        <ComboboxInput
-          className="search search-bar"
-          value={value}
-          onChange={handleInput}
-          disabled={!ready}
-          placeholder="Search your location"
-        />
+        <GridItem xs={12} sm={12} md={12}>
+          <Card chart>
+            <ComboboxInput
+              className="search search-bar"
+              value={value}
+              onChange={handleInput}
+              disabled={!ready}
+              placeholder="Search your location"
+            />
+          </Card>
+          <div style={{ height: "25px" }} />
+        </GridItem>
 
         <ComboboxPopover>
           <ComboboxList>
@@ -209,25 +216,62 @@ function Search({ panTo }) {
 
 function Locate({ panTo }) {
   return (
-    <button
-      className="locate"
-      style={{ backgroundColor: "#fff", border: "none" }}
-      onClick={() => {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            console.log(pos.coords.latitude, pos.coords.longitude);
+    <>
+      <div style={{ display: "flex", justifyContent: "flex-start" }}>
+        <button
+          className="locate"
+          style={{
+            backgroundColor: "rgb(0, 172, 193)",
+            border: "none",
+            color: "#fff",
+            margin: "0 auto",
+            width: "46%",
+            display: "inline-block",
+            lineHeight: "40px",
+            borderRadius: "10px",
+            boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+            fontWeight: "500",
+            fontSize: "15px",
+          }}
+          onClick={() => {
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                console.log(pos.coords.latitude, pos.coords.longitude);
 
-            panTo({
-              lat: pos.coords.latitude,
-              lng: pos.coords.longitude,
-            });
-          },
-          () => null
-        );
-      }}
-    >
-      현재 위치로 이동하기
-    </button>
+                panTo({
+                  lat: pos.coords.latitude,
+                  lng: pos.coords.longitude,
+                });
+              },
+              () => null
+            );
+          }}
+        >
+          현재 위치로 이동하기
+        </button>
+
+        <button
+          className="locate"
+          style={{
+            backgroundColor: "rgb(158, 56, 180)",
+            border: "none",
+            color: "#fff",
+            margin: "0 auto",
+            width: "46%",
+            display: "inline-block",
+            lineHeight: "30px",
+            borderRadius: "10px",
+            boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+            fontWeight: "500",
+            fontSize: "15px",
+          }}
+        >
+          날씨 불러오기
+        </button>
+      </div>
+
+      <div style={{ height: "25px" }}></div>
+    </>
   );
 }
 export default Mycomonent;

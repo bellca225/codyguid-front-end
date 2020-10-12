@@ -92,7 +92,7 @@ const CurrentWeather = () => {
   const box = {
     width: "90%",
 
-    padding: "30px",
+    padding: "2%",
   };
 
   const titlefont = { color: "#888", fontSize: "1em", fontWeight: "300" };

@@ -363,7 +363,7 @@ const Coordi = ({ data }) => {
   const back = {
     width: "90%",
     borderRadius: "10px",
-    padding: " 30px",
+    padding: " 5%",
     lineHeight: "40px",
     fontSize: "16px",
   };
@@ -372,8 +372,8 @@ const Coordi = ({ data }) => {
     // border: "3px solid #eee",
     borderRadius: "10px",
     backgroundColor: "#fff",
-    width: "155px",
-    height: "250px",
+    width: "30%",
+    height: "50%",
     marginRight: "5px",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
   };
@@ -382,9 +382,10 @@ const Coordi = ({ data }) => {
     // border: "3px solid #eee",
     borderRadius: "10px",
     backgroundColor: "#fff",
-    width: "155px",
+    // width: "155px",
+    width: "30%",
     marginTop: "25px",
-    height: "250px",
+    height: "50%",
     marginRight: "0px",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
   };
@@ -470,28 +471,29 @@ const Coordi = ({ data }) => {
               <h4 style={titlefont}>상의</h4>
               {dress1.top[index5]}
             </div>
+
+            <div style={frame}>
+              <h4 style={titlefont}>상의</h4>
+              {dress1.top[index5]}
+            </div>
+
             <div style={frame}>
               <h4 style={titlefont}> 하의 </h4>
               {dress1.pants[index2]}
             </div>
 
-            <div style={frame}>
+            <div style={frame2}>
               <h4 style={titlefont}> 악세사리1 </h4>
               {dress1.accessories[index8]}
             </div>
 
-            <div style={frame}>
+            <div style={frame2}>
               <h4 style={titlefont}> 악세사리2 </h4>
               {dress1.accessories[index8]}
             </div>
 
-            <div style={frame}>
+            <div style={frame2}>
               <h4 style={titlefont}> 악세사리3 </h4>
-              {dress1.accessories[index8]}
-            </div>
-
-            <div style={frame}>
-              <h4 style={titlefont}> 악세사리4 </h4>
               {dress1.accessories[index8]}
             </div>
           </div>
@@ -523,19 +525,43 @@ const Coordi = ({ data }) => {
           }}
         >
           <div style={frame}>
-            <h4 style={titlefont}>TOP </h4>
+            <h4 style={titlefont}>상의 </h4>
+            {dress2.top[index9]}
           </div>
-          {dress2.top[index9]}
+
+          <div style={frame}>
+            <h4 style={titlefont}>상의2 </h4>
+            {dress2.top[index9]}
+          </div>
         </div>
         <div style={frame}>
-          <h4 style={titlefont}>BOTTOM </h4>
+          <h4 style={titlefont}>하의 </h4>
           {dress2.pants[index4]}
         </div>
-        <div style={frame}>
-          <h4 style={titlefont}>소품 </h4>
+        <div style={frame2}>
+          <h4 style={titlefont}>악세사리1 </h4>
           {dress2.accessories[index3]}
         </div>
-        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
+
+        <div style={frame2}>
+          <h4 style={titlefont}>악세사리2 </h4>
+          {dress2.accessories[index3]}
+        </div>
+
+        <div style={frame2}>
+          <h4 style={titlefont}>악세사리3 </h4>
+          {dress2.accessories[index3]}
+        </div>
+        <div style={blank}>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>수분 보충을 충분히 진행해주세요</span>
+          </div>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>외출 시 썬크림을 발라주세요</span>
+          </div>
+        </div>
       </div>
     );
   }
@@ -563,12 +589,31 @@ const Coordi = ({ data }) => {
             <h4 style={titlefont}>아우터 : </h4>
             {dress3.outer[index2]}
           </div>
-          <div style={frame}>
-            <h4 style={titlefont}>악세서리 : </h4>
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리1 : </h4>
+            {dress3.accessories[index2]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리2 : </h4>
+            {dress3.accessories[index2]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리3 : </h4>
             {dress3.accessories[index2]}
           </div>
         </div>
-        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
+        <div style={blank}>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>수분 보충을 충분히 진행해주세요</span>
+          </div>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>외출 시 썬크림을 발라주세요</span>
+          </div>
+        </div>
       </div>
     );
   }
@@ -592,16 +637,37 @@ const Coordi = ({ data }) => {
             <h4 style={titlefont}>하의 : </h4>
             {dress4.pants[index8]}
           </div>
-          <div style={frame}>
-            <h4 style={titlefont}>악세서리 : </h4>
-            {dress4.accessories[index1]}
-          </div>
+
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
             {dress4.outer[index5]}
           </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리1 : </h4>
+            {dress4.accessories[index1]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리2 : </h4>
+            {dress4.accessories[index1]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리3 : </h4>
+            {dress4.accessories[index1]}
+          </div>
         </div>
-        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
+        <div style={blank}>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>수분 보충을 충분히 진행해주세요</span>
+          </div>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>외출 시 썬크림을 발라주세요</span>
+          </div>
+        </div>
       </div>
     );
   }
@@ -680,16 +746,37 @@ const Coordi = ({ data }) => {
             <h4 style={titlefont}>하의 : </h4>
             {dress6.pants[index8]}
           </div>
-          <div style={frame}>
-            <h4 style={titlefont}>악세서리 : </h4>
-            {dress6.accessories[index1]}
-          </div>
+
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
             {dress6.outer[index2]}
           </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리1 : </h4>
+            {dress6.accessories[index1]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리2 : </h4>
+            {dress6.accessories[index1]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리3 : </h4>
+            {dress6.accessories[index1]}
+          </div>
         </div>
-        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
+        <div style={blank}>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>수분 보충을 충분히 진행해주세요</span>
+          </div>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>외출 시 썬크림을 발라주세요</span>
+          </div>
+        </div>
       </div>
     );
   }
@@ -713,16 +800,37 @@ const Coordi = ({ data }) => {
             <h4 style={titlefont}>하의 : </h4>
             {dress7.pants[index8]}
           </div>
-          <div style={frame}>
-            <h4 style={titlefont}>악세서리 : </h4>
-            {dress7.accessories[index1]}
-          </div>
+
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
             {dress7.outer[index3]}
           </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리1 : </h4>
+            {dress7.accessories[index1]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리2 : </h4>
+            {dress7.accessories[index1]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리3 : </h4>
+            {dress7.accessories[index1]}
+          </div>
         </div>
-        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
+        <div style={blank}>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>수분 보충을 충분히 진행해주세요</span>
+          </div>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>외출 시 썬크림을 발라주세요</span>
+          </div>
+        </div>
       </div>
     );
   }
@@ -746,16 +854,37 @@ const Coordi = ({ data }) => {
             <h4 style={titlefont}>하의 : </h4>
             {dress8.pants[index6]}
           </div>
-          <div style={frame}>
-            <h4 style={titlefont}>악세서리 : </h4>
-            {dress8.accessories[index8]}
-          </div>
+
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
             {dress8.outer[index1]}
           </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리1 : </h4>
+            {dress8.accessories[index8]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리2 : </h4>
+            {dress7.accessories[index1]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리3 : </h4>
+            {dress7.accessories[index1]}
+          </div>
         </div>
-        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
+        <div style={blank}>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>수분 보충을 충분히 진행해주세요</span>
+          </div>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>외출 시 썬크림을 발라주세요</span>
+          </div>
+        </div>
       </div>
     );
   }

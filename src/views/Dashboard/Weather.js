@@ -58,7 +58,7 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
   const box = {
     width: "90%",
 
-    padding: "30px",
+    padding: "5%",
   };
 
   const titlefont = { color: "#888", fontSize: "1em", fontWeight: "300" };
@@ -218,9 +218,7 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
                 alt="체감 온도"
                 title="체감 온도"
               />
-              <div style={main}>
-                {data.feels_like}℃
-              </div>
+              <div style={main}>{data.feels_like}℃</div>
               <div style={maintext}>체감온도 </div>
             </div>
             <div style={vertical}>
