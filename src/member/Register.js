@@ -16,6 +16,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import axios from "axios";
+import { useForm } from "react-hook-form";
 
 function Register(props) {
   const useStyles = makeStyles((theme) => ({
@@ -42,45 +44,52 @@ function Register(props) {
 
   const dispatch = useDispatch();
 
-  const [userId, setUserId] = useState("");
-  const [userPwd, setUserPwd] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [ConfirmPwd, setConfirmPwd] = useState("");
+  // const [userId, setUserId] = useState("");
+  // const [userPwd, setUserPwd] = useState("");
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [ConfirmPwd, setConfirmPwd] = useState("");
 
-  const onUserIdHandler = (e) => {
-    setUserId(e.target.value);
-  };
+  const [member, SetMember] = useState({
+    userId: "",
+    name: "",
+    userPwd: "",
+    email: "",
+  });
 
-  const onPasswordHandler = (e) => {
-    setUserPwd(e.target.value);
-  };
+  // const onUserIdHandler = (e) => {
+  //   setUserId(e.target.value);
+  // };
 
-  const onNameHandler = (e) => {
-    setName(e.target.value);
-  };
+  // const onPasswordHandler = (e) => {
+  //   setUserPwd(e.target.value);
+  // };
 
-  const onEmailHandler = (e) => {
-    setEmail(e.target.value);
-  };
+  // const onNameHandler = (e) => {
+  //   setName(e.target.value);
+  // };
 
-  const onConfirmPwdHandler = (e) => {
-    setConfirmPwd(e.target.value);
-  };
+  // const onEmailHandler = (e) => {
+  //   setEmail(e.target.value);
+  // };
+
+  // const onConfirmPwdHandler = (e) => {
+  //   setConfirmPwd(e.target.value);
+  // };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    if (userPwd !== ConfirmPwd) {
-      return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
-    }
+    // if (userPwd !== ConfirmPwd) {
+    //   return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
+    // }
 
-    let body = {
-      userId: userId,
-      userPwd: userPwd,
-      name: name,
-      email: email,
-    };
+    // let body = {
+    //   userId: userId,
+    //   userPwd: userPwd,
+    //   name: name,
+    //   email: email,
+    // };
 
     //   dispatch(registerUser(body)).then((response) => {
     //     if (response.payload.success) {
@@ -91,8 +100,20 @@ function Register(props) {
     //   });
     // };
 
-    dispatch(registerUser(userPwd, userPwd, name, email));
-    props.history.push("/member/login");
+    // dispatch(registerUser(userPwd, userPwd, name, email));
+    // props.history.push("/member/login");
+
+    dispatch(registerUser(member));
+    const apiUrl = "http://127.0.0.1:8000/api/register/";
+    axios
+      .post(apiUrl, member)
+      .then((response) => {
+        console.log("호출 결과 :", response.data);
+        window.location = "/";
+      })
+      .catch((response) => {
+        console.error(response, "불러오지 못했습니다.");
+      });
   };
 
   return (
@@ -115,8 +136,8 @@ function Register(props) {
                   fullWidth
                   label="Name"
                   type="text"
-                  value={name}
-                  onChange={onNameHandler}
+                  // value={member.name}
+                  onChange={onSubmitHandler}
                   autoComplete="Name"
                 />
               </Grid>
@@ -127,8 +148,8 @@ function Register(props) {
                   fullWidth
                   label="ID"
                   type="text"
-                  value={userId}
-                  onChange={onUserIdHandler}
+                  // value={member.userId}
+                  onChange={onSubmitHandler}
                   autoComplete="Name"
                 />
               </Grid>
@@ -139,8 +160,8 @@ function Register(props) {
                   fullWidth
                   label="Password"
                   type="password"
-                  value={userPwd}
-                  onChange={onPasswordHandler}
+                  // value={member.userPwd}
+                  onChange={onSubmitHandler}
                   autoComplete="current-password"
                 />
               </Grid>
@@ -151,8 +172,8 @@ function Register(props) {
                   fullWidth
                   label="Confirm Password"
                   type="password"
-                  value={ConfirmPwd}
-                  onChange={onConfirmPwdHandler}
+                  // value={member.ConfirmPwd}
+                  onChange={onSubmitHandler}
                   autoComplete="current-password"
                 />
               </Grid>
@@ -163,8 +184,8 @@ function Register(props) {
                   fullWidth
                   label="Email"
                   name="email"
-                  value={email}
-                  onChange={onEmailHandler}
+                  // value={member.email}
+                  onChange={onSubmitHandler}
                   autoComplete="email"
                 />
               </Grid>
