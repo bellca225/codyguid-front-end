@@ -228,10 +228,10 @@ function Locate({ panTo }) {
             width: "46%",
             display: "inline-block",
             lineHeight: "40px",
-            borderRadius: "10px",
+            borderRadius: "5px",
             boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
             fontWeight: "500",
-            fontSize: "15px",
+            fontSize: "14px",
           }}
           onClick={() => {
             navigator.geolocation.getCurrentPosition(
@@ -260,10 +260,10 @@ function Locate({ panTo }) {
             width: "46%",
             display: "inline-block",
             lineHeight: "30px",
-            borderRadius: "10px",
+            borderRadius: "5px",
             boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
             fontWeight: "500",
-            fontSize: "15px",
+            fontSize: "14px",
           }}
         >
           날씨 불러오기
