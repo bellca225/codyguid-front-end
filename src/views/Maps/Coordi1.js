@@ -1,4 +1,5 @@
 import React from "react";
+import "./Cody.css";
 
 import vest from "../../clothesIcon/02상의 정장 베스트조끼.svg";
 import suitset from "../../clothesIcon/02상의 정장세트.svg";
@@ -371,9 +372,9 @@ const Coordi = ({ data }) => {
     // border: "3px solid #eee",
     borderRadius: "10px",
     backgroundColor: "#fff",
-    width: "160px",
-    height: "300px",
-    marginRight: "5px 20px",
+    width: "155px",
+    height: "250px",
+    marginRight: "5px",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
   };
 
@@ -381,9 +382,10 @@ const Coordi = ({ data }) => {
     // border: "3px solid #eee",
     borderRadius: "10px",
     backgroundColor: "#fff",
-    width: "30%",
-    height: "160px",
-    marginRight: "5px 20px",
+    width: "155px",
+    marginTop: "25px",
+    height: "250px",
+    marginRight: "0px",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
   };
 
@@ -397,21 +399,29 @@ const Coordi = ({ data }) => {
     color: "#fff",
     fontWeight: "500",
     fontSize: "18px",
-    padding: "5px",
+    padding: "8px 5px",
     borderRadius: "0 10px 0px 10px",
     width: "98%",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    textAlign: "center",
   };
 
   const tip = {
-    backgroundColor: "#fff",
-    // backgroundColor: "linearGradient(60deg, #ab47bc, #8e24aa)",
-    // color: "#9E38B4",
-    // padding: "5px",
-    // borderRadius: "0 10px 0px 10px",
-    width: "98%",
-    marginTop: "20px",
+    fontWeight: "500",
+    color: "#555",
     // boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+  };
+
+  const tip2 = {
+    marginLeft: "5px",
+  };
+
+  const tip3 = {
+    backgroundColor: "#9E38B4",
+    color: "#fff",
+    fontSize: "18px",
+    padding: "3px 6px",
+    borderRadius: "4px",
   };
 
   const titlefont = {
@@ -429,6 +439,21 @@ const Coordi = ({ data }) => {
     textAlign: "center",
   };
 
+  const blank = {
+    marginTop: "40px",
+    // width: "100%",
+    borderRadius: "10px",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    backgroundColor: "#fff",
+    padding: "5px 15px",
+  };
+
+  const blank2 = {
+    // width: "100%",
+    height: "70px",
+    // backgroundColor: "#eee",
+  };
+
   if (weather > 27) {
     return (
       <>
@@ -442,35 +467,45 @@ const Coordi = ({ data }) => {
             }}
           >
             <div style={frame}>
-              <h4 style={titlefont}>TOP</h4>
+              <h4 style={titlefont}>상의</h4>
               {dress1.top[index5]}
             </div>
             <div style={frame}>
-              <h4 style={titlefont}> BOTTOM </h4>
+              <h4 style={titlefont}> 하의 </h4>
               {dress1.pants[index2]}
             </div>
 
             <div style={frame}>
-              <h4 style={titlefont}> ATC </h4>
+              <h4 style={titlefont}> 악세사리1 </h4>
               {dress1.accessories[index8]}
             </div>
 
-            <div style={frame2} className="frame2">
-              {/* <h4 style={titlefont2}> ATC </h4> */}
+            <div style={frame}>
+              <h4 style={titlefont}> 악세사리2 </h4>
               {dress1.accessories[index8]}
             </div>
 
-            <div style={frame2} className="frame2">
-              {/* <h4 style={titlefont2}> ATC </h4> */}
+            <div style={frame}>
+              <h4 style={titlefont}> 악세사리3 </h4>
               {dress1.accessories[index8]}
             </div>
 
-            <div style={frame2} className="frame2">
-              {/* <h4 style={titlefont2}> ATC </h4> */}
+            <div style={frame}>
+              <h4 style={titlefont}> 악세사리4 </h4>
               {dress1.accessories[index8]}
             </div>
           </div>
-          <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
+
+          <div style={blank}>
+            <div style={tip}>
+              <span style={tip3}>tip</span>
+              <span style={tip2}>수분 보충을 충분히 진행해주세요</span>
+            </div>
+            <div style={tip}>
+              <span style={tip3}>tip</span>
+              <span style={tip2}>외출 시 썬크림을 발라주세요</span>
+            </div>
+          </div>
         </div>
       </>
     );
@@ -479,43 +514,61 @@ const Coordi = ({ data }) => {
   if (weather > 23) {
     return (
       <div style={back}>
-        <div style={(frame, { marginRight: "20px" })}>
-          <h4>TOP </h4>
+        <h4 style={nowCody}>NOW CODY</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexFlow: "row wrap",
+          }}
+        >
+          <div style={frame}>
+            <h4 style={titlefont}>TOP </h4>
+          </div>
           {dress2.top[index9]}
         </div>
         <div style={frame}>
-          <h4>BOTTOM </h4>
+          <h4 style={titlefont}>BOTTOM </h4>
           {dress2.pants[index4]}
         </div>
         <div style={frame}>
-          <h4>소품 </h4>
+          <h4 style={titlefont}>소품 </h4>
           {dress2.accessories[index3]}
         </div>
+        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
       </div>
     );
   }
 
   if (weather > 20) {
     return (
-      <div>
-        <div style={back}>
+      <div style={back}>
+        <h4 style={nowCody}>NOW CODY</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexFlow: "row wrap",
+          }}
+        >
           <div style={frame}>
-            <h4>상의 : </h4>
+            <h4 style={titlefont}>상의 : </h4>
             {dress3.top[index3]}
           </div>
           <div style={frame}>
-            <h4>하의 : </h4>
+            <h4 style={titlefont}>하의 : </h4>
             {dress3.pants[index6]}
           </div>
           <div style={frame}>
-            <h4>악세서리 : </h4>
+            <h4 style={titlefont}>악세서리 : </h4>
             {dress3.accessories[index2]}
           </div>
           <div style={frame}>
-            <h4>아우터 : </h4>
+            <h4 style={titlefont}>아우터 : </h4>
             {dress3.outer[index2]}
           </div>
         </div>
+        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
       </div>
     );
   }
@@ -523,22 +576,32 @@ const Coordi = ({ data }) => {
   if (weather > 17) {
     return (
       <div style={back}>
-        <div style={frame}>
-          <h4>상의 : </h4>
-          {dress4.top[index3]}
+        <h4 style={nowCody}>NOW CODY</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexFlow: "row wrap",
+          }}
+        >
+          <div style={frame}>
+            <h4 style={titlefont}> 상의 : </h4>
+            {dress4.top[index3]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>하의 : </h4>
+            {dress4.pants[index8]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>악세서리 : </h4>
+            {dress4.accessories[index1]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>아우터 : </h4>
+            {dress4.outer[index5]}
+          </div>
         </div>
-        <div style={frame}>
-          <h4>하의 : </h4>
-          {dress4.pants[index8]}
-        </div>
-        <div style={frame}>
-          <h4>악세서리 : </h4>
-          {dress4.accessories[index1]}
-        </div>
-        <div style={frame}>
-          <h4>아우터 : </h4>
-          {dress4.outer[index5]}
-        </div>
+        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
       </div>
     );
   }
@@ -546,22 +609,54 @@ const Coordi = ({ data }) => {
   if (weather > 12) {
     return (
       <div style={back}>
-        <div style={frame}>
-          <h4>상의 : </h4>
-          {dress5.top[index4]}
+        <h4 style={nowCody}>NOW CODY</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexFlow: "row wrap",
+          }}
+        >
+          <div style={frame}>
+            <h4 style={titlefont}>상의 </h4>
+            {dress5.top[index4]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>하의 </h4>
+            {dress5.pants[index8]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>아우터 </h4>
+            {dress5.outer[index3]}
+          </div>
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리1 </h4>
+            {dress5.accessories[index2]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리2 </h4>
+            {dress5.accessories[index2]}
+          </div>
+
+          <div style={frame2}>
+            <h4 style={titlefont}>악세서리3 </h4>
+            {dress5.accessories[index2]}
+          </div>
         </div>
-        <div style={frame}>
-          <h4>하의 : </h4>
-          {dress5.pants[index8]}
+
+        <div style={blank}>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>수분 보충을 충분히 진행해주세요</span>
+          </div>
+          <div style={tip}>
+            <span style={tip3}>tip</span>
+            <span style={tip2}>외출 시 썬크림을 발라주세요</span>
+          </div>
         </div>
-        <div style={frame}>
-          <h4>악세서리 : </h4>
-          {dress5.accessories[index2]}
-        </div>
-        <div style={frame}>
-          <h4>아우터 : </h4>
-          {dress5.outer[index3]}
-        </div>
+
+        {/* <div style={blank2}></div> */}
       </div>
     );
   }
@@ -569,22 +664,32 @@ const Coordi = ({ data }) => {
   if (weather > 10) {
     return (
       <div style={back}>
-        <div style={frame}>
-          <h4>상의 : </h4>
-          {dress6.top[index3]}
+        <h4 style={nowCody}>NOW CODY</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexFlow: "row wrap",
+          }}
+        >
+          <div style={frame}>
+            <h4 style={titlefont}>상의 : </h4>
+            {dress6.top[index3]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>하의 : </h4>
+            {dress6.pants[index8]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>악세서리 : </h4>
+            {dress6.accessories[index1]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>아우터 : </h4>
+            {dress6.outer[index2]}
+          </div>
         </div>
-        <div style={frame}>
-          <h4>하의 : </h4>
-          {dress6.pants[index8]}
-        </div>
-        <div style={frame}>
-          <h4>악세서리 : </h4>
-          {dress6.accessories[index1]}
-        </div>
-        <div style={frame}>
-          <h4>아우터 : </h4>
-          {dress6.outer[index2]}
-        </div>
+        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
       </div>
     );
   }
@@ -592,22 +697,32 @@ const Coordi = ({ data }) => {
   if (weather > 5) {
     return (
       <div style={back}>
-        <div style={frame}>
-          <h4>상의 : </h4>
-          {dress7.top[index3]}
+        <h4 style={nowCody}>NOW CODY</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexFlow: "row wrap",
+          }}
+        >
+          <div style={frame}>
+            <h4 style={titlefont}>상의 : </h4>
+            {dress7.top[index3]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>하의 : </h4>
+            {dress7.pants[index8]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>악세서리 : </h4>
+            {dress7.accessories[index1]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>아우터 : </h4>
+            {dress7.outer[index3]}
+          </div>
         </div>
-        <div style={frame}>
-          <h4>하의 : </h4>
-          {dress7.pants[index8]}
-        </div>
-        <div style={frame}>
-          <h4>악세서리 : </h4>
-          {dress7.accessories[index1]}
-        </div>
-        <div style={frame}>
-          <h4>아우터 : </h4>
-          {dress7.outer[index3]}
-        </div>
+        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
       </div>
     );
   }
@@ -615,22 +730,32 @@ const Coordi = ({ data }) => {
   if (weather < 6) {
     return (
       <div style={back}>
-        <div style={frame}>
-          <h4>상의 : </h4>
-          {dress8.top[index3]}
+        <h4 style={nowCody}>NOW CODY</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexFlow: "row wrap",
+          }}
+        >
+          <div style={frame}>
+            <h4 style={titlefont}>상의 : </h4>
+            {dress8.top[index3]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>하의 : </h4>
+            {dress8.pants[index6]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>악세서리 : </h4>
+            {dress8.accessories[index8]}
+          </div>
+          <div style={frame}>
+            <h4 style={titlefont}>아우터 : </h4>
+            {dress8.outer[index1]}
+          </div>
         </div>
-        <div style={frame}>
-          <h4>하의 : </h4>
-          {dress8.pants[index6]}
-        </div>
-        <div style={frame}>
-          <h4>악세서리 : </h4>
-          {dress8.accessories[index8]}
-        </div>
-        <div style={frame}>
-          <h4>아우터 : </h4>
-          {dress8.outer[index1]}
-        </div>
+        <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
       </div>
     );
   }

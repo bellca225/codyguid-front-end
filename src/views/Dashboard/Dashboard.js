@@ -41,7 +41,7 @@ import {
 } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
-import CurrentWeather from "./WeatherContainer";
+import CurrentWeather from "./CurrentWeather";
 import CustomInput from "components/CustomInput/CustomInput";
 import Mycomonent from "Mycomponent";
 import Coordi from "views/Maps/CodyContainer";
@@ -111,7 +111,7 @@ export default function Dashboard() {
         </GridItem>
 
         <GridItem xs={12} sm={12} md={6}>
-          <Card chart>
+          <Card chart style={{ height: "860px" }}>
             <Coordi />
             <CardFooter chart></CardFooter>
           </Card>

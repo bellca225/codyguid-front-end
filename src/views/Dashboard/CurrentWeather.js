@@ -75,10 +75,11 @@ const CurrentWeather = () => {
     color: "#fff",
     fontWeight: "500",
     fontSize: "18px",
-    padding: "5px",
+    padding: "8px 5px",
     borderRadius: "0 10px 0px 10px",
     width: "98%",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    textAlign: "center",
   };
 
   const box = {
@@ -93,9 +94,10 @@ const CurrentWeather = () => {
     borderRadius: "10px",
     backgroundColor: "#fff",
     width: "45%",
-    height: "110px",
+    height: "100px",
     margin: "5% 5% 0 0",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    paddingTop: "40px",
     // padding: "40px 40px 0px 40px",
   };
 
@@ -103,16 +105,82 @@ const CurrentWeather = () => {
     borderRadius: "10px",
     backgroundColor: "#00acc1",
     width: "45%",
-    height: "80px",
-    margin: "5% 5% 0 0",
+    height: "100px",
+    margin: "5% 0% 0 0",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    textAlign: "center",
+    paddingTop: "40px",
     // padding: "40px 40px 0px 40px",
   };
 
+  const vertical3 = {
+    borderRadius: "10px",
+    backgroundColor: "#fff",
+    width: "45%",
+    height: "85px",
+    paddingTop: "60px",
+    margin: "5% 5% 0 0",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+  };
+
+  const main3 = {
+    fontSize: "2.5em",
+    fontWeight: "500",
+    color: "#00acc1",
+    textAlign: "center",
+    // alignCotent: "center",
+  };
+
   const Countrytext = { fontSize: "1.5em", color: "#333" };
-  const maintext = { marginTop: "15px", color: "#888" };
-  const main = { fontSize: "2.5em", fontWeight: "500", color: "#00acc1" };
+  const maintext = { marginTop: "15px", color: "#888", textAlign: "center" };
+  const main = {
+    fontSize: "2.5em",
+    fontWeight: "500",
+    color: "#00acc1",
+    textAlign: "center",
+  };
+
   const color = { color: "#00acc1" };
+
+  const frameOne = {
+    borderRadius: "10px",
+    backgroundColor: "#fff",
+    width: "45%",
+    height: "100px",
+    margin: "5% 0% 0 0",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    paddingTop: "40px",
+  };
+
+  const frameRight = {
+    borderRadius: "10px",
+    backgroundColor: "#fff",
+    width: "45%",
+    height: "100px",
+    margin: "5% 0% 0 0",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    paddingTop: "40px",
+  };
+
+  const frameTop = {
+    borderRadius: "10px",
+    backgroundColor: "#fff",
+    width: "45%",
+    height: "100px",
+    margin: "0% 5% 0 0",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    paddingTop: "40px",
+  };
+
+  const frameTopRight = {
+    borderRadius: "10px",
+    backgroundColor: "#fff",
+    width: "45%",
+    height: "100px",
+    margin: "0% 0% 0 0",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    paddingTop: "40px",
+  };
 
   console.log(data.current.weather[0].main);
 
@@ -130,56 +198,61 @@ const CurrentWeather = () => {
               justifyContent: "center",
             }}
           >
-            <div style={vertical} className="ver1">
+            <div style={frameTop}>
               <div style={main}>{Math.round(data.current.temp - 273.15)}℃</div>
               <div style={maintext}>현재 온도</div>
             </div>
-            <div style={vertical} className="ver1">
+            <div style={frameTopRight}>
               <div style={main}>
                 {Math.round(data.current.feels_like - 273.15)}℃
               </div>
               <div style={maintext}>체감온도 </div>
             </div>
-            <div style={vertical} className="ver">
+            <div style={vertical}>
               <div style={main}>{data.current.humidity}% </div>
               <div style={maintext}>습도</div>
             </div>
-            <div style={vertical} className="ver">
+            <div style={frameRight}>
               <div style={main}>{data.current.uvi}</div>
               <div style={maintext}>자외선</div>
             </div>
-            <div style={vertical} className="ver">
+            <div style={vertical}>
               <div style={main}>{data.current.clouds}</div>
               <div style={maintext}> 구름양</div>
             </div>
-            <div style={vertical} className="ver">
+            <div style={frameRight}>
               <div style={main}>{data.current.wind_speed}</div>
               <div style={maintext}>바람 속도</div>
             </div>
 
-            <div style={vertical} className="ver">
-              <div style={main}>{data.current.weather[0].main} </div>
-              <div style={maintext}>날씨</div>
+            <div style={vertical3}>
+              <div style={main3}>{data.current.weather[0].main} </div>
+              {/* <div style={maintext}>날씨</div> */}
             </div>
 
-            <div style={vertical2} className="ver">
-              <i
-                className="wi wi-cloud"
-                color="info"
-                style={{
-                  fontSize: "60px",
-                  color: "#fff",
-                  // backgroundColor: "#00acc1",
-                }}
-              ></i>
-              <div style={maintext}>{data.current.weather[0].description}</div>
+            <div style={vertical2}>
+              <div>
+                <i
+                  className="wi wi-cloud"
+                  color="info"
+                  style={{
+                    fontSize: "60px",
+                    color: "#fff",
+
+                    // backgroundColor: "#00acc1",
+                  }}
+                ></i>
+                {/* <div style={maintext}>
+                  {data.current.weather[0].description}
+                </div> */}
+              </div>
             </div>
           </div>
 
-          <h3 style={titlefont}>위치 정보</h3>
-          {/* 위도 : {data.lat} <br />
-        경도 : {data.lon} <br /> */}
-          <span style={Countrytext}>{data.timezone} </span>
+          {/* <h3 style={titlefont}>위치 정보</h3>
+          위도 : {data.lat} <br />
+          경도 : {data.lon} <br />
+          <span style={Countrytext}>{data.timezone} </span> */}
         </div>
       </div>
     </div>

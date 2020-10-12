@@ -450,20 +450,21 @@ const Coordi = () => {
               {dress1.accessories[index4]}
             </div>
 
-            <div style={frame2} className="frame2">
-              {/* <h4 style={titlefont2}> ATC </h4> */}
+            {/* <div style={frame2} className="frame2">
+              <h4 style={titlefont2}> ATC </h4>
               {dress1.accessories[index4]}
             </div>
 
             <div style={frame2} className="frame2">
-              {/* <h4 style={titlefont2}> ATC </h4> */}
+              <h4 style={titlefont2}> ATC </h4>
               {dress1.accessories[index4]}
             </div>
 
             <div style={frame2} className="frame2">
-              {/* <h4 style={titlefont2}> ATC </h4> */}
+              <h4 style={titlefont2}> ATC </h4>
               {dress1.accessories[index4]}
-            </div>
+            </div> */}
+          
           </div>
           <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
         </div>
@@ -473,20 +474,35 @@ const Coordi = () => {
 
   if (weather > 23) {
     return (
-      <div style={back}>
-        <div style={(frame, { marginRight: "20px" })}>
-          <h4>TOP </h4>
-          {dress2.top[index3]}
+      <>
+        <div style={back}>
+        <h4 style={nowCody}>NOW CODY</h4>
+          <div style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexFlow: "row wrap",
+            }}>
+
+             <div style={frame}>
+              <h4>TOP </h4>
+              {dress2.top[index3]}
+            </div>
+
+            <div style={frame}>
+              <h4>BOTTOM </h4>
+              {dress2.pants[index2]}
+            </div>
+
+            <div style={frame}>
+              <h4>소품 </h4>
+              {dress2.accessories[index1]}
+            </div>
+
+          </div>
+          <div style={tip}> tip : 수분 보충을 충분히 진행해주세요 </div>
+          </div>
         </div>
-        <div style={frame}>
-          <h4>BOTTOM </h4>
-          {dress2.pants[index2]}
-        </div>
-        <div style={frame}>
-          <h4>소품 </h4>
-          {dress2.accessories[index1]}
-        </div>
-      </div>
+      </>
     );
   }
 
@@ -494,6 +510,7 @@ const Coordi = () => {
     return (
       <div>
         <div style={back}>
+          <div >
           <div style={frame}>
             <h4>상의 : </h4>
             {dress3.top[index3]}
@@ -518,6 +535,7 @@ const Coordi = () => {
   if (weather > 17) {
     return (
       <div style={back}>
+         <h4 style={nowCody}>NOW CODY</h4>
         <div style={frame}>
           <h4>상의 : </h4>
           {dress4.top[index4]}
@@ -541,6 +559,7 @@ const Coordi = () => {
   if (weather > 12) {
     return (
       <div style={back}>
+         <h4 style={nowCody}>NOW CODY</h4>
         <div style={frame}>
           <h4>상의 : </h4>
           {dress5.top[index3]}
@@ -564,6 +583,7 @@ const Coordi = () => {
   if (weather > 10) {
     return (
       <div style={back}>
+         <h4 style={nowCody}>NOW CODY</h4>
         <div style={frame}>
           <h4>상의 : </h4>
           {dress6.top[index4]}
@@ -587,6 +607,7 @@ const Coordi = () => {
   if (weather > 5) {
     return (
       <div style={back}>
+        <h4 style={nowCody}>NOW CODY</h4>
         <div style={frame}>
           <h4>상의 : </h4>
           {dress7.top[index4]}
@@ -610,6 +631,7 @@ const Coordi = () => {
   if (weather < 6) {
     return (
       <div style={back}>
+        <h4 style={nowCody}>NOW CODY</h4>
         <div style={frame}>
           <h4>상의 : </h4>
           {dress8.top[index4]}
