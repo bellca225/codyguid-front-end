@@ -3,6 +3,13 @@ import axios from "axios";
 import "../../assets/css/WeatherIcons/css/WeatherIcons.css";
 import "../../assets/css/WeatherIcons/css/WeatherIconsWind.css";
 import "./currentweather.css";
+import uvRays from "../../miniIcon/자외선.svg";
+import humidity from "../../miniIcon/습도.svg";
+import clouds from "../../miniIcon/구름양.svg";
+import windowStrong from "../../miniIcon/바람세기.svg";
+import temfeel from "../../miniIcon/체감온도.svg";
+import tem from "../../miniIcon/현재온도.svg";
+import now from "../../miniIcon/현재날씨.svg";
 
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
@@ -94,10 +101,11 @@ const CurrentWeather = () => {
     borderRadius: "10px",
     backgroundColor: "#fff",
     width: "45%",
-    height: "100px",
+    height: "130px",
     margin: "5% 5% 0 0",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-    paddingTop: "40px",
+    paddingTop: "10px",
+    textAlign: "center",
     // padding: "40px 40px 0px 40px",
   };
 
@@ -105,11 +113,25 @@ const CurrentWeather = () => {
     borderRadius: "10px",
     backgroundColor: "#00acc1",
     width: "45%",
-    height: "100px",
-    margin: "5% 0% 0 0",
-    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    height: "130px",
     textAlign: "center",
-    paddingTop: "40px",
+    margin: "5% 0% 0 0",
+    textAlign: "center",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+
+    paddingTop: "10px",
+    // padding: "40px 40px 0px 40px",
+  };
+  const vertical22 = {
+    borderRadius: "10px",
+    backgroundColor: "#00acc1",
+    width: "45%",
+    height: "120px",
+    textAlign: "center",
+    margin: "5% 0% 0 0",
+    textAlign: "center",
+    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    paddingTop: "25px",
     // padding: "40px 40px 0px 40px",
   };
 
@@ -117,9 +139,10 @@ const CurrentWeather = () => {
     borderRadius: "10px",
     backgroundColor: "#fff",
     width: "45%",
-    height: "85px",
-    paddingTop: "60px",
+    height: "130px",
+    paddingTop: "10px",
     margin: "5% 5% 0 0",
+    textAlign: "center",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
   };
 
@@ -132,7 +155,13 @@ const CurrentWeather = () => {
   };
 
   const Countrytext = { fontSize: "1.5em", color: "#333" };
-  const maintext = { marginTop: "15px", color: "#888", textAlign: "center" };
+  const maintext = {
+    marginTop: "10px",
+    color: "#888",
+    textAlign: "center",
+    fontSize: "0.8em",
+    fontWeight: "500",
+  };
   const main = {
     fontSize: "2.5em",
     fontWeight: "500",
@@ -146,40 +175,47 @@ const CurrentWeather = () => {
     borderRadius: "10px",
     backgroundColor: "#fff",
     width: "45%",
-    height: "100px",
+    height: "130px",
     margin: "5% 0% 0 0",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-    paddingTop: "40px",
+    paddingTop: "10px",
+    textAlign: "center",
   };
 
   const frameRight = {
     borderRadius: "10px",
     backgroundColor: "#fff",
     width: "45%",
-    height: "100px",
+
     margin: "5% 0% 0 0",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-    paddingTop: "40px",
+    height: "130px",
+    paddingTop: "10px",
+    textAlign: "center",
   };
 
   const frameTop = {
     borderRadius: "10px",
     backgroundColor: "#fff",
     width: "45%",
-    height: "100px",
+    textAlign: "center",
     margin: "0% 5% 0 0",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-    paddingTop: "40px",
+    height: "130px",
+    paddingTop: "10px",
+    textAlign: "center",
   };
 
   const frameTopRight = {
     borderRadius: "10px",
     backgroundColor: "#fff",
     width: "45%",
-    height: "100px",
+    height: "130px",
+    paddingTop: "10px",
+    textAlign: "center",
     margin: "0% 0% 0 0",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-    paddingTop: "40px",
+    textAlign: "center",
   };
 
   console.log(data.current.weather[0].main);
@@ -199,44 +235,86 @@ const CurrentWeather = () => {
             }}
           >
             <div style={frameTop}>
+              <img
+                style={{ width: "20%" }}
+                src={tem}
+                alt="현재 온도"
+                title="현재 온도"
+              />
               <div style={main}>{Math.round(data.current.temp - 273.15)}℃</div>
               <div style={maintext}>현재 온도</div>
             </div>
             <div style={frameTopRight}>
+              <img
+                style={{ width: "18%" }}
+                src={temfeel}
+                alt="체감 온도"
+                title="체감 온도"
+              />
               <div style={main}>
                 {Math.round(data.current.feels_like - 273.15)}℃
               </div>
               <div style={maintext}>체감온도 </div>
             </div>
             <div style={vertical}>
+              <img
+                style={{ width: "20%" }}
+                src={humidity}
+                alt="습도"
+                title="습도"
+              />
               <div style={main}>{data.current.humidity}% </div>
               <div style={maintext}>습도</div>
             </div>
             <div style={frameRight}>
+              <img
+                style={{ width: "20%" }}
+                src={uvRays}
+                alt="자외선"
+                title="자외선"
+              />
               <div style={main}>{data.current.uvi}</div>
               <div style={maintext}>자외선</div>
             </div>
             <div style={vertical}>
+              <img
+                style={{ width: "20%" }}
+                src={clouds}
+                alt="구름양"
+                title="구름양"
+              />
               <div style={main}>{data.current.clouds}</div>
               <div style={maintext}> 구름양</div>
             </div>
             <div style={frameRight}>
+              <img
+                style={{ width: "20%" }}
+                src={windowStrong}
+                alt="바람 속도"
+                title="바람 속도"
+              />
               <div style={main}>{data.current.wind_speed}</div>
               <div style={maintext}>바람 속도</div>
             </div>
 
             <div style={vertical3}>
+              <img
+                style={{ width: "20%" }}
+                src={now}
+                alt="현재 날씨"
+                title="현재 날씨"
+              />
               <div style={main3}>{data.current.weather[0].main} </div>
-              {/* <div style={maintext}>날씨</div> */}
+              <div style={maintext}>현재 날씨</div>
             </div>
 
-            <div style={vertical2}>
+            <div style={vertical22}>
               <div>
                 <i
                   className="wi wi-cloud"
                   color="info"
                   style={{
-                    fontSize: "60px",
+                    fontSize: "90px",
                     color: "#fff",
 
                     // backgroundColor: "#00acc1",
