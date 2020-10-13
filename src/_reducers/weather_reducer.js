@@ -48,8 +48,9 @@ const initialState = {
     uvi: 5.21,
     clouds: 40,
     wind_speed: 1.94,
-    weather: "Clouds",
+    weather: "Sunny",
     timezone: "Asia/Seoul",
+    icon: "01d",
   },
 };
 
@@ -71,6 +72,7 @@ export default handleActions(
       const wind_speed = action.payload.current.wind_speed;
       const weather = action.payload.current.weather[0].main;
       const timezone = action.payload.timezone;
+      const icon = action.payload.current.weather[0].icon;
 
       return {
         ...state,
@@ -84,6 +86,7 @@ export default handleActions(
           wind_speed: wind_speed,
           weather: weather,
           timezone: timezone,
+          icon: icon,
         },
       };
     },

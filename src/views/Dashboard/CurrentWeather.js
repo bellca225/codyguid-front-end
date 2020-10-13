@@ -310,6 +310,7 @@ const CurrentWeather = () => {
 
             <div style={vertical22}>
               <div>
+                
                 <i
                   className="wi wi-cloud"
                   color="info"

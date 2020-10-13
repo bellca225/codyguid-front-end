@@ -90,7 +90,7 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
   };
   const vertical22 = {
     borderRadius: "10px",
-    backgroundColor: "#00acc1",
+    backgroundColor: "#fff",
     width: "45%",
     height: "120px",
     textAlign: "center",
@@ -103,13 +103,31 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
 
   const vertical3 = {
     borderRadius: "10px",
-    backgroundColor: "#fff",
+    width: "50%",
+    height: "130px",
+
+    textAlign: "center",
+  };
+
+  const vertical33 = {
+    borderRadius: "10px",
     width: "45%",
     height: "130px",
+    textAlign: "center",
+    // marginTop: "5px",
+  };
+
+  const vertical4 = {
+    borderRadius: "10px",
+    backgroundColor: "#fff",
+    width: "95%",
+    // margin: "5%",
+    height: "130px",
     paddingTop: "10px",
-    margin: "5% 5% 0 0",
+    margin: "5% 0 5% 0",
     textAlign: "center",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
+    display: "flex",
   };
 
   const main3 = {
@@ -123,6 +141,12 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
   const Countrytext = { fontSize: "1.5em", color: "#333" };
   const maintext = {
     marginTop: "10px",
+    color: "#888",
+    textAlign: "center",
+    fontSize: "0.8em",
+    fontWeight: "500",
+  };
+  const maintext1 = {
     color: "#888",
     textAlign: "center",
     fontSize: "0.8em",
@@ -183,6 +207,8 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
     textAlign: "center",
   };
+
+  const icons = `http://openweathermap.org/img/wn/${data.icon}@2x.png`;
 
   // console.log(data.current.weather[0].main);
 
@@ -262,32 +288,39 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
               <div style={maintext}>바람 속도</div>
             </div>
 
-            <div style={vertical3}>
-              <img
-                style={{ width: "20%" }}
-                src={now}
-                alt="현재 날씨"
-                title="현재 날씨"
-              />
-              <div style={main3}>{data.weather} </div>
-              <div style={maintext}>현재 날씨</div>
-            </div>
+            <div style={vertical4}>
+              <div style={vertical3}>
+                <img
+                  style={{ width: "20%" }}
+                  src={now}
+                  alt="현재 날씨"
+                  title="현재 날씨"
+                />
+                <div style={main3}>{data.weather} </div>
+                <div style={maintext}>현재 날씨</div>
+              </div>
 
-            <div style={vertical22}>
-              <div>
-                <i
+              <div style={vertical33}>
+                <div>
+                  {/* {data.icon} */}
+                  <img
+                    src={icons}
+                    alt="날씨 아이콘"
+                    style={{ width: "110px" }}
+                  />
+
+                  {/* <i
                   className="wi wi-cloud"
                   color="info"
                   style={{
                     fontSize: "90px",
                     color: "#fff",
-
-                    // backgroundColor: "#00acc1",
                   }}
-                ></i>
-                {/* <div style={maintext}>
+                ></i> */}
+                  {/* <div style={maintext}>
                   {data.current.weather[0].description}
                 </div> */}
+                </div>
               </div>
             </div>
           </div>

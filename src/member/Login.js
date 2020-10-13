@@ -15,6 +15,14 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
+import { createMuiTheme } from "@material-ui/core/styles";
+import purple from "@material-ui/core/colors/purple";
+import green from "@material-ui/core/colors/green";
+
+const theme = createMuiTheme({
+  backgroundColor: "rgb(158, 56, 180)",
+});
+
 function Login(props) {
   const useStyles = makeStyles((theme) => ({
     paper: {
@@ -113,6 +121,7 @@ function Login(props) {
               label="Remember me"
             />
             <Button
+              theme={theme}
               type="submit"
               fullWidth
               variant="contained"
