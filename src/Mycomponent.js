@@ -24,6 +24,8 @@ import "@reach/combobox/styles.css";
 import "mycomponent.css";
 import { Card } from "@material-ui/core";
 import GridItem from "./components/Grid/GridItem.js";
+import { getWeather } from "./_reducers/weather_reducer";
+import { useDispatch } from "react-redux";
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -215,24 +217,15 @@ function Search({ panTo }) {
 }
 
 function Locate({ panTo }) {
+  const dispatch = useDispatch();
+  const getWeatherData = () => {
+    dispatch(getWeather());
+  };
   return (
     <>
       <div style={{ display: "flex", justifyContent: "flex-start" }}>
         <button
           className="locate"
-          style={{
-            backgroundColor: "rgb(0, 172, 193)",
-            border: "none",
-            color: "#fff",
-            margin: "0 auto",
-            width: "46%",
-            display: "inline-block",
-            lineHeight: "40px",
-            borderRadius: "5px",
-            boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-            fontWeight: "500",
-            fontSize: "14px",
-          }}
           onClick={() => {
             navigator.geolocation.getCurrentPosition(
               (pos) => {
@@ -250,22 +243,7 @@ function Locate({ panTo }) {
           현재 위치로 이동하기
         </button>
 
-        <button
-          className="locate"
-          style={{
-            backgroundColor: "rgb(158, 56, 180)",
-            border: "none",
-            color: "#fff",
-            margin: "0 auto",
-            width: "46%",
-            display: "inline-block",
-            lineHeight: "30px",
-            borderRadius: "5px",
-            boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-            fontWeight: "500",
-            fontSize: "14px",
-          }}
-        >
+        <button className="locate" style={{}} onClick={getWeatherData}>
           날씨 불러오기
         </button>
       </div>

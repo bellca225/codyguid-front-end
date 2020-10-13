@@ -387,7 +387,7 @@ const Coordi = () => {
   };
 
   const nowCody = {
-    backgroundColor: "#9E38B4",
+    backgroundColor: "#772FDD"//"#9E38B4",
     // backgroundColor: "linearGradient(60deg, #ab47bc, #8e24aa)",
     color: "#fff",
     fontWeight: "500",

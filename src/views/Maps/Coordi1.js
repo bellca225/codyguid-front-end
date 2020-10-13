@@ -147,7 +147,7 @@ const Coordi = ({ data }) => {
       //"긴팔티", "후드티", "얇은긴팔"
       <img src={Tlong} alt="긴티" />,
       <img src={shirtlong} alt="상의 긴팔 셔츠" />,
-      <img src={hoodlong} alt="상의 긴팔 후드" />,
+      <img src={hoodlong} alt="상의 긴팔 후드" title="상의 긴팔 후드" />,
     ],
 
     pants: [
@@ -395,7 +395,7 @@ const Coordi = ({ data }) => {
   };
 
   const nowCody = {
-    backgroundColor: "#9E38B4",
+    backgroundColor: "#772FDD", //"#9E38B4",
     // backgroundColor: "linearGradient(60deg, #ab47bc, #8e24aa)",
     color: "#fff",
     fontWeight: "500",
@@ -418,7 +418,8 @@ const Coordi = ({ data }) => {
   };
 
   const tip3 = {
-    backgroundColor: "#9E38B4",
+    // backgroundColor: "#9E38B4",
+    backgroundColor: "#772FDD",
     color: "#fff",
     fontSize: "18px",
     padding: "3px 6px",

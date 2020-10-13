@@ -214,7 +214,6 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
 
   return (
     <div>
-      <button onClick={getWeatherData}>날씨 불러오기</button>
       <div style={box}>
         <h4 style={nowCody}>NOW WEATHER</h4>
         <div>
