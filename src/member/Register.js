@@ -21,7 +21,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 const theme = createMuiTheme({
   palette: {
@@ -152,7 +152,7 @@ function Register(props) {
                     label="이름"
                     type="text"
                     // value={member.name}
-                    onChange={onSubmitHandler}
+                    // onChange={onSubmitHandler}
                     autoComplete="Name"
                   />
                 </Grid>
@@ -164,7 +164,7 @@ function Register(props) {
                     label="ID"
                     type="text"
                     // value={member.userId}
-                    onChange={onSubmitHandler}
+                    // onChange={onSubmitHandler}
                     autoComplete="ID"
                   />
                 </Grid>
@@ -176,7 +176,7 @@ function Register(props) {
                     label="Password"
                     type="password"
                     // value={member.userPwd}
-                    onChange={onSubmitHandler}
+                    // onChange={onSubmitHandler}
                     autoComplete="current-password"
                   />
                 </Grid>
@@ -188,7 +188,7 @@ function Register(props) {
                     label="Confirm Password"
                     type="password"
                     // value={member.ConfirmPwd}
-                    onChange={onSubmitHandler}
+                    // onChange={onSubmitHandler}
                     autoComplete="current-password"
                   />
                 </Grid>
@@ -200,7 +200,7 @@ function Register(props) {
                     label="E-mail"
                     name="email"
                     // value={member.email}
-                    onChange={onSubmitHandler}
+                    // onChange={onSubmitHandler}
                     autoComplete="email"
                   />
                 </Grid>

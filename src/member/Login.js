@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../_reducers/user_reducer";
 import { withRouter } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/styles";
+import axios from "axios";
+import { Cookies } from "react-cookie";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -50,15 +52,20 @@ function Login(props) {
 
   const dispatch = useDispatch();
 
-  const [userId, setUserId] = useState("");
-  const [userPwd, setUserPwd] = useState("");
+  // const [userId, setUserId] = useState("");
+  // const [userPwd, setUserPwd] = useState("");
+
+  const [member, setMember] = useState({
+    userId: "",
+    userPwd: "",
+  });
 
   const onUserIdChange = (e) => {
-    setUserId(e.target.value);
+    setMember({ ...member, [e.target.name]: e.target.value });
   };
 
   const onUserPwdChange = (e) => {
-    setUserPwd(e.target.value);
+    setMember({ ...member, [e.target.name]: e.target.value });
   };
 
   const onSubmitHandler = (e) => {
@@ -77,8 +84,23 @@ function Login(props) {
     //   }
     // });
 
-    dispatch(loginUser(userId, userPwd));
-    props.history.push("/admin/dashboard");
+    // dispatch(loginUser(userId, userPwd));
+    // props.history.push("/admin/dashboard");
+
+    const apiUrl = "http://127.0.0.1:8000/api/get_token/";
+
+    axios
+      .post(apiUrl, member)
+      .then((response) => {
+        console.log("호출 결과 :", response.data);
+        const token = response.data.token;
+        let cookies = new Cookies();
+        cookies.set("usertoken", token, { path: "/admin" }); // "/"밑에있는 모든 경로에서 접근 가능한 쿠키
+        window.location = "/";
+      })
+      .catch((response) => {
+        console.error(response);
+      });
   };
 
   return (
@@ -103,7 +125,7 @@ function Login(props) {
                 type="id"
                 id="id"
                 autoComplete="id"
-                value={userId}
+                // value={userId}
                 onChange={onUserIdChange}
                 autoFocus
               />
@@ -116,7 +138,7 @@ function Login(props) {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                value={userPwd}
+                // value={userPwd}
                 onChange={onUserPwdChange}
               />
               <FormControlLabel

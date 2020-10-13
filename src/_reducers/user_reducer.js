@@ -93,8 +93,10 @@ const member = (state = initialState, action) => {
       if (loginMember.length == 1) {
         console.log("리덕스 로그인 일치 사용자:", loginMember[0]);
         setSession(loginMember[0]);
-
-        return state;
+        return {
+          ...state,
+          loginMember: loginMember,
+        };
       } else {
         let cookies = new Cookies();
         cookies.remove("user");
