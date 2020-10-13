@@ -13,6 +13,8 @@ import { Grid } from "@material-ui/core";
 
 // import Pagination from "@material-ui/lab/Pagination";
 
+// 갤러리 첫 화면
+
 const styles = {
   gridContainer: {
     paddingLeft: "20px",

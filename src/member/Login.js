@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../_reducers/user_reducer";
 import { withRouter } from "react-router-dom";
+import { ThemeProvider } from "@material-ui/styles";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -16,11 +17,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
 import { createMuiTheme } from "@material-ui/core/styles";
-import purple from "@material-ui/core/colors/purple";
-import green from "@material-ui/core/colors/green";
 
 const theme = createMuiTheme({
-  backgroundColor: "rgb(158, 56, 180)",
+  palette: {
+    primary: { main: "#9E38B4" },
+  },
+  contrastText: "#fff",
 });
 
 function Login(props) {
@@ -80,62 +82,65 @@ function Login(props) {
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <form className={classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              label="ID"
-              type="id"
-              id="id"
-              autoComplete="id"
-              value={userId}
-              onChange={onUserIdChange}
-              autoFocus
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              value={userPwd}
-              onChange={onUserPwdChange}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              theme={theme}
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              onClick={onSubmitHandler}
-              className={classes.submit}
-            >
-              Sign In
-            </Button>
-          </form>
-        </div>
-        <Box mt={8}></Box>
-      </Container>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div style={{ display: "flex" }}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              로그인
+            </Typography>
+            <form className={classes.form} noValidate>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                label="ID"
+                type="id"
+                id="id"
+                autoComplete="id"
+                value={userId}
+                onChange={onUserIdChange}
+                autoFocus
+              />
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                value={userPwd}
+                onChange={onUserPwdChange}
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="다음에도 로그인 정보를 기억합니다."
+              />
+              <Button
+                theme={theme}
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                onClick={onSubmitHandler}
+                className={classes.submit}
+                style={{ color: "#fff" }}
+              >
+                로그인
+              </Button>
+            </form>
+          </div>
+          <Box mt={8}></Box>
+        </Container>
+      </div>
+    </ThemeProvider>
   );
 }
 

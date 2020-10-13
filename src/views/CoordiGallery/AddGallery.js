@@ -12,6 +12,8 @@ import CardBody from "components/Card/CardBody.js";
 
 // import Pagination from "@material-ui/lab/Pagination";
 
+// 사진 올리기
+
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {

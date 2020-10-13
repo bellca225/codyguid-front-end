@@ -30,7 +30,7 @@ code {
   background: none;
   z-index: 10;
 
-  background-color: rgb(158, 56, 180);
+  background-color: #00acc1;
   border: none;
   color: #fff;
   margin: 0 auto;
@@ -45,7 +45,7 @@ code {
 }
 
 .locate:hover {
-  background-color: blueviolet;
+  background-color: #00bad2;
 }
 
 .locate img {

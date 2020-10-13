@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
+
 import { useDispatch } from "react-redux";
 import { registerUser } from "../_reducers/user_reducer";
 import Axios from "axios";
@@ -18,6 +22,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: "#9E38B4" },
+  },
+});
 
 function Register(props) {
   const useStyles = makeStyles((theme) => ({
@@ -117,108 +127,115 @@ function Register(props) {
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <form className={classes.form} noValidate onSubmit={onSubmitHandler}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  label="Name"
-                  type="text"
-                  // value={member.name}
-                  onChange={onSubmitHandler}
-                  autoComplete="Name"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  label="ID"
-                  type="text"
-                  // value={member.userId}
-                  onChange={onSubmitHandler}
-                  autoComplete="Name"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  label="Password"
-                  type="password"
-                  // value={member.userPwd}
-                  onChange={onSubmitHandler}
-                  autoComplete="current-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  label="Confirm Password"
-                  type="password"
-                  // value={member.ConfirmPwd}
-                  onChange={onSubmitHandler}
-                  autoComplete="current-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  label="Email"
-                  name="email"
-                  // value={member.email}
-                  onChange={onSubmitHandler}
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
-                  }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
+    <ThemeProvider theme={theme}>
+      <div style={{ display: "flex" }}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              회원 가입
+            </Typography>
+            <form
+              className={classes.form}
+              noValidate
+              onSubmit={onSubmitHandler}
             >
-              Sign Up
-            </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    label="이름"
+                    type="text"
+                    // value={member.name}
+                    onChange={onSubmitHandler}
+                    autoComplete="Name"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    label="ID"
+                    type="text"
+                    // value={member.userId}
+                    onChange={onSubmitHandler}
+                    autoComplete="ID"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    label="Password"
+                    type="password"
+                    // value={member.userPwd}
+                    onChange={onSubmitHandler}
+                    autoComplete="current-password"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    label="Confirm Password"
+                    type="password"
+                    // value={member.ConfirmPwd}
+                    onChange={onSubmitHandler}
+                    autoComplete="current-password"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    label="E-mail"
+                    name="email"
+                    // value={member.email}
+                    onChange={onSubmitHandler}
+                    autoComplete="email"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox value="allowExtraEmails" color="primary" />
+                    }
+                    label="회원가입에 필요한 개인 정보 수집에 동의합니다."
+                  />
+                </Grid>
               </Grid>
-            </Grid>
-          </form>
-        </div>
-        <Box mt={5}></Box>
-      </Container>
-    </div>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+                style={{ color: "#fff" }}
+              >
+                회원 가입
+              </Button>
+              <Grid container justify="flex-end">
+                <Grid item>
+                  <Link href="#" variant="body2">
+                    이미 회원가입 하셨나요? 지금 로그인하세요.
+                  </Link>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+          <Box mt={5}></Box>
+        </Container>
+      </div>
+    </ThemeProvider>
   );
 }
 

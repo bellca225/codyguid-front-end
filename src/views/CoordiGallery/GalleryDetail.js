@@ -10,6 +10,8 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 
+// 코디 상세
+
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
