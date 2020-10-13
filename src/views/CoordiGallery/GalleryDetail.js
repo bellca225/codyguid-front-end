@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
@@ -9,8 +8,11 @@ import GalleryDetail from "components/CoordiGallery/GalleryDetail.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import axios from "axios";
 
 // 코디 상세
+
+const useStyles = makeStyles(styles);
 
 const styles = {
   cardCategoryWhite: {
@@ -42,10 +44,31 @@ const styles = {
   },
 };
 
-const useStyles = makeStyles(styles);
-
 export default function TableList(props) {
   const classes = useStyles();
+
+  const [selectedFiles, setSelectedFiles] = useState(undefined);
+  const selectFile = (event) => {
+    setSelectedFiles(event.target.files);
+  };
+
+  const onFileUpload = (e) => {
+    const formData = new FormData();
+    formData.append("file", selectedFiles[0]);
+
+    axios({
+      method: "post",
+      url: "http://localhost:8000/api/booking/upload/",
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (response) {
+        console.log(response);
+      });
+  };
 
   return (
     <div>
