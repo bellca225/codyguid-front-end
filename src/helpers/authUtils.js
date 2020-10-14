@@ -10,4 +10,31 @@ const getLoggedInUser = () => {
   return user ? (typeof user == "object" ? user : JSON.parse(user)) : null;
 };
 
-export { getLoggedInUser };
+
+const getUserToken = () => {
+  const cookies = new Cookies();
+  const userToken = cookies.get("usertoken");
+  return userToken;
+};
+
+const setCookieExpire = () => {
+  const cookies = new Cookies();
+  cookies.remove("usertoken");
+};
+const isUserAuthenticated = () => {
+  const userToken = getUserToken();
+  if (userToken == null) {
+    return false;
+  } else {
+    return true;
+  }
+};
+const notLoginRedirect = () => {
+  const userToken = getUserToken();
+
+  if (!isUserAuthenticated()) {
+    window.location = "/admin/login";
+  }
+};
+
+export { getLoggedInUser, getUserToken, isUserAuthenticated, setCookieExpire, notLoginRedirect };

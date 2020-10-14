@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
@@ -21,7 +21,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
-// import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const theme = createMuiTheme({
   palette: {
@@ -29,7 +29,13 @@ const theme = createMuiTheme({
   },
 });
 
-function Register(props) {
+function Register() {
+  const inputRef = useRef();
+
+  const { register, handleSubmit, errors, trigger} = useForm({
+    mode: "onSubmitHandler",
+  });
+
   const useStyles = makeStyles((theme) => ({
     paper: {
       marginTop: theme.spacing(-5),
@@ -55,24 +61,27 @@ function Register(props) {
   const dispatch = useDispatch();
 
   // const [userId, setUserId] = useState("");
-  // const [userPwd, setUserPwd] = useState("");
+  // const [password, setpassword] = useState("");
   // const [name, setName] = useState("");
   // const [email, setEmail] = useState("");
   // const [ConfirmPwd, setConfirmPwd] = useState("");
 
   const [member, SetMember] = useState({
-    userId: "",
-    name: "",
-    userPwd: "",
+    username: "",
+    password: "",
     email: "",
   });
+
+  const onInputChange = (e) => {
+    SetMember({ ...member, [e.target.name]: e.target.value });
+  };
 
   // const onUserIdHandler = (e) => {
   //   setUserId(e.target.value);
   // };
 
   // const onPasswordHandler = (e) => {
-  //   setUserPwd(e.target.value);
+  //   setpassword(e.target.value);
   // };
 
   // const onNameHandler = (e) => {
@@ -88,15 +97,15 @@ function Register(props) {
   // };
 
   const onSubmitHandler = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
-    // if (userPwd !== ConfirmPwd) {
+    // if (password !== ConfirmPwd) {
     //   return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
     // }
 
     // let body = {
     //   userId: userId,
-    //   userPwd: userPwd,
+    //   password: password,
     //   name: name,
     //   email: email,
     // };
@@ -110,7 +119,7 @@ function Register(props) {
     //   });
     // };
 
-    // dispatch(registerUser(userPwd, userPwd, name, email));
+    // dispatch(registerUser(password, password, name, email));
     // props.history.push("/member/login");
 
     dispatch(registerUser(member));
@@ -119,7 +128,7 @@ function Register(props) {
       .post(apiUrl, member)
       .then((response) => {
         console.log("호출 결과 :", response.data);
-        window.location = "/";
+        window.location = "/admin/login";
       })
       .catch((response) => {
         console.error(response, "불러오지 못했습니다.");
@@ -141,7 +150,7 @@ function Register(props) {
             <form
               className={classes.form}
               noValidate
-              onSubmit={onSubmitHandler}
+              onSubmit={handleSubmit(onSubmitHandler)}
             >
               <Grid container spacing={2}>
                 <Grid item xs={12}>
@@ -149,60 +158,95 @@ function Register(props) {
                     variant="outlined"
                     required
                     fullWidth
+                    id="name"
                     label="이름"
-                    type="text"
+                    name="username"
                     // value={member.name}
-                    // onChange={onSubmitHandler}
-                    autoComplete="Name"
+                    onChange={onInputChange}
+                    // autoComplete="Name"
+                    inputRef={register({
+                      minLength: 2,
+                      required: "error message",
+                    })}
                   />
+                  {errors.username && (
+                    <span className="error">이름을 입력해주세요.</span>
+                  )}
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
                     variant="outlined"
                     required
                     fullWidth
-                    label="ID"
-                    type="text"
-                    // value={member.userId}
-                    // onChange={onSubmitHandler}
-                    autoComplete="ID"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    label="Password"
-                    type="password"
-                    // value={member.userPwd}
-                    // onChange={onSubmitHandler}
-                    autoComplete="current-password"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    label="Confirm Password"
-                    type="password"
-                    // value={member.ConfirmPwd}
-                    // onChange={onSubmitHandler}
-                    autoComplete="current-password"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
+                    id="email"
                     label="E-mail"
                     name="email"
                     // value={member.email}
-                    // onChange={onSubmitHandler}
+                    onChange={onInputChange}
                     autoComplete="email"
+                    inputRef={register({
+                      minLength: 2,
+                      required: "error message",
+                    })}
+                    onFocus={() => {
+                      trigger("name");
+                    }}
                   />
+                  {errors.password && (
+                    <span className="error">이메일을 입력해 주세요.</span>
+                  )}
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    name="password"
+                    id="Password"
+                    label="Password"
+                    type="password"
+                    // value={member.password}
+                    onChange={onInputChange}
+                    // autoComplete="current-password"
+                    inputRef={register({
+                      minLength: 2,
+                      required: "error message",
+                    })}
+                    onFocus={() => {
+                      trigger("email");
+                    }}
+                  />
+                  {errors.name && (
+                    <span className="error">
+                      비밀번호는 형식대로 입력해주세요.
+                    </span>
+                  )}
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    name="ConfirmPassword"
+                    id="ConfirmPassword"
+                    label="Confirm Password"
+                    type="password"
+                    // value={member.ConfirmPwd}
+                    onChange={onInputChange}
+                    autoComplete="current-password"
+                    inputRef={register({
+                      minLength: 2,
+                      required: "error message",
+                    })}
+                    onFocus={() => {
+                      trigger("Password");
+                    }}
+                  />
+                  {member.password === member.ConfirmPassword ? (
+                    ""
+                  ) : (
+                    <span className="error">비밀번호가 일치하지 않습니다.</span>
+                  )}
                 </Grid>
                 <Grid item xs={12}>
                   <FormControlLabel
@@ -239,4 +283,4 @@ function Register(props) {
   );
 }
 
-export default withRouter(Register);
+export default Register;
