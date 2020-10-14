@@ -27,6 +27,9 @@ import GridItem from "./components/Grid/GridItem.js";
 import { getWeather } from "./_reducers/weather_reducer";
 import { useDispatch } from "react-redux";
 
+import spot from "./miniIcon/현재 위치로 설정.svg";
+import weather from "./miniIcon/현재 날씨로 설정.svg";
+
 const libraries = ["places"];
 const mapContainerStyle = {
   width: "100%",
@@ -223,9 +226,33 @@ function Locate({ panTo }) {
   };
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "flex-start" }}>
-        <button
-          className="locate"
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          // alignContent: "center",
+        }}
+      >
+        <img
+          onClick={() => {
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                console.log(pos.coords.latitude, pos.coords.longitude);
+
+                panTo({
+                  lat: pos.coords.latitude,
+                  lng: pos.coords.longitude,
+                });
+              },
+              () => null
+            );
+          }}
+          src={spot}
+          className="btn-hover"
+          alt="현재 위치로 이동하기"
+        />
+        <div
+          className="btn01"
           onClick={() => {
             navigator.geolocation.getCurrentPosition(
               (pos) => {
@@ -241,11 +268,16 @@ function Locate({ panTo }) {
           }}
         >
           현재 위치로 이동하기
-        </button>
-
-        <button className="locate" style={{}} onClick={getWeatherData}>
-          날씨 불러오기
-        </button>
+        </div>
+        <img
+          onClick={getWeatherData}
+          src={weather}
+          className="btn-hover"
+          alt="현재 날씨로 코디 설정"
+        />
+        <div className="btn01" onClick={getWeatherData}>
+          현재 날씨로 코디 설정
+        </div>
       </div>
 
       <div style={{ height: "25px" }}></div>
