@@ -193,18 +193,16 @@ function Search({ panTo }) {
   return (
     <div>
       <Combobox onSelect={handleSelect}>
-        <GridItem xs={12} sm={12} md={12}>
-          <Card chart>
-            <ComboboxInput
-              className="search search-bar"
-              value={value}
-              onChange={handleInput}
-              disabled={!ready}
-              placeholder="Search your location"
-            />
-          </Card>
-          <div style={{ height: "25px" }} />
-        </GridItem>
+        <Card chart>
+          <ComboboxInput
+            className="search search-bar"
+            value={value}
+            onChange={handleInput}
+            disabled={!ready}
+            placeholder="Search your location"
+          />
+        </Card>
+        <div style={{ height: "15px" }} />
 
         <ComboboxPopover>
           <ComboboxList>
@@ -226,6 +224,8 @@ function Locate({ panTo }) {
   };
   return (
     <>
+      <hr style={{ opacity: "0.2", width: "100%" }} />
+      <div style={{ height: "5px" }}></div>
       <div
         style={{
           display: "flex",
@@ -275,7 +275,7 @@ function Locate({ panTo }) {
           className="btn-hover"
           alt="현재 날씨로 코디 설정"
         />
-        <div className="btn01" onClick={getWeatherData}>
+        <div className="btn01 btn02" onClick={getWeatherData}>
           현재 날씨로 코디 설정
         </div>
       </div>

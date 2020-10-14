@@ -442,7 +442,7 @@ const Coordi = ({ data }) => {
   };
 
   const blank = {
-    marginTop: "40px",
+    marginTop: "26px",
     // width: "100%",
     borderRadius: "10px",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",

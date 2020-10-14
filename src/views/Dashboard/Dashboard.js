@@ -86,7 +86,7 @@ export default function Dashboard() {
           <Card chart>
             <CurrentWeather />
 
-            <CardBody>
+            <CardBody style={{ padding: "0 20px" }}>
               <h4
                 className={classes.cardTitle}
                 style={{ display: "inline" }}
@@ -97,21 +97,20 @@ export default function Dashboard() {
                 </span>
               </p>
             </CardBody>
-            <CardFooter chart>
-              <div className={classes.stats}>
-                <AccessTime /> 현재 위치 및 시각 기준 :
-                <span style={{ color: "#00acc1" }}>
-                  {year}.{month}.{date} {day}
-                </span>
-              </div>
-            </CardFooter>
           </Card>
         </GridItem>
 
         <GridItem xs={12} sm={12} md={6}>
-          <Card chart style={{ height: "860px" }}>
+          <Card chart>
             <Coordi />
-            <CardFooter chart></CardFooter>
+            <CardFooter chart>
+              <div className={classes.stats}>
+                <AccessTime /> 현재 위치 및 시각 기준 :
+                <span style={{ color: "#00acc1" }}>
+                  {year}.{month}.{date}
+                </span>
+              </div>
+            </CardFooter>
           </Card>
         </GridItem>
 

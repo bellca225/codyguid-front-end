@@ -68,6 +68,9 @@ code {
   color: #888;
   cursor: pointer;
 }
+.btn02 {
+  margin-right: 0;
+}
 .btn01:hover {
   color: rgb(158, 56, 180);
   font-weight: 600;
