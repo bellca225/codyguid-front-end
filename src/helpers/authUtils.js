@@ -10,7 +10,6 @@ const getLoggedInUser = () => {
   return user ? (typeof user == "object" ? user : JSON.parse(user)) : null;
 };
 
-
 const getUserToken = () => {
   const cookies = new Cookies();
   const userToken = cookies.get("usertoken");
@@ -21,6 +20,7 @@ const setCookieExpire = () => {
   const cookies = new Cookies();
   cookies.remove("usertoken");
 };
+
 const isUserAuthenticated = () => {
   const userToken = getUserToken();
   if (userToken == null) {
@@ -37,4 +37,10 @@ const notLoginRedirect = () => {
   }
 };
 
-export { getLoggedInUser, getUserToken, isUserAuthenticated, setCookieExpire, notLoginRedirect };
+export {
+  getLoggedInUser,
+  getUserToken,
+  isUserAuthenticated,
+  setCookieExpire,
+  notLoginRedirect,
+};

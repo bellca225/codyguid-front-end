@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -12,8 +12,9 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-
+import axios from "axios";
 import avatar from "assets/img/faces/marc.jpg";
+import { Cookies } from "react-cookie";
 
 const styles = {
   cardCategoryWhite: {
@@ -38,6 +39,29 @@ const useStyles = makeStyles(styles);
 
 export default function UserProfile() {
   const classes = useStyles();
+
+  const [mypage, setMypage] = useState({})
+
+  const userApiCall = () => {
+    // 로그인 유저 정보 불러오기
+    let cookies = new Cookies();
+    const userToken = cookies.get("usertoken");
+    const apiUrl = `http://127.0.0.1:8000/api/myinfo/`;
+    axios
+      .get(apiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        setMypage(response.data[0]);
+        console.log("로그인 유저", response.data);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  };
+
+  useEffect(() => {
+    userApiCall();
+  }, []);
+
   return (
     <div>
       <GridContainer>
@@ -61,7 +85,7 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem> */}
-                <GridItem xs={12} sm={12} md={6}>
+                <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
                     labelText="Username"
                     id="username"
@@ -70,7 +94,7 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
+                <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
                     labelText="Email address"
                     id="email-address"
@@ -79,68 +103,12 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="First Name"
-                    id="first-name"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="Last Name"
-                    id="last-name"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="City"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Country"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Postal Code"
-                    id="postal-code"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
                   <CustomInput
-                    labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
-                    id="about-me"
+                    labelText="password"
+                    id="password"
                     formControlProps={{
                       fullWidth: true,
-                    }}
-                    inputProps={{
-                      multiline: true,
-                      rows: 5,
                     }}
                   />
                 </GridItem>

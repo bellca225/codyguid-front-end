@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../_reducers/user_reducer";
-import { ThemeProvider } from "@material-ui/styles";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 
@@ -99,7 +98,6 @@ function Login() {
   };
 
   return (
-    // <ThemeProvider theme={theme}>
       <div style={{ display: "flex" }}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -158,7 +156,6 @@ function Login() {
           <Box mt={8}></Box>
         </Container>
       </div>
-    /* </ThemeProvider> */
   );
 }
 
