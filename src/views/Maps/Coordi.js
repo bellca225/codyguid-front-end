@@ -70,6 +70,7 @@ import FurHat from "../../clothesIcon/07소품저온도 털모자.svg";
 import rainCoat from "../../clothesIcon/08소품날씨(비) 우비.svg";
 import umbrella from "../../clothesIcon/08소품날씨(비) 우산.svg";
 import rainboots from "../../clothesIcon/08소품날씨(비) 장화.svg";
+import 
 
 // <img src={rainCoat} alt="우비" />,
 // <img src={umbrella} alt="우산" />,
@@ -99,14 +100,50 @@ const Coordi = () => {
       // "부채",
       // "양산",
       // "선크림",
+      <img src={tumbler} alt="텀블러" />,
+      <img src={fan} alt="부채" />,
+      <img src={sunglasses} alt="썬글라스" />,
+      <img src={sunCream2} alt="썬크림2" />,
+
+    ],
+
+    // 모자
+    accessories1: [
+      <img src={strawhat} alt="짚모자" />,
+      <img src={cap} alt="캡모자" />,
+      <img src={sunCap} alt="썬캡" />,  
+    ],
+
+    // 신발
+    accessories2: [
+      // "미니선풍기",
+      // "부채",
+      // "양산",
+      // "선크림",
       <img src={strawhat} alt="짚모자" />,
       <img src={cap} alt="캡모자" />,
       <img src={tumbler} alt="텀블러" />,
       <img src={fan} alt="부채" />,
       <img src={sunglasses} alt="썬글라스" />,
       <img src={sunCap} alt="썬캡" />,
-      <img src={sunCream1} alt="썬크림1" />,
       <img src={sunCream2} alt="썬크림2" />,
+
+    ],
+
+    // 가방
+    accessories3: [
+      // "미니선풍기",
+      // "부채",
+      // "양산",
+      // "선크림",
+      <img src={strawhat} alt="짚모자" />,
+      <img src={cap} alt="캡모자" />,
+      <img src={tumbler} alt="텀블러" />,
+      <img src={fan} alt="부채" />,
+      <img src={sunglasses} alt="썬글라스" />,
+      <img src={sunCap} alt="썬캡" />,
+      <img src={sunCream2} alt="썬크림2" />,
+
     ],
   };
 

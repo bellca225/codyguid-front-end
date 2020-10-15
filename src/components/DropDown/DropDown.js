@@ -4,6 +4,16 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { ThemeProvider } from "@material-ui/styles";
+
+import { createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: "#9E38B4" },
+  },
+  contrastText: "#fff",
+});
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -24,14 +34,16 @@ export default function SimpleSelect(props) {
 
   return (
     <div>
-      <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-outlined-label">전체</InputLabel>
-        <Select onChange={handleChange}>
-          <MenuItem value={"Q&A"}>Q&A</MenuItem>
-          <MenuItem value={"여행 TIP"}>여행 TIP</MenuItem>
-          <MenuItem value={"자유 게시판"}>자유 게시판</MenuItem>
-        </Select>
-      </FormControl>
+      <ThemeProvider theme={theme}>
+        <FormControl variant="outlined" className={classes.formControl}>
+          <InputLabel id="demo-simple-select-outlined-label">전체</InputLabel>
+          <Select onChange={handleChange}>
+            <MenuItem value={"Q&A"}>Q&A</MenuItem>
+            <MenuItem value={"여행 TIP"}>여행 TIP</MenuItem>
+            <MenuItem value={"자유 게시판"}>자유 게시판</MenuItem>
+          </Select>
+        </FormControl>
+      </ThemeProvider>
     </div>
   );
 }

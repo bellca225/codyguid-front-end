@@ -85,7 +85,7 @@ const dashboardRoutes = [
 
   {
     path: "/table",
-    name: "게시판",
+    name: "코디 커뮤니티",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
@@ -95,7 +95,7 @@ const dashboardRoutes = [
 
   {
     path: "/addtable",
-    name: "게시판",
+    name: "코디 커뮤니티",
     rtlName: "لوحة القيادة",
     component: AddPost,
     layout: "/admin",
@@ -104,7 +104,7 @@ const dashboardRoutes = [
 
   {
     path: "/edittable/:id",
-    name: "게시판",
+    name: "코디 커뮤니티",
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: EditTable,

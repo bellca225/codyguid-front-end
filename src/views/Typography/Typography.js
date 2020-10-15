@@ -17,7 +17,7 @@ const styles = {
   typo: {
     paddingLeft: "25%",
     marginBottom: "40px",
-    position: "relative"
+    position: "relative",
   },
   note: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
@@ -30,14 +30,14 @@ const styles = {
     left: "0",
     marginLeft: "20px",
     position: "absolute",
-    width: "260px"
+    width: "260px",
   },
   cardCategoryWhite: {
     color: "rgba(255,255,255,.62)",
     margin: "0",
     fontSize: "14px",
     marginTop: "0",
-    marginBottom: "0"
+    marginBottom: "0",
   },
   cardTitleWhite: {
     color: "#FFFFFF",
@@ -46,8 +46,8 @@ const styles = {
     fontWeight: "300",
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
     marginBottom: "3px",
-    textDecoration: "none"
-  }
+    textDecoration: "none",
+  },
 };
 
 const useStyles = makeStyles(styles);
@@ -56,10 +56,12 @@ export default function TypographyPage() {
   const classes = useStyles();
   return (
     <Card>
+      <div style={{ height: "35px" }}></div>
       <CardHeader color="primary">
-        <h4 className={classes.cardTitleWhite}>Material Dashboard Heading</h4>
+        <h4 className={classes.cardTitleWhite}>World Weather Cody Guide</h4>
         <p className={classes.cardCategoryWhite}>
-          Created using Roboto Font Family
+          코디 가이드 사이트는 사용자가 원하는 장소의 날씨에 가장 알맞은 코디를
+          안내해줍니다.
         </p>
       </CardHeader>
       <CardBody>

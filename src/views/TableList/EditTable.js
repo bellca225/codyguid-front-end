@@ -52,7 +52,7 @@ export default function TableList(props) {
           <Card>
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>코디 커뮤니티</h4>
-              <p className={classes.cardCategoryWhite}>coordi board</p>
+              <p className={classes.cardCategoryWhite}>cody board</p>
             </CardHeader>
             <CardBody>
               <EditTable />

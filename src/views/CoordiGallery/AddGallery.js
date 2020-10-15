@@ -56,7 +56,7 @@ export default function AddPost(props) {
           <Card>
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>코디 갤러리</h4>
-              <p className={classes.cardCategoryWhite}>coordi gallery</p>
+              <p className={classes.cardCategoryWhite}>cody gallery</p>
             </CardHeader>
             <CardBody>
               <AddGallery />

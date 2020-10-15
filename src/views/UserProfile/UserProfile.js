@@ -13,7 +13,7 @@ import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
-import avatar from "assets/img/faces/marc.jpg";
+import avatar from "assets/img/faces/camila.png";
 
 const styles = {
   cardCategoryWhite: {
@@ -44,8 +44,10 @@ export default function UserProfile() {
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
-              <p className={classes.cardCategoryWhite}>Complete your profile</p>
+              <h4 className={classes.cardTitleWhite}>마이 프로필</h4>
+              <p className={classes.cardCategoryWhite}>
+                당신의 프로필을 꾸며보세요
+              </p>
             </CardHeader>
             <CardBody>
               <GridContainer>
@@ -63,7 +65,7 @@ export default function UserProfile() {
                 </GridItem> */}
                 <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
-                    labelText="Username"
+                    labelText="nickname"
                     id="username"
                     formControlProps={{
                       fullWidth: true,
@@ -72,7 +74,7 @@ export default function UserProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
-                    labelText="Email address"
+                    labelText="Email"
                     id="email-address"
                     formControlProps={{
                       fullWidth: true,
@@ -129,11 +131,12 @@ export default function UserProfile() {
                   />
                 </GridItem>
               </GridContainer>
+              <div style={{ height: "50px" }}></div>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
                   <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
                   <CustomInput
-                    labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                    labelText="당신에 대한 소개를 남겨주세요."
                     id="about-me"
                     formControlProps={{
                       fullWidth: true,
@@ -147,7 +150,7 @@ export default function UserProfile() {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary">Update Profile</Button>
+              <Button color="primary">프로필 저장하기gallerydetail</Button>
             </CardFooter>
           </Card>
         </GridItem>
@@ -159,12 +162,21 @@ export default function UserProfile() {
               </a>
             </CardAvatar>
             <CardBody profile>
-              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+              {/* <h6 className={classes.cardCategory}>Taylor Swift</h6> */}
+              <h4 className={classes.cardTitle}>Taylor Swift</h4>
               <p className={classes.description}>
-                Don{"'"}t be scared of the truth because we need to restart the
+                I stay out too late, got nothin' in my brain That's what people
+                say, that's what people say,
+                <br /> I go on too many dates, but I can't make 'em stay At
+                least that's what people say,
+                {/* that's what people say */}
+                {/* 'Cause the players gonna play, play, play, play, play And the
+                haters gonna hate, hate, hate, hate, hate Baby, I'm just gonna
+                shake, shake, shake, shake, shake I shake it off, I shake it off */}
+                <br />
+                {/* Don{"'"}t be scared of the truth because we need to restart the
                 human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
+                I love Rick Owens’ bed design but the back is... */}
               </p>
               <Button color="primary" round>
                 Follow

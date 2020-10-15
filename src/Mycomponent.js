@@ -195,7 +195,7 @@ function Search({ panTo }) {
       <Combobox onSelect={handleSelect}>
         <Card chart>
           <ComboboxInput
-            className="search search-bar"
+            className="search-bar"
             value={value}
             onChange={handleInput}
             disabled={!ready}

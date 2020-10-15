@@ -3,16 +3,9 @@ code {
     monospace;
 }
 
-.search {
-  /* left: 50%;
-  /* margin-left: -49%; */
-  /* position: absolute;
-  top: 80px; */
-  /* width: 92%; */
-  /* z-index: 10; */
-}
-
 .search-bar {
+  width: 85%;
+  margin: 0 auto;
   padding: 20px;
   appearance: none;
   background: none;
