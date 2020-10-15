@@ -68,9 +68,9 @@ export default function UserProfile() {
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>마이 프로필</h4>
+              <h4 className={classes.cardTitleWhite}>회원정보</h4>
               <p className={classes.cardCategoryWhite}>
-                당신의 프로필을 꾸며보세요
+                당신의 회원정보를 수정할 수 있습니다
               </p>
             </CardHeader>
             <CardBody>
@@ -117,7 +117,7 @@ export default function UserProfile() {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary">프로필 저장하기</Button>
+              <Button color="primary">수정 저장하기</Button>
             </CardFooter>
           </Card>
         </GridItem>

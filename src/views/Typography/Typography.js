@@ -51,7 +51,9 @@ const styles = {
 };
 
 const useStyles = makeStyles(styles);
-
+const div1 = {
+  marginRight: "50px",
+};
 export default function TypographyPage() {
   const classes = useStyles();
   return (
@@ -60,24 +62,23 @@ export default function TypographyPage() {
       <CardHeader color="primary">
         <h4 className={classes.cardTitleWhite}>World Weather Cody Guide</h4>
         <p className={classes.cardCategoryWhite}>
-          코디 가이드 사이트는 사용자가 원하는 장소의 날씨에 가장 알맞은 코디를
-          안내해줍니다.
+          코디 가이드의 사이트 소개입니다. 간단히 읽고 즐겁게 이용해주세요.
         </p>
       </CardHeader>
       <CardBody>
-        <div className={classes.typo}>
-          <div className={classes.note}>Header 1</div>
-          <h1>The Life of Material Dashboard</h1>
+        {/* <div className={classes.typo}>
+          <div className={classes.note}>사용 안내</div>
+          <p>The Life of Material Dashboard</p>
         </div>
         <div className={classes.typo}>
-          <div className={classes.note}>Header 2</div>
+          <div className={classes.note}>코디 가이드</div>
           <h2>The Life of Material Dashboard</h2>
         </div>
         <div className={classes.typo}>
-          <div className={classes.note}>Header 3</div>
+          <div className={classes.note}>코디 갤러리</div>
           <h3>The Life of Material Dashboard</h3>
-        </div>
-        <div className={classes.typo}>
+        </div> */}
+        {/* <div className={classes.typo}>
           <div className={classes.note}>Header 4</div>
           <h4>The Life of Material Dashboard</h4>
         </div>
@@ -88,9 +89,24 @@ export default function TypographyPage() {
         <div className={classes.typo}>
           <div className={classes.note}>Header 6</div>
           <h6>The Life of Material Dashboard</h6>
+        </div> */}
+        <div style={div1} className={classes.typo}>
+          <div className={classes.note}>소개</div>
+          <p style={{ marginTop: "30px" }}>
+            코디 가이드 사이트는 사용자가 원하는 장소의 날씨에 가장 알맞은
+            코디를 안내해줍니다.
+          </p>
         </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Paragraph</div>
+        <div style={div1} className={classes.typo}>
+          <div className={classes.note}>사용 예시</div>
+          <Quote
+            text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
+            author=" Kanye West, Musician"
+          />
+        </div>
+
+        <div style={div1} className={classes.typo}>
+          <div className={classes.note}>코디 가이드</div>
           <p>
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers. I understand culture. I am
@@ -99,15 +115,31 @@ export default function TypographyPage() {
             be at.
           </p>
         </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Quote</div>
-          <Quote
-            text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-            author=" Kanye West, Musician"
-          />
+
+        <div style={div1} className={classes.typo}>
+          <div className={classes.note}>코디 커뮤니티</div>
+          <p>
+            I will be the leader of a company that ends up being worth billions
+            of dollars, because I got the answers. I understand culture. I am
+            the nucleus. I think that’s a responsibility that I have, to push
+            possibilities, to show people, this is the level that things could
+            be at.
+          </p>
         </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Muted Text</div>
+
+        <div style={div1} className={classes.typo}>
+          <div className={classes.note}>코디 갤러리</div>
+          <p>
+            I will be the leader of a company that ends up being worth billions
+            of dollars, because I got the answers. I understand culture. I am
+            the nucleus. I think that’s a responsibility that I have, to push
+            possibilities, to show people, this is the level that things could
+            be at.
+          </p>
+        </div>
+
+        {/* <div style={div1} className={classes.typo}>
+          <div className={classes.note}>마이 페이지</div>
           <Muted>
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers...
@@ -140,15 +172,15 @@ export default function TypographyPage() {
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers...
           </Warning>
-        </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Danger Text</div>
+        </div> */}
+        {/* <div className={classes.typo}> */}
+        {/* <div className={classes.note}>Danger Text</div>
           <Danger>
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers...
-          </Danger>
-        </div>
-        <div className={classes.typo}>
+          </Danger> */}
+        {/* </div> */}
+        {/* <div className={classes.typo}>
           <div className={classes.note}>Small Tag</div>
           <h2>
             Header with small subtitle
@@ -157,7 +189,7 @@ export default function TypographyPage() {
               Use {'"'}Small{'"'} tag for the headers
             </small>
           </h2>
-        </div>
+        </div> */}
       </CardBody>
     </Card>
   );

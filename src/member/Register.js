@@ -32,7 +32,7 @@ const theme = createMuiTheme({
 function Register() {
   const inputRef = useRef();
 
-  const { register, handleSubmit, errors, trigger} = useForm({
+  const { register, handleSubmit, errors, trigger } = useForm({
     mode: "onSubmitHandler",
   });
 
@@ -203,7 +203,7 @@ function Register() {
                     fullWidth
                     name="password"
                     id="Password"
-                    label="Password"
+                    label="비밀번호"
                     type="password"
                     // value={member.password}
                     onChange={onInputChange}
@@ -229,7 +229,7 @@ function Register() {
                     fullWidth
                     name="ConfirmPassword"
                     id="ConfirmPassword"
-                    label="Confirm Password"
+                    label="비밀번호 확인"
                     type="password"
                     // value={member.ConfirmPwd}
                     onChange={onInputChange}

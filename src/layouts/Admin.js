@@ -12,6 +12,7 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
+// import routes from
 
 import styles from "assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
@@ -96,7 +97,7 @@ export default function Admin({ ...rest }) {
     <div className={classes.wrapper}>
       <Sidebar
         routes={routes}
-        logoText={"Cody Guide"}
+        logoText={"Cody Guide :)"}
         logo={logo}
         image={image}
         handleDrawerToggle={handleDrawerToggle}

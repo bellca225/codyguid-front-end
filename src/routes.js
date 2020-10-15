@@ -36,7 +36,7 @@ import Gallery from "views/CoordiGallery/Gallery.js";
 // import Gallery from "components/CoordiGallery/Gallery.js";
 import AddGallery from "views/CoordiGallery/AddGallery.js";
 import GalleryDetail from "views/CoordiGallery/GalleryDetail.js";
-import CollectionsIcon from '@material-ui/icons/Collections';
+import CollectionsIcon from "@material-ui/icons/Collections";
 
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
@@ -150,7 +150,7 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/typography",
+    path: "/manual",
     name: " 사이트 소개",
     rtlName: "طباعة",
     icon: LibraryBooks,
