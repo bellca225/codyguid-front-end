@@ -36,28 +36,26 @@ export const registerUser = (member) => ({
   member,
 });
 
-export const loginUser = (memberId, memberPwd) => ({
+export const loginUser = (email, password) => ({
   type: LOGIN_USER,
-  memberId,
-  memberPwd,
+  email,
+  password,
 });
 
 const initialState = {
   members: [
     {
-      memberId: "test1",
-      memberPwd: "test1",
       name: "test1",
       email: "test1@test.co.kr",
+      password: "test1",
     },
     {
-      memberId: "test2",
-      memberPwd: "test2",
       name: "test2",
       email: "test2@test.co.kr",
+      password: "test2",
     },
   ],
-  // loginUser: {},
+  loginUser: {},
   // isLogin: false,
 };
 
@@ -86,8 +84,7 @@ const member = (state = initialState, action) => {
       return { ...state, members: state.members.concat(action.member) };
     case LOGIN_USER: {
       const loginMember = state.members.filter(
-        (user) =>
-          user.memberId == action.memberId && user.memberPwd == action.memberPwd
+        (user) => user.email == action.email && user.passwrod == action.passwrod
       );
 
       if (loginMember.length == 1) {

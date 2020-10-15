@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -12,8 +12,14 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
+<<<<<<< HEAD
 
 import avatar from "assets/img/faces/camila.png";
+=======
+import axios from "axios";
+import avatar from "assets/img/faces/marc.jpg";
+import { Cookies } from "react-cookie";
+>>>>>>> db339869a55a33565c771b7f0cff6859bda830ad
 
 const styles = {
   cardCategoryWhite: {
@@ -38,6 +44,29 @@ const useStyles = makeStyles(styles);
 
 export default function UserProfile() {
   const classes = useStyles();
+
+  const [mypage, setMypage] = useState({})
+
+  const userApiCall = () => {
+    // 로그인 유저 정보 불러오기
+    let cookies = new Cookies();
+    const userToken = cookies.get("usertoken");
+    const apiUrl = `http://127.0.0.1:8000/api/myinfo/`;
+    axios
+      .get(apiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        setMypage(response.data[0]);
+        console.log("로그인 유저", response.data);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  };
+
+  useEffect(() => {
+    userApiCall();
+  }, []);
+
   return (
     <div>
       <GridContainer>
@@ -63,7 +92,7 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem> */}
-                <GridItem xs={12} sm={12} md={6}>
+                <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
                     labelText="nickname"
                     id="username"
@@ -72,7 +101,7 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
+                <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
                     labelText="Email"
                     id="email-address"
@@ -81,6 +110,7 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
+<<<<<<< HEAD
               </GridContainer>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
@@ -133,17 +163,19 @@ export default function UserProfile() {
               </GridContainer>
               <div style={{ height: "50px" }}></div>
               <GridContainer>
+=======
+>>>>>>> db339869a55a33565c771b7f0cff6859bda830ad
                 <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
                   <CustomInput
+<<<<<<< HEAD
                     labelText="당신에 대한 소개를 남겨주세요."
                     id="about-me"
+=======
+                    labelText="password"
+                    id="password"
+>>>>>>> db339869a55a33565c771b7f0cff6859bda830ad
                     formControlProps={{
                       fullWidth: true,
-                    }}
-                    inputProps={{
-                      multiline: true,
-                      rows: 5,
                     }}
                   />
                 </GridItem>

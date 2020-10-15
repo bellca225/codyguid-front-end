@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../_reducers/user_reducer";
-import { withRouter } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/styles";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 
@@ -27,7 +25,7 @@ const theme = createMuiTheme({
   contrastText: "#fff",
 });
 
-function Login(props) {
+function Login() {
   const useStyles = makeStyles((theme) => ({
     paper: {
       marginTop: theme.spacing(0),
@@ -56,15 +54,11 @@ function Login(props) {
   // const [userPwd, setUserPwd] = useState("");
 
   const [member, setMember] = useState({
-    userId: "",
-    userPwd: "",
+    username: "",
+    password: "",
   });
 
-  const onUserIdChange = (e) => {
-    setMember({ ...member, [e.target.name]: e.target.value });
-  };
-
-  const onUserPwdChange = (e) => {
+  const onChange = (e) => {
     setMember({ ...member, [e.target.name]: e.target.value });
   };
 
@@ -95,8 +89,8 @@ function Login(props) {
         console.log("호출 결과 :", response.data);
         const token = response.data.token;
         let cookies = new Cookies();
-        cookies.set("usertoken", token, { path: "/admin" }); // "/"밑에있는 모든 경로에서 접근 가능한 쿠키
-        window.location = "/";
+        cookies.set("usertoken", token, { path: "/admin" });
+        window.location = "/admin/dashboard";
       })
       .catch((response) => {
         console.error(response);
@@ -104,7 +98,6 @@ function Login(props) {
   };
 
   return (
-    <ThemeProvider theme={theme}>
       <div style={{ display: "flex" }}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -121,12 +114,12 @@ function Login(props) {
                 margin="normal"
                 required
                 fullWidth
-                label="ID"
-                type="id"
-                id="id"
-                autoComplete="id"
+                label="E-mail"
+                id="username"
+                name="username"
+                autoComplete="username"
                 // value={userId}
-                onChange={onUserIdChange}
+                onChange={onChange}
                 autoFocus
               />
               <TextField
@@ -137,9 +130,10 @@ function Login(props) {
                 label="Password"
                 type="password"
                 id="password"
+                name="password"
                 autoComplete="current-password"
                 // value={userPwd}
-                onChange={onUserPwdChange}
+                onChange={onChange}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -162,8 +156,7 @@ function Login(props) {
           <Box mt={8}></Box>
         </Container>
       </div>
-    </ThemeProvider>
   );
 }
 
-export default withRouter(Login);
+export default Login;

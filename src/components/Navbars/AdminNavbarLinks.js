@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
+import { getLoggedInUser, isUserAuthenticated, getUserToken } from "../../helpers/authUtils";
 import { withRouter } from "react-router-dom";
-import { getLoggedInUser } from "../../helpers/authUtils";
 import { Cookies } from "react-cookie";
 import classNames from "classnames";
 // @material-ui/core components
@@ -21,7 +21,7 @@ import Search from "@material-ui/icons/Search";
 // core components
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
-
+import axios from "axios";
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
@@ -57,13 +57,34 @@ function AdminNavbarLinks(props) {
     props.history.push("/admin/user");
   };
 
-  const loginUsermember = getLoggedInUser();
+  // const loginUsermember = getLoggedInUser();
+  const loginUserToken = getUserToken();
 
   const onLogout = () => {
     const cookies = new Cookies();
-    cookies.remove("user");
+    // cookies.remove("user");
+    cookies.remove("usertoken");
     props.history.push("/admin/login");
   };
+
+  const [mypage, setMypate] = useState("");
+
+  const apiUrl = `http://127.0.0.1:8000/api/myinfo/`;
+  const apiCall = () => {
+    // 로그인 유저 정보 불러오기
+    let cookies = new Cookies();
+    const userToken = cookies.get("usertoken");
+    axios
+      .get(apiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        setMypate(response.data[0]);
+        console.log("로그인 유저", response.data[0]);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  };
+  apiCall();
 
   return (
     <div>
@@ -218,7 +239,8 @@ function AdminNavbarLinks(props) {
                       Settings
                     </MenuItem> */}
                     <Divider light />
-                    {getLoggedInUser() == undefined ? (
+                    {/* {getLoggedInUser() == undefined ? ( */}
+                    {!isUserAuthenticated() ? (
                       <div>
                         <MenuItem
                           className={classes.dropdownItem}
@@ -239,8 +261,7 @@ function AdminNavbarLinks(props) {
                       </div>
                     ) : (
                       <div>
-                        <p align="center">{loginUsermember.name}님</p>
-
+                        <p align="center">{mypage.username}님</p>
                         <MenuItem
                           // onClick={handleCloseProfile}
                           className={classes.dropdownItem}

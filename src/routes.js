@@ -36,6 +36,7 @@ import Gallery from "views/CoordiGallery/Gallery.js";
 // import Gallery from "components/CoordiGallery/Gallery.js";
 import AddGallery from "views/CoordiGallery/AddGallery.js";
 import GalleryDetail from "views/CoordiGallery/GalleryDetail.js";
+import CollectionsIcon from '@material-ui/icons/Collections';
 
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
@@ -116,7 +117,7 @@ const dashboardRoutes = [
     path: "/gallery",
     name: "코디 갤러리",
     rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
+    icon: CollectionsIcon,
     component: Gallery,
     layout: "/admin",
     // invisible: true,
