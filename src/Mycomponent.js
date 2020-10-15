@@ -199,7 +199,7 @@ function Search({ panTo }) {
             value={value}
             onChange={handleInput}
             disabled={!ready}
-            placeholder="Search your location"
+            placeholder="날씨별 맞춤 코디를 알아보고 싶은 곳을 입력하거나 지도에 클릭해주세요!"
           />
         </Card>
         <div style={{ height: "15px" }} />

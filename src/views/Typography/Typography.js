@@ -106,7 +106,25 @@ export default function TypographyPage() {
         </div>
 
         <div style={div1} className={classes.typo}>
-          <div className={classes.note}>코디 가이드</div>
+          <Primary>
+            <div>코디 가이드</div>
+          </Primary>
+
+          <p>
+            I will be the leader of a company that ends up being worth billions
+            of dollars, because I got the answers... I will be the leader of a
+            company that ends up being worth billions of dollars, because I got
+            the answers. I understand culture. I am the nucleus. I think that’s
+            a responsibility that I have, to push possibilities, to show people,
+            this is the level that things could be at.
+          </p>
+        </div>
+
+        <div style={div1} className={classes.typo}>
+          <Info>
+            <div>코디 커뮤니티</div>
+          </Info>
+          {/* <div className={classes.note}>코디 커뮤니티</div> */}
           <p>
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers. I understand culture. I am
@@ -117,7 +135,10 @@ export default function TypographyPage() {
         </div>
 
         <div style={div1} className={classes.typo}>
-          <div className={classes.note}>코디 커뮤니티</div>
+          <Success>
+            <div>코디 갤러리</div>
+          </Success>
+          {/* <div className={classes.note}>코디 갤러리</div> */}
           <p>
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers. I understand culture. I am
@@ -128,7 +149,11 @@ export default function TypographyPage() {
         </div>
 
         <div style={div1} className={classes.typo}>
-          <div className={classes.note}>코디 갤러리</div>
+          {/* <div className={classes.note}>마이 페이지</div> */}
+          <Warning>
+            <div>마이 페이지</div>
+          </Warning>
+
           <p>
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers. I understand culture. I am
@@ -136,16 +161,13 @@ export default function TypographyPage() {
             possibilities, to show people, this is the level that things could
             be at.
           </p>
-        </div>
 
-        {/* <div style={div1} className={classes.typo}>
-          <div className={classes.note}>마이 페이지</div>
-          <Muted>
+          {/* <Muted>
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers...
-          </Muted>
+          </Muted> */}
         </div>
-        <div className={classes.typo}>
+        {/* <div className={classes.typo}>
           <div className={classes.note}>Primary Text</div>
           <Primary>
             I will be the leader of a company that ends up being worth billions
@@ -172,14 +194,14 @@ export default function TypographyPage() {
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers...
           </Warning>
-        </div> */}
-        {/* <div className={classes.typo}> */}
-        {/* <div className={classes.note}>Danger Text</div>
+        </div>
+        <div className={classes.typo}>
+          <div className={classes.note}>Danger Text</div>
           <Danger>
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers...
-          </Danger> */}
-        {/* </div> */}
+          </Danger>
+        </div> */}
         {/* <div className={classes.typo}>
           <div className={classes.note}>Small Tag</div>
           <h2>
