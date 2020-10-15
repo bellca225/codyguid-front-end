@@ -1,5 +1,9 @@
-import React, {useState} from "react";
-import { getLoggedInUser, isUserAuthenticated, getUserToken } from "../../helpers/authUtils";
+import React, { useState } from "react";
+import {
+  getLoggedInUser,
+  isUserAuthenticated,
+  getUserToken,
+} from "../../helpers/authUtils";
 import { withRouter } from "react-router-dom";
 import { Cookies } from "react-cookie";
 import classNames from "classnames";
@@ -261,7 +265,7 @@ function AdminNavbarLinks(props) {
                       </div>
                     ) : (
                       <div>
-                        <p align="center">{mypage.username}님</p>
+                        {/* <p align="center">{mypage.username}님</p> */}
                         <MenuItem
                           // onClick={handleCloseProfile}
                           className={classes.dropdownItem}

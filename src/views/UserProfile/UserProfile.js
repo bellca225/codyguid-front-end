@@ -12,14 +12,9 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-<<<<<<< HEAD
-
-import avatar from "assets/img/faces/camila.png";
-=======
 import axios from "axios";
-import avatar from "assets/img/faces/marc.jpg";
+import avatar from "assets/img/faces/camila.png";
 import { Cookies } from "react-cookie";
->>>>>>> db339869a55a33565c771b7f0cff6859bda830ad
 
 const styles = {
   cardCategoryWhite: {
@@ -45,7 +40,7 @@ const useStyles = makeStyles(styles);
 export default function UserProfile() {
   const classes = useStyles();
 
-  const [mypage, setMypage] = useState({})
+  const [mypage, setMypage] = useState({});
 
   const userApiCall = () => {
     // 로그인 유저 정보 불러오기
@@ -110,70 +105,10 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
-<<<<<<< HEAD
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="First Name"
-                    id="first-name"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="Last Name"
-                    id="last-name"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="City"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Country"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Postal Code"
-                    id="postal-code"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <div style={{ height: "50px" }}></div>
-              <GridContainer>
-=======
->>>>>>> db339869a55a33565c771b7f0cff6859bda830ad
                 <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
-<<<<<<< HEAD
-                    labelText="당신에 대한 소개를 남겨주세요."
-                    id="about-me"
-=======
                     labelText="password"
                     id="password"
->>>>>>> db339869a55a33565c771b7f0cff6859bda830ad
                     formControlProps={{
                       fullWidth: true,
                     }}
@@ -182,7 +117,7 @@ export default function UserProfile() {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary">프로필 저장하기gallerydetail</Button>
+              <Button color="primary">프로필 저장하기</Button>
             </CardFooter>
           </Card>
         </GridItem>

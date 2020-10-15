@@ -15,7 +15,9 @@ function getAPI() {
     key: "d63c7d503cfb0a45ff09fe5274c4d2ea",
     base: "https://api.openweathermap.org/data/2.5/onecall",
   };
-  return axios.get(`${api2.base}?lat=${Lat}&lon=${Lon}&appid=${api2.key}`);
+  return axios.get(
+    `${api2.base}?lat=${Lat}&lon=${Lon}&lang=kr&appid=${api2.key}`
+  );
 }
 
 export const getWeather = () => async (dispatch) => {
