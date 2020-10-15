@@ -199,7 +199,7 @@ function Search({ panTo }) {
             value={value}
             onChange={handleInput}
             disabled={!ready}
-            placeholder="날씨별 맞춤 코디를 알아보고 싶은 곳을 입력하거나 지도에 클릭해주세요!"
+            placeholder="코디를 알아보고 싶은 장소를 검색하거나 지도에 클릭한 후, 현재 날씨에 설정을 눌러주세요"
           />
         </Card>
         <div style={{ height: "15px" }} />
@@ -222,6 +222,7 @@ function Locate({ panTo }) {
   const getWeatherData = () => {
     dispatch(getWeather());
   };
+
   return (
     <>
       <hr style={{ opacity: "0.2", width: "100%" }} />
@@ -231,6 +232,7 @@ function Locate({ panTo }) {
           display: "flex",
           justifyContent: "center",
           // alignContent: "center",
+          marginTop: "5px",
         }}
       >
         <img
@@ -269,18 +271,32 @@ function Locate({ panTo }) {
         >
           현재 위치로 이동하기
         </div>
-        <img
-          onClick={getWeatherData}
-          src={weather}
-          className="btn-hover"
-          alt="현재 날씨로 코디 설정"
-        />
-        <div className="btn01 btn02" onClick={getWeatherData}>
-          현재 날씨로 코디 설정
-        </div>
+        <a href="#clcikPosition">
+          <img
+            onClick={getWeatherData}
+            src={weather}
+            className="btn-hover"
+            alt="현재 날씨로 코디 설정"
+          />
+        </a>
+        <a href="#clcikPosition">
+          <div className="btn01 btn02" onClick={getWeatherData}>
+            현재 날씨로 코디 설정
+          </div>
+        </a>
       </div>
 
-      <div style={{ height: "25px" }}></div>
+      {/* <div style={{ height: "5px" }}></div> */}
+
+      <div
+        id="clcikPosition"
+        style={{
+          height: "20px",
+          // backgroundColor: "#ff0000",
+          position: "relative",
+          top: "500px",
+        }}
+      ></div>
     </>
   );
 }

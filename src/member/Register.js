@@ -203,7 +203,7 @@ function Register() {
                     fullWidth
                     name="password"
                     id="Password"
-                    label="비밀번호"
+                    label="Password"
                     type="password"
                     // value={member.password}
                     onChange={onInputChange}
@@ -229,7 +229,7 @@ function Register() {
                     fullWidth
                     name="ConfirmPassword"
                     id="ConfirmPassword"
-                    label="비밀번호 확인"
+                    label="Confirm Password"
                     type="password"
                     // value={member.ConfirmPwd}
                     onChange={onInputChange}
@@ -269,7 +269,7 @@ function Register() {
               </Button>
               <Grid container justify="flex-end">
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link href="login" variant="body2">
                     이미 회원가입 하셨나요? 지금 로그인하세요.
                   </Link>
                 </Grid>
