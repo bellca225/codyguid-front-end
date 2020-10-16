@@ -35,7 +35,6 @@ import Admin from "layouts/Admin.js";
 import RTL from "layouts/RTL.js";
 
 import "assets/css/material-dashboard-react.css?v=1.9.0";
-import rootReducer from "./_reducers";
 
 const theme = createMuiTheme({
   palette: {
@@ -46,15 +45,13 @@ const theme = createMuiTheme({
 
 const hist = createBrowserHistory();
 
-const logger = createLogger();
-
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(logger, ReduxThunk))
-);
+const createStoreWithMiddleware = applyMiddleware(
+  promiseMiddleware,
+  ReduxThunk
+)(createStore);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={createStoreWithMiddleware(Reducer)}>
     <Router history={hist}>
       <ThemeProvider theme={theme}>
         <Switch>

@@ -34,13 +34,13 @@ const AddTable = (props) => {
 
   const id = useSelector((state) => state.posts.slice(-1)[0].id + 1);
 
-  const loginUser = getLoggedInUser().name;
+  // const loginUser = getLoggedInUser().name;
 
   useEffect(() => {
     setPost({
       ...post,
       id: id,
-      writer: loginUser,
+      writer: "loginUser",
       regiDate: new Date().toLocaleDateString(),
     });
   }, []);
@@ -65,9 +65,10 @@ const AddTable = (props) => {
             <DropDown
               onChange={(value) => setPost({ ...post, header: value })}
             />
+            <h4>제목</h4>
             <TextField
               name="title"
-              label="제목"
+              label="제목을 작성해주세요"
               multiline
               fullWidth
               variant="outlined"
@@ -75,9 +76,10 @@ const AddTable = (props) => {
               onChange={onChangeHandler}
             />
 
+            <h4>내용</h4>
             <TextField
               name="contents"
-              label="내용"
+              label="내용을 입력해주세요"
               multiline
               fullWidth
               variant="outlined"

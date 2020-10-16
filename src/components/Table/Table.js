@@ -23,7 +23,15 @@ function CustomTable(props) {
   const classes = useStyles();
 
   const tableHeaderColor = "primary";
-  const tableHead = ["번호", "주제", "글제목", "작성자", "등록일"];
+  const tableHead = [
+    "번호",
+    "주제",
+    "글제목",
+    "작성자",
+    "등록일",
+    "조회수",
+    "댓글",
+  ];
   const [tableData, setTableData] = useState([]);
   const [allData, setAllData] = useState([]);
   const allTable = useSelector((state) => state.posts);
@@ -37,6 +45,8 @@ function CustomTable(props) {
         allTable[i].title,
         allTable[i].writer,
         allTable[i].regiDate,
+        allTable[i].view,
+        allTable[i].comment,
       ]);
     }
     setAllData(newTable);
@@ -61,10 +71,12 @@ function CustomTable(props) {
       <Table className={classes.table}>
         <colgroup>
           <col style={{ width: "10%" }} />
-          <col style={{ width: "10%" }} />
-          <col style={{ width: "40%" }} />
+          <col style={{ width: "15%" }} />
           <col style={{ width: "30%" }} />
-          <col style={{ width: "10%" }} />
+          <col style={{ width: "20%" }} />
+          <col style={{ width: "15%" }} />
+          <col style={{ width: "5%" }} />
+          <col style={{ width: "5%" }} />
         </colgroup>
         {tableHead !== undefined ? (
           <TableHead className={classes[tableHeaderColor + "TableHeader"]}>

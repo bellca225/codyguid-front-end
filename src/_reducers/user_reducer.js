@@ -1,12 +1,22 @@
 import { Cookies } from "react-cookie";
 import { LOGIN_USER, REGISTER_USER } from "../actions/types";
 
-// import axios from "axios";
+import axios from "axios";
 
 // export function loginUser(dataToSubmit) {
+//   const apiUrl = "http://127.0.0.1:8000/api/get_token/";
+
 //   const request = axios
-//     .post("http://localhost:8000/member/sign-up", dataToSubmit)
-//     .then((response) => response.data);
+//     .post(apiUrl, dataToSubmit)
+//     .then((response) => {
+//       console.log("호출 결과 :", response.data);
+//       const token = response.data.token;
+//       let cookies = new Cookies();
+//       cookies.set("usertoken", token, { path: "/admin" });
+//     })
+//     .catch((response) => {
+//       console.error(response);
+//     });
 
 //   return {
 //     type: LOGIN_USER,
@@ -15,14 +25,15 @@ import { LOGIN_USER, REGISTER_USER } from "../actions/types";
 // }
 
 // export function registerUser(dataToSubmit) {
+
+//   const apiUrl = "http://127.0.0.1:8000/api/register/";
 //   const request = axios
-//     .post("http://localhost:8000/member/sign-up", dataToSubmit)
+//     .post(apiUrl, dataToSubmit)
 //     .then((response) => {
-//       console.log("데이터 등록 완료", response.data);
-//       alert("등록완료");
+//       console.log("호출 결과 :", response.data);
 //     })
 //     .catch((response) => {
-//       console.error(response);
+//       console.error(response, "불러오지 못했습니다.");
 //     });
 
 //   return {
@@ -59,7 +70,7 @@ const initialState = {
   // isLogin: false,
 };
 
-// export default function (state = {}, action) {
+// const member = (state = {}, action) => {
 //   switch (action.type) {
 //     case LOGIN_USER:
 //       return { ...state, loginSuccess: action.payload };
@@ -71,7 +82,7 @@ const initialState = {
 //     default:
 //       return state;
 //   }
-// }
+// };
 
 const member = (state = initialState, action) => {
   const setSession = (user) => {
@@ -84,7 +95,7 @@ const member = (state = initialState, action) => {
       return { ...state, members: state.members.concat(action.member) };
     case LOGIN_USER: {
       const loginMember = state.members.filter(
-        (user) => user.email == action.email && user.passwrod == action.passwrod
+        (user) => user.email == action.email && user.password == action.password
       );
 
       if (loginMember.length == 1) {

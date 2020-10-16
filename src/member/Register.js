@@ -99,30 +99,17 @@ function Register() {
   const onSubmitHandler = (e) => {
     // e.preventDefault();
 
-    // if (password !== ConfirmPwd) {
-    //   return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
-    // }
+    // dispatch(registerUser(member)).then((response) => {
+    //   if (response.payload.success) {
+    //     window.location = "/admin/login";
+    //   } else {
+    //     alert("회원가입에 실패했습니다.");
+    //   }
+    // });
 
-    // let body = {
-    //   userId: userId,
-    //   password: password,
-    //   name: name,
-    //   email: email,
-    // };
-
-    //   dispatch(registerUser(body)).then((response) => {
-    //     if (response.payload.success) {
-    //       props.history.push("/login");
-    //     } else {
-    //       alert("로그인에 실패했습니다.");
-    //     }
-    //   });
-    // };
-
-    // dispatch(registerUser(password, password, name, email));
+    // dispatch(registerUser(member));
     // props.history.push("/member/login");
 
-    dispatch(registerUser(member));
     const apiUrl = "http://127.0.0.1:8000/api/register/";
     axios
       .post(apiUrl, member)
@@ -173,6 +160,9 @@ function Register() {
                     <span className="error">이름을 입력해주세요.</span>
                   )}
                 </Grid>
+                {errors.password && (
+                  <span className="error">이메일을 입력해 주세요.</span>
+                )}
                 <Grid item xs={12}>
                   <TextField
                     variant="outlined"
@@ -192,11 +182,13 @@ function Register() {
                       trigger("name");
                     }}
                   />
-                  {errors.password && (
-                    <span className="error">이메일을 입력해 주세요.</span>
-                  )}
                 </Grid>
                 <Grid item xs={12}>
+                  {errors.name && (
+                    <span className="error">
+                      비밀번호는 형식대로 입력해주세요.
+                    </span>
+                  )}
                   <TextField
                     variant="outlined"
                     required
@@ -216,11 +208,6 @@ function Register() {
                       trigger("email");
                     }}
                   />
-                  {errors.name && (
-                    <span className="error">
-                      비밀번호는 형식대로 입력해주세요.
-                    </span>
-                  )}
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
@@ -283,4 +270,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default withRouter(Register);

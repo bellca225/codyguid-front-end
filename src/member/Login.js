@@ -15,6 +15,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { withRouter } from "react-router-dom";
 
 import { createMuiTheme } from "@material-ui/core/styles";
 
@@ -65,21 +66,16 @@ function Login() {
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    // let body = {
-    //   userId: userId,
-    //   userPwd: userPwd,
-    // };
-
-    // dispatch(loginUser(body)).then((response) => {
+    // dispatch(loginUser(member)).then((response) => {
     //   if (response.payload.loginSuccess) {
-    //     props.history.push("/");
+    //     window.location = "/admin/dashboard";
     //   } else {
-    //     alert("Error");
+    //     alert("로그인에 실패하였습니다.");
     //   }
     // });
 
-    // dispatch(loginUser(userId, userPwd));
-    // props.history.push("/admin/dashboard");
+    // dispatch(loginUser(member));
+    // window.location = "/admin/dashboard";
 
     const apiUrl = "http://127.0.0.1:8000/api/get_token/";
 
@@ -159,4 +155,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default withRouter(Login);

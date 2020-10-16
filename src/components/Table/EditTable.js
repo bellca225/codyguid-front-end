@@ -32,22 +32,22 @@ const EditPost = (props) => {
         <Column gap={2}>
           <Row mt={2} alignItems={"center"}></Row>
           <Row mt={2} alignItems={"center"}></Row>
-          <Row mt={2} alignItems={"center"}>
-            <Button variant="contained" color="primary">
-              수정
-            </Button>
-          </Row>
-          <Row mt={2} alignItems={"center"}>
-            <Button
-              className="write-btn"
-              variant="outlined"
-              color="white"
-              onClick={() => props.history.goBack()}
-            >
-              뒤로가기
-            </Button>
-          </Row>
+          <Row mt={2} alignItems={"center"}></Row>
+          <Row mt={2} alignItems={"center"}></Row>
         </Column>
+        <div style={{ float: "right" }}>
+          <Button variant="contained" color="primary">
+            수정
+          </Button>
+          <Button
+            className="write-btn"
+            variant="outlined"
+            color="white"
+            onClick={() => props.history.goBack()}
+          >
+            뒤로가기
+          </Button>
+        </div>
       </Paper>
     </div>
   );
