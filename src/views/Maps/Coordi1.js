@@ -530,13 +530,14 @@ const Coordi = ({ data }) => {
 
   const tip2 = {
     marginLeft: "5px",
+    fontSize: "14px",
   };
 
   const tip3 = {
     // backgroundColor: "#9E38B4",
     backgroundColor: "#772FDD",
     color: "#fff",
-    fontSize: "18px",
+    fontSize: "15px",
     padding: "3px 6px",
     borderRadius: "4px",
     marginLeft: "10px",
@@ -883,28 +884,28 @@ const Coordi = ({ data }) => {
           </div>
 
           <div style={frame2}>
-            <h4 style={titlefont}>악세서리1 : </h4>
-            {dress6.accessories[index1]}
+            <h4 style={titlefont}>악세서리1 </h4>
+            {dress5.accessories[index3]}
           </div>
 
           <div style={frame2}>
-            <h4 style={titlefont}>악세서리2 : </h4>
-            {dress6.accessories[index1]}
+            <h4 style={titlefont}>악세서리2 </h4>
+            {dress5.accessories2[index8]}
           </div>
 
           <div style={frame2}>
-            <h4 style={titlefont}>악세서리3 : </h4>
-            {dress6.accessories[index1]}
+            <h4 style={titlefont}>악세서리3 </h4>
+            {dress5.accessories3[index4]}
           </div>
         </div>
         <div style={blank}>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            <span style={tip2}>수분 보충을 충분히 진행해주세요</span>
+            {tip01.tip001[index4]}
           </div>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            <span style={tip2}>외출 시 썬크림을 발라주세요</span>
+            {tip01.tip002[index4]}
           </div>
         </div>
       </div>
