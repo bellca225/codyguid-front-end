@@ -67,22 +67,22 @@ function Gallery(props) {
   const [allData, setAllData] = useState([]);
   const allGallery = useSelector((state) => state.galleries);
 
-  useEffect(() => {
-    const newGallery = [];
-    for (let i = 0; i < allGallery.length; i++) {
-      newGallery.push([
-        allGallery[i].id,
-        allGallery[i].regiDate,
-        allGallery[i].title,
-        allGallery[i].writer,
-        allGallery[i].image,
-        allGallery[i].contents,
-        allGallery[i].description,
-      ]);
-    }
-    setAllData(newGallery);
-    setGalleryData(newGallery.slice(0, 12));
-  }, [allGallery]);
+  // useEffect(() => {
+  //   const newGallery = [];
+  //   for (let i = 0; i < allGallery.length; i++) {
+  //     newGallery.push([
+  //       allGallery[i].id,
+  //       allGallery[i].regiDate,
+  //       allGallery[i].title,
+  //       allGallery[i].writer,
+  //       allGallery[i].image,
+  //       allGallery[i].contents,
+  //       allGallery[i].description,
+  //     ]);
+  //   }
+  //   setAllData(newGallery);
+  //   setGalleryData(newGallery.slice(0, 12));
+  // }, [allGallery]);
 
   const addGallery = () => {
     props.history.push("/admin/addgallery");

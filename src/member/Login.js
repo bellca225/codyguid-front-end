@@ -98,64 +98,64 @@ function Login() {
   };
 
   return (
-      <div style={{ display: "flex" }}>
-        <Container component="main" maxWidth="xs">
-          <CssBaseline />
-          <div className={classes.paper}>
-            <Avatar className={classes.avatar}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
+    <div style={{ display: "flex" }}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            로그인
+          </Typography>
+          <form className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              label="E-mail"
+              id="username"
+              name="username"
+              autoComplete="username"
+              // value={userId}
+              onChange={onChange}
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              label="Password"
+              type="password"
+              id="password"
+              name="password"
+              autoComplete="current-password"
+              // value={userPwd}
+              onChange={onChange}
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="다음에도 로그인 정보를 기억합니다."
+            />
+            <Button
+              theme={theme}
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              onClick={onSubmitHandler}
+              className={classes.submit}
+              style={{ color: "#fff" }}
+            >
               로그인
-            </Typography>
-            <form className={classes.form} noValidate>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                label="E-mail"
-                id="username"
-                name="username"
-                autoComplete="username"
-                // value={userId}
-                onChange={onChange}
-                autoFocus
-              />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                label="Password"
-                type="password"
-                id="password"
-                name="password"
-                autoComplete="current-password"
-                // value={userPwd}
-                onChange={onChange}
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="다음에도 로그인 정보를 기억합니다."
-              />
-              <Button
-                theme={theme}
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                onClick={onSubmitHandler}
-                className={classes.submit}
-                style={{ color: "#fff" }}
-              >
-                로그인
-              </Button>
-            </form>
-          </div>
-          <Box mt={8}></Box>
-        </Container>
-      </div>
+            </Button>
+          </form>
+        </div>
+        <Box mt={8}></Box>
+      </Container>
+    </div>
   );
 }
 
