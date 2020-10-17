@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import Button from "../../components/CustomButtons/Button.js";
 import { getLoggedInUser } from "../../helpers/authUtils";
 import DropDown from "../../components/DropDown/DropDown";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,7 +19,17 @@ const useStyles = makeStyles((theme) => ({
     width: "98%", // Fix IE 11 issue.
     // marginTop: theme.spacing(0),
   },
+  container: {
+    display: "grid",
+    gridTemplateColumns: "repeat(12, 1fr)",
+    gridGap: theme.spacing(3),
+  },
 }));
+
+const titlefont = {
+  textAlign: "left",
+  paddingLeft: "20px",
+};
 
 const AddTable = (props) => {
   const dispatch = useDispatch();
@@ -61,42 +72,50 @@ const AddTable = (props) => {
     <div style={{ display: "flex" }}>
       <form className={classes.form}>
         <div className={classes.root}>
-          <div>
-            <DropDown
-              onChange={(value) => setPost({ ...post, header: value })}
-            />
-            <h4>제목</h4>
-            <TextField
-              name="title"
-              label="제목을 작성해주세요"
-              multiline
-              fullWidth
-              variant="outlined"
-              value={post.title}
-              onChange={onChangeHandler}
-            />
-
-            <h4>내용</h4>
-            <TextField
-              name="contents"
-              label="내용을 입력해주세요"
-              multiline
-              fullWidth
-              variant="outlined"
-              rows={15}
-              value={post.contents}
-              onChange={onChangeHandler}
-            />
-
-            <Button
-              style={{ margin: "3px" }}
-              className="write-btn"
-              variant="contained"
-              color="primary"
-              onClick={onClickHandler}
-            >
-              등록
-            </Button>
+          <DropDown onChange={(value) => setPost({ ...post, header: value })} />
+          <div className={classes.root}>
+            <Grid container spacing={1}>
+              <Grid item xs={2} sm={1}>
+                <h4 style={titlefont}>제목</h4>
+              </Grid>
+              <Grid item xs={10} sm={11}>
+                <TextField
+                  name="title"
+                  label="제목을 작성해주세요"
+                  multiline
+                  fullWidth
+                  variant="outlined"
+                  value={post.title}
+                  onChange={onChangeHandler}
+                />
+              </Grid>
+              <Grid item xs={2} sm={1}>
+                <h4 style={titlefont}>내용</h4>
+              </Grid>
+              <Grid item xs={10} sm={11}>
+                <TextField
+                  name="contents"
+                  label="내용을 입력해주세요"
+                  multiline
+                  fullWidth
+                  variant="outlined"
+                  rows={15}
+                  value={post.contents}
+                  onChange={onChangeHandler}
+                />
+              </Grid>
+            </Grid>
+            <div style={{ float: "right" }}>
+              <Button
+                style={{ margin: "3px" }}
+                className="write-btn"
+                variant="contained"
+                color="primary"
+                onClick={onClickHandler}
+              >
+                등록
+              </Button>
+            </div>
           </div>
         </div>
       </form>

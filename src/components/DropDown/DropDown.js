@@ -35,7 +35,7 @@ export default function SimpleSelect(props) {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <FormControl variant="outlined" className={classes.formControl}>
+        <FormControl className={classes.formControl}>
           <InputLabel id="demo-simple-select-outlined-label">전체</InputLabel>
           <Select onChange={handleChange}>
             <MenuItem value={"Q&A"}>Q&A</MenuItem>

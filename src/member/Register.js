@@ -32,7 +32,7 @@ const theme = createMuiTheme({
 function Register() {
   const inputRef = useRef();
 
-  const { register, handleSubmit, errors, trigger } = useForm({
+  const { register, handleSubmit, trigger } = useForm({
     mode: "onSubmitHandler",
   });
 
@@ -156,13 +156,7 @@ function Register() {
                       required: "error message",
                     })}
                   />
-                  {errors.username && (
-                    <span className="error">이름을 입력해주세요.</span>
-                  )}
                 </Grid>
-                {errors.password && (
-                  <span className="error">이메일을 입력해 주세요.</span>
-                )}
                 <Grid item xs={12}>
                   <TextField
                     variant="outlined"
@@ -184,11 +178,6 @@ function Register() {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  {errors.name && (
-                    <span className="error">
-                      비밀번호는 형식대로 입력해주세요.
-                    </span>
-                  )}
                   <TextField
                     variant="outlined"
                     required
