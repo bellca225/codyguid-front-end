@@ -8,6 +8,8 @@ import Button from "../../components/CustomButtons/Button.js";
 import { getLoggedInUser } from "../../helpers/authUtils";
 import DropDown from "../../components/DropDown/DropDown";
 import Grid from "@material-ui/core/Grid";
+import { Cookies } from "react-cookie";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,27 +36,37 @@ const titlefont = {
 const AddTable = (props) => {
   const dispatch = useDispatch();
   const classes = useStyles();
+  // const [post, setPost] = useState({
+  //   id: null,
+  //   header: "",
+  //   title: "",
+  //   contents: "",
+  //   writer: "",
+  //   regiDate: "",
+  // });
+
   const [post, setPost] = useState({
-    id: null,
-    header: "",
+    category: "",
     title: "",
-    contents: "",
-    writer: "",
-    regiDate: "",
+    content: "",
   });
 
-  const id = useSelector((state) => state.posts.slice(-1)[0].id + 1);
+
+  // const id = useSelector((state) => state.posts.slice(-1)[0].id + 1);
 
   // const loginUser = getLoggedInUser().name;
 
-  useEffect(() => {
-    setPost({
-      ...post,
-      id: id,
-      writer: "loginUser",
-      regiDate: new Date().toLocaleDateString(),
-    });
-  }, []);
+  // useEffect(() => {
+  //   setPost({
+  //     ...post,
+  //     id: id,
+  //     writer: "loginUser",
+  //     regiDate: new Date().toLocaleDateString(),
+  //   });
+  // }, []);
+
+  const [imgPath, setImgPath] = useState(null);
+
 
   const onChangeHandler = (e) => {
     setPost({
@@ -64,15 +76,49 @@ const AddTable = (props) => {
   };
 
   const onClickHandler = () => {
-    dispatch(addPosting(post));
-    props.history.push("/admin/table");
-  };
+    // dispatch(addPosting(post));
+    // props.history.push("/admin/table");
+
+    let cookies = new Cookies();
+      const userToken = cookies.get("usertoken");
+
+      const formData = new FormData();
+      if(imgPath != null){
+        formData.append("img_path", imgPath[0]);
+      }
+      formData.append("title", post.title);
+      formData.append("content", post.content);
+      formData.append("category", post.category);
+
+      axios({
+        method: "post",
+        url: "http://localhost:8000/api/board/",
+        data: formData,
+        headers: { "Authorization": `Token	 ${userToken}`, "Content-Type": "multipart/form-data" },
+      })
+        .then(function (response) {
+          console.log(response);
+          props.history.push("/admin/table");
+        })
+        .catch(function (response) {
+          console.log(response);
+        });
+
+    }
+
+    const onChangeFile = (e) => {
+      setImgPath(e.target.files)
+    };
 
   return (
     <div style={{ display: "flex" }}>
       <form className={classes.form}>
         <div className={classes.root}>
-          <DropDown onChange={(value) => setPost({ ...post, header: value })} />
+        <DropDown
+          title="전체"
+          value={["전체","Q&A", "여행 TIP", "자유 게시판"]}
+          onChange={(value) => setPost({ ...post, category: value })}
+        />
           <div className={classes.root}>
             <Grid container spacing={1}>
               <Grid item xs={2} sm={1}>
@@ -86,7 +132,8 @@ const AddTable = (props) => {
                   fullWidth
                   variant="outlined"
                   value={post.title}
-                  onChange={onChangeHandler}
+                  onChange={(e) => onChangeHandler(e)}
+
                 />
               </Grid>
               <Grid item xs={2} sm={1}>
@@ -101,17 +148,25 @@ const AddTable = (props) => {
                   variant="outlined"
                   rows={15}
                   value={post.contents}
-                  onChange={onChangeHandler}
+                  onChange={(e) => onChangeHandler(e)}
+
                 />
               </Grid>
             </Grid>
+            <TextField
+              type="file"
+              fullWidth
+              variant="outlined"
+              onChange={(e) => onChangeFile(e)}
+            />
             <div style={{ float: "right" }}>
               <Button
                 style={{ margin: "3px" }}
                 className="write-btn"
                 variant="contained"
                 color="primary"
-                onClick={onClickHandler}
+                onChange={() => onChangeHandler()}
+
               >
                 등록
               </Button>

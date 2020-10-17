@@ -35,13 +35,15 @@ export default function SimpleSelect(props) {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <FormControl className={classes.formControl}>
-          <InputLabel id="demo-simple-select-outlined-label">전체</InputLabel>
-          <Select onChange={handleChange}>
-            <MenuItem value={"Q&A"}>Q&A</MenuItem>
-            <MenuItem value={"여행 TIP"}>여행 TIP</MenuItem>
-            <MenuItem value={"자유 게시판"}>자유 게시판</MenuItem>
-          </Select>
+      <FormControl className={classes.formControl} disabled={props.disabled}>
+          <InputLabel id="demo-simple-select-outlined-label">{props.title}</InputLabel>
+          <Select onChange={handleChange} className={classes.select}>
+        {props.value.map((v) => (
+          <MenuItem value={v} className={classes.menuItem}>
+            {v}
+          </MenuItem>
+        ))}
+      </Select>
         </FormControl>
       </ThemeProvider>
     </div>

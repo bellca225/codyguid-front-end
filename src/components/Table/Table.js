@@ -13,6 +13,8 @@ import Button from "../CustomButtons/Button.js";
 import DropDown from "../../components/DropDown/DropDown";
 import { withRouter } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
+import axios from "axios";
+import { Cookies } from "react-cookie";
 
 // core components
 import styles from "assets/jss/material-dashboard-react/components/tableStyle.js";
@@ -34,24 +36,41 @@ function CustomTable(props) {
   ];
   const [tableData, setTableData] = useState([]);
   const [allData, setAllData] = useState([]);
-  const allTable = useSelector((state) => state.posts);
+  // const allTable = useSelector((state) => state.posts);
+  const [myPostBtn, setMyPostBtn] = useState(false);
 
-  useEffect(() => {
-    const newTable = [];
-    for (let i = 0; i < allTable.length; i++) {
-      newTable.push([
-        allTable[i].id,
-        allTable[i].header,
-        allTable[i].title,
-        allTable[i].writer,
-        allTable[i].regiDate,
-        allTable[i].view,
-        allTable[i].comment,
-      ]);
-    }
-    setAllData(newTable);
-    setTableData(newTable.slice(0, 10));
-  }, [allTable]);
+
+  // useEffect(() => {
+  //   const newTable = [];
+  //   for (let i = 0; i < allTable.length; i++) {
+  //     newTable.push([
+  //       allTable[i].id,
+  //       allTable[i].header,
+  //       allTable[i].title,
+  //       allTable[i].writer,
+  //       allTable[i].regiDate,
+  //       allTable[i].view,
+  //       allTable[i].comment,
+  //     ]);
+  //   }
+  //   setAllData(newTable);
+  //   setTableData(newTable.slice(0, 10));
+  // }, [allTable]);
+
+  const allTable = () => {
+    const apiUrl = "http://localhost:8000/api/board/";
+
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        console.log("조회목록데이터:", response.data);
+        setAllData(response.data);
+        setTableData(response.data.slice(0, 10))
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  }
 
   const handlePage = (event, value) => {
     const startNum = (value - 1) * 10;
@@ -59,14 +78,42 @@ function CustomTable(props) {
     setTableData(allData.slice(startNum, endNum));
   };
 
+  useEffect(() => {
+    allTable()
+  }, []);
+
   const addPost = () => {
     props.history.push("/admin/addtable");
   };
 
+  const categoryChange = (value) => {
+    if(value === "전체") {
+      allTable();
+    } else {
+      const apiUrl = `http://localhost:8000/api/board/${value}/`;
+
+      axios
+        .get(apiUrl)
+        .then((response) => {
+          console.log("카테고리 조회:", response.data);
+          setAllData(response.data);
+          setTableData(response.data.slice(0, 10))
+        })
+        .catch((response) => {
+          console.error(response);
+        });
+    }
+};
+
   return (
     <div className={classes.tableResponsive}>
       <div>
-        <DropDown onChange={(value) => value} />
+      <DropDown
+            title="전체"
+            value={["전체", "Q&A", "여행 TIP", "자유 게시판"]}
+            onChange={categoryChange}
+            disabled={myPostBtn}
+          />
       </div>
       <Table className={classes.table}>
         <colgroup>
@@ -97,17 +144,43 @@ function CustomTable(props) {
         <TableBody>
           {tableData.map((prop, key) => {
             return (
-              <TableRow key={key} className={classes.tableBodyRow}>
-                {prop.map((index, key) => {
-                  return (
+              <TableRow key={`r${key}`} className={classes.tableBodyRow}>
                     <TableCell className={classes.tableCell} key={key}>
-                      <RouterLink to={`/admin/edittable/${prop[0]}`}>
-                        {index}
+                      <RouterLink to={`/admin/edittable/${prop.id}`}>
+                        {prop.id}
                       </RouterLink>
                     </TableCell>
-                  );
-                })}
-              </TableRow>
+                    <TableCell className={classes.tableCell} key={key}>
+                      <RouterLink to={`/admin/edittable/${prop.id}`}>
+                        {prop.category}
+                      </RouterLink>
+                    </TableCell>
+                    <TableCell className={classes.tableCell} key={key}>
+                      <RouterLink to={`/admin/edittable/${prop.id}`}>
+                        {prop.title}
+                      </RouterLink>
+                    </TableCell>
+                    <TableCell className={classes.tableCell}>
+                    <RouterLink to={`/admin/edittable/${prop.id}`}>
+                      {prop.username}
+                    </RouterLink>
+                  </TableCell>
+                  <TableCell className={classes.tableCell}>
+                    <RouterLink to={`/admin/edittable/${prop.id}`}>
+                      {prop.created.substring(0, 10)}
+                    </RouterLink>
+                  </TableCell>
+                  <TableCell className={classes.tableCell}>
+                    <RouterLink to={`/admin/edittable/${prop.id}`}>
+                      {prop.views}
+                    </RouterLink>
+                  </TableCell>
+                  <TableCell className={classes.tableCell}>
+                    <RouterLink to={`/admin/edittable/${prop.id}`}>
+                      {prop.comments}
+                    </RouterLink>
+                  </TableCell>
+                </TableRow>
             );
           })}
         </TableBody>
