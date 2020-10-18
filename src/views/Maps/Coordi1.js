@@ -74,6 +74,8 @@ import umbrella from "../../clothesIcon/08소품날씨(비) 우산.svg";
 import handcream from "../../clothesIcon/05소품일반 핸드크림.svg";
 import warmBottom from "../../clothesIcon/00(추후 후가)-아웃도여용 발열하의.svg";
 import warmTop from "../../clothesIcon/00(추후 후가)-아웃도어용 발열상의.svg";
+import superHot1 from "../../clothesIcon/00(추후 후가)-폭염지역 얇은 겉옷1.svg";
+import superHot2 from "../../clothesIcon/00(추후 후가)-폭염지역 얇은 겉옷2.svg";
 
 // <img src={rainCoat} alt="우비" />,
 // <img src={umbrella} alt="우산" />,
@@ -118,14 +120,181 @@ const blank = {
 };
 
 const Coordi = ({ data }) => {
+ 
   const dress42 = {
     top: [
       // "나시티",
       // "민소매",
       // "반팔티",
-      // 5
-      <img src={top} alt="나시탑" title="나시탑" />,
-      <img src={sleeveless} alt="나시티" title="나시티" />,
+      // 3
+
+      <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
+      <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
+      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+    ],
+    pants: [
+      // "반바지",
+      // "치마",
+      // 3
+      <img src={pant2} alt="면바지" title=" 얇은 면바지" />,
+      <img src={skirtlong} alt="긴치마" title=" 얇은 긴치마" />,
+      <img src={skirtlong2} alt="긴치마" title=" 얇은 긴치마" />,
+    ],
+    creamType: [
+      // "미니선풍기",
+      // "부채",
+      // "양산",
+      // "선크림",
+      // 1
+      <img
+        src={sunCream2}
+        alt="썬크림 PA +++ 이상"
+        title="썬크림 PA +++ 이상"
+      />,
+    ],
+
+    // 아우터
+    outer: [
+      // 2
+      <img
+        src={superHot1}
+        alt="폭염지역 전용 얇은 겉옷"
+        title="폭염지역 전용 얇은 겉옷"
+      />,
+      <img
+        src={superHot2}
+        alt="폭염지역 전용 얇은 겉옷"
+        title="폭염지역 전용 얇은 겉옷"
+      />,
+    ],
+
+    // 신발
+    shoesType: [
+      // 3
+      <img src={shoes2} alt="단화" title="단화" />,
+      <img src={shoes3} alt="단화" title="단화" />,
+      <img src={sportShoes} alt="운동화" title="운동화" />,
+    ],
+
+    accType: [
+      // 4
+      <img src={tumbler} alt="텀블러" title="텀블러" />,
+      <img src={sunglasses} alt="썬글라스" title="썬글라스" />,
+      <img src={strawhat} alt="짚모자" title="짚모자" />,
+      <img src={sunCap} alt="썬캡" title="썬캡" />,
+    ],
+  };
+
+  const tip42 = {
+    tip001: [
+      <span style={tip2}>
+        일사병에 걸릴 수 있어 장시간 야외 활동을 삼가하세요
+      </span>,
+      <span style={tip2}>눈 보호를 위해 기능성 썬글라스를 꼭 착용하세요</span>,
+    ],
+
+    tip002: [
+      <span style={tip2}>
+        화상을 입지 않도록 길고 얇은 상하의를 준비하세요
+      </span>,
+      <span style={tip2}>
+        고온에 녹을 수 있는 플라스틱 소재의 신발 착용을 삼가하세요
+      </span>,
+      <span style={tip2}>
+        피부보호를 위해 특수한 썬크림을 필수로 사용하세요
+      </span>,
+    ],
+  };
+
+  const dress39 = {
+    top: [
+      // "나시티",
+      // "민소매",
+      // "반팔티",
+      // 3
+
+      <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
+      <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
+      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+    ],
+    pants: [
+      // "반바지",
+      // "치마",
+      // 3
+      <img src={pant2} alt="면바지" title=" 얇은 면바지" />,
+      <img src={skirtlong} alt="긴치마" title=" 얇은 긴치마" />,
+      <img src={skirtlong2} alt="긴치마" title=" 얇은 긴치마" />,
+    ],
+    creamType: [
+      // "미니선풍기",
+      // "부채",
+      // "양산",
+      // "선크림",
+      // 1
+      <img
+        src={sunCream2}
+        alt="썬크림 PA +++ 이상"
+        title="썬크림 PA +++ 이상"
+      />,
+    ],
+
+    // 아우터
+    outer: [
+      // 2
+      <img
+        src={superHot1}
+        alt="폭염지역 전용 얇은 겉옷"
+        title="폭염지역 전용 얇은 겉옷"
+      />,
+      <img
+        src={superHot2}
+        alt="폭염지역 전용 얇은 겉옷"
+        title="폭염지역 전용 얇은 겉옷"
+      />,
+    ],
+
+    // 신발
+    shoesType: [
+      // 3
+      <img src={shoes2} alt="단화" title="단화" />,
+      <img src={shoes3} alt="단화" title="단화" />,
+      <img src={sportShoes} alt="운동화" title="운동화" />,
+    ],
+
+    accType: [
+      // 4
+      <img src={tumbler} alt="텀블러" title="텀블러" />,
+      <img src={sunglasses} alt="썬글라스" title="썬글라스" />,
+      <img src={strawhat} alt="짚모자" title="짚모자" />,
+      <img src={sunCap} alt="썬캡" title="썬캡" />,
+    ],
+  };
+
+  const tip39 = {
+    tip001: [
+      <span style={tip2}>
+        일사병에 걸릴 수 있어 장시간 야외 활동을 삼가하세요
+      </span>,
+      <span style={tip2}>눈 보호를 위해 기능성 썬글라스를 꼭 착용하세요</span>,
+    ],
+
+    tip002: [
+      <span style={tip2}>
+        화상을 입지 않도록 길고 얇은 상하의를 준비하세요
+      </span>,
+      <span style={tip2}>수분을 충분히 섭취해주세요</span>,
+      <span style={tip2}>
+        피부보호를 위해 특수한 썬크림을 필수로 사용하세요
+      </span>,
+    ],
+  };
+
+  const dress35 = {
+    top: [
+      // "나시티",
+      // "민소매",
+      // "반팔티",
+      // 3
       <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
       <img src={blouseshort} alt="블라우스" title="블라우스" />,
@@ -150,44 +319,111 @@ const Coordi = ({ data }) => {
       />,
     ],
 
-    // 모자
-    capType: [
-      // 3
-      <img src={strawhat} alt="짚모자" title="짚모자" />,
-      <img src={cap} alt="캡모자" title="캡모자" />,
-      <img src={sunCap} alt="썬캡" title="썬캡" />,
-    ],
-
     // 신발
     shoesType: [
+      // 6
       <img src={shoes2} alt="단화" title="단화" />,
       <img src={shoes3} alt="단화" title="단화" />,
-      <img src={slipper} alt="슬리퍼" title="슬리퍼" />,
       <img src={sportShoes} alt="운동화" title="운동화" />,
+      <img src={slipper} alt="슬리퍼" title="슬리퍼" />,
       <img src={casualLoafers} alt="캐주얼로퍼" title="캐주얼로퍼" />,
       <img src={canvasHigh} alt="캔버스 하이" title="캔버스 하이" />,
     ],
 
     accType: [
+      // 2
       <img src={tumbler} alt="텀블러" title="텀블러" />,
-      <img src={fan} alt="부채" title="부채" />,
       <img src={sunglasses} alt="썬글라스" title="썬글라스" />,
+    ],
+
+    accType2: [
+      // 3
+      <img src={strawhat} alt="짚모자" title="짚모자" />,
+      <img src={sunCap} alt="썬캡" title="썬캡" />,
+      <img src={fan} alt="부채" title="부채" />,
     ],
   };
 
-  const tip42 = {
+  const tip35 = {
     tip001: [
-      <span style={tip2}>아주 무더운 날씨 입니다. 물을 자주 마셔주세요</span>,
-      <span style={tip2}>더운 날씨로, 부채나 미니선풍기를 챙겨주세요</span>,
       <span style={tip2}>
-        다만 실내에서 에어컨을 틀 경우, 냉방병 예방을 위해 얇은 겉옷을
-        챙겨주세요.
+        일사병에 걸릴 수 있어 장시간 야외 활동을 삼가하세요
       </span>,
+      <span style={tip2}>자외선 차단을 위해 썬글라스 착용을 추천합니다</span>,
     ],
+
     tip002: [
-      <span style={tip2}>PA+++ 이상의 썬크림을 필수로 챙겨주세요</span>,
-      <span style={tip2}>외출 시 햇볕을 가려줄 모자를 챙겨주세요</span>,
-      <span style={tip2}>햇볕이 강해 썬글라스를 꼭 챙겨주세요</span>,
+      <span style={tip2}>수분 섭취를 충분히 진행해주세요</span>,
+      <span style={tip2}>챙이 넓은 모자 착용을 권장합니다</span>,
+      <span style={tip2}>PA+++ 이상의 썬크림을 꼭 발라주세요</span>,
+    ],
+  };
+
+  const dress30 = {
+    top: [
+      // "나시티",
+      // "민소매",
+      // "반팔티",
+      // 3
+      <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
+      <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
+      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+    ],
+    pants: [
+      // "반바지",
+      // "치마",
+      // 2
+      <img src={pantshort2} alt="짧은 트레이닝복" title="짧은 트레이닝복" />,
+      <img src={pantshort} alt="짧은 바지" title="짧은 바지" />,
+    ],
+    creamType: [
+      // "미니선풍기",
+      // "부채",
+      // "양산",
+      // "선크림",
+      // 1
+      <img
+        src={sunCream2}
+        alt="썬크림 PA +++ 이상"
+        title="썬크림 PA +++ 이상"
+      />,
+    ],
+
+    // 신발
+    shoesType: [
+      // 6
+      <img src={shoes2} alt="단화" title="단화" />,
+      <img src={shoes3} alt="단화" title="단화" />,
+      <img src={sportShoes} alt="운동화" title="운동화" />,
+      <img src={slipper} alt="슬리퍼" title="슬리퍼" />,
+      <img src={casualLoafers} alt="캐주얼로퍼" title="캐주얼로퍼" />,
+      <img src={canvasHigh} alt="캔버스 하이" title="캔버스 하이" />,
+    ],
+
+    accType: [
+      // 2
+      <img src={tumbler} alt="텀블러" title="텀블러" />,
+      <img src={sunglasses} alt="썬글라스" title="썬글라스" />,
+    ],
+
+    accType2: [
+      // 3
+      <img src={strawhat} alt="짚모자" title="짚모자" />,
+      <img src={sunCap} alt="썬캡" title="썬캡" />,
+      <img src={fan} alt="부채" title="부채" />,
+    ],
+  };
+
+  const tip30 = {
+    tip001: [
+      <span style={tip2}>무더위입니다. 장시간 야외 활동을 삼가하세요</span>,
+      <span style={tip2}>자외선 차단을 위해 썬글라스 착용을 추천합니다</span>,
+    ],
+
+    tip002: [
+      <span style={tip2}>수분 섭취를 충분히 진행해주세요</span>,
+      <span style={tip2}>챙이 넓은 모자 착용을 권장합니다</span>,
+      <span style={tip2}>PA+++ 이상의 썬크림을 꼭 발라주세요</span>,
     ],
   };
 
@@ -790,6 +1026,229 @@ const Coordi = ({ data }) => {
     ],
   };
 
+  const dress05 = {
+    // 0
+    top: [
+      //  "긴팔", "니트", "후드티", "맨투맨"
+      // 3
+      <img src={Tlong} alt="긴티" />,
+      <img src={hoodlong} alt="상의 긴팔 후드" />,
+      <img src={shirtlong} alt="상의 긴팔 셔츠" />,
+    ],
+    pants: [
+      // "청바지",
+      // "면바지",
+      // 6
+      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      <img src={blueJeansWide} alt="청바지" title="청바지" />,
+      <img src={pant} alt="면바지" title="면바지" />,
+      <img src={pant2} alt="면바지2" title="면바지" />,
+      <img src={baggyPants} alt="배기팬츠" title="배기팬츠" />,
+    ],
+    creamType: [
+      // "핸드크림",
+      // "목도리",
+      // "장갑",
+      // 2
+      <img src={handcream} alt="핸드크림" title="핸드크림" />,
+      <img src={handwarmer} alt="손난로" title="손난로" />,
+    ],
+
+    shoesType: [
+      // 4
+      <img src={workShoes} alt="스포츠 운동화" title="스포츠 운동화" />,
+      <img src={uggBoots} alt="어그부츠" title="어그부츠" />,
+      <img src={suedeBoots} alt="스웨이드 구두" title="스웨이드 구두" />,
+      <img src={fashonShoes} alt="패션구두" title="패션구두" />,
+    ],
+
+    accType: [
+      // 6
+      <img src={earPlug} alt="귀마개" title="방한용 귀마개" />,
+      <img src={earPlug2} alt="귀마개2" title="귀마개" />,
+      <img src={scarf} alt="목도리" title="목도리" />,
+      <img src={winterHat} alt="방한용모자" title="방한용 모자" />,
+      <img src={sleepingSocks} alt="수면양말" title="수면양말" />,
+      <img src={FurHat} alt="털모자" title="털모자" />,
+    ],
+
+    outer: [
+      // "야상",
+      // "롱패딩",
+      // "숏패딩",
+      // 3
+      <img src={paddinglong} alt="롱패딩" title="롱패딩" />,
+
+      <img src={paddingvest} alt="패딩조끼" title="패딩조끼" />,
+    ],
+  };
+
+  const tip05 = {
+    // 0~5 기준
+    tip001: [
+      <span style={tip2}>
+        날이 많이 건조하여 피부 보습을 충분히 진행하세요
+      </span>,
+      <span style={tip2}>두툼한 겉옷을 챙겨입으세요</span>,
+      <span style={tip2}>
+        추위를 많이 타시면 롱패딩이나 겨울용 아웃도어를 챙겨주세요
+      </span>,
+    ],
+    tip002: [
+      <span style={tip2}>따듯한 내의를 꼭 챙겨입으세요.</span>,
+      <span style={tip2}>손난로나 목도리 장갑 등을 챙겨주세요</span>,
+      <span style={tip2}>장기간 야외 외출을 삼가해주세요</span>,
+    ],
+  };
+
+  const dress09 = {
+    // 0
+    top: [
+      //  "긴팔", "니트", "후드티", "맨투맨"
+      // 3
+      <img src={Tlong} alt="긴티" />,
+      <img src={hoodlong} alt="상의 긴팔 후드" />,
+      <img src={shirtlong} alt="상의 긴팔 셔츠" />,
+    ],
+    pants: [
+      // "청바지",
+      // "면바지",
+      // 6
+      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      <img src={blueJeansWide} alt="청바지" title="청바지" />,
+      <img src={pant} alt="면바지" title="면바지" />,
+      <img src={pant2} alt="면바지2" title="면바지" />,
+      <img src={baggyPants} alt="배기팬츠" title="배기팬츠" />,
+    ],
+    creamType: [
+      // "핸드크림",
+      // "목도리",
+      // "장갑",
+      // 2
+      <img src={handcream} alt="핸드크림" title="핸드크림" />,
+      <img src={handwarmer} alt="손난로" title="손난로" />,
+    ],
+
+    shoesType: [
+      // 4
+      <img src={workShoes} alt="스포츠 운동화" title="스포츠 운동화" />,
+      <img src={uggBoots} alt="어그부츠" title="어그부츠" />,
+      <img src={suedeBoots} alt="스웨이드 구두" title="스웨이드 구두" />,
+      <img src={fashonShoes} alt="패션구두" title="패션구두" />,
+    ],
+
+    accType: [
+      // 6
+      <img src={earPlug} alt="귀마개" title="방한용 귀마개" />,
+      <img src={earPlug2} alt="귀마개2" title="귀마개" />,
+      <img src={scarf} alt="목도리" title="목도리" />,
+      <img src={winterHat} alt="방한용모자" title="방한용 모자" />,
+      <img src={sleepingSocks} alt="수면양말" title="수면양말" />,
+      <img src={FurHat} alt="털모자" title="털모자" />,
+    ],
+
+    outer: [
+      // "야상",
+      // "롱패딩",
+      // "숏패딩",
+      // 3
+      <img src={paddinglong} alt="롱패딩" title="롱패딩" />,
+
+      <img src={paddingvest} alt="패딩조끼" title="패딩조끼" />,
+    ],
+  };
+
+  const tip09 = {
+    // 0~5 기준
+    tip001: [
+      <span style={tip2}>
+        날이 많이 건조하여 피부 보습을 충분히 진행하세요
+      </span>,
+      <span style={tip2}>두툼한 겉옷을 챙겨입으세요</span>,
+      <span style={tip2}>
+        추위를 많이 타시면 롱패딩이나 겨울용 아웃도어를 챙겨주세요
+      </span>,
+    ],
+    tip002: [
+      <span style={tip2}>따듯한 내의를 꼭 챙겨입으세요.</span>,
+      <span style={tip2}>손난로나 목도리 장갑 등을 챙겨주세요</span>,
+      <span style={tip2}>장기간 야외 외출을 삼가해주세요</span>,
+    ],
+  };
+
+  const dress012 = {
+    // 0
+    top: [
+      //  "긴팔", "니트", "후드티", "맨투맨"
+      // 3
+      <img src={Tlong} alt="긴티" />,
+      <img src={hoodlong} alt="상의 긴팔 후드" />,
+      <img src={shirtlong} alt="상의 긴팔 셔츠" />,
+    ],
+    pants: [
+      // "청바지",
+      // "면바지",
+      // 3
+
+      <img src={blueJeansWide} alt="청바지" title="청바지" />,
+      <img src={pant} alt="면바지" title="면바지" />,
+      <img src={pant2} alt="면바지2" title="면바지" />,
+    ],
+    creamType: [
+      // "핸드크림",
+      // "목도리",
+      // "장갑",
+      // 2
+      <img src={handcream} alt="핸드크림" title="핸드크림" />,
+      <img src={handwarmer} alt="손난로" title="손난로" />,
+    ],
+
+    shoesType: [
+      // 2
+
+      <img src={uggBoots} alt="어그부츠" title="어그부츠" />,
+      <img src={suedeBoots} alt="스웨이드 구두" title="스웨이드 구두" />,
+    ],
+
+    accType: [
+      // 6
+      <img src={earPlug} alt="귀마개" title="방한용 귀마개" />,
+      <img src={earPlug2} alt="귀마개2" title="귀마개" />,
+      <img src={scarf} alt="목도리" title="목도리" />,
+      <img src={winterHat} alt="방한용모자" title="방한용 모자" />,
+      <img src={sleepingSocks} alt="수면양말" title="수면양말" />,
+      <img src={FurHat} alt="털모자" title="털모자" />,
+    ],
+
+    outer: [
+      // "야상",
+      // "롱패딩",
+      // "숏패딩",
+      // 2
+      <img src={paddinglong} alt="롱패딩" title="롱패딩" />,
+    ],
+  };
+
+  const tip012 = {
+    // 0~5 기준
+    tip001: [
+      <span style={tip2}>
+        날이 많이 건조하여 피부 보습을 충분히 진행하세요
+      </span>,
+      <span style={tip2}>두툼한 겉옷을 챙겨입으세요</span>,
+      <span style={tip2}>
+        추위를 많이 타시면 롱패딩이나 겨울용 아웃도어를 챙겨주세요
+      </span>,
+    ],
+    tip002: [
+      <span style={tip2}>따듯한 내의를 꼭 챙겨입으세요.</span>,
+      <span style={tip2}>손난로나 목도리 장갑 등을 챙겨주세요</span>,
+      <span style={tip2}>장기간 야외 외출을 삼가해주세요</span>,
+    ],
+  };
+
   const dress0025 = {
     // 0
     top: [
@@ -1025,17 +1484,17 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress42.top[index5]}
+              {dress42.top[index3]}
             </div>
 
             <div style={frame}>
               <h4 style={titlefont}>하의 </h4>
-              {dress42.pants[index2]}
+              {dress42.pants[index3]}
             </div>
 
             <div style={frame}>
-              <h4 style={titlefont}>악세사리1 </h4>
-              {dress42.capType[index3]}
+              <h4 style={titlefont}>아우터 </h4>
+              {dress42.outer[index2]}
             </div>
 
             <div style={frame2}>
@@ -1045,19 +1504,19 @@ const Coordi = ({ data }) => {
 
             <div style={frame2}>
               <h4 style={titlefont}>악세사리3 </h4>
-              {dress42.shoesType[index6]}
+              {dress42.shoesType[index3]}
             </div>
 
             <div style={frame2}>
               <h4 style={titlefont}>악세사리4 </h4>
-              {dress42.accType[index3]}
+              {dress42.accType[index4]}
             </div>
           </div>
 
           <div style={blank}>
             <div style={tip}>
               <span style={tip3}>tip</span>
-              {tip42.tip001[index3]}
+              {tip42.tip001[index2]}
             </div>
             <div style={tip}>
               <span style={tip3}>tip</span>
@@ -1083,43 +1542,43 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress27.top[index5]}
+              {dress39.top[index3]}
             </div>
 
             <div style={frame}>
               <h4 style={titlefont}>하의 </h4>
-              {dress27.pants[index2]}
+              {dress39.pants[index2]}
             </div>
 
             <div style={frame}>
+              <h4 style={titlefont}>아우터 </h4>
+              {dress39.outer[index2]}
+            </div>
+
+            <div style={frame2}>
               <h4 style={titlefont}>악세사리1 </h4>
-              {dress27.capType[index3]}
+              {dress39.creamType[index1]}
             </div>
 
             <div style={frame2}>
               <h4 style={titlefont}>악세사리2 </h4>
-              {dress27.creamType[index1]}
+              {dress39.shoesType[index3]}
             </div>
 
             <div style={frame2}>
-              <h4 style={titlefont}>악세사리3 </h4>
-              {dress27.shoesType[index6]}
-            </div>
-
-            <div style={frame2}>
-              <h4 style={titlefont}>악세사리4 </h4>
-              {dress27.accType[index3]}
+              <h4 style={titlefont}>악세사리3</h4>
+              {dress39.accType[index4]}
             </div>
           </div>
 
           <div style={blank}>
             <div style={tip}>
               <span style={tip3}>tip</span>
-              {tip27.tip001[index3]}
+              {tip39.tip001[index3]}
             </div>
             <div style={tip}>
               <span style={tip3}>tip</span>
-              {tip27.tip002[index3]}
+              {tip39.tip002[index3]}
             </div>
           </div>
         </div>
@@ -1141,43 +1600,43 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress27.top[index5]}
+              {dress35.top[index3]}
             </div>
 
             <div style={frame}>
               <h4 style={titlefont}>하의 </h4>
-              {dress27.pants[index2]}
+              {dress35.pants[index2]}
             </div>
 
             <div style={frame}>
               <h4 style={titlefont}>악세사리1 </h4>
-              {dress27.capType[index3]}
+              {dress35.accType[index2]}
             </div>
 
             <div style={frame2}>
               <h4 style={titlefont}>악세사리2 </h4>
-              {dress27.creamType[index1]}
+              {dress35.creamType[index1]}
             </div>
 
             <div style={frame2}>
               <h4 style={titlefont}>악세사리3 </h4>
-              {dress27.shoesType[index6]}
+              {dress35.shoesType[index6]}
             </div>
 
             <div style={frame2}>
               <h4 style={titlefont}>악세사리4 </h4>
-              {dress27.accType[index3]}
+              {dress35.accType2[index3]}
             </div>
           </div>
 
           <div style={blank}>
             <div style={tip}>
               <span style={tip3}>tip</span>
-              {tip27.tip001[index3]}
+              {tip35.tip001[index2]}
             </div>
             <div style={tip}>
               <span style={tip3}>tip</span>
-              {tip27.tip002[index3]}
+              {tip35.tip002[index3]}
             </div>
           </div>
         </div>
@@ -1199,43 +1658,43 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress27.top[index5]}
+              {dress30.top[index3]}
             </div>
 
             <div style={frame}>
               <h4 style={titlefont}>하의 </h4>
-              {dress27.pants[index2]}
+              {dress30.pants[index2]}
             </div>
 
             <div style={frame}>
               <h4 style={titlefont}>악세사리1 </h4>
-              {dress27.capType[index3]}
+              {dress30.accType[index2]}
             </div>
 
             <div style={frame2}>
               <h4 style={titlefont}>악세사리2 </h4>
-              {dress27.creamType[index1]}
+              {dress30.creamType[index1]}
             </div>
 
             <div style={frame2}>
               <h4 style={titlefont}>악세사리3 </h4>
-              {dress27.shoesType[index6]}
+              {dress30.shoesType[index6]}
             </div>
 
             <div style={frame2}>
               <h4 style={titlefont}>악세사리4 </h4>
-              {dress27.accType[index3]}
+              {dress30.accType2[index3]}
             </div>
           </div>
 
           <div style={blank}>
             <div style={tip}>
               <span style={tip3}>tip</span>
-              {tip27.tip001[index3]}
+              {tip30.tip001[index2]}
             </div>
             <div style={tip}>
               <span style={tip3}>tip</span>
-              {tip27.tip002[index3]}
+              {tip30.tip002[index3]}
             </div>
           </div>
         </div>
@@ -1696,41 +2155,41 @@ const Coordi = ({ data }) => {
         >
           <div style={frame}>
             <h4 style={titlefont}>상의 : </h4>
-            {dress0.top[index3]}
+            {dress05.top[index3]}
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress0.pants[index6]}
+            {dress05.pants[index6]}
           </div>
 
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
-            {dress0.outer[index3]}
+            {dress05.outer[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리1 : </h4>
-            {dress0.creamType[index2]}
+            {dress05.creamType[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리2 : </h4>
-            {dress0.shoesType[index4]}
+            {dress05.shoesType[index4]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리3 : </h4>
-            {dress0.accType[index6]}
+            {dress05.accType[index6]}
           </div>
         </div>
         <div style={blank}>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip001[index3]}
+            {tip05.tip001[index3]}
           </div>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip002[index3]}
+            {tip05.tip002[index3]}
           </div>
         </div>
       </div>
@@ -1750,41 +2209,41 @@ const Coordi = ({ data }) => {
         >
           <div style={frame}>
             <h4 style={titlefont}>상의 : </h4>
-            {dress0.top[index3]}
+            {dress09.top[index3]}
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress0.pants[index6]}
+            {dress09.pants[index6]}
           </div>
 
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
-            {dress0.outer[index3]}
+            {dress09.outer[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리1 : </h4>
-            {dress0.creamType[index2]}
+            {dress09.creamType[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리2 : </h4>
-            {dress0.shoesType[index4]}
+            {dress09.shoesType[index4]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리3 : </h4>
-            {dress0.accType[index6]}
+            {dress09.accType[index6]}
           </div>
         </div>
         <div style={blank}>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip001[index3]}
+            {tip09.tip001[index3]}
           </div>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip002[index3]}
+            {tip09.tip002[index3]}
           </div>
         </div>
       </div>
@@ -1804,41 +2263,41 @@ const Coordi = ({ data }) => {
         >
           <div style={frame}>
             <h4 style={titlefont}>상의 : </h4>
-            {dress0.top[index3]}
+            {dress012.top[index3]}
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress0.pants[index6]}
+            {dress012.pants[index3]}
           </div>
 
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
-            {dress0.outer[index3]}
+            {dress012.outer[index1]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리1 : </h4>
-            {dress0.creamType[index2]}
+            {dress012.creamType[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리2 : </h4>
-            {dress0.shoesType[index4]}
+            {dress012.shoesType[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리3 : </h4>
-            {dress0.accType[index6]}
+            {dress012.accType[index6]}
           </div>
         </div>
         <div style={blank}>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip001[index3]}
+            {tip012.tip001[index3]}
           </div>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip002[index3]}
+            {tip012.tip002[index3]}
           </div>
         </div>
       </div>
@@ -1858,49 +2317,48 @@ const Coordi = ({ data }) => {
         >
           <div style={frame}>
             <h4 style={titlefont}>상의 : </h4>
-            {dress0.top[index3]}
+            {dress012.top[index3]}
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress0.pants[index6]}
+            {dress012.pants[index3]}
           </div>
 
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
-            {dress0.outer[index3]}
+            {dress012.outer[index1]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리1 : </h4>
-            {dress0.creamType[index2]}
+            {dress012.creamType[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리2 : </h4>
-            {dress0.shoesType[index4]}
+            {dress012.shoesType[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리3 : </h4>
-            {dress0.accType[index6]}
+            {dress012.accType[index6]}
           </div>
         </div>
         <div style={blank}>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip001[index3]}
+            {tip012.tip001[index3]}
           </div>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip002[index3]}
+            {tip012.tip002[index3]}
           </div>
         </div>
       </div>
     );
   }
 
-  //
-  if (weather > -21) {
+  if (weather > -19) {
     return (
       <div style={back}>
         <h4 style={nowCody}>NOW CODY</h4>
@@ -1913,48 +2371,46 @@ const Coordi = ({ data }) => {
         >
           <div style={frame}>
             <h4 style={titlefont}>상의 : </h4>
-            {dress0.top[index3]}
+            {dress012.top[index3]}
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress0.pants[index6]}
+            {dress012.pants[index3]}
           </div>
 
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
-            {dress0.outer[index3]}
+            {dress012.outer[index1]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리1 : </h4>
-            {dress0.creamType[index2]}
+            {dress012.creamType[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리2 : </h4>
-            {dress0.shoesType[index4]}
+            {dress012.shoesType[index2]}
           </div>
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리3 : </h4>
-            {dress0.accType[index6]}
+            {dress012.accType[index6]}
           </div>
         </div>
         <div style={blank}>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip001[index3]}
+            {tip012.tip001[index3]}
           </div>
           <div style={tip}>
             <span style={tip3}>tip</span>
-            {tip0.tip002[index3]}
+            {tip012.tip002[index3]}
           </div>
         </div>
       </div>
     );
   }
-
-  //
 
   if (weather > -26) {
     return (
