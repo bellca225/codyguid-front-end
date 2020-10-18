@@ -52,7 +52,7 @@ const EditPost = (props) => {
   //   return <div key={key}>{i}</div>;
   // });
 
-  const commentCall = () => {
+  const comment = () => {
     const commentApiUrl = `http://localhost:8000/api/board/${postId}/comment`;
     axios
       .get(commentApiUrl)
@@ -77,7 +77,7 @@ const EditPost = (props) => {
         console.error(response);
       });
 
-    commentCall();
+      comment();
   }, []);
 
   const commentInputChange = (e) => {
@@ -101,7 +101,7 @@ const EditPost = (props) => {
       .then(function (response) {
         console.log(response);
         setNewComment({ ...newComment, content: "" });
-        commentCall();
+        comment();
       })
       .catch(function (response) {
         console.error(response);
@@ -113,7 +113,7 @@ const EditPost = (props) => {
     <div>
       <Paper>
         <CardContent>
-          <Typography className={classes.pos1}>{post.header}</Typography>
+          <Typography className={classes.pos1}>{post.category}</Typography>
           <Divider />
           <Typography className={classes.pos2} variant="h5" component="h2">
             {post.title}
@@ -123,7 +123,7 @@ const EditPost = (props) => {
             color="textSecondary"
             gutterBottom
           >
-            {String(post.created).substring(0, 10) + " " + post.username}
+            {String(post.created).substring(0, 10) + " | " + post.username}
           </Typography>
           <Typography component="p">
             {post.content}
