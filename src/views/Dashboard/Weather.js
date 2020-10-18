@@ -53,6 +53,7 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
     width: "98%",
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
     textAlign: "center",
+    marginTop: "45px",
   };
 
   const box = {
