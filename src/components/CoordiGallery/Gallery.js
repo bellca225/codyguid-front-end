@@ -134,6 +134,8 @@ function Gallery(props) {
                         gutterBottom
                       >
                         {prop.title}
+
+                        <img src={prop.image} className={classes.img} />
                       </Typography>
                       {/* <Typography variant="h5" component="h2">
                           {index}

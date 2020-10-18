@@ -39,7 +39,6 @@ function CustomTable(props) {
   // const allTable = useSelector((state) => state.posts);
   const [myPostBtn, setMyPostBtn] = useState(false);
 
-
   // useEffect(() => {
   //   const newTable = [];
   //   for (let i = 0; i < allTable.length; i++) {
@@ -65,12 +64,12 @@ function CustomTable(props) {
       .then((response) => {
         console.log("조회목록데이터:", response.data);
         setAllData(response.data);
-        setTableData(response.data.slice(0, 10))
+        setTableData(response.data.slice(0, 10));
       })
       .catch((response) => {
         console.error(response);
       });
-  }
+  };
 
   const handlePage = (event, value) => {
     const startNum = (value - 1) * 10;
@@ -79,7 +78,7 @@ function CustomTable(props) {
   };
 
   useEffect(() => {
-    allTable()
+    allTable();
   }, []);
 
   const addPost = () => {
@@ -87,7 +86,7 @@ function CustomTable(props) {
   };
 
   const categoryChange = (value) => {
-    if(value === "전체") {
+    if (value === "전체") {
       allTable();
     } else {
       const apiUrl = `http://localhost:8000/api/board/${value}/`;
@@ -97,23 +96,23 @@ function CustomTable(props) {
         .then((response) => {
           console.log("카테고리 조회:", response.data);
           setAllData(response.data);
-          setTableData(response.data.slice(0, 10))
+          setTableData(response.data.slice(0, 10));
         })
         .catch((response) => {
           console.error(response);
         });
     }
-};
+  };
 
   return (
     <div className={classes.tableResponsive}>
       <div>
-      <DropDown
-            title="전체"
-            value={["전체", "Q&A", "여행 TIP", "자유 게시판"]}
-            onChange={categoryChange}
-            disabled={myPostBtn}
-          />
+        <DropDown
+          title="전체"
+          value={["전체", "Q&A", "여행 TIP", "자유 게시판"]}
+          onChange={categoryChange}
+          disabled={myPostBtn}
+        />
       </div>
       <Table className={classes.table}>
         <colgroup>
@@ -145,42 +144,42 @@ function CustomTable(props) {
           {tableData.map((prop, key) => {
             return (
               <TableRow key={`r${key}`} className={classes.tableBodyRow}>
-                    <TableCell className={classes.tableCell} key={key}>
-                      <RouterLink to={`/admin/edittable/${prop.id}`}>
-                        {prop.id}
-                      </RouterLink>
-                    </TableCell>
-                    <TableCell className={classes.tableCell} key={key}>
-                      <RouterLink to={`/admin/edittable/${prop.id}`}>
-                        {prop.category}
-                      </RouterLink>
-                    </TableCell>
-                    <TableCell className={classes.tableCell} key={key}>
-                      <RouterLink to={`/admin/edittable/${prop.id}`}>
-                        {prop.title}
-                      </RouterLink>
-                    </TableCell>
-                    <TableCell className={classes.tableCell}>
-                    <RouterLink to={`/admin/edittable/${prop.id}`}>
-                      {prop.username}
-                    </RouterLink>
-                  </TableCell>
-                  <TableCell className={classes.tableCell}>
-                    <RouterLink to={`/admin/edittable/${prop.id}`}>
-                      {prop.created.substring(0, 10)}
-                    </RouterLink>
-                  </TableCell>
-                  <TableCell className={classes.tableCell}>
-                    <RouterLink to={`/admin/edittable/${prop.id}`}>
-                      {prop.views}
-                    </RouterLink>
-                  </TableCell>
-                  <TableCell className={classes.tableCell}>
-                    <RouterLink to={`/admin/edittable/${prop.id}`}>
-                      {prop.comments}
-                    </RouterLink>
-                  </TableCell>
-                </TableRow>
+                <TableCell className={classes.tableCell} key={key}>
+                  <RouterLink to={`/admin/edittable/${prop.id}`}>
+                    {prop.id}
+                  </RouterLink>
+                </TableCell>
+                <TableCell className={classes.tableCell} key={key}>
+                  <RouterLink to={`/admin/edittable/${prop.id}`}>
+                    {prop.category}
+                  </RouterLink>
+                </TableCell>
+                <TableCell className={classes.tableCell} key={key}>
+                  <RouterLink to={`/admin/edittable/${prop.id}`}>
+                    {prop.title}
+                  </RouterLink>
+                </TableCell>
+                <TableCell className={classes.tableCell}>
+                  <RouterLink to={`/admin/edittable/${prop.id}`}>
+                    {prop.username}
+                  </RouterLink>
+                </TableCell>
+                <TableCell className={classes.tableCell}>
+                  <RouterLink to={`/admin/edittable/${prop.id}`}>
+                    {prop.created.substring(0, 10)}
+                  </RouterLink>
+                </TableCell>
+                <TableCell className={classes.tableCell}>
+                  <RouterLink to={`/admin/edittable/${prop.id}`}>
+                    {prop.views}
+                  </RouterLink>
+                </TableCell>
+                <TableCell className={classes.tableCell}>
+                  <RouterLink to={`/admin/edittable/${prop.id}`}>
+                    {prop.comments}
+                  </RouterLink>
+                </TableCell>
+              </TableRow>
             );
           })}
         </TableBody>
