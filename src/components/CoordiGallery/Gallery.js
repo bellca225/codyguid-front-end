@@ -102,6 +102,7 @@ function Gallery(props) {
       });
   };
 
+
   const addGallery = () => {
     props.history.push("/admin/addgallery");
   };
@@ -113,7 +114,10 @@ function Gallery(props) {
   };
 
   return (
+
+
     <div>
+      
       <Grid container spacing={4} className={classes.gridContainer}>
         {galleryData.map((prop, key) => {
           return (
@@ -176,6 +180,11 @@ function Gallery(props) {
           );
         })}
       </Grid>
+
+
+
+
+
       <div style={{ float: "right" }}>
         <Button
           variant="contained"
