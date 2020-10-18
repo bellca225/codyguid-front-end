@@ -60,16 +60,18 @@ const div1 = {
 export default function TypographyPage() {
   const classes = useStyles();
   return (
-    <Card>
-      <div style={{ height: "35px" }}></div>
-      <CardHeader color="primary">
-        <h4 className={classes.cardTitleWhite}>World Weather Cody Guide</h4>
-        <p className={classes.cardCategoryWhite}>
-          코디 가이드의 사이트 소개입니다. 간단히 읽고 즐겁게 이용해주세요.
-        </p>
-      </CardHeader>
-      <CardBody>
-        {/* <div className={classes.typo}>
+    <>
+      <hr style={{ opacity: "0.2", width: "100%" }} />
+      <div style={{ height: "1px" }}></div>
+      <Card>
+        <CardHeader color="primary">
+          <h4 className={classes.cardTitleWhite}>World Weather Cody Guide</h4>
+          <p className={classes.cardCategoryWhite}>
+            코디 가이드의 사이트 소개입니다. 간단히 읽고 즐겁게 이용해주세요.
+          </p>
+        </CardHeader>
+        <CardBody>
+          {/* <div className={classes.typo}>
           <div className={classes.note}>사용 안내</div>
           <p>The Life of Material Dashboard</p>
         </div>
@@ -81,7 +83,7 @@ export default function TypographyPage() {
           <div className={classes.note}>코디 갤러리</div>
           <h3>The Life of Material Dashboard</h3>
         </div> */}
-        {/* <div className={classes.typo}>
+          {/* <div className={classes.typo}>
           <div className={classes.note}>Header 4</div>
           <h4>The Life of Material Dashboard</h4>
         </div>
@@ -93,96 +95,97 @@ export default function TypographyPage() {
           <div className={classes.note}>Header 6</div>
           <h6>The Life of Material Dashboard</h6>
         </div> */}
-        <div style={div1} className={classes.typo}>
-          <div className={classes.note}>소개</div>
-          <p style={{ marginTop: "30px" }}>
-            코디 가이드 사이트는 사용자가 원하는 장소의 날씨에 가장 알맞은
-            코디를 안내해줍니다.
-            <br /> 구글 지도를 이용해 사용자가 원하는 위치의 지역 날씨를 불러와
-            날씨에 맞는 최적의 코디 가이드 라인을 제공하며, 커뮤니티와 갤러리를
-            통해 다양한 지역의 사람들이 올린 코디를 확인할 수 있고, 직접 올릴 수
-            있습니다
-          </p>
-        </div>
-        <div style={div1} className={classes.typo}>
-          <div className={classes.note}>사용 예시</div>
-          <Quote
-            text="
+          <div style={div1} className={classes.typo}>
+            <div className={classes.note}>소개</div>
+            <p style={{ marginTop: "30px" }}>
+              코디 가이드 사이트는 사용자가 원하는 장소의 날씨에 가장 알맞은
+              코디를 안내해줍니다.
+              <br /> 구글 지도를 이용해 사용자가 원하는 위치의 지역 날씨를
+              불러와 날씨에 맞는 최적의 코디 가이드 라인을 제공하며, 커뮤니티와
+              갤러리를 통해 다양한 지역의 사람들이 올린 코디를 확인할 수 있고,
+              직접 올릴 수 있습니다
+            </p>
+          </div>
+          <div style={div1} className={classes.typo}>
+            <div className={classes.note}>사용 예시</div>
+            <Quote
+              text="
             
             "
-            author=" 
+              author=" 
             현재 위치로 이동하기 버튼 혹은 지도맵에 마커를 남겨 지역을 설정한 후 현재 날씨로 코디 설정을 누르면 자동으로 날씨에 맞는 코디와 추가로 챙겨야 할 팁을 안내해드립니다.
             "
-          />
-          <img style={{ width: "700px" }} src={Image} alt="이미지"></img>
-        </div>
+            />
+            <img style={{ width: "700px" }} src={Image} alt="이미지"></img>
+          </div>
 
-        <div style={div1} className={classes.typo}>
-          <Primary>
-            <div>코디 가이드</div>
-          </Primary>
+          <div style={div1} className={classes.typo}>
+            <Primary>
+              <div>코디 가이드</div>
+            </Primary>
 
-          <p>
-            구글 지도를 이용해 사용자가 원하는 위치의 지역 날씨를 불러와 날씨에
-            맞는 최적의 코디 가이드 라인을 제공하며, 커뮤니티와 갤러리를 통해
-            다양한 지역의 사람들이 올린 코디를 확인할 수 있고, 직접 올릴 수
-            있습니다
-            {/* I will be the leader of a company that ends up being worth billions
+            <p>
+              구글 지도를 이용해 사용자가 원하는 위치의 지역 날씨를 불러와
+              날씨에 맞는 최적의 코디 가이드 라인을 제공하며, 커뮤니티와
+              갤러리를 통해 다양한 지역의 사람들이 올린 코디를 확인할 수 있고,
+              직접 올릴 수 있습니다
+              {/* I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers... I will be the leader of a
             company that ends up being worth billions of dollars, because I got
             the answers. I understand culture. I am the nucleus. I think that’s
             a responsibility that I have, to push possibilities, to show people,
             this is the level that things could be at. */}
-          </p>
-        </div>
+            </p>
+          </div>
 
-        <div style={div1} className={classes.typo}>
-          <Info>
-            <div>코디 커뮤니티</div>
-          </Info>
-          {/* <div className={classes.note}>코디 커뮤니티</div> */}
-          <p>
-            {/* I will be the leader of a company that ends up being worth billions
+          <div style={div1} className={classes.typo}>
+            <Info>
+              <div>코디 커뮤니티</div>
+            </Info>
+            {/* <div className={classes.note}>코디 커뮤니티</div> */}
+            <p>
+              {/* I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers. I understand culture. I am
             the nucleus. I think that’s a responsibility that I have, to push
             possibilities, to show people, this is the level that things could
             be at. */}
-            사이트를 이용하는 사용자들이 올리는 코디 팁을 공유하고, 자유롭게
-            글을 올릴 수 있는 공간입니다.
-          </p>
-        </div>
+              사이트를 이용하는 사용자들이 올리는 코디 팁을 공유하고, 자유롭게
+              글을 올릴 수 있는 공간입니다.
+            </p>
+          </div>
 
-        <div style={div1} className={classes.typo}>
-          <Success>
-            <div>코디 갤러리</div>
-          </Success>
-          {/* <div className={classes.note}>코디 갤러리</div> */}
-          <p>
-            사이트를 이용하는 사용자들이 코디를 진행한 사진을 올리는 공간입니다
-          </p>
-        </div>
+          <div style={div1} className={classes.typo}>
+            <Success>
+              <div>코디 갤러리</div>
+            </Success>
+            {/* <div className={classes.note}>코디 갤러리</div> */}
+            <p>
+              사이트를 이용하는 사용자들이 코디를 진행한 사진을 올리는
+              공간입니다
+            </p>
+          </div>
 
-        <div style={div1} className={classes.typo}>
-          {/* <div className={classes.note}>마이 페이지</div> */}
-          <Warning>
-            <div>마이 페이지</div>
-          </Warning>
+          <div style={div1} className={classes.typo}>
+            {/* <div className={classes.note}>마이 페이지</div> */}
+            <Warning>
+              <div>마이 페이지</div>
+            </Warning>
 
-          <p>
-            사용자의 정보를 수정하는 공간입니다
-            {/* I will be the leader of a company that ends up being worth billions
+            <p>
+              사용자의 정보를 수정하는 공간입니다
+              {/* I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers. I understand culture. I am
             the nucleus. I think that’s a responsibility that I have, to push
             possibilities, to show people, this is the level that things could
             be at. */}
-          </p>
+            </p>
 
-          {/* <Muted>
+            {/* <Muted>
             I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers...
           </Muted> */}
-        </div>
-        {/* <div className={classes.typo}>
+          </div>
+          {/* <div className={classes.typo}>
           <div className={classes.note}>Primary Text</div>
           <Primary>
             I will be the leader of a company that ends up being worth billions
@@ -217,7 +220,7 @@ export default function TypographyPage() {
             of dollars, because I got the answers...
           </Danger>
         </div> */}
-        {/* <div className={classes.typo}>
+          {/* <div className={classes.typo}>
           <div className={classes.note}>Small Tag</div>
           <h2>
             Header with small subtitle
@@ -227,7 +230,8 @@ export default function TypographyPage() {
             </small>
           </h2>
         </div> */}
-      </CardBody>
-    </Card>
+        </CardBody>
+      </Card>
+    </>
   );
 }

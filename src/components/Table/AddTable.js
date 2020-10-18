@@ -11,6 +11,10 @@ import Grid from "@material-ui/core/Grid";
 import { Cookies } from "react-cookie";
 import axios from "axios";
 
+const inputProps = {
+  step: 300,
+};
+
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -51,7 +55,6 @@ const AddTable = (props) => {
     content: "",
   });
 
-
   // const id = useSelector((state) => state.posts.slice(-1)[0].id + 1);
 
   // const loginUser = getLoggedInUser().name;
@@ -67,7 +70,6 @@ const AddTable = (props) => {
 
   const [imgPath, setImgPath] = useState(null);
 
-
   const onChangeHandler = (e) => {
     setPost({
       ...post,
@@ -80,35 +82,48 @@ const AddTable = (props) => {
     // props.history.push("/admin/table");
 
     let cookies = new Cookies();
-      const userToken = cookies.get("usertoken");
+    const userToken = cookies.get("usertoken");
 
-      const formData = new FormData();
-      if(imgPath != null){
-        formData.append("img_path", imgPath[0]);
-      }
-      formData.append("title", post.title);
-      formData.append("content", post.content);
-      formData.append("category", post.category);
-
-      axios({
-        method: "post",
-        url: "http://localhost:8000/api/board/",
-        data: formData,
-        headers: { "Authorization": `Token	 ${userToken}`, "Content-Type": "multipart/form-data" },
-      })
-        .then(function (response) {
-          console.log(response);
-          props.history.push("/admin/table");
-        })
-        .catch(function (response) {
-          console.log(response);
-        });
-
+    const formData = new FormData();
+    if (imgPath != null) {
+      formData.append("img_path", imgPath[0]);
     }
+    formData.append("title", post.title);
+    formData.append("content", post.content);
+    formData.append("category", post.category);
 
-    const onChangeFile = (e) => {
-      setImgPath(e.target.files)
-    };
+    axios({
+      method: "post",
+      url: "http://localhost:8000/api/board/",
+      data: formData,
+      headers: {
+        Authorization: `Token	 ${userToken}`,
+        "Content-Type": "multipart/form-data",
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+        props.history.push("/admin/table");
+      })
+      .catch(function (response) {
+        console.log(response);
+      });
+  };
+
+  const onChangeFile = (e) => {
+    setImgPath(e.target.files);
+  };
+
+  const box1 = {
+    // height: "20px",
+    fontSize: "10px",
+  };
+
+  const box2 = {
+    // height: "20px",
+    fontSize: "5px",
+    // width: "150px",
+  };
 
   return (
     <form className={classes.root}>
@@ -127,6 +142,7 @@ const AddTable = (props) => {
           variant="outlined"
           value={post.title}
           onChange={(e) => onChangeHandler(e)}
+          style={box1}
         />
 
         <TextField
@@ -145,23 +161,22 @@ const AddTable = (props) => {
           fullWidth
           variant="outlined"
           onChange={(e) => onChangeFile(e)}
+          // style={styles}
         />
-      <div style={{ float: "right" }}>
-        <Button
-          style={{ margin: "3px" }}
-          className="write-btn"
-          variant="contained"
-          color="primary"
-          onClick={() => onClickHandler()}
-        >
-          등록
-        </Button>
+        <div style={{ float: "right" }}>
+          <Button
+            style={{ margin: "3px" }}
+            className="write-btn"
+            variant="contained"
+            color="primary"
+            onClick={() => onClickHandler()}
+          >
+            등록
+          </Button>
         </div>
-
       </div>
     </form>
   );
 };
-
 
 export default withRouter(AddTable);

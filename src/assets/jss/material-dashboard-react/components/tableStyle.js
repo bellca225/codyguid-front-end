@@ -49,6 +49,7 @@ const tableStyle = (theme) => ({
     ...defaultFont,
     "&, &$tableCell": {
       fontSize: "1em",
+      fontWeight: "600",
     },
   },
   tableCell: {

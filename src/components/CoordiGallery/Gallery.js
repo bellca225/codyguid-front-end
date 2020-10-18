@@ -102,6 +102,9 @@ function Gallery(props) {
       });
   };
 
+  useEffect(() => {
+    allGallery();
+  }, []);
 
   const addGallery = () => {
     props.history.push("/admin/addgallery");
@@ -122,46 +125,43 @@ function Gallery(props) {
         {galleryData.map((prop, key) => {
           return (
             // eslint-disable-next-line react/jsx-key
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={12} sm={6} md={3} key={`r${key}`}>
               <Card className={classes.root} key={key}>
                 <CardContent key={key}>
-                  <RouterLink to={`/admin/gallerydetail/${prop[0]}`}>
-                    {prop.map((index, key) => {
-                      return (
-                        // eslint-disable-next-line react/jsx-key
-                        <div>
-                          <Typography
-                            key={key}
-                            className={classes.title}
-                            color="textSecondary"
-                            gutterBottom
-                          >
-                            {index}
-                          </Typography>
-                          {/* <Typography variant="h5" component="h2">
+                  <RouterLink to={`/admin/gallerydetail/${prop.id}`}>
+                    <div>
+                      <Typography
+                        key={key}
+                        className={classes.title}
+                        color="textSecondary"
+                        gutterBottom
+                      >
+                        {prop.title}
+
+                        <img src={prop.image} className={classes.img} />
+                      </Typography>
+                      {/* <Typography variant="h5" component="h2">
                           {index}
                         </Typography> */}
-                          {/* <Typography
+                      {/* <Typography
                           className={classes.pos}
                           color="textSecondary"
                         >
                           {index}
                         </Typography> */}
-                          {/* <CardMedia
+                      {/* <CardMedia
                           // className={classes.media}
                           image="/picture.jpg"
                           title="Paella dish"
                         ></CardMedia> */}
-                          {/* <Typography
+                      {/* <Typography
                           className={classes.media}
                           variant="body2"
                           component="p"
                         >
                           <br />
                         </Typography> */}
-                        </div>
-                      );
-                    })}
+                    </div>
                   </RouterLink>
                 </CardContent>
                 <CardActions disableSpacing>

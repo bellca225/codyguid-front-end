@@ -64,6 +64,8 @@ export default function UserProfile() {
 
   return (
     <div>
+      <hr style={{ opacity: "0.2", width: "100%" }} />
+
       <GridContainer>
         <GridItem xs={12} sm={12} md={8}>
           <Card>
