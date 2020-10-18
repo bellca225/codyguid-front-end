@@ -13,6 +13,9 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 
+import Image2 from "../../miniIcon/0101.png";
+import Image from "../../miniIcon/0102.png";
+
 const styles = {
   typo: {
     paddingLeft: "25%",
@@ -111,6 +114,7 @@ export default function TypographyPage() {
             현재 위치로 이동하기 버튼 혹은 지도맵에 마커를 남겨 지역을 설정한 후 현재 날씨로 코디 설정을 누르면 자동으로 날씨에 맞는 코디와 추가로 챙겨야 할 팁을 안내해드립니다.
             "
           />
+          <img style={{ width: "700px" }} src={Image} alt="이미지"></img>
         </div>
 
         <div style={div1} className={classes.typo}>

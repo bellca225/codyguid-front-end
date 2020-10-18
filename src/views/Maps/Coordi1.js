@@ -255,8 +255,12 @@ const Coordi = ({ data }) => {
 
   const tip036 = {
     tip001: [
-      <span style={tip2}>아주 무더운 날씨 입니다. 물을 자주 마셔주세요</span>,
-      <span style={tip2}>더운 날씨로, 부채나 미니선풍기를 챙겨주세요</span>,
+      <span style={tip2}>
+        폭염 주의의 아주 무더운 날씨 입니다. 꼭 물을 자주 마셔주세요
+      </span>,
+      <span style={tip2}>
+        무덥고 햇볕이 강한 날씨로 꼭 썬크림을 발라주세요
+      </span>,
       <span style={tip2}>
         다만 실내에서 에어컨을 틀 경우, 냉방병 예방을 위해 얇은 겉옷을
         챙겨주세요.
@@ -561,7 +565,7 @@ const Coordi = ({ data }) => {
   const tip020 = {
     tip001: [
       <span style={tip2}>수분 보충을 충분히 진행해주세요</span>,
-      <span style={tip2}>낮에는 날이 더워지는 날입니다</span>,
+      <span style={tip2}>일교차가 커지는 날 입니다</span>,
     ],
     tip002: [
       <span style={tip2}>
@@ -639,7 +643,7 @@ const Coordi = ({ data }) => {
   const tip017 = {
     tip001: [
       <span style={tip2}>수분 보충을 충분히 진행해주세요</span>,
-      <span style={tip2}>낮에는 날이 더워지는 날입니다</span>,
+      <span style={tip2}>일교차가 커지는 날입니다</span>,
     ],
     tip002: [
       <span style={tip2}>

@@ -563,7 +563,7 @@ const Coordi = ({ data }) => {
   const tip020 = {
     tip001: [
       <span style={tip2}>수분 보충을 충분히 진행해주세요</span>,
-      <span style={tip2}>낮에는 날이 더워지는 날입니다</span>,
+      <span style={tip2}>일교차가 커지는 날입니다</span>,
     ],
     tip002: [
       <span style={tip2}>
@@ -641,7 +641,7 @@ const Coordi = ({ data }) => {
   const tip017 = {
     tip001: [
       <span style={tip2}>수분 보충을 충분히 진행해주세요</span>,
-      <span style={tip2}>낮에는 날이 더워지는 날입니다</span>,
+      <span style={tip2}>일교차가 커지는 날입니다</span>,
     ],
     tip002: [
       <span style={tip2}>
