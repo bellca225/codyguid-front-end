@@ -44,7 +44,7 @@ const initialState = {
   pending: false,
   error: false,
   data: {
-    temp: 7,
+    temp: 2,
     feels_like: 15,
     humidity: 72,
     uvi: 5.21,
