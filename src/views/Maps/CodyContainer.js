@@ -87,12 +87,17 @@ export default function Cody() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar
+        position="static"
+        color="default"
+        style={{ borderRadius: "10px 10px 0 0" }}
+      >
         <Tabs
           variant="fullWidth"
           value={value}
           onChange={handleChange}
           aria-label="nav tabs example"
+          style={{ borderRadius: "10px 10px 0 0" }}
         >
           <LinkTab label="WOMAN" href="/drafts" {...a11yProps(0)} />
           <LinkTab label="MAN" href="/trash" {...a11yProps(1)} />

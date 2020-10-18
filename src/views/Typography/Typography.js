@@ -95,13 +95,21 @@ export default function TypographyPage() {
           <p style={{ marginTop: "30px" }}>
             코디 가이드 사이트는 사용자가 원하는 장소의 날씨에 가장 알맞은
             코디를 안내해줍니다.
+            <br /> 구글 지도를 이용해 사용자가 원하는 위치의 지역 날씨를 불러와
+            날씨에 맞는 최적의 코디 가이드 라인을 제공하며, 커뮤니티와 갤러리를
+            통해 다양한 지역의 사람들이 올린 코디를 확인할 수 있고, 직접 올릴 수
+            있습니다
           </p>
         </div>
         <div style={div1} className={classes.typo}>
           <div className={classes.note}>사용 예시</div>
           <Quote
-            text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-            author=" Kanye West, Musician"
+            text="
+            
+            "
+            author=" 
+            현재 위치로 이동하기 버튼 혹은 지도맵에 마커를 남겨 지역을 설정한 후 현재 날씨로 코디 설정을 누르면 자동으로 날씨에 맞는 코디와 추가로 챙겨야 할 팁을 안내해드립니다.
+            "
           />
         </div>
 
@@ -111,12 +119,16 @@ export default function TypographyPage() {
           </Primary>
 
           <p>
-            I will be the leader of a company that ends up being worth billions
+            구글 지도를 이용해 사용자가 원하는 위치의 지역 날씨를 불러와 날씨에
+            맞는 최적의 코디 가이드 라인을 제공하며, 커뮤니티와 갤러리를 통해
+            다양한 지역의 사람들이 올린 코디를 확인할 수 있고, 직접 올릴 수
+            있습니다
+            {/* I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers... I will be the leader of a
             company that ends up being worth billions of dollars, because I got
             the answers. I understand culture. I am the nucleus. I think that’s
             a responsibility that I have, to push possibilities, to show people,
-            this is the level that things could be at.
+            this is the level that things could be at. */}
           </p>
         </div>
 
@@ -126,11 +138,13 @@ export default function TypographyPage() {
           </Info>
           {/* <div className={classes.note}>코디 커뮤니티</div> */}
           <p>
-            I will be the leader of a company that ends up being worth billions
+            {/* I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers. I understand culture. I am
             the nucleus. I think that’s a responsibility that I have, to push
             possibilities, to show people, this is the level that things could
-            be at.
+            be at. */}
+            사이트를 이용하는 사용자들이 올리는 코디 팁을 공유하고, 자유롭게
+            글을 올릴 수 있는 공간입니다.
           </p>
         </div>
 
@@ -140,11 +154,7 @@ export default function TypographyPage() {
           </Success>
           {/* <div className={classes.note}>코디 갤러리</div> */}
           <p>
-            I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers. I understand culture. I am
-            the nucleus. I think that’s a responsibility that I have, to push
-            possibilities, to show people, this is the level that things could
-            be at.
+            사이트를 이용하는 사용자들이 코디를 진행한 사진을 올리는 공간입니다
           </p>
         </div>
 
@@ -155,11 +165,12 @@ export default function TypographyPage() {
           </Warning>
 
           <p>
-            I will be the leader of a company that ends up being worth billions
+            사용자의 정보를 수정하는 공간입니다
+            {/* I will be the leader of a company that ends up being worth billions
             of dollars, because I got the answers. I understand culture. I am
             the nucleus. I think that’s a responsibility that I have, to push
             possibilities, to show people, this is the level that things could
-            be at.
+            be at. */}
           </p>
 
           {/* <Muted>
