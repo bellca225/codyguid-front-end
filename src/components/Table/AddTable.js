@@ -111,71 +111,57 @@ const AddTable = (props) => {
     };
 
   return (
-    <div style={{ display: "flex" }}>
-      <form className={classes.form}>
-        <div className={classes.root}>
+    <form className={classes.root}>
+      <div>
         <DropDown
           title="전체"
-          value={["전체","Q&A", "여행 TIP", "자유 게시판"]}
+          value={["Q&A", "여행 TIP", "자유 게시판"]}
           onChange={(value) => setPost({ ...post, category: value })}
         />
-          <div className={classes.root}>
-            <Grid container spacing={1}>
-              <Grid item xs={2} sm={1}>
-                <h4 style={titlefont}>제목</h4>
-              </Grid>
-              <Grid item xs={10} sm={11}>
-                <TextField
-                  name="title"
-                  label="제목을 작성해주세요"
-                  multiline
-                  fullWidth
-                  variant="outlined"
-                  value={post.title}
-                  onChange={(e) => onChangeHandler(e)}
 
-                />
-              </Grid>
-              <Grid item xs={2} sm={1}>
-                <h4 style={titlefont}>내용</h4>
-              </Grid>
-              <Grid item xs={10} sm={11}>
-                <TextField
-                  name="contents"
-                  label="내용을 입력해주세요"
-                  multiline
-                  fullWidth
-                  variant="outlined"
-                  rows={15}
-                  value={post.contents}
-                  onChange={(e) => onChangeHandler(e)}
+        <TextField
+          name="title"
+          label="제목"
+          multiline
+          fullWidth
+          variant="outlined"
+          value={post.title}
+          onChange={(e) => onChangeHandler(e)}
+        />
 
-                />
-              </Grid>
-            </Grid>
-            <TextField
-              type="file"
-              fullWidth
-              variant="outlined"
-              onChange={(e) => onChangeFile(e)}
-            />
-            <div style={{ float: "right" }}>
-              <Button
-                style={{ margin: "3px" }}
-                className="write-btn"
-                variant="contained"
-                color="primary"
-                onChange={() => onChangeHandler()}
+        <TextField
+          name="content"
+          label="내용"
+          multiline
+          fullWidth
+          variant="outlined"
+          rows={10}
+          onChange={(e) => onChangeHandler(e)}
+          value={post.contents}
+        />
 
-              >
-                등록
-              </Button>
-            </div>
-          </div>
+        <TextField
+          type="file"
+          fullWidth
+          variant="outlined"
+          onChange={(e) => onChangeFile(e)}
+        />
+      <div style={{ float: "right" }}>
+        <Button
+          style={{ margin: "3px" }}
+          className="write-btn"
+          variant="contained"
+          color="primary"
+          onClick={() => onClickHandler()}
+        >
+          등록
+        </Button>
         </div>
-      </form>
-    </div>
+
+      </div>
+    </form>
   );
 };
+
 
 export default withRouter(AddTable);
