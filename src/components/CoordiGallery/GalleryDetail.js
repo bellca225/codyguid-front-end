@@ -1,53 +1,103 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Paper from "@material-ui/core/Paper";
 import CardContent from "@material-ui/core/CardContent";
-import TextInfoContent from "@mui-treasury/components/content/textInfo";
-import { useN01TextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/n01";
+import Typography from "@material-ui/core/Typography";
 import { withRouter } from "react-router-dom";
-import { Column, Row } from "@mui-treasury/components/flex";
 import Button from "../../components/CustomButtons/Button.js";
+import axios from "axios";
+import { Cookies } from "react-cookie";
+import { makeStyles } from "@material-ui/core/styles";
 
 import { useSelector } from "react-redux";
 
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    marginBottom: 20,
+    fontSize: 14,
+  },
+
+  pos1: {
+    marginBottom: 10,
+    fontWeight: "bold",
+  },
+  pos2: {
+    marginTop: 10,
+    marginBottom: 5,
+    fontWeight: "bold",
+  },
+});
+
 const GalleryDetail = (props) => {
+  const classes = useStyles();
   let galleryId = props.match.params.id;
-  const gallery = useSelector(
-    (state) => state.galleries.filter((gallery) => gallery.id == galleryId)[0]
-  );
-  const text = gallery.contents.split("\n").map((i, key) => {
-    return <div key={key}>{i}</div>;
-  });
+  // const gallery = useSelector(
+  //   (state) => state.galleries.filter((gallery) => gallery.id == galleryId)[0]
+  // );
+  // const text = gallery.contents.split("\n").map((i, key) => {
+  //   return <div key={key}>{i}</div>;
+  // });
+
+  const [gallery, setGallery] = useState({});
+
+  useEffect(() => {
+    const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+    axios
+      .get(postApiUrl)
+      .then((response) => {
+        console.log("조회목록데이터:", response.data);
+        setGallery(response.data);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  }, []);
 
   return (
     <div>
       <Paper>
         <CardContent>
-          <TextInfoContent
-            useStyles={useN01TextInfoContentStyles}
-            overline={gallery.regiDate}
-            heading={`${gallery.title}`}
-            body={text}
-          />
+          <Typography className={classes.pos2} variant="h5" component="h2">
+            {gallery.title}
+          </Typography>
+          <Typography
+            className={classes.title}
+            color="textSecondary"
+            gutterBottom
+          >
+            {String(gallery.created).substring(0, 10) +
+              " | " +
+              gallery.username}
+          </Typography>
+          <Typography component="p">
+            {gallery.content}
+            <br />
+            <br />
+            <br />
+          </Typography>
+          <img src={gallery.img_path} className={gallery.img} />
         </CardContent>
-        <Column gap={2}>
-          <Row mt={2} alignItems={"center"}></Row>
-          <Row mt={2} alignItems={"center"}></Row>
-          <Row mt={2} alignItems={"center"}>
-            <Button variant="contained" color="primary">
-              수정
-            </Button>
-          </Row>
-          <Row mt={2} alignItems={"center"}>
-            <Button
-              className="write-btn"
-              variant="outlined"
-              color="white"
-              onClick={() => props.history.goBack()}
-            >
-              뒤로가기
-            </Button>
-          </Row>
-        </Column>
+
+        <div style={{ float: "right" }}>
+          <Button variant="contained" color="primary">
+            수정
+          </Button>
+          <Button
+            className="write-btn"
+            variant="outlined"
+            color="white"
+            onClick={() => props.history.goBack()}
+          >
+            뒤로가기
+          </Button>
+        </div>
       </Paper>
     </div>
   );

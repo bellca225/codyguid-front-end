@@ -265,7 +265,7 @@ function AdminNavbarLinks(props) {
                       </div>
                     ) : (
                       <div>
-                        <p align="center">{loginUserToken.username}님</p>
+                        {/* <p align="center">{loginUserToken.username}님</p>  */}
                         <MenuItem
                           // onClick={handleCloseProfile}
                           className={classes.dropdownItem}

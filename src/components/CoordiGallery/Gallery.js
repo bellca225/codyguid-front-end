@@ -88,7 +88,7 @@ function Gallery(props) {
   // }, [allGallery]);
 
   const allGallery = () => {
-    const apiUrl = "http://localhost:8000/api/photo/photo";
+    const apiUrl = "http://localhost:8000/api/gallery";
 
     axios
       .get(apiUrl)
@@ -117,10 +117,7 @@ function Gallery(props) {
   };
 
   return (
-
-
     <div>
-      
       <Grid container spacing={4} className={classes.gridContainer}>
         {galleryData.map((prop, key) => {
           return (
@@ -138,7 +135,7 @@ function Gallery(props) {
                       >
                         {prop.title}
 
-                        <img src={prop.image} className={classes.img} />
+                        <img src={prop.img_path} className={classes.img} />
                       </Typography>
                       {/* <Typography variant="h5" component="h2">
                           {index}
@@ -180,10 +177,6 @@ function Gallery(props) {
           );
         })}
       </Grid>
-
-
-
-
 
       <div style={{ float: "right" }}>
         <Button
