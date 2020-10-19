@@ -92,14 +92,14 @@ const EditPost = (props) => {
   const onDataSave = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const saveApiUrl = `http://localhost:8000/api/board/${postId}/`;
+    const saveApiUrl = `http://localhost:8000/api/board/${postId}/update/`;
 
     axios
       .patch(saveApiUrl, { headers: { Authorization: `Token ${userToken}` } })
       .then((response) => {
         alert("수정완료");
         console.log(response);
-        props.history.push("admin/table");
+        props.history.push("admin/addtable");
       })
       .catch((response) => {
         console.error(response);
@@ -134,7 +134,7 @@ const EditPost = (props) => {
           <div className="flex01">
             <div className="font-category">{post.category}</div>
             <div>
-              {String(post.created).substring(0, 10) + " | " + post.username}
+              {String(post.created).substring(0, 10) + "  |  " + post.username}
             </div>
           </div>
           <Divider />
