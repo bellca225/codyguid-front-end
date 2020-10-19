@@ -34,7 +34,9 @@ const styles = {
     fontWeight: "300",
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
     marginBottom: "3px",
+
     textDecoration: "none",
+
     "& small": {
       color: "#777",
       fontSize: "65%",

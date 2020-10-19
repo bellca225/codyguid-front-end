@@ -64,18 +64,11 @@ const GalleryDetail = (props) => {
     <div>
       <Paper>
         <CardContent>
-          <Typography className={classes.pos2} variant="h5" component="h2">
-            {gallery.title}
-          </Typography>
+          <Typography className={classes.pos2}>{gallery.title}</Typography>
           <Typography
             className={classes.title}
             color="textSecondary"
-            gutterBottom
-          >
-            {String(gallery.created).substring(0, 10) +
-              " | " +
-              gallery.username}
-          </Typography>
+          ></Typography>
 
           <Typography component="p">
             {gallery.content}

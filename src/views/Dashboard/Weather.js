@@ -58,7 +58,6 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
 
   const box = {
     width: "90%",
-
     padding: "5%",
   };
 

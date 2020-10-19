@@ -12,6 +12,25 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  props: {
+    // Name of the component ⚛️
+    Tabs: {
+      // The default props to change
+      // No more ripple, on the whole application 💣!
+      boxShadow: "none",
+    },
+    LinkTab: {
+      // The default props to change
+      // No more ripple, on the whole application 💣!
+      boxShadow: "none",
+    },
+  },
+});
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -87,38 +106,57 @@ export default function Cody() {
 
   return (
     <div className={classes.root}>
-      <AppBar
-        position="static"
-        color="default"
-        style={{ borderRadius: "10px 10px 0 0" }}
-      >
-        <Tabs
-          variant="fullWidth"
-          value={value}
-          onChange={handleChange}
-          aria-label="nav tabs example"
-          style={{ borderRadius: "10px 10px 0 0" }}
+      <ThemeProvider theme={theme}>
+        {/* <AppBar
+          position="static"
+          color="default"
+          style={{ borderRadius: "10px" }}
         >
-          <LinkTab label="WOMAN" href="/drafts" {...a11yProps(0)} />
-          <LinkTab label="MAN" href="/trash" {...a11yProps(1)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        <Coordi
-          data={data}
-          error={error}
-          loading={loading}
-          // getWeatherData={getCodyData}
-        />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <ManCoordi
-          data={data}
-          error={error}
-          loading={loading}
-          // getWeatherData={getCodyData}
-        />
-      </TabPanel>
+          <Tabs
+            variant="fullWidth"
+            value={value}
+            onChange={handleChange}
+            aria-label="nav tabs example"
+            style={{
+              borderRadius: "10px ",
+              backgroundColor: "#fff",
+            }}
+          >
+            <LinkTab
+              label="WOMAN"
+              href="/drafts"
+              {...a11yProps(0)}
+              style={{
+                borderRadius: "10px",
+              }}
+            />
+            <LinkTab
+              label="MAN"
+              href="/trash"
+              {...a11yProps(1)}
+              style={{
+                borderRadius: "10px",
+              }}
+            />
+          </Tabs>
+        </AppBar> */}
+        <TabPanel value={value} index={0}>
+          <Coordi
+            data={data}
+            error={error}
+            loading={loading}
+            // getWeatherData={getCodyData}
+          />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <ManCoordi
+            data={data}
+            error={error}
+            loading={loading}
+            // getWeatherData={getCodyData}
+          />
+        </TabPanel>
+      </ThemeProvider>
     </div>
   );
 }

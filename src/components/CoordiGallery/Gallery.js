@@ -197,7 +197,7 @@ function Gallery(props) {
             );
           })}
         </Grid>
-
+        <div className="height-01"></div>
         <div style={{ float: "right" }}>
           <Button
             variant="contained"
