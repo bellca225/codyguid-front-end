@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import Divider from "@material-ui/core/Divider";
 import axios from "axios";
 import { Cookies } from "react-cookie";
+import "../CoordiGallery/gallery.css";
 
 const useStyles = makeStyles({
   root: {
@@ -77,7 +78,7 @@ const EditPost = (props) => {
         console.error(response);
       });
 
-      comment();
+    comment();
   }, []);
 
   const commentInputChange = (e) => {
@@ -108,7 +109,6 @@ const EditPost = (props) => {
       });
   };
 
-
   return (
     <div>
       <Paper>
@@ -131,8 +131,9 @@ const EditPost = (props) => {
             <br />
             <br />
           </Typography>
-          <img src={post.img_path} className={classes.img} />
-
+          <div className="width-space-detail">
+            <img src={post.img_path} className={classes.img} />
+          </div>
         </CardContent>
 
         <div style={{ float: "right" }}>

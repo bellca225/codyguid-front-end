@@ -2012,7 +2012,7 @@ const Coordi = ({ data }) => {
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리2 </h4>
-            {dress10.shoesTYpe[index6]}
+            {dress10.shoesType[index6]}
           </div>
 
           <div style={frame2}>

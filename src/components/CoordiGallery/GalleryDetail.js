@@ -76,13 +76,16 @@ const GalleryDetail = (props) => {
               " | " +
               gallery.username}
           </Typography>
+
           <Typography component="p">
             {gallery.content}
             <br />
             <br />
             <br />
           </Typography>
-          <img src={gallery.img_path} className={gallery.img} />
+          <div className="width-space-detail">
+            <img src={gallery.img_path} className={gallery.img} />
+          </div>
         </CardContent>
 
         <div style={{ float: "right" }}>
