@@ -78,8 +78,12 @@ export default function TableList(props) {
         <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>코디 갤러리</h4>
-              <p className={classes.cardCategoryWhite}>cody gallery</p>
+              <h4 style={{ margin: "0" }} className={classes.cardTitleWhite}>
+                코디 갤러리
+              </h4>
+              <p style={{ margin: "0" }} className={classes.cardCategoryWhite}>
+                cody gallery
+              </p>
             </CardHeader>
             <CardBody>
               <GalleryDetail />

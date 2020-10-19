@@ -28,6 +28,19 @@ import PropTypes from "prop-types";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import { useSpring, animated } from "react-spring/web.cjs"; // web.cjs is required for IE 11 support
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  overrides: {
+    MuiIconButton: {
+      root: {
+        "&:hover": {
+          color: "#00acc1",
+        },
+      },
+    },
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
@@ -37,10 +50,12 @@ const useStyles = makeStyles((theme) => ({
   pos2: {
     marginTop: 10,
     marginBottom: 5,
-    fontWeight: "bold",
+    fontWeight: "500",
   },
   root: {
-    maxWidth: 365,
+    // maxWidth: 365,
+    // width: "50px",
+    // height: "50px",
     "& > *": {
       marginTop: theme.spacing(2),
     },
@@ -51,7 +66,8 @@ const useStyles = makeStyles((theme) => ({
     transform: "scale(0.8)",
   },
   title: {
-    fontSize: 14,
+    fontSize: 12,
+    color: "#9e38e4",
   },
   pos: {
     marginBottom: 12,
@@ -151,6 +167,8 @@ function Gallery(props) {
     props.history.push("/admin/addgallery");
   };
 
+  const addColor = { color: "#00acc1" };
+
   const handlePage = (event, value) => {
     const startNum = (value - 1) * 12;
     const endNum = value * 12;
@@ -159,84 +177,89 @@ function Gallery(props) {
 
   return (
     <div>
-      <Grid container spacing={4} className={classes.gridContainer}>
-        {galleryData.map((prop, key) => {
-          return (
-            // eslint-disable-next-line react/jsx-key
-            <Grid item xs={12} sm={6} md={3} key={`r${key}`}>
-              <Card className={classes.root} className="width-01" key={key}>
-                <CardContent key={key}>
-                  <RouterLink to={`/admin/gallerydetail/${prop.id}`}>
-                    <div>
-                      <Typography
-                        key={key}
-                        className={classes.title}
-                        color="textSecondary"
-                        gutterBottom
-                      >
-                        <h4 className={classes.pos2}>{prop.title}</h4>
-                        <div className="width-space">
-                          <img src={prop.img_path} className={classes.img} />
-                        </div>
-                      </Typography>
-                      {/* <Typography variant="h5" component="h2">
+      <MuiThemeProvider theme={theme}>
+        <Grid container spacing={4} className={classes.gridContainer}>
+          {galleryData.map((prop, key) => {
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <Grid item xs={12} sm={6} md={3} key={`r${key}`}>
+                <Card className={classes.root} className="width-01" key={key}>
+                  <CardContent key={key}>
+                    <RouterLink to={`/admin/gallerydetail/${prop.id}`}>
+                      <div>
+                        <Typography
+                          key={key}
+                          className={classes.title}
+                          color="textSecondary"
+                          gutterBottom
+                        >
+                          <h4 className={classes.pos2}>{prop.title}</h4>
+                          <div className="width-space">
+                            <img src={prop.img_path} className={classes.img} />
+                          </div>
+                        </Typography>
+                        {/* <Typography variant="h5" component="h2">
                           {index}
                         </Typography> */}
-                      {/* <Typography
+                        {/* <Typography
                           className={classes.pos}
                           color="textSecondary"
                         >
                           {index}
                         </Typography> */}
-                      {/* <CardMedia
+                        {/* <CardMedia
                           // className={classes.media}
                           image="/picture.jpg"
                           title="Paella dish"
                         ></CardMedia> */}
-                      {/* <Typography
+                        {/* <Typography
                           className={classes.media}
                           variant="body2"
                           component="p"
                         >
                           <br />
                         </Typography> */}
-                    </div>
-                  </RouterLink>
-                </CardContent>
-                <CardActions disableSpacing>
-                  <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                  </IconButton>
-                  <IconButton>
-                    <ThumbUpIcon />
-                  </IconButton>
-                  <IconButton aria-label="share">
-                    <ShareIcon />
-                  </IconButton>
-                </CardActions>
-              </Card>
-            </Grid>
-          );
-        })}
-      </Grid>
-      <div className="height-01"></div>
-      <div style={{ float: "right" }}>
-        <Button
-          variant="contained"
-          color="primary"
-          className="write-btn"
-          onClick={addGallery}
-        >
-          글쓰기
-        </Button>
-      </div>
-      <div className={classes.root}>
-        <Pagination
-          count={parseInt(allGallery.length / 13) + 1}
-          shape="rounded"
-          onChange={handlePage}
-        />
-      </div>
+                      </div>
+                    </RouterLink>
+                  </CardContent>
+                  <CardActions disableSpacing>
+                    <IconButton
+                      aria-label="add to favorites"
+                      onClick={addColor}
+                    >
+                      <FavoriteIcon />
+                    </IconButton>
+                    <IconButton>
+                      <ThumbUpIcon />
+                    </IconButton>
+                    <IconButton aria-label="share">
+                      <ShareIcon />
+                    </IconButton>
+                  </CardActions>
+                </Card>
+              </Grid>
+            );
+          })}
+        </Grid>
+        <div className="height-01"></div>
+        <div style={{ float: "right" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            className="write-btn"
+            onClick={addGallery}
+          >
+            글쓰기
+          </Button>
+        </div>
+        <div className={classes.root}>
+          <Pagination
+            count={parseInt(allGallery.length / 13) + 1}
+            shape="rounded"
+            onChange={handlePage}
+          />
+        </div>
+      </MuiThemeProvider>
     </div>
   );
 }

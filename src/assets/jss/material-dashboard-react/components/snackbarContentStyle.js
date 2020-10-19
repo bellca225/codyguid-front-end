@@ -18,6 +18,8 @@ import {
   hexToRgb
 } from "assets/jss/material-dashboard-react.js";
 
+
+
 const snackbarContentStyle = {
   root: {
     ...defaultFont,
@@ -91,6 +93,7 @@ const snackbarContentStyle = {
     height: "24px",
     padding: "0px"
   },
+
   icon: {
     display: "block",
     left: "15px",
@@ -100,6 +103,7 @@ const snackbarContentStyle = {
     width: "30px",
     height: "30px"
   },
+
   infoIcon: {
     color: infoColor[3]
   },
