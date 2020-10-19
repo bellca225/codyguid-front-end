@@ -115,6 +115,7 @@ function Register() {
       .post(apiUrl, member)
       .then((response) => {
         console.log("호출 결과 :", response.data);
+        alert("회원가입 완료");
         window.location = "/admin/login";
       })
       .catch((response) => {
