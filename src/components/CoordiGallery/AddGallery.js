@@ -91,51 +91,49 @@ const AddGallery = (props) => {
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      <form className={classes.root}>
-        <div>
-          <TextField
-            name="title"
-            label="제목"
-            multiline
-            fullWidth
-            variant="outlined"
-            value={gallery.title}
-            onChange={(e) => onChangeHandler(e)}
-          />
+    <form className={classes.root}>
+      <div>
+        <TextField
+          name="title"
+          label="제목"
+          multiline
+          fullWidth
+          variant="outlined"
+          value={gallery.title}
+          onChange={(e) => onChangeHandler(e)}
+        />
 
-          <TextField
-            name="content"
-            label="내용"
-            multiline
-            fullWidth
-            variant="outlined"
-            rows={10}
-            onChange={(e) => onChangeHandler(e)}
-            value={gallery.contents}
-          />
+        <TextField
+          name="content"
+          label="내용"
+          multiline
+          fullWidth
+          variant="outlined"
+          rows={10}
+          onChange={(e) => onChangeHandler(e)}
+          value={gallery.contents}
+        />
 
-          <TextField
-            type="file"
-            fullWidth
-            variant="outlined"
-            onChange={(e) => onChangeFile(e)}
-            // style={styles}
-          />
-          <div style={{ float: "right" }}>
-            <Button
-              style={{ margin: "3px" }}
-              className="write-btn"
-              variant="contained"
-              color="primary"
-              onClick={() => onClickHandler()}
-            >
-              등록
-            </Button>
-          </div>
+        <TextField
+          type="file"
+          fullWidth
+          variant="outlined"
+          onChange={(e) => onChangeFile(e)}
+          // style={styles}
+        />
+        <div style={{ float: "right" }}>
+          <Button
+            style={{ margin: "3px" }}
+            className="write-btn"
+            variant="contained"
+            color="primary"
+            onClick={() => onClickHandler()}
+          >
+            등록
+          </Button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 

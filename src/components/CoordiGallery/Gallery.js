@@ -24,33 +24,31 @@ import ListSubheader from "@material-ui/core/ListSubheader";
 import InfoIcon from "@material-ui/icons/Info";
 import axios from "axios";
 import { Cookies } from "react-cookie";
-
-import { ThemeProvider } from "@material-ui/styles";
-import { createMuiTheme } from "@material-ui/core/styles";
-import "./gallery.css";
-
-const theme = createMuiTheme({
-  props: {
-    // Name of the component ⚛️
-    MuiButtonBase: {
-      // The default props to change
-      disableRipple: true, // No more ripple, on the whole application 💣!
-    },
-  },
-});
+import PropTypes from "prop-types";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import { useSpring, animated } from "react-spring/web.cjs"; // web.cjs is required for IE 11 support
 
 const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
   gridContainer: {
-    // paddingLeft: "20px",
-    // paddingRight: "20px",
-    // width: "100%",
+    paddingLeft: "20px",
+    paddingRight: "20px",
   },
   root: {
     maxWidth: 365,
     "& > *": {
-      marginTop: theme.spacing(3),
-      height: "200px",
-      width: "500px",
+      marginTop: theme.spacing(2),
     },
   },
   bullet: {
@@ -59,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     transform: "scale(0.8)",
   },
   title: {
-    fontSize: 24,
+    fontSize: 14,
   },
   pos: {
     marginBottom: 12,
@@ -67,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: "56.25%",
-    width: "100%",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -81,11 +78,53 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const Fade = React.forwardRef(function Fade(props, ref) {
+  const { in: open, children, onEnter, onExited, ...other } = props;
+  const style = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: open ? 1 : 0 },
+    onStart: () => {
+      if (open && onEnter) {
+        onEnter();
+      }
+    },
+    onRest: () => {
+      if (!open && onExited) {
+        onExited();
+      }
+    },
+  });
+
+  return (
+    <animated.div ref={ref} style={style} {...other}>
+      {children}
+    </animated.div>
+  );
+});
+
+Fade.propTypes = {
+  children: PropTypes.element,
+  in: PropTypes.bool.isRequired,
+  onEnter: PropTypes.func,
+  onExited: PropTypes.func,
+};
+
 function Gallery(props) {
   const classes = useStyles();
 
   const [galleryData, setGalleryData] = useState([]);
   const [allData, setAllData] = useState([]);
+  const [open, setOpen] = React.useState(false);
+
+  let galleryId = props.match.params.id;
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   // const allGallery = useSelector((state) => state.galleries);
 
   // useEffect(() => {
@@ -133,6 +172,21 @@ function Gallery(props) {
     const endNum = value * 12;
     setGalleryData(allData.slice(startNum, endNum));
   };
+
+  const [gallery, setGallery] = useState({});
+
+  useEffect(() => {
+    const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+    axios
+      .get(postApiUrl)
+      .then((response) => {
+        console.log("조회목록데이터:", response.data);
+        setGallery(response.data);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  }, []);
 
   return (
     <div>
