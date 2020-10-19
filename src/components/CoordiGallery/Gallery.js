@@ -29,6 +29,8 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import { useSpring, animated } from "react-spring/web.cjs"; // web.cjs is required for IE 11 support
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import Divider from "@material-ui/core/Divider";
+
 
 const theme = createMuiTheme({
   overrides: {
@@ -74,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 0,
-    paddingTop: "56.25%",
+    paddingTop: "70%",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -90,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Fade = React.forwardRef(function Fade(props, ref) {
   const { in: open, children, onEnter, onExited, ...other } = props;
+
   const style = useSpring({
     from: { opacity: 0 },
     to: { opacity: open ? 1 : 0 },
@@ -175,6 +178,9 @@ function Gallery(props) {
     setGalleryData(allData.slice(startNum, endNum));
   };
 
+  
+
+
   return (
     <div>
       <MuiThemeProvider theme={theme}>
@@ -195,9 +201,16 @@ function Gallery(props) {
                         >
                           <h4 className={classes.pos2}>{prop.title}</h4>
                           <div className="width-space">
-                            <img src={prop.img_path} className={classes.img} />
+                            <Divider />
+                        <CardMedia
+                          className={classes.media}
+                          image={prop.img_path}
+                          title="Paella dish"
+                        ></CardMedia>
+                            {/* <img src={prop.img_path} className={classes.media} /> */}
                           </div>
                         </Typography>
+                        <Divider />
                         {/* <Typography variant="h5" component="h2">
                           {index}
                         </Typography> */}
