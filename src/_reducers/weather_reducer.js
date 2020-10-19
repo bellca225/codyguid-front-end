@@ -3,13 +3,16 @@ import {
   GET_WEATHER_PENDING,
   GET_WEATHER_SUCCESS,
   GET_WEATHER_FAILURE,
+  MAP_POSTION,
 } from "../actions/types";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-function getAPI() {
-  let Lat = "37.4652876"; //추후 변경 예정
-  let Lon = "126.900341";
+function getAPI(position) {
+  console.log("호출 API 위/경도주소??????:", position);
+
+  let Lat = position.lat; //"37.4652876"; //추후 변경 예정
+  let Lon = position.lng; //"126.900341";
 
   const api2 = {
     key: "d63c7d503cfb0a45ff09fe5274c4d2ea",
@@ -20,13 +23,19 @@ function getAPI() {
   );
 }
 
-export const getWeather = () => async (dispatch) => {
+//전력 현재 위경도정보 관리 액션함수
+export const setMapPosition = (position) => ({
+  type: MAP_POSTION,
+  position,
+});
+
+export const getWeather = (position) => async (dispatch) => {
   dispatch({
     type: GET_WEATHER_PENDING,
   });
 
   try {
-    const response = await getAPI();
+    const response = await getAPI(position);
     dispatch({
       type: GET_WEATHER_SUCCESS,
       payload: response.data,
@@ -54,6 +63,7 @@ const initialState = {
     timezone: "Asia/Seoul",
     icon: "01d",
   },
+  position: {}, //현재 선택된 위경도정보
 };
 
 export default handleActions(
@@ -61,7 +71,7 @@ export default handleActions(
     [GET_WEATHER_PENDING]: (state, action) => {
       return {
         ...state,
-        pendiong: true,
+        pending: true,
         error: false,
       };
     },
@@ -97,6 +107,14 @@ export default handleActions(
         ...state,
         pending: false,
         error: true,
+      };
+    },
+    [MAP_POSTION]: (state, action) => {
+      console.log("리덕스 맵위치 정보:", action.position);
+      return {
+        ...state,
+        position: action.position,
+        // 액션 함수에서 온 포지션을 전역에 엎어줌
       };
     },
   },

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./_reducers/latlon";
 import {
   GoogleMap,
@@ -24,8 +24,8 @@ import "@reach/combobox/styles.css";
 import "mycomponent.css";
 import { Card } from "@material-ui/core";
 import GridItem from "./components/Grid/GridItem.js";
-import { getWeather } from "./_reducers/weather_reducer";
-import { useDispatch } from "react-redux";
+import { getWeather, setMapPosition } from "./_reducers/weather_reducer";
+import { useSelector, useDispatch } from "react-redux";
 
 import spot from "./miniIcon/현재 위치로 설정.svg";
 import weather from "./miniIcon/현재 날씨로 설정.svg";
@@ -54,6 +54,9 @@ function Mycomonent() {
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
 
+  //전역 리덕스 디스패치 객체
+  const globalDispatch = useDispatch();
+
   const onMapClick = React.useCallback((e) => {
     setMarkers((current) => [
       ...current,
@@ -73,6 +76,21 @@ function Mycomonent() {
   const panTo = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(16);
+
+    //현재 선택 위경도 정보를 전역 리덕스 정보로 갱신한다.
+    globalDispatch(setMapPosition({ lat: lat, lng: lng }));
+
+    //현재 선택 위경도 마커표시
+    setMarkers((current) => [
+      ...current,
+      {
+        lat: lat,
+        lng: lng,
+        time: new Date(),
+      },
+    ]);
+
+    setMapPosition({ lat: lat, lng: lng });
   }, []);
 
   if (loadError) return "Error";
@@ -218,9 +236,19 @@ function Search({ panTo }) {
 }
 
 function Locate({ panTo }) {
+  //전역 리덕스 현재 위/경도 정보 조회
+  const curreuntPosition = useSelector(
+    (state) => state.weather.position,
+    (currentdata, predata) => {
+      console.log("위경도 정보 변경됨1==", currentdata);
+    }
+  );
+
   const dispatch = useDispatch();
+
   const getWeatherData = () => {
-    dispatch(getWeather());
+    console.log("test1-------------------", curreuntPosition);
+    dispatch(getWeather(curreuntPosition));
   };
 
   return (
@@ -264,6 +292,8 @@ function Locate({ panTo }) {
                   lat: pos.coords.latitude,
                   lng: pos.coords.longitude,
                 });
+
+                console.log("test2----------------------------------------");
               },
               () => null
             );

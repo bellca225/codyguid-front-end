@@ -13,3 +13,5 @@ export const LATLON_SERACH_FAILURE = "latlon_search_failure";
 export const LATLON_GEOCODING = "latlon_geocoding";
 export const LATLON_GEOCODING_SUCCESS = "latlon_geocoding_success";
 export const LATLON_GEOCODING_FAILURE = "latlon_geocoding_failure";
+
+export const MAP_POSTION = "MAP_POSTION";
