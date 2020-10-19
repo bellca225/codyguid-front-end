@@ -16,17 +16,12 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
-  props: {
-    // Name of the component ⚛️
-    Tabs: {
-      // The default props to change
-      // No more ripple, on the whole application 💣!
-      boxShadow: "none",
+  palette: {
+    primary: {
+      main: "#ff0000",
     },
-    LinkTab: {
-      // The default props to change
-      // No more ripple, on the whole application 💣!
-      boxShadow: "none",
+    secondary: {
+      main: "rgb(158, 56, 180)",
     },
   },
 });
@@ -107,10 +102,13 @@ export default function Cody() {
   return (
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
-        {/* <AppBar
+        <AppBar
           position="static"
           color="default"
-          style={{ borderRadius: "10px" }}
+          style={{
+            borderRadius: "10px 10px 0 0 ",
+            boxShadow: "none",
+          }}
         >
           <Tabs
             variant="fullWidth"
@@ -118,33 +116,22 @@ export default function Cody() {
             onChange={handleChange}
             aria-label="nav tabs example"
             style={{
-              borderRadius: "10px ",
+              borderRadius: "10px 10px 0 0 ",
               backgroundColor: "#fff",
             }}
+            indicatorColor="secondary"
           >
-            <LinkTab
-              label="WOMAN"
-              href="/drafts"
-              {...a11yProps(0)}
-              style={{
-                borderRadius: "10px",
-              }}
-            />
-            <LinkTab
-              label="MAN"
-              href="/trash"
-              {...a11yProps(1)}
-              style={{
-                borderRadius: "10px",
-              }}
-            />
+            <LinkTab label="WOMAN" href="/drafts" {...a11yProps(0)} />
+            <LinkTab label="MAN" href="/trash" {...a11yProps(1)} />
           </Tabs>
-        </AppBar> */}
+        </AppBar>
+
         <TabPanel value={value} index={0}>
           <Coordi
             data={data}
             error={error}
             loading={loading}
+
             // getWeatherData={getCodyData}
           />
         </TabPanel>
