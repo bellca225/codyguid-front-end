@@ -40,27 +40,29 @@ const useStyles = makeStyles(styles);
 export default function UserProfile() {
   const classes = useStyles();
 
-  // const [mypage, setMypage] = useState({});
+  const [mypage, setMypage] = useState({});
 
-  // const userApiCall = () => {
-  //   // 로그인 유저 정보 불러오기
-  //   let cookies = new Cookies();
-  //   const userToken = cookies.get("usertoken");
-  //   const apiUrl = `http://127.0.0.1:8000/api/myinfo/`;
-  //   axios
-  //     .get(apiUrl, { headers: { Authorization: `Token ${userToken}` } })
-  //     .then((response) => {
-  //       setMypage(response.data[0]);
-  //       console.log("로그인 유저", response.data);
-  //     })
-  //     .catch((response) => {
-  //       console.error(response);
-  //     });
-  // };
+  const userApiCall = () => {
+    let cookies = new Cookies();
+    const userToken = cookies.get("usertoken");
+    const apiUrl = `http://127.0.0.1:8000/api/mypage/`;
+    axios
+      .get(apiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        setMypage(response.data[0]);
+        console.log("로그인 유저", response.data);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  };
 
-  // useEffect(() => {
-  //   userApiCall();
-  // }, []);
+  let cookies = new Cookies();
+  const userToken = cookies.get("usertoken");
+
+  useEffect(() => {
+    userApiCall();
+  }, []);
 
   return (
     <div>
@@ -91,7 +93,7 @@ export default function UserProfile() {
                 </GridItem> */}
                 <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
-                    labelText="nickname"
+                    labelText={mypage.username}
                     id="username"
                     formControlProps={{
                       fullWidth: true,
@@ -100,7 +102,7 @@ export default function UserProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
-                    labelText="Email"
+                    labelText={mypage.email}
                     id="email-address"
                     formControlProps={{
                       fullWidth: true,
@@ -109,7 +111,7 @@ export default function UserProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
-                    labelText="password"
+                    labelText={mypage.password}
                     id="password"
                     formControlProps={{
                       fullWidth: true,

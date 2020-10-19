@@ -64,12 +64,18 @@ const GalleryDetail = (props) => {
     <div>
       <Paper>
         <CardContent>
-          <Typography className={classes.pos2}>{gallery.title}</Typography>
+          <Typography className={classes.pos2} variant="h5" component="h2">
+            {gallery.title}
+          </Typography>
           <Typography
             className={classes.title}
             color="textSecondary"
-          ></Typography>
-
+            gutterBottom
+          >
+            {String(gallery.created).substring(0, 10) +
+              " | " +
+              gallery.username}
+          </Typography>
           <Typography component="p">
             {gallery.content}
             <br />
@@ -77,7 +83,7 @@ const GalleryDetail = (props) => {
             <br />
           </Typography>
           <div className="width-space-detail">
-            <img src={gallery.img_path} className={gallery.img} />
+            <img src={gallery.img_path} className={classes.img} />
           </div>
         </CardContent>
 

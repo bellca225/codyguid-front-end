@@ -133,28 +133,38 @@ const AddTable = (props) => {
           value={["Q&A", "여행 TIP", "자유 게시판"]}
           onChange={(value) => setPost({ ...post, category: value })}
         />
-
-        <TextField
-          name="title"
-          label="제목"
-          multiline
-          fullWidth
-          variant="outlined"
-          value={post.title}
-          onChange={(e) => onChangeHandler(e)}
-          style={box1}
-        />
-
-        <TextField
-          name="content"
-          label="내용"
-          multiline
-          fullWidth
-          variant="outlined"
-          rows={10}
-          onChange={(e) => onChangeHandler(e)}
-          value={post.contents}
-        />
+        <Grid container spacing={1}>
+          <Grid item xs={2} sm={1}>
+            <h4 style={titlefont}>제목</h4>
+          </Grid>
+          <Grid item xs={10} sm={11}>
+            <TextField
+              name="title"
+              label="제목을 입력해주세요."
+              multiline
+              fullWidth
+              variant="outlined"
+              value={post.title}
+              onChange={(e) => onChangeHandler(e)}
+              style={box1}
+            />
+          </Grid>
+          <Grid item xs={2} sm={1}>
+            <h4 style={titlefont}>내용</h4>
+          </Grid>
+          <Grid item xs={10} sm={11}>
+            <TextField
+              name="content"
+              label="내용을 입력해주세요."
+              multiline
+              fullWidth
+              variant="outlined"
+              rows={10}
+              onChange={(e) => onChangeHandler(e)}
+              value={post.contents}
+            />
+          </Grid>
+        </Grid>
 
         <TextField
           type="file"

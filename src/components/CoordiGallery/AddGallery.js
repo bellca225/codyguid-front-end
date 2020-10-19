@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import Button from "../../components/CustomButtons/Button.js";
 import { getLoggedInUser } from "../../helpers/authUtils";
 import DropDown from "../../components/DropDown/DropDown";
+import Grid from "@material-ui/core/Grid";
 import { Cookies } from "react-cookie";
 import axios from "axios";
 
@@ -19,6 +20,11 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: "98%", // Fix IE 11 issue.
     // marginTop: theme.spacing(0),
+  },
+  container: {
+    display: "grid",
+    gridTemplateColumns: "repeat(12, 1fr)",
+    gridGap: theme.spacing(3),
   },
 }));
 
@@ -38,6 +44,11 @@ const AddGallery = (props) => {
     title: "",
     content: "",
   });
+
+  const titlefont = {
+    textAlign: "left",
+    paddingLeft: "20px",
+  };
 
   const [imgPath, setImgPath] = useState(null);
 
@@ -93,26 +104,37 @@ const AddGallery = (props) => {
   return (
     <form className={classes.root}>
       <div>
-        <TextField
-          name="title"
-          label="제목"
-          multiline
-          fullWidth
-          variant="outlined"
-          value={gallery.title}
-          onChange={(e) => onChangeHandler(e)}
-        />
-
-        <TextField
-          name="content"
-          label="내용"
-          multiline
-          fullWidth
-          variant="outlined"
-          rows={10}
-          onChange={(e) => onChangeHandler(e)}
-          value={gallery.contents}
-        />
+        <Grid container spacing={1}>
+          <Grid item xs={2} sm={1}>
+            <h4 style={titlefont}>제목</h4>
+          </Grid>
+          <Grid item xs={10} sm={11}>
+            <TextField
+              name="title"
+              label="제목을 입력해주세요."
+              multiline
+              fullWidth
+              variant="outlined"
+              value={gallery.title}
+              onChange={(e) => onChangeHandler(e)}
+            />
+          </Grid>
+          <Grid item xs={2} sm={1}>
+            <h4 style={titlefont}>내용</h4>
+          </Grid>
+          <Grid item xs={10} sm={11}>
+            <TextField
+              name="content"
+              label="내용을 입력해주세요."
+              multiline
+              fullWidth
+              variant="outlined"
+              rows={10}
+              onChange={(e) => onChangeHandler(e)}
+              value={gallery.contents}
+            />
+          </Grid>
+        </Grid>
 
         <TextField
           type="file"
