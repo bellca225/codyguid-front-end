@@ -24,8 +24,23 @@ import ListSubheader from "@material-ui/core/ListSubheader";
 import InfoIcon from "@material-ui/icons/Info";
 import axios from "axios";
 import { Cookies } from "react-cookie";
+import PropTypes from "prop-types";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import { useSpring, animated } from "react-spring/web.cjs"; // web.cjs is required for IE 11 support
 
 const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
   gridContainer: {
     paddingLeft: "20px",
     paddingRight: "20px",
@@ -63,11 +78,53 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const Fade = React.forwardRef(function Fade(props, ref) {
+  const { in: open, children, onEnter, onExited, ...other } = props;
+  const style = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: open ? 1 : 0 },
+    onStart: () => {
+      if (open && onEnter) {
+        onEnter();
+      }
+    },
+    onRest: () => {
+      if (!open && onExited) {
+        onExited();
+      }
+    },
+  });
+
+  return (
+    <animated.div ref={ref} style={style} {...other}>
+      {children}
+    </animated.div>
+  );
+});
+
+Fade.propTypes = {
+  children: PropTypes.element,
+  in: PropTypes.bool.isRequired,
+  onEnter: PropTypes.func,
+  onExited: PropTypes.func,
+};
+
 function Gallery(props) {
   const classes = useStyles();
 
   const [galleryData, setGalleryData] = useState([]);
   const [allData, setAllData] = useState([]);
+  const [open, setOpen] = React.useState(false);
+
+  let galleryId = props.match.params.id;
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   // const allGallery = useSelector((state) => state.galleries);
 
   // useEffect(() => {
@@ -116,6 +173,21 @@ function Gallery(props) {
     setGalleryData(allData.slice(startNum, endNum));
   };
 
+  const [gallery, setGallery] = useState({});
+
+  useEffect(() => {
+    const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+    axios
+      .get(postApiUrl)
+      .then((response) => {
+        console.log("조회목록데이터:", response.data);
+        setGallery(response.data);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  }, []);
+
   return (
     <div>
       <Grid container spacing={4} className={classes.gridContainer}>
@@ -125,7 +197,8 @@ function Gallery(props) {
             <Grid item xs={12} sm={6} md={3} key={`r${key}`}>
               <Card className={classes.root} key={key}>
                 <CardContent key={key}>
-                  <RouterLink to={`/admin/gallerydetail/${prop.id}`}>
+                  {/* <RouterLink onClick={handleOpen}> */}
+                  <RouterLink to={`${prop.id}`}>
                     <div>
                       <Typography
                         key={key}
@@ -134,30 +207,8 @@ function Gallery(props) {
                         gutterBottom
                       >
                         {prop.title}
-
                         <img src={prop.img_path} className={classes.img} />
                       </Typography>
-                      {/* <Typography variant="h5" component="h2">
-                          {index}
-                        </Typography> */}
-                      {/* <Typography
-                          className={classes.pos}
-                          color="textSecondary"
-                        >
-                          {index}
-                        </Typography> */}
-                      {/* <CardMedia
-                          // className={classes.media}
-                          image="/picture.jpg"
-                          title="Paella dish"
-                        ></CardMedia> */}
-                      {/* <Typography
-                          className={classes.media}
-                          variant="body2"
-                          component="p"
-                        >
-                          <br />
-                        </Typography> */}
                     </div>
                   </RouterLink>
                 </CardContent>
@@ -195,6 +246,26 @@ function Gallery(props) {
           onChange={handlePage}
         />
       </div>
+      <Modal
+        aria-labelledby="spring-modal-title"
+        aria-describedby="spring-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper}>
+            <h2 id="spring-modal-title">{gallery.title}</h2>
+            <img src={gallery.img_path} className={gallery.img} />
+            <p id="spring-modal-description">{gallery.content}</p>
+          </div>
+        </Fade>
+      </Modal>
     </div>
   );
 }
