@@ -35,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
 const titlefont = {
   textAlign: "left",
   paddingLeft: "20px",
+  fontSize: "14px",
+};
+
+const title01 = {
+  fontSize: "12px",
 };
 
 const AddTable = (props) => {
@@ -129,6 +134,7 @@ const AddTable = (props) => {
     <form className={classes.root}>
       <div>
         <DropDown
+          style={title01}
           title="전체"
           value={["Q&A", "여행 TIP", "자유 게시판"]}
           onChange={(value) => setPost({ ...post, category: value })}
@@ -143,7 +149,7 @@ const AddTable = (props) => {
               label="제목을 입력해주세요."
               multiline
               fullWidth
-              variant="outlined"
+              size="small"
               value={post.title}
               onChange={(e) => onChangeHandler(e)}
               style={box1}
@@ -164,18 +170,24 @@ const AddTable = (props) => {
               value={post.contents}
             />
           </Grid>
+
+          <Grid item xs={2} sm={1}>
+            <h4 style={titlefont}> 파일 </h4>
+          </Grid>
+          <Grid item xs={10} sm={11}>
+            <TextField
+              type="file"
+              fullWidth
+              variant="outlined"
+              onChange={(e) => onChangeFile(e)}
+              // style={styles}
+            />
+          </Grid>
         </Grid>
 
-        <TextField
-          type="file"
-          fullWidth
-          variant="outlined"
-          onChange={(e) => onChangeFile(e)}
-          // style={styles}
-        />
         <div style={{ float: "right" }}>
           <Button
-            style={{ margin: "3px" }}
+            style={{ margin: "15px 0 15px 0" }}
             className="write-btn"
             variant="contained"
             color="primary"

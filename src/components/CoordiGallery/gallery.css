@@ -7,7 +7,7 @@
 }
 
 .width-space-detail img {
-  width: 50%;
+  width: 100%;
 }
 .width-01 {
   width: 100%;
@@ -16,4 +16,34 @@
 
 .height-01 {
   height: 50px;
+}
+
+.font-content {
+  font-weight: 300;
+  color: #666;
+  font-size: 0.8em;
+}
+
+.font-title {
+  font-weight: 300;
+  color: #444;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.font-category {
+  font-weight: 700;
+  font-size: "0.5em";
+  color: #9c27b0;
+}
+
+.flex01 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.flex02 {
+  display: flex;
+  justify-content: center;
 }

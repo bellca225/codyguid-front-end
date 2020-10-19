@@ -113,30 +113,35 @@ const EditPost = (props) => {
     <div>
       <Paper>
         <CardContent>
-          <Typography className={classes.pos1}>{post.category}</Typography>
+          <div className="flex01">
+            <div className="font-category">{post.category}</div>
+            <div>
+              {String(post.created).substring(0, 10) + " | " + post.username}
+            </div>
+          </div>
           <Divider />
-          <Typography className={classes.pos2} variant="h5" component="h2">
+          <div className="font-title" variant="h5" component="h2">
             {post.title}
-          </Typography>
-          <Typography
+          </div>
+          <div
             className={classes.title}
             color="textSecondary"
             gutterBottom
-          >
-            {String(post.created).substring(0, 10) + " | " + post.username}
-          </Typography>
-          <Typography component="p">
+          ></div>
+          <Typography component="p" className="font-content">
             {post.content}
             <br />
             <br />
             <br />
           </Typography>
-          <div className="width-space-detail">
-            <img src={post.img_path} className={classes.img} />
+          <div className="flex02">
+            <div className="width-space-detail">
+              <img src={post.img_path} className={classes.img} />
+            </div>
           </div>
         </CardContent>
 
-        <div style={{ float: "right" }}>
+        <div style={{ float: "right", marginTop: "20px" }}>
           <Button variant="contained" color="primary">
             수정
           </Button>
@@ -145,6 +150,7 @@ const EditPost = (props) => {
             variant="outlined"
             color="white"
             onClick={() => props.history.goBack()}
+            style={{ marginLeft: "20px" }}
           >
             뒤로가기
           </Button>
