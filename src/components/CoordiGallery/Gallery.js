@@ -29,6 +29,20 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import { useSpring, animated } from "react-spring/web.cjs"; // web.cjs is required for IE 11 support
 
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
+import "./gallery.css";
+
+const theme = createMuiTheme({
+  props: {
+    // Name of the component ⚛️
+    MuiButtonBase: {
+      // The default props to change
+      disableRipple: true, // No more ripple, on the whole application 💣!
+    },
+  },
+});
+
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -42,13 +56,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
   gridContainer: {
-    paddingLeft: "20px",
-    paddingRight: "20px",
+    // paddingLeft: "20px",
+    // paddingRight: "20px",
+    // width: "100%",
   },
   root: {
     maxWidth: 365,
     "& > *": {
-      marginTop: theme.spacing(2),
+      marginTop: theme.spacing(3),
+      height: "200px",
+      width: "500px",
     },
   },
   bullet: {
@@ -57,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
     transform: "scale(0.8)",
   },
   title: {
-    fontSize: 14,
+    fontSize: 24,
   },
   pos: {
     marginBottom: 12,
@@ -65,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: "56.25%",
+    width: "100%",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -190,6 +208,7 @@ function Gallery(props) {
 
   return (
     <div>
+<<<<<<< HEAD
       <Grid container spacing={4} className={classes.gridContainer}>
         {galleryData.map((prop, key) => {
           return (
@@ -266,6 +285,88 @@ function Gallery(props) {
           </div>
         </Fade>
       </Modal>
+=======
+      <ThemeProvider theme={theme}>
+        <Grid container spacing={4} className={classes.gridContainer}>
+          {galleryData.map((prop, key) => {
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <Grid item xs={12} sm={6} md={3} key={`r${key}`}>
+                <Card className={classes.root} className="width-01" key={key}>
+                  <CardContent key={key}>
+                    <RouterLink to={`/admin/gallerydetail/${prop.id}`}>
+                      <div>
+                        <Typography
+                          key={key}
+                          className={classes.title}
+                          color="textSecondary"
+                          gutterBottom
+                        >
+                          {prop.title}
+                          <div className="width-space">
+                            <img src={prop.img_path} className={classes.img} />
+                          </div>
+                        </Typography>
+                        {/* <Typography variant="h5" component="h2">
+                          {index}
+                        </Typography> */}
+                        {/* <Typography
+                          className={classes.pos}
+                          color="textSecondary"
+                        >
+                          {index}
+                        </Typography> */}
+                        {/* <CardMedia
+                          // className={classes.media}
+                          image="/picture.jpg"
+                          title="Paella dish"
+                        ></CardMedia> */}
+                        {/* <Typography
+                          className={classes.media}
+                          variant="body2"
+                          component="p"
+                        >
+                          <br />
+                        </Typography> */}
+                      </div>
+                    </RouterLink>
+                  </CardContent>
+                  <CardActions disableSpacing>
+                    <IconButton aria-label="add to favorites">
+                      <FavoriteIcon />
+                    </IconButton>
+                    <IconButton>
+                      <ThumbUpIcon />
+                    </IconButton>
+                    <IconButton aria-label="share">
+                      <ShareIcon />
+                    </IconButton>
+                  </CardActions>
+                </Card>
+              </Grid>
+            );
+          })}
+        </Grid>
+
+        <div style={{ float: "right" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            className="write-btn"
+            onClick={addGallery}
+          >
+            글쓰기
+          </Button>
+        </div>
+        <div className={classes.root}>
+          <Pagination
+            count={parseInt(allGallery.length / 13) + 1}
+            shape="rounded"
+            onChange={handlePage}
+          />
+        </div>
+      </ThemeProvider>
+>>>>>>> 8e9c9ca2b53e6d8fd5da64b0d23492c31521ff82
     </div>
   );
 }

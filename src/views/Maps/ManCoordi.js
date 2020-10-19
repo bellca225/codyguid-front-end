@@ -129,15 +129,15 @@ const Coordi = ({ data }) => {
 
       <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
-      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+      // <img src={blouseshort} alt="블라우스" title="블라우스" />,
     ],
     pants: [
       // "반바지",
       // "치마",
       // 3
       <img src={pant2} alt="면바지" title=" 얇은 면바지" />,
-      <img src={skirtlong} alt="긴치마" title=" 얇은 긴치마" />,
-      <img src={skirtlong2} alt="긴치마" title=" 얇은 긴치마" />,
+      // <img src={skirtlong} alt="긴치마" title=" 얇은 긴치마" />,
+      // <img src={skirtlong2} alt="긴치마" title=" 얇은 긴치마" />,
     ],
     creamType: [
       // "미니선풍기",
@@ -214,15 +214,15 @@ const Coordi = ({ data }) => {
 
       <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
-      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+      // <img src={blouseshort} alt="블라우스" title="블라우스" />,
     ],
     pants: [
       // "반바지",
       // "치마",
       // 3
       <img src={pant2} alt="면바지" title=" 얇은 면바지" />,
-      <img src={skirtlong} alt="긴치마" title=" 얇은 긴치마" />,
-      <img src={skirtlong2} alt="긴치마" title=" 얇은 긴치마" />,
+      // <img src={skirtlong} alt="긴치마" title=" 얇은 긴치마" />,
+      // <img src={skirtlong2} alt="긴치마" title=" 얇은 긴치마" />,
     ],
     creamType: [
       // "미니선풍기",
@@ -296,7 +296,7 @@ const Coordi = ({ data }) => {
       // 3
       <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
-      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+      // <img src={blouseshort} alt="블라우스" title="블라우스" />,
     ],
     pants: [
       // "반바지",
@@ -366,7 +366,7 @@ const Coordi = ({ data }) => {
       // 3
       <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
-      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+      // <img src={blouseshort} alt="블라우스" title="블라우스" />,
     ],
     pants: [
       // "반바지",
@@ -432,11 +432,11 @@ const Coordi = ({ data }) => {
       // "민소매",
       // "반팔티",
       // 5
-      <img src={top} alt="나시탑" title="나시탑" />,
-      <img src={sleeveless} alt="나시티" title="나시티" />,
+      // <img src={top} alt="나시탑" title="나시탑" />,
+      // <img src={sleeveless} alt="나시티" title="나시티" />,
       <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
-      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+      // <img src={blouseshort} alt="블라우스" title="블라우스" />,
     ],
     pants: [
       // "반바지",
@@ -514,7 +514,7 @@ const Coordi = ({ data }) => {
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
       <img src={PolarTshirt1} alt="폴라티셔츠" title="폴라티셔츠" />,
       <img src={PolarTshirt2} alt="폴라티셔츠" title="폴라티셔츠" />,
-      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+      // <img src={blouseshort} alt="블라우스" title="블라우스" />,
       <img src={Tlong} alt="긴티" title="긴티" />,
     ],
     pants: [
@@ -588,7 +588,7 @@ const Coordi = ({ data }) => {
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
       <img src={PolarTshirt1} alt="폴라티셔츠" title="폴라티셔츠" />,
       <img src={PolarTshirt2} alt="폴라티셔츠" title="폴라티셔츠" />,
-      <img src={blouseshort} alt="블라우스" title="블라우스" />,
+      // <img src={blouseshort} alt="블라우스" title="블라우스" />,
       <img src={shirtlong} alt="상의 긴팔 셔츠" />,
     ],
 
@@ -598,8 +598,8 @@ const Coordi = ({ data }) => {
       // "스키니",
       // "청바지",
       // 5
-      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
-      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      // <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      // <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
       <img src={blueJeansWide} alt="청바지" title="청바지" />,
       <img src={pant} alt="면바지" title="면바지" />,
       <img src={pant2} alt="면바지2" title="면바지" />,
@@ -672,13 +672,13 @@ const Coordi = ({ data }) => {
 
       // 7개
 
-      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
-      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      // <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      // <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
       <img src={blueJeansWide} alt="청바지" title="청바지" />,
       <img src={pant} alt="면바지" title="면바지" />,
       <img src={pant2} alt="면바지2" title="면바지" />,
-      <img src={skirtlong} alt="긴치마" title="긴치마" />,
-      <img src={skirtlong2} alt="긴치마2" title="긴치마" />,
+      // <img src={skirtlong} alt="긴치마" title="긴치마" />,
+      // <img src={skirtlong2} alt="긴치마2" title="긴치마" />,
     ],
     creamType: [
       // 1개
@@ -743,13 +743,13 @@ const Coordi = ({ data }) => {
       // "청바지",
       // "슬랙스",
       // "면바지", 8개
-      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
-      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      // <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      // <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
       <img src={blueJeansWide} alt="청바지" title="청바지" />,
       <img src={pant} alt="면바지" title="면바지" />,
       <img src={pant2} alt="면바지2" title="면바지" />,
-      <img src={skirtlong} alt="긴치마" title="긴치마" />,
-      <img src={skirtlong2} alt="긴치마2" title="긴치마" />,
+      // <img src={skirtlong} alt="긴치마" title="긴치마" />,
+      // <img src={skirtlong2} alt="긴치마2" title="긴치마" />,
       <img src={baggyPants} alt="배기팬츠" title="배기팬츠" />,
     ],
     creamType: [
@@ -822,13 +822,13 @@ const Coordi = ({ data }) => {
       // "스키니",
       // "면바지",
       // 8
-      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
-      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      // <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      // <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
       <img src={blueJeansWide} alt="청바지" title="청바지" />,
       <img src={pant} alt="면바지" title="면바지" />,
       <img src={pant2} alt="면바지2" title="면바지" />,
-      <img src={skirtlong} alt="긴치마" title="긴치마" />,
-      <img src={skirtlong2} alt="긴치마2" title="긴치마" />,
+      // <img src={skirtlong} alt="긴치마" title="긴치마" />,
+      // <img src={skirtlong2} alt="긴치마2" title="긴치마" />,
       <img src={baggyPants} alt="배기팬츠" title="배기팬츠" />,
     ],
     creamType: [
@@ -892,13 +892,13 @@ const Coordi = ({ data }) => {
       // "스키니",
       // "면바지",
       // 8
-      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
-      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      // <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      // <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
       <img src={blueJeansWide} alt="청바지" title="청바지" />,
       <img src={pant} alt="면바지" title="면바지" />,
       <img src={pant2} alt="면바지2" title="면바지" />,
-      <img src={skirtlong} alt="긴치마" title="긴치마" />,
-      <img src={skirtlong2} alt="긴치마2" title="긴치마" />,
+      // <img src={skirtlong} alt="긴치마" title="긴치마" />,
+      // <img src={skirtlong2} alt="긴치마2" title="긴치마" />,
       <img src={baggyPants} alt="배기팬츠" title="배기팬츠" />,
     ],
     creamType: [
@@ -962,8 +962,8 @@ const Coordi = ({ data }) => {
       // "청바지",
       // "면바지",
       // 6
-      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
-      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      // <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      // <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
       <img src={blueJeansWide} alt="청바지" title="청바지" />,
       <img src={pant} alt="면바지" title="면바지" />,
       <img src={pant2} alt="면바지2" title="면바지" />,
@@ -1038,8 +1038,8 @@ const Coordi = ({ data }) => {
       // "청바지",
       // "면바지",
       // 6
-      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
-      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      // <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      // <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
       <img src={blueJeansWide} alt="청바지" title="청바지" />,
       <img src={pant} alt="면바지" title="면바지" />,
       <img src={pant2} alt="면바지2" title="면바지" />,
@@ -1114,8 +1114,8 @@ const Coordi = ({ data }) => {
       // "청바지",
       // "면바지",
       // 6
-      <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
-      <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
+      // <img src={blueJeans} alt="연청스키니진" title="연청스키니진" />,
+      // <img src={blueJeans2} alt="진청스키니진" title="진청스키니진" />,
       <img src={blueJeansWide} alt="청바지" title="청바지" />,
       <img src={pant} alt="면바지" title="면바지" />,
       <img src={pant2} alt="면바지2" title="면바지" />,
@@ -1483,12 +1483,12 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress42.top[index3]}
+              {dress42.top[index2]}
             </div>
 
             <div style={frame}>
               <h4 style={titlefont}>하의 </h4>
-              {dress42.pants[index3]}
+              {dress42.pants[index1]}
             </div>
 
             <div style={frame}>
@@ -1541,12 +1541,12 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress39.top[index3]}
+              {dress39.top[index2]}
             </div>
 
             <div style={frame}>
               <h4 style={titlefont}>하의 </h4>
-              {dress39.pants[index2]}
+              {dress39.pants[index1]}
             </div>
 
             <div style={frame}>
@@ -1599,7 +1599,7 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress35.top[index3]}
+              {dress35.top[index2]}
             </div>
 
             <div style={frame}>
@@ -1657,7 +1657,7 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress30.top[index3]}
+              {dress30.top[index2]}
             </div>
 
             <div style={frame}>
@@ -1717,7 +1717,7 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress27.top[index5]}
+              {dress27.top[index2]}
             </div>
 
             <div style={frame}>
@@ -1774,7 +1774,7 @@ const Coordi = ({ data }) => {
         >
           <div style={frame}>
             <h4 style={titlefont}>상의 </h4>
-            {dress23.top[index9]}
+            {dress23.top[index8]}
           </div>
 
           <div style={frame}>
@@ -1830,11 +1830,11 @@ const Coordi = ({ data }) => {
         >
           <div style={frame}>
             <h4 style={titlefont}>상의 : </h4>
-            {dress20.top[index9]}
+            {dress20.top[index8]}
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress20.pants[index5]}
+            {dress20.pants[index3]}
           </div>
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
@@ -1887,7 +1887,7 @@ const Coordi = ({ data }) => {
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress17.pants[index7]}
+            {dress17.pants[index3]}
           </div>
 
           <div style={frame}>
@@ -1942,7 +1942,7 @@ const Coordi = ({ data }) => {
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 </h4>
-            {dress12.pants[index8]}
+            {dress12.pants[index4]}
           </div>
           <div style={frame}>
             <h4 style={titlefont}>아우터 </h4>
@@ -1995,7 +1995,7 @@ const Coordi = ({ data }) => {
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress10.pants[index8]}
+            {dress10.pants[index4]}
           </div>
 
           <div style={frame}>
@@ -2010,7 +2010,7 @@ const Coordi = ({ data }) => {
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리2 </h4>
-            {dress10.shoesTYpe[index6]}
+            {dress10.shoesType[index6]}
           </div>
 
           <div style={frame2}>
@@ -2050,7 +2050,7 @@ const Coordi = ({ data }) => {
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress5.pants[index8]}
+            {dress5.pants[index4]}
           </div>
 
           <div style={frame}>
@@ -2158,7 +2158,7 @@ const Coordi = ({ data }) => {
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress05.pants[index6]}
+            {dress05.pants[index4]}
           </div>
 
           <div style={frame}>
@@ -2212,7 +2212,7 @@ const Coordi = ({ data }) => {
           </div>
           <div style={frame}>
             <h4 style={titlefont}>하의 : </h4>
-            {dress09.pants[index6]}
+            {dress09.pants[index4]}
           </div>
 
           <div style={frame}>

@@ -120,7 +120,6 @@ const blank = {
 };
 
 const Coordi = ({ data }) => {
- 
   const dress42 = {
     top: [
       // "나시티",
@@ -365,6 +364,8 @@ const Coordi = ({ data }) => {
       // "민소매",
       // "반팔티",
       // 3
+      <img src={top} alt="나시탑" title="나시탑" />,
+      <img src={sleeveless} alt="나시티" title="나시티" />,
       <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,
       <img src={blouseshort} alt="블라우스" title="블라우스" />,
@@ -1658,7 +1659,7 @@ const Coordi = ({ data }) => {
           >
             <div style={frame}>
               <h4 style={titlefont}>상의 </h4>
-              {dress30.top[index3]}
+              {dress30.top[index5]}
             </div>
 
             <div style={frame}>
@@ -2011,7 +2012,7 @@ const Coordi = ({ data }) => {
 
           <div style={frame2}>
             <h4 style={titlefont}>악세서리2 </h4>
-            {dress10.shoesTYpe[index6]}
+            {dress10.shoesType[index6]}
           </div>
 
           <div style={frame2}>
