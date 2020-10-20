@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./_reducers/latlon";
+
 import {
   GoogleMap,
   useLoadScript,
@@ -279,18 +279,13 @@ function Locate({ panTo }) {
               () => null
             );
           }}
-          
           src={spot}
           className="btn-hover"
           alt="현재 위치로 이동하기"
         />
 
         <div
-
-
           className="btn01"
-
-
           onClick={() => {
             navigator.geolocation.getCurrentPosition(
               (pos) => {
@@ -306,8 +301,6 @@ function Locate({ panTo }) {
               () => null
             );
           }}
-
-
         >
           현재 위치로 이동하기
         </div>
