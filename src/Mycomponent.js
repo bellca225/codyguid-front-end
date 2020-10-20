@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./_reducers/latlon";
+
 import {
   GoogleMap,
   useLoadScript,
@@ -51,12 +51,14 @@ function Mycomonent() {
     googleMapsApiKey: "AIzaSyC54MBKa78_EDw3PV0QHVU77Bo4VfOp1R4",
     libraries,
   });
+
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
 
   //전역 리덕스 디스패치 객체
   const globalDispatch = useDispatch();
 
+  // 클릭하면 현재 위치 가져오기
   const onMapClick = React.useCallback((e) => {
     setMarkers((current) => [
       ...current,
@@ -281,6 +283,7 @@ function Locate({ panTo }) {
           className="btn-hover"
           alt="현재 위치로 이동하기"
         />
+
         <div
           className="btn01"
           onClick={() => {

@@ -6,6 +6,21 @@
   margin-top: 15px;
 }
 
+.width-space-detail {
+  text-align: center;
+}
+
+.height15 {
+  height: 15px;
+}
+
+.gray {
+  background-color: #ddd;
+  height: 1px;
+  border: 0;
+  /* color: #ddd; */
+}
+
 .width-space-detail img {
   width: 70%;
 }

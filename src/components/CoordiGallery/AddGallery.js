@@ -10,6 +10,7 @@ import DropDown from "../../components/DropDown/DropDown";
 import Grid from "@material-ui/core/Grid";
 import { Cookies } from "react-cookie";
 import axios from "axios";
+import AddOutlinedIcon from "@material-ui/icons/AddOutlined";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,6 +49,11 @@ const AddGallery = (props) => {
   const titlefont = {
     textAlign: "left",
     paddingLeft: "20px",
+    fontSize: "14px",
+  };
+
+  const title01 = {
+    fontSize: "12px",
   };
 
   const [imgPath, setImgPath] = useState(null);
@@ -102,9 +108,16 @@ const AddGallery = (props) => {
     setImgPath(e.target.files);
   };
 
+  const box2 = {
+    // height: "20px",
+    // fontSize: "5px",
+    // width: "150px",
+    padding: "0 30px 0 0",
+  };
+
   return (
     <form className={classes.root}>
-      <div>
+      <div style={box2}>
         <Grid container spacing={1}>
           <Grid item xs={2} sm={1}>
             <h4 style={titlefont}>제목</h4>
@@ -113,14 +126,31 @@ const AddGallery = (props) => {
             <TextField
               name="title"
               label="제목을 입력해주세요."
+              size="small"
               multiline
               fullWidth
-              variant="outlined"
+              // variant="outlined"
               value={gallery.title}
               onChange={(e) => onChangeHandler(e)}
             />
           </Grid>
 
+          <Grid item xs={2} sm={1}>
+            <h4 style={titlefont}>내용</h4>
+          </Grid>
+          <Grid item xs={10} sm={11}>
+            <TextField
+              name="content"
+              label="내용을 입력해주세요."
+              size="small"
+              multiline
+              fullWidth
+              variant="outlined"
+              rows={5}
+              onChange={(e) => onChangeHandler(e)}
+              value={gallery.contents}
+            />
+          </Grid>
           <Grid item xs={2} sm={1}>
             <h4 style={titlefont}> 파일 </h4>
           </Grid>
@@ -130,29 +160,14 @@ const AddGallery = (props) => {
               fullWidth
               variant="outlined"
               onChange={(e) => onChangeFile(e)}
+              // onChange={<img src={img_path} />}
               // style={styles}
             />
           </Grid>
-          <Grid item xs={2} sm={1}>
-            <h4 style={titlefont}>내용</h4>
-          </Grid>
-          <Grid item xs={10} sm={11}>
-            <TextField
-              name="content"
-              label="내용을 입력해주세요."
-              multiline
-              fullWidth
-              variant="outlined"
-              rows={5}
-              onChange={(e) => onChangeHandler(e)}
-              value={gallery.contents}
-            />
-          </Grid>
         </Grid>
-
         <div style={{ float: "right" }}>
           <Button
-            style={{ margin: "3px" }}
+            style={{ margin: "15px 0 15px 0" }}
             className="write-btn"
             variant="contained"
             color="primary"

@@ -26,8 +26,10 @@ const useStyles = makeStyles({
   },
 
   pos1: {
+    marginTop: 20,
     marginBottom: 10,
     fontWeight: "bold",
+    fontSize: 30,
   },
   pos2: {
     marginTop: 10,
@@ -133,11 +135,11 @@ const EditPost = (props) => {
           <div className="flex01">
             <div className="font-category">{post.category}</div>
             <div>
-              {String(post.created).substring(0, 10) + "  |  " + post.username}
+              {String(post.created).substring(0, 10) + " | " + post.username}
             </div>
           </div>
           <Divider />
-          <div className="font-title" variant="h5" component="h2">
+          <div className={classes.pos1} variant="h5" component="h2">
             {post.title}
           </div>
           <div

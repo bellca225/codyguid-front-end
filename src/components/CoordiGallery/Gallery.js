@@ -235,8 +235,12 @@ function Gallery(props) {
                 {/* <ButtonBase onClick={handleOpen}> */}
                 <Card className={classes.root} className="width-01" key={key}>
                   <CardContent key={key}>
-                    <RouterLink
+                    {/* <RouterLink
                       to={`/admin/gallery/${prop.id}`}
+                      onClick={handleOpen}
+                    > */}
+                    <RouterLink
+                      to={`/admin/gallerydetail/${prop.id}`}
                       onClick={handleOpen}
                     >
                       <div>

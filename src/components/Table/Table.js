@@ -15,6 +15,7 @@ import { withRouter } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 import axios from "axios";
 import { Cookies } from "react-cookie";
+import AddAPhotoOutlinedIcon from "@material-ui/icons/AddAPhotoOutlined";
 
 // core components
 import styles from "assets/jss/material-dashboard-react/components/tableStyle.js";
@@ -156,7 +157,8 @@ function CustomTable(props) {
                 </TableCell>
                 <TableCell className={classes.tableCell} key={key}>
                   <RouterLink to={`/admin/edittable/${prop.id}`}>
-                    {prop.title}
+                    {prop.title}{" "}
+                    {prop.img_path ? <AddAPhotoOutlinedIcon /> : null}
                   </RouterLink>
                 </TableCell>
                 <TableCell className={classes.tableCell}>
