@@ -30,7 +30,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import { useSpring, animated } from "react-spring/web.cjs"; // web.cjs is required for IE 11 support
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Divider from "@material-ui/core/Divider";
-
+import ButtonBase from "@material-ui/core/ButtonBase";
 
 const theme = createMuiTheme({
   overrides: {
@@ -88,6 +88,17 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: "rotate(180deg)",
   },
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
 const Fade = React.forwardRef(function Fade(props, ref) {
@@ -127,6 +138,28 @@ function Gallery(props) {
 
   const [galleryData, setGalleryData] = useState([]);
   const [allData, setAllData] = useState([]);
+  const [gallery, setGallery] = useState({});
+  let galleryId = props.match.params.id;
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+    axios
+      .get(postApiUrl)
+      .then((response) => {
+        console.log("조회목록데이터:", response.data);
+        setGallery(response.data);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   // const allGallery = useSelector((state) => state.galleries);
 
@@ -162,8 +195,22 @@ function Gallery(props) {
       });
   };
 
+  const galleryCall = () => {
+    const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+    axios
+      .get(postApiUrl)
+      .then((response) => {
+        console.log("조회목록데이터:", response.data);
+        setGallery(response.data);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  };
+
   useEffect(() => {
     allGallery();
+    galleryCall();
   }, []);
 
   const addGallery = () => {
@@ -178,20 +225,20 @@ function Gallery(props) {
     setGalleryData(allData.slice(startNum, endNum));
   };
 
-  
-
-
   return (
     <div>
       <MuiThemeProvider theme={theme}>
         <Grid container spacing={4} className={classes.gridContainer}>
           {galleryData.map((prop, key) => {
             return (
-              // eslint-disable-next-line react/jsx-key
               <Grid item xs={12} sm={6} md={3} key={`r${key}`}>
+                {/* <ButtonBase onClick={handleOpen}> */}
                 <Card className={classes.root} className="width-01" key={key}>
                   <CardContent key={key}>
-                    <RouterLink to={`/admin/gallerydetail/${prop.id}`}>
+                    <RouterLink
+                      to={`/admin/gallery/${prop.id}`}
+                      onClick={handleOpen}
+                    >
                       <div>
                         <Typography
                           key={key}
@@ -202,11 +249,11 @@ function Gallery(props) {
                           <h4 className={classes.pos2}>{prop.title}</h4>
                           <div className="width-space">
                             <Divider />
-                        <CardMedia
-                          className={classes.media}
-                          image={prop.img_path}
-                          title="Paella dish"
-                        ></CardMedia>
+                            <CardMedia
+                              className={classes.media}
+                              image={prop.img_path}
+                              title="Paella dish"
+                            ></CardMedia>
                             {/* <img src={prop.img_path} className={classes.media} /> */}
                           </div>
                         </Typography>
@@ -250,10 +297,12 @@ function Gallery(props) {
                     </IconButton>
                   </CardActions>
                 </Card>
+                {/* </ButtonBase> */}
               </Grid>
             );
           })}
         </Grid>
+
         <div className="height-01"></div>
         <div style={{ float: "right" }}>
           <Button
@@ -273,6 +322,28 @@ function Gallery(props) {
           />
         </div>
       </MuiThemeProvider>
+
+      <Modal
+        aria-labelledby="spring-modal-title"
+        aria-describedby="spring-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper}>
+            <h2 id="spring-modal-title">{gallery.title}</h2>
+            <br />
+            <img src={gallery.img_path} className={classes.img} />
+            <p id="spring-modal-description">{gallery.content}</p>
+          </div>
+        </Fade>
+      </Modal>
     </div>
   );
 }

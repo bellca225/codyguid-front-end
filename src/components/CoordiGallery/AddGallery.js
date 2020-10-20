@@ -120,6 +120,19 @@ const AddGallery = (props) => {
               onChange={(e) => onChangeHandler(e)}
             />
           </Grid>
+
+          <Grid item xs={2} sm={1}>
+            <h4 style={titlefont}> 파일 </h4>
+          </Grid>
+          <Grid item xs={10} sm={11}>
+            <TextField
+              type="file"
+              fullWidth
+              variant="outlined"
+              onChange={(e) => onChangeFile(e)}
+              // style={styles}
+            />
+          </Grid>
           <Grid item xs={2} sm={1}>
             <h4 style={titlefont}>내용</h4>
           </Grid>
@@ -130,20 +143,13 @@ const AddGallery = (props) => {
               multiline
               fullWidth
               variant="outlined"
-              rows={10}
+              rows={5}
               onChange={(e) => onChangeHandler(e)}
               value={gallery.contents}
             />
           </Grid>
         </Grid>
 
-        <TextField
-          type="file"
-          fullWidth
-          variant="outlined"
-          onChange={(e) => onChangeFile(e)}
-          // style={styles}
-        />
         <div style={{ float: "right" }}>
           <Button
             style={{ margin: "3px" }}
