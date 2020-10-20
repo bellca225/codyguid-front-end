@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../assets/css/WeatherIcons/css/WeatherIcons.css";
 import "../../assets/css/WeatherIcons/css/WeatherIconsWind.css";
-import "./currentweather.css";
 import uvRays from "../../miniIcon/자외선.svg";
 import humidity from "../../miniIcon/습도.svg";
 import clouds from "../../miniIcon/구름양.svg";
