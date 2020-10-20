@@ -10,6 +10,46 @@ import Divider from "@material-ui/core/Divider";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 import "../CoordiGallery/gallery.css";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+// const theme = createMuiTheme({
+//   overrides: {
+//     palette: {
+//       primary: { main: "#9E38B4" },
+//       secondary: {
+//         // light: "#0066ff",
+//         main: "#0044ff",
+//         // dark: will be calculated from palette.secondary.main,
+//         // contrastText: "#ffcc00",
+//       },
+//       neutral: {
+//         main: "#5c6ac4",
+//       },
+//     },
+
+//     contrastText: "#fff",
+//     MuiIconButton: {
+//       root: {
+//         "&:hover": {
+//           color: "#00acc1",
+//         },
+//       },
+//     },
+//   },
+// });
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: "#11cb5f",
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: "#11cb5f",
+    },
+  },
+});
 
 const useStyles = makeStyles({
   root: {
@@ -129,75 +169,85 @@ const EditPost = (props) => {
   return (
     <div>
       <Paper>
-        <CardContent>
-          <div className="flex01">
-            <div className="font-category">{post.category}</div>
-            <div>
-              {String(post.created).substring(0, 10) + "  |  " + post.username}
+        <MuiThemeProvider theme={theme}>
+          <CardContent>
+            <div className="flex01">
+              <div className="font-category">{post.category}</div>
+              <div>
+                {String(post.created).substring(0, 10) +
+                  "  |  " +
+                  post.username}
+              </div>
             </div>
-          </div>
-          <Divider />
-          <div className="font-title" variant="h5" component="h2">
-            {post.title}
-          </div>
-          <div
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          ></div>
-          <Typography component="p" className="font-content">
-            {post.content}
-            <br />
-            <br />
-            <br />
-          </Typography>
-          <div className="flex02">
-            <div className="width-space-detail">
-              <img src={post.img_path} className={classes.img} />
+            <Divider />
+            <div className="font-title" variant="h5" component="h2">
+              {post.title}
             </div>
-          </div>
-        </CardContent>
+            <div
+              className={classes.title}
+              color="textSecondary"
+              gutterBottom
+            ></div>
+            <Typography component="p" className="font-content">
+              {post.content}
+              <br />
+              <br />
+              <br />
+            </Typography>
+            <div className="flex02">
+              <div className="width-space-detail">
+                <img src={post.img_path} className={classes.img} />
+              </div>
+            </div>
+          </CardContent>
 
-        <div style={{ float: "right", marginTop: "20px" }}>
-          {/* <Button variant="contained" color="primary">
+          <div style={{ float: "right", marginTop: "20px" }}>
+            {/* <Button variant="contained" color="primary">
             수정
           </Button>
           <Button variant="contained" color="primary" onClick={onDelete}>
             삭제
           </Button> */}
 
-          {post.username == mypage.username && (
-            <>
-              <Button
-                className={classes.btn}
-                variant="outlined"
-                color="primary"
-                onClick={onDataSave}
-                style={{ marginRight: "15px" }}
-              >
-                수정
-              </Button>
-              <Button
-                className={classes.btn}
-                variant="contained"
-                color="primary"
-                onClick={onDelete}
-                // onClick={openModal}
-              >
-                삭제
-              </Button>
-            </>
-          )}
-          <Button
-            className="write-btn"
-            variant="outlined"
-            color="white"
-            onClick={() => props.history.goBack()}
-            style={{ marginLeft: "15px" }}
-          >
-            목록
-          </Button>
-        </div>
+            {post.username == mypage.username && (
+              <>
+                <Button
+                  className={classes.btn}
+                  variant="outlined"
+                  color="white"
+                  onClick={onDataSave}
+                  disabled
+                  style={{
+                    // backgroundColor: "#21b6ae",
+                    marginRight: "15px",
+                  }}
+                >
+                  수정
+                </Button>
+                <Button
+                  className={classes.btn}
+                  variant="contained"
+                  color="secondary"
+                  onClick={onDelete}
+                  // onClick={openModal}
+                  style={{
+                    backgroundColor: "#772fdd",
+                  }}
+                >
+                  삭제
+                </Button>
+              </>
+            )}
+            <Button
+              className="write-btn"
+              variant="outlined"
+              onClick={() => props.history.goBack()}
+              style={{ marginLeft: "15px", backgroundColor: "#9E38B4" }}
+            >
+              목록
+            </Button>
+          </div>
+        </MuiThemeProvider>
       </Paper>
     </div>
   );

@@ -31,7 +31,6 @@ import { useSpring, animated } from "react-spring/web.cjs"; // web.cjs is requir
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Divider from "@material-ui/core/Divider";
 
-
 const theme = createMuiTheme({
   overrides: {
     MuiIconButton: {
@@ -178,9 +177,6 @@ function Gallery(props) {
     setGalleryData(allData.slice(startNum, endNum));
   };
 
-  
-
-
   return (
     <div>
       <MuiThemeProvider theme={theme}>
@@ -202,11 +198,11 @@ function Gallery(props) {
                           <h4 className={classes.pos2}>{prop.title}</h4>
                           <div className="width-space">
                             <Divider />
-                        <CardMedia
-                          className={classes.media}
-                          image={prop.img_path}
-                          title="Paella dish"
-                        ></CardMedia>
+                            <CardMedia
+                              className={classes.media}
+                              image={prop.img_path}
+                              title="Paella dish"
+                            ></CardMedia>
                             {/* <img src={prop.img_path} className={classes.media} /> */}
                           </div>
                         </Typography>

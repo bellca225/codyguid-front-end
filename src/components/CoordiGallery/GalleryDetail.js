@@ -170,9 +170,10 @@ const GalleryDetail = (props) => {
               <Button
                 className={classes.btn}
                 variant="outlined"
-                color="primary"
+                disabled
                 onClick={onDataSave}
                 style={{ marginRight: "15px" }}
+                color="white"
               >
                 수정
               </Button>
@@ -181,6 +182,9 @@ const GalleryDetail = (props) => {
                 variant="contained"
                 color="primary"
                 onClick={onDelete}
+                style={{
+                  backgroundColor: "#772fdd",
+                }}
                 // onClick={openModal}
               >
                 삭제
@@ -190,9 +194,8 @@ const GalleryDetail = (props) => {
           <Button
             className="write-btn"
             variant="outlined"
-            color="white"
             onClick={() => props.history.goBack()}
-            style={{ marginLeft: "20px" }}
+            style={{ marginLeft: "20px", backgroundColor: "#9E38B4" }}
           >
             목록
           </Button>
