@@ -69,9 +69,11 @@ export default function UserProfile(props) {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
     const deleteApiUrl = `http://localhost:8000/api/mypage/${id}/`;
-    
+
     axios
-      .delete(deleteApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .delete(deleteApiUrl, {
+        headers: { Authorization: `Token ${userToken}` },
+      })
       .then((response) => {
         console.log(response);
         alert("삭제완료");
@@ -81,7 +83,7 @@ export default function UserProfile(props) {
         console.error(response);
         alert("삭제실패");
       });
-    }
+  };
 
   return (
     <div>
@@ -141,8 +143,10 @@ export default function UserProfile(props) {
             </CardBody>
             <CardFooter>
               <Button color="primary">수정 저장하기</Button>
-                <div style={{ float: "right", marginTop: "20px" }}>
-              <Button color="primary" onClick={onDelete}>회원탈퇴</Button>
+              <div style={{ float: "right", marginTop: "20px" }}>
+                <Button color="primary" onClick={onDelete}>
+                  회원탈퇴
+                </Button>
               </div>
             </CardFooter>
           </Card>
