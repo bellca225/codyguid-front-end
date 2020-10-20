@@ -116,7 +116,9 @@ export default function TypographyPage() {
             현재 위치로 이동하기 버튼 혹은 지도맵에 마커를 남겨 지역을 설정한 후 현재 날씨로 코디 설정을 누르면 자동으로 날씨에 맞는 코디와 추가로 챙겨야 할 팁을 안내해드립니다.
             "
             />
-            <img style={{ width: "700px" }} src={Image} alt="이미지"></img>
+            <div style={{ width: "100%" }}>
+              <img style={{ width: "100%" }} src={Image} alt="이미지"></img>
+            </div>
           </div>
 
           <div style={div1} className={classes.typo}>

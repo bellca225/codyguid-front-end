@@ -7,6 +7,7 @@ import Button from "../../components/CustomButtons/Button.js";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 import { makeStyles } from "@material-ui/core/styles";
+import "./gallery.css";
 
 import { useSelector } from "react-redux";
 
@@ -46,7 +47,7 @@ const GalleryDetail = (props) => {
   // });
 
   const [gallery, setGallery] = useState({});
-  const [mypage, setMypage] = useState({})
+  const [mypage, setMypage] = useState({});
 
   const galleryCall = () => {
     const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
@@ -59,7 +60,7 @@ const GalleryDetail = (props) => {
       .catch((response) => {
         console.error(response);
       });
-  }
+  };
 
   const myInfoCall = () => {
     // 로그인 유저 정보 불러오기
@@ -77,7 +78,7 @@ const GalleryDetail = (props) => {
       });
   };
 
-  useEffect(() => {    
+  useEffect(() => {
     galleryCall();
     myInfoCall();
   }, []);
@@ -100,15 +101,15 @@ const GalleryDetail = (props) => {
       });
   };
 
-  
-
   const onDelete = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
     const deleteApiUrl = `http://localhost:8000/api/gallery/${galleryId}/`;
-    
+
     axios
-      .delete(deleteApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .delete(deleteApiUrl, {
+        headers: { Authorization: `Token ${userToken}` },
+      })
       .then((response) => {
         console.log(response);
         alert("삭제완료");
@@ -117,32 +118,36 @@ const GalleryDetail = (props) => {
       .catch((response) => {
         console.error(response);
         alert("삭제실패");
-      })
-    }
+      });
+  };
 
   return (
     <div>
       <Paper>
         <CardContent>
-          <Typography className={classes.pos2} variant="h5" component="h2">
-            {gallery.title}
-          </Typography>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
+          <div className="flex01">
+            <div className="font-category">{gallery.title}</div>
+
+            <Typography
+              className={classes.title}
+              color="textSecondary"
+              gutterBottom
+            ></Typography>
+
             {String(gallery.created).substring(0, 10) +
               "  |  " +
               gallery.username}
-          </Typography>
-          <Typography component="p">
+          </div>
+          {/* <Typography component="p">
             {gallery.content}
             <br />
             <br />
             <br />
-          </Typography>
-          <div className="width-space-detail">
+          </Typography> */}
+
+          <hr className="gray"></hr>
+          <div className="width-space-detail ">
+            <div className="height15"></div>
             <img src={gallery.img_path} className={classes.img} />
           </div>
         </CardContent>
@@ -159,29 +164,30 @@ const GalleryDetail = (props) => {
           >
             뒤로가기
           </Button> */}
-          {gallery.username == mypage.username && 
-              (
-              <>
-                <Button
-                  className={classes.btn}
-                  variant="outlined"
-                  color="primary"
-                  onClick={onDataSave}
-                >
-                  수정
-                </Button>
-                <Button
-                  className={classes.btn}
-                  variant="contained"
-                  color="primary"
-                  onClick={onDelete}
-                  // onClick={openModal}
-                >
-                  삭제
-                </Button>
+          {gallery.username == mypage.username && (
+            <>
+              <div className="height15"></div>
+              <Button
+                className={classes.btn}
+                variant="outlined"
+                color="primary"
+                onClick={onDataSave}
+                style={{ marginRight: "15px" }}
+              >
+                수정
+              </Button>
+              <Button
+                className={classes.btn}
+                variant="contained"
+                color="primary"
+                onClick={onDelete}
+                // onClick={openModal}
+              >
+                삭제
+              </Button>
             </>
-            )}
-            <Button
+          )}
+          <Button
             className="write-btn"
             variant="outlined"
             color="white"

@@ -127,13 +127,14 @@ const AddTable = (props) => {
 
   const box2 = {
     // height: "20px",
-    fontSize: "5px",
+    // fontSize: "5px",
     // width: "150px",
+    padding: "0 30px 0 0",
   };
 
   return (
     <form className={classes.root}>
-      <div>
+      <div style={box2}>
         <DropDown
           style={title01}
           title="전체"
@@ -172,6 +173,8 @@ const AddTable = (props) => {
             />
           </Grid>
 
+
+
           <Grid item xs={2} sm={1}>
             <h4 style={titlefont}> 파일 </h4>
           </Grid>
@@ -184,6 +187,8 @@ const AddTable = (props) => {
               // style={styles}
             />
           </Grid>
+
+          
         </Grid>
 
         <div style={{ float: "right" }}>

@@ -48,8 +48,7 @@ const EditPost = (props) => {
     post: postId,
     content: "",
   });
-  const [mypage, setMypage] = useState({})
-
+  const [mypage, setMypage] = useState({});
 
   // const text = post.contents.split("\n").map((i, key) => {
   //   return <div key={key}>{i}</div>;
@@ -66,7 +65,7 @@ const EditPost = (props) => {
       .catch((response) => {
         console.error(response);
       });
-  }
+  };
 
   const myInfoCall = () => {
     // 로그인 유저 정보 불러오기
@@ -84,7 +83,7 @@ const EditPost = (props) => {
       });
   };
 
-  useEffect(() => {    
+  useEffect(() => {
     postCall();
     myInfoCall();
   }, []);
@@ -107,15 +106,15 @@ const EditPost = (props) => {
       });
   };
 
-  
-
   const onDelete = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
     const deleteApiUrl = `http://localhost:8000/api/board/${postId}/`;
-    
+
     axios
-      .delete(deleteApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .delete(deleteApiUrl, {
+        headers: { Authorization: `Token ${userToken}` },
+      })
       .then((response) => {
         console.log(response);
         alert("삭제완료");
@@ -125,7 +124,7 @@ const EditPost = (props) => {
         console.error(response);
         alert("삭제실패");
       });
-    }
+  };
 
   return (
     <div>
@@ -166,35 +165,35 @@ const EditPost = (props) => {
           <Button variant="contained" color="primary" onClick={onDelete}>
             삭제
           </Button> */}
-          
-          {post.username == mypage.username && 
-              (
-              <>
-                <Button
-                  className={classes.btn}
-                  variant="outlined"
-                  color="primary"
-                  onClick={onDataSave}
-                >
-                  수정
-                </Button>
-                <Button
-                  className={classes.btn}
-                  variant="contained"
-                  color="primary"
-                  onClick={onDelete}
-                  // onClick={openModal}
-                >
-                  삭제
-                </Button>
+
+          {post.username == mypage.username && (
+            <>
+              <Button
+                className={classes.btn}
+                variant="outlined"
+                color="primary"
+                onClick={onDataSave}
+                style={{ marginRight: "15px" }}
+              >
+                수정
+              </Button>
+              <Button
+                className={classes.btn}
+                variant="contained"
+                color="primary"
+                onClick={onDelete}
+                // onClick={openModal}
+              >
+                삭제
+              </Button>
             </>
-            )}
-            <Button
+          )}
+          <Button
             className="write-btn"
             variant="outlined"
             color="white"
             onClick={() => props.history.goBack()}
-            style={{ marginLeft: "20px" }}
+            style={{ marginLeft: "15px" }}
           >
             목록
           </Button>
