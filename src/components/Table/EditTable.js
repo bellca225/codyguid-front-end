@@ -48,25 +48,14 @@ const EditPost = (props) => {
     post: postId,
     content: "",
   });
+  const [mypage, setMypage] = useState({})
+
 
   // const text = post.contents.split("\n").map((i, key) => {
   //   return <div key={key}>{i}</div>;
   // });
 
-  const comment = () => {
-    const commentApiUrl = `http://localhost:8000/api/board/${postId}/comment`;
-    axios
-      .get(commentApiUrl)
-      .then((response) => {
-        console.log("댓글:", response.data);
-        setComments(response.data);
-      })
-      .catch((response) => {
-        console.error(response);
-      });
-  };
-
-  useEffect(() => {
+  const postCall = () => {
     const postApiUrl = `http://localhost:8000/api/board/${postId}`;
     axios
       .get(postApiUrl)
@@ -77,37 +66,66 @@ const EditPost = (props) => {
       .catch((response) => {
         console.error(response);
       });
+  }
 
-    comment();
-  }, []);
-
-  const commentInputChange = (e) => {
-    setNewComment({ ...newComment, content: e.target.value });
-  };
-
-  const commentSubmit = () => {
+  const myInfoCall = () => {
+    // 로그인 유저 정보 불러오기
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-
-    console.log("저장된 쿠키토큰값:", userToken);
-
-    axios({
-      method: "post",
-      url: `http://localhost:8000/api/board/${postId}/comment/`,
-      data: newComment,
-      headers: {
-        Authorization: `Token 	${userToken}`,
-      },
-    })
-      .then(function (response) {
-        console.log(response);
-        setNewComment({ ...newComment, content: "" });
-        comment();
+    const myInfoApiUrl = `http://127.0.0.1:8000/api/mypage/`;
+    axios
+      .get(myInfoApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        setMypage(response.data[0]);
+        // console.log("로그인 유저", response.data[0]);
       })
-      .catch(function (response) {
+      .catch((response) => {
         console.error(response);
       });
   };
+
+  useEffect(() => {    
+    postCall();
+    myInfoCall();
+  }, []);
+
+  const onDataSave = () => {
+    let cookies = new Cookies();
+    const userToken = cookies.get("usertoken");
+    const saveApiUrl = `http://localhost:8000/api/board/${postId}/update/`;
+
+    axios
+      .patch(saveApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        alert("수정완료");
+        console.log(response);
+        props.history.push("admin/addtable");
+      })
+      .catch((response) => {
+        console.error(response);
+        alert("수정실패");
+      });
+  };
+
+  
+
+  const onDelete = () => {
+    let cookies = new Cookies();
+    const userToken = cookies.get("usertoken");
+    const deleteApiUrl = `http://localhost:8000/api/board/${postId}/`;
+    
+    axios
+      .delete(deleteApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        console.log(response);
+        alert("삭제완료");
+        props.history.push("/admin/table");
+      })
+      .catch((response) => {
+        console.error(response);
+        alert("삭제실패");
+      });
+    }
 
   return (
     <div>
@@ -116,7 +134,7 @@ const EditPost = (props) => {
           <div className="flex01">
             <div className="font-category">{post.category}</div>
             <div>
-              {String(post.created).substring(0, 10) + " | " + post.username}
+              {String(post.created).substring(0, 10) + "  |  " + post.username}
             </div>
           </div>
           <Divider />
@@ -142,17 +160,43 @@ const EditPost = (props) => {
         </CardContent>
 
         <div style={{ float: "right", marginTop: "20px" }}>
-          <Button variant="contained" color="primary">
+          {/* <Button variant="contained" color="primary">
             수정
           </Button>
-          <Button
+          <Button variant="contained" color="primary" onClick={onDelete}>
+            삭제
+          </Button> */}
+          
+          {post.username == mypage.username && 
+              (
+              <>
+                <Button
+                  className={classes.btn}
+                  variant="outlined"
+                  color="primary"
+                  onClick={onDataSave}
+                >
+                  수정
+                </Button>
+                <Button
+                  className={classes.btn}
+                  variant="contained"
+                  color="primary"
+                  onClick={onDelete}
+                  // onClick={openModal}
+                >
+                  삭제
+                </Button>
+            </>
+            )}
+            <Button
             className="write-btn"
             variant="outlined"
             color="white"
             onClick={() => props.history.goBack()}
             style={{ marginLeft: "20px" }}
           >
-            뒤로가기
+            목록
           </Button>
         </div>
       </Paper>

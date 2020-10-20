@@ -90,6 +90,7 @@ const AddGallery = (props) => {
     })
       .then(function (response) {
         console.log(response);
+        alert("등록완료");
         props.history.push("/admin/gallery");
       })
       .catch(function (response) {

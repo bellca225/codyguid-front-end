@@ -155,7 +155,7 @@ function Gallery(props) {
       .then((response) => {
         console.log("조회목록데이터:", response.data);
         setAllData(response.data);
-        setGalleryData(response.data.slice(0, 10));
+        setGalleryData(response.data.slice(0, 12));
       })
       .catch((response) => {
         console.error(response);
@@ -267,7 +267,7 @@ function Gallery(props) {
         </div>
         <div className={classes.root}>
           <Pagination
-            count={parseInt(allGallery.length / 13) + 1}
+            count={Math.ceil(allData.length / 13)}
             shape="rounded"
             onChange={handlePage}
           />

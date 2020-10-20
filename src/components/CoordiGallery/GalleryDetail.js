@@ -46,8 +46,9 @@ const GalleryDetail = (props) => {
   // });
 
   const [gallery, setGallery] = useState({});
+  const [mypage, setMypage] = useState({})
 
-  useEffect(() => {
+  const galleryCall = () => {
     const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
     axios
       .get(postApiUrl)
@@ -58,7 +59,66 @@ const GalleryDetail = (props) => {
       .catch((response) => {
         console.error(response);
       });
+  }
+
+  const myInfoCall = () => {
+    // 로그인 유저 정보 불러오기
+    let cookies = new Cookies();
+    const userToken = cookies.get("usertoken");
+    const myInfoApiUrl = `http://127.0.0.1:8000/api/mypage/`;
+    axios
+      .get(myInfoApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        setMypage(response.data[0]);
+        // console.log("로그인 유저", response.data[0]);
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  };
+
+  useEffect(() => {    
+    galleryCall();
+    myInfoCall();
   }, []);
+
+  const onDataSave = () => {
+    let cookies = new Cookies();
+    const userToken = cookies.get("usertoken");
+    const saveApiUrl = `http://localhost:8000/api/gallery/${galleryId}/update/`;
+
+    axios
+      .patch(saveApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        alert("수정완료");
+        console.log(response);
+        props.history.push("admin/addtable");
+      })
+      .catch((response) => {
+        console.error(response);
+        alert("수정실패");
+      });
+  };
+
+  
+
+  const onDelete = () => {
+    let cookies = new Cookies();
+    const userToken = cookies.get("usertoken");
+    const deleteApiUrl = `http://localhost:8000/api/gallery/${galleryId}/`;
+    
+    axios
+      .delete(deleteApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .then((response) => {
+        console.log(response);
+        alert("삭제완료");
+        props.history.push("/admin/table");
+      })
+      .catch((response) => {
+        console.error(response);
+        alert("삭제실패");
+      })
+    }
 
   return (
     <div>
@@ -73,7 +133,7 @@ const GalleryDetail = (props) => {
             gutterBottom
           >
             {String(gallery.created).substring(0, 10) +
-              " | " +
+              "  |  " +
               gallery.username}
           </Typography>
           <Typography component="p">
@@ -88,7 +148,7 @@ const GalleryDetail = (props) => {
         </CardContent>
 
         <div style={{ float: "right" }}>
-          <Button variant="contained" color="primary">
+          {/* <Button variant="contained" color="primary">
             수정
           </Button>
           <Button
@@ -98,6 +158,37 @@ const GalleryDetail = (props) => {
             onClick={() => props.history.goBack()}
           >
             뒤로가기
+          </Button> */}
+          {gallery.username == mypage.username && 
+              (
+              <>
+                <Button
+                  className={classes.btn}
+                  variant="outlined"
+                  color="primary"
+                  onClick={onDataSave}
+                >
+                  수정
+                </Button>
+                <Button
+                  className={classes.btn}
+                  variant="contained"
+                  color="primary"
+                  onClick={onDelete}
+                  // onClick={openModal}
+                >
+                  삭제
+                </Button>
+            </>
+            )}
+            <Button
+            className="write-btn"
+            variant="outlined"
+            color="white"
+            onClick={() => props.history.goBack()}
+            style={{ marginLeft: "20px" }}
+          >
+            목록
           </Button>
         </div>
       </Paper>

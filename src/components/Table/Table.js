@@ -196,7 +196,7 @@ function CustomTable(props) {
       </div>
       <div className={classes.root}>
         <Pagination
-          count={parseInt(allTable.length / 11) + 1}
+          count={Math.ceil(allData.length / 10)}
           shape="rounded"
           onChange={handlePage}
         />
