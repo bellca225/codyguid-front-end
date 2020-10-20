@@ -90,6 +90,7 @@ function Login() {
       })
       .catch((response) => {
         console.error(response);
+        alert("로그인 실패");
       });
   };
 

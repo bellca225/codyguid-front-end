@@ -6,10 +6,6 @@
   margin-top: 15px;
 }
 
-.width-space-detail {
-  text-align: center;
-}
-
 .height15 {
   height: 15px;
 }
@@ -19,6 +15,18 @@
   height: 1px;
   border: 0;
   /* color: #ddd; */
+}
+.width-space-detail {
+  width: 70%;
+  text-align: center;
+}
+
+.width-space-detail-gallery {
+  width: 100%;
+}
+
+.width-space-detail-gallery img {
+  width: 100%;
 }
 
 .width-space-detail img {
@@ -39,6 +47,13 @@
   font-size: 0.8em;
 }
 
+.font-content2 {
+  margin-top: 20px;
+  font-weight: 300;
+  color: #666;
+  font-size: 1em;
+}
+
 .font-title {
   font-weight: 300;
   color: #444;
@@ -49,6 +64,12 @@
 .font-category {
   font-weight: 500;
   font-size: "0.5em";
+  color: #9c27b0;
+}
+
+.font-category1 {
+  font-weight: 600;
+  font-size: 18px;
   color: #9c27b0;
 }
 

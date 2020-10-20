@@ -191,13 +191,6 @@ const EditPost = (props) => {
               color="textSecondary"
               gutterBottom
             ></div>
-
-            <div className="flex02">
-              <div className="width-space-detail">
-                <img src={post.img_path} className={classes.img} />
-              </div>
-            </div>
-
             <Typography component="p" className="font-content">
               <br />
 
@@ -205,6 +198,10 @@ const EditPost = (props) => {
               <br />
               <br />
             </Typography>
+
+            <div className="width-space-detail">
+              <img src={post.img_path} className={classes.img} />
+            </div>
           </CardContent>
 
           <div style={{ float: "right", marginTop: "20px" }}>

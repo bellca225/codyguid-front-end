@@ -126,7 +126,7 @@ const GalleryDetail = (props) => {
       <Paper>
         <CardContent>
           <div className="flex01">
-            <div className="font-category">{gallery.title}</div>
+            <div className="font-category1">{gallery.title}</div>
 
             <Typography
               className={classes.title}
@@ -146,10 +146,13 @@ const GalleryDetail = (props) => {
           </Typography> */}
 
           <hr className="gray"></hr>
-          <div className="width-space-detail ">
-            <div className="height15"></div>
+
+          <div className="height15"></div>
+          <div className="flex02 width-space-detail-gallery">
             <img src={gallery.img_path} className={classes.img} />
           </div>
+
+          <div className="font-content2">{gallery.content}</div>
         </CardContent>
 
         <div style={{ float: "right" }}>
