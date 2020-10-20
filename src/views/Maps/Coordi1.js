@@ -1424,7 +1424,7 @@ const Coordi = ({ data }) => {
   const index10 = Math.floor(Math.random() * 9);
 
   const weather = data.temp;
-  console.log(data.temp);
+  // console.log(data.temp);
 
   const back = {
     width: "90%",
