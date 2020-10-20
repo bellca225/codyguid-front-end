@@ -170,10 +170,10 @@ const GalleryDetail = (props) => {
               <Button
                 className={classes.btn}
                 variant="outlined"
-                disabled
                 onClick={onDataSave}
                 style={{ marginRight: "15px" }}
                 color="white"
+                disabled
               >
                 수정
               </Button>

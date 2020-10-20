@@ -173,8 +173,6 @@ const AddTable = (props) => {
             />
           </Grid>
 
-
-
           <Grid item xs={2} sm={1}>
             <h4 style={titlefont}> 파일 </h4>
           </Grid>
@@ -187,8 +185,6 @@ const AddTable = (props) => {
               // style={styles}
             />
           </Grid>
-
-          
         </Grid>
 
         <div style={{ float: "right" }}>

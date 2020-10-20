@@ -37,12 +37,14 @@ const theme = createMuiTheme({
     MuiIconButton: {
       root: {
         "&:hover": {
-          color: "#00acc1",
+          color: "#ff4477",
         },
       },
     },
   },
 });
+
+// 클래스 2개 원래 색, 바뀐 색, 클래스 이름을 아이콘에 3항 연산자로 ....
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
@@ -98,6 +100,12 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+  },
+  heartgray: {
+    color: "gray",
+  },
+  heartred: {
+    color: "red",
   },
 }));
 
@@ -217,7 +225,13 @@ function Gallery(props) {
     props.history.push("/admin/addgallery");
   };
 
-  const addColor = { color: "#00acc1" };
+  const heart = "classes.heartgray";
+
+  const addColor = () => {
+    heart == "classes.heartgray"
+      ? (heart = "classes.heartred")
+      : (heart = "classes.heartgray");
+  };
 
   const handlePage = (event, value) => {
     const startNum = (value - 1) * 12;
@@ -290,6 +304,8 @@ function Gallery(props) {
                     <IconButton
                       aria-label="add to favorites"
                       onClick={addColor}
+                      style={{ color: "#ddd" }}
+                      className={heart}
                     >
                       <FavoriteIcon />
                     </IconButton>

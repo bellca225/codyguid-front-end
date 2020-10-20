@@ -49,15 +49,16 @@ const tableStyle = (theme) => ({
     ...defaultFont,
     "&, &$tableCell": {
       fontSize: "1em",
-      fontWeight: "600",
+      fontWeight: "500",
+      color: "#999",
     },
-  },
-  tableCell: {
-    ...defaultFont,
-    lineHeight: "1.42857143",
-    padding: "12px 8px",
-    verticalAlign: "middle",
-    fontSize: "0.8125rem",
+    tableCell: {
+      ...defaultFont,
+      lineHeight: "1.42857143",
+      padding: "12px 8px",
+      verticalAlign: "middle",
+      fontSize: "0.8125rem",
+    },
   },
   tableResponsive: {
     width: "100%",
@@ -77,6 +78,9 @@ const tableStyle = (theme) => ({
     display: "table-row",
     outline: "none",
     verticalAlign: "middle",
+    "&:hover": {
+      fontWeight: "800",
+    },
   },
 });
 

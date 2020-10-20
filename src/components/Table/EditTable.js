@@ -72,8 +72,9 @@ const useStyles = makeStyles({
   pos2: {
     marginTop: 15,
     marginBottom: 10,
-    fontWeight: "bold",
-    fontSize: 25,
+    fontWeight: "400",
+    fontSize: 20,
+    color: "#666",
   },
 });
 
@@ -183,32 +184,49 @@ const EditPost = (props) => {
             <Divider />
             <div className={classes.pos2} variant="h5" component="h2">
               {post.title}
+              <br />
             </div>
             <div
               className={classes.title}
               color="textSecondary"
               gutterBottom
             ></div>
-            <Typography component="p" className="font-content">
-              {post.content}
-              <br />
-              <br />
-              <br />
-            </Typography>
+
             <div className="flex02">
               <div className="width-space-detail">
                 <img src={post.img_path} className={classes.img} />
               </div>
             </div>
+
+            <Typography component="p" className="font-content">
+              <br />
+
+              {post.content}
+              <br />
+              <br />
+            </Typography>
           </CardContent>
 
           <div style={{ float: "right", marginTop: "20px" }}>
-            {/* <Button variant="contained" color="primary">
-            수정
-          </Button>
-          <Button variant="contained" color="primary" onClick={onDelete}>
-            삭제
-          </Button> */}
+            {/* <Button
+              variant="contained"
+              color="primary"
+              style={{ marginRight: "15px" }}
+              color="white"
+              disabled
+            >
+              수정
+            </Button> */}
+            {/* <Button
+              variant="contained"
+              color="primary"
+              onClick={onDelete}
+              style={{
+                backgroundColor: "#772fdd",
+              }}
+            >
+              삭제
+            </Button> */}
 
             {post.username == mypage.username && (
               <>
@@ -219,7 +237,6 @@ const EditPost = (props) => {
                   onClick={onDataSave}
                   disabled
                   style={{
-                    // backgroundColor: "#21b6ae",
                     marginRight: "15px",
                   }}
                 >

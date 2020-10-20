@@ -120,10 +120,10 @@ function CustomTable(props) {
           <col style={{ width: "10%" }} />
           <col style={{ width: "15%" }} />
           <col style={{ width: "30%" }} />
-          <col style={{ width: "20%" }} />
+          <col style={{ width: "17%" }} />
           <col style={{ width: "12%" }} />
           <col style={{ width: "8%" }} />
-          <col style={{ width: "5%" }} />
+          <col style={{ width: "8%" }} />
         </colgroup>
         {tableHead !== undefined ? (
           <TableHead className={classes[tableHeaderColor + "TableHeader"]}>
@@ -158,7 +158,16 @@ function CustomTable(props) {
                 <TableCell className={classes.tableCell} key={key}>
                   <RouterLink to={`/admin/edittable/${prop.id}`}>
                     {prop.title}{" "}
-                    {prop.img_path ? <AddAPhotoOutlinedIcon /> : null}
+                    {prop.img_path ? (
+                      <AddAPhotoOutlinedIcon
+                        style={{
+                          width: "17px",
+                          color: "#ddd",
+                          // marginTop: "15px",
+                          // paddingTop: "5px",
+                        }}
+                      />
+                    ) : null}
                   </RouterLink>
                 </TableCell>
                 <TableCell className={classes.tableCell}>
