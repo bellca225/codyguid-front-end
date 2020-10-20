@@ -144,8 +144,8 @@ export default function UserProfile(props) {
             <CardFooter>
               <Button color="primary">수정 저장하기</Button>
               <div style={{ float: "right", marginTop: "20px" }}>
-                <Button color="primary" onClick={onDelete}>
-                  회원탈퇴
+                <Button color="white" onClick={onDelete}>
+                  회원 탈퇴
                 </Button>
               </div>
             </CardFooter>

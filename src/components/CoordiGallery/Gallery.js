@@ -303,8 +303,8 @@ function Gallery(props) {
                   <CardActions disableSpacing>
                     <IconButton
                       aria-label="add to favorites"
-                      onClick={addColor}
-                      style={{ color: "#ddd" }}
+                      // onClick={addColor}
+                      // style={{ color: "#ddd" }}
                       className={heart}
                     >
                       <FavoriteIcon />

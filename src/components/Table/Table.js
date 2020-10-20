@@ -162,7 +162,7 @@ function CustomTable(props) {
                       <AddAPhotoOutlinedIcon
                         style={{
                           width: "17px",
-                          color: "#ddd",
+                          color: "#dfade9",
                           // marginTop: "15px",
                           // paddingTop: "5px",
                         }}
