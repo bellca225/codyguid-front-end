@@ -147,23 +147,23 @@ function Gallery(props) {
   const [galleryData, setGalleryData] = useState([]);
   const [allData, setAllData] = useState([]);
   const [gallery, setGallery] = useState({});
-  let galleryId = props.match.params.id;
+  // let galleryId = props.match.params.id;
 
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
-    const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
-    axios
-      .get(postApiUrl)
-      .then((response) => {
-        console.log("조회목록데이터:", response.data);
-        setGallery(response.data);
-      })
-      .catch((response) => {
-        console.error(response);
-      });
-    setOpen(true);
-  };
+  // const handleOpen = () => {
+  //   const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+  //   axios
+  //     .get(postApiUrl)
+  //     .then((response) => {
+  //       console.log("조회목록데이터:", response.data);
+  //       setGallery(response.data);
+  //     })
+  //     .catch((response) => {
+  //       console.error(response);
+  //     });
+  //   setOpen(true);
+  // };
 
   const handleClose = () => {
     setOpen(false);
@@ -203,22 +203,22 @@ function Gallery(props) {
       });
   };
 
-  const galleryCall = () => {
-    const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
-    axios
-      .get(postApiUrl)
-      .then((response) => {
-        console.log("조회목록데이터:", response.data);
-        setGallery(response.data);
-      })
-      .catch((response) => {
-        console.error(response);
-      });
-  };
+  // const galleryCall = () => {
+  //   const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+  //   axios
+  //     .get(postApiUrl)
+  //     .then((response) => {
+  //       console.log("조회목록데이터:", response.data);
+  //       setGallery(response.data);
+  //     })
+  //     .catch((response) => {
+  //       console.error(response);
+  //     });
+  // };
 
   useEffect(() => {
     allGallery();
-    galleryCall();
+    // galleryCall();
   }, []);
 
   const addGallery = () => {
@@ -255,7 +255,7 @@ function Gallery(props) {
                     > */}
                     <RouterLink
                       to={`/admin/gallerydetail/${prop.id}`}
-                      onClick={handleOpen}
+                      // onClick={handleOpen}
                     >
                       <div>
                         <Typography
