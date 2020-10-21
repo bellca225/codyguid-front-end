@@ -17,7 +17,7 @@ import {
 
 const sidebarStyle = (theme) => ({
   drawerPaper: {
-    border: "none",
+    // border: "none",
     position: "fixed",
     top: "0",
     bottom: "0",
@@ -124,8 +124,11 @@ const sidebarStyle = (theme) => ({
       height: "100%",
       content: '""',
       display: "block",
-      background: blackColor,
-      opacity: ".8",
+      // background: "rgb(158, 56, 180)",
+      // 아 배경색 우짤까요..???
+      background: "#802793",
+      // background: blackColor,
+      opacity: ".9",
     },
   },
   list: {

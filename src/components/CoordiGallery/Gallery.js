@@ -9,10 +9,14 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import Collapse from "@material-ui/core/Collapse";
 import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteIcon from "@material-ui/icons/FavoriteBorder";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
+
 import CardMedia from "@material-ui/core/CardMedia";
 import { withRouter } from "react-router-dom";
 import Pagination from "@material-ui/lab/Pagination";
@@ -37,8 +41,10 @@ const theme = createMuiTheme({
     MuiIconButton: {
       root: {
         "&:hover": {
-          color: "#ff4477",
+          color: "#ff5588",
         },
+        // color: "#fff",
+        // border: "1px solid #ddd",
       },
     },
   },
@@ -307,10 +313,12 @@ function Gallery(props) {
                       // style={{ color: "#ddd" }}
                       className={heart}
                     >
-                      <FavoriteIcon />
+                      <FavoriteIcon
+                      // style={{ width: "20px", border: "1px solid #ddd" }}
+                      />
                     </IconButton>
                     <IconButton>
-                      <ThumbUpIcon />
+                      <ThumbUpAltOutlinedIcon />
                     </IconButton>
                     <IconButton aria-label="share">
                       <ShareIcon />
