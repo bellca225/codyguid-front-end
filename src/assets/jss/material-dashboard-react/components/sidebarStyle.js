@@ -126,9 +126,9 @@ const sidebarStyle = (theme) => ({
       display: "block",
       // background: "rgb(158, 56, 180)",
       // 아 배경색 우짤까요..???
-      background: "#802793",
-      // background: blackColor,
-      opacity: ".9",
+      // background: "#802793",
+      background: blackColor,
+      opacity: ".7",
     },
   },
   list: {

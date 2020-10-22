@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import searchIcon from "miniIcon/searchIcon.png";
 
 import {
   GoogleMap,
@@ -213,14 +214,22 @@ function Search({ panTo }) {
   return (
     <div>
       <Combobox onSelect={handleSelect}>
-        <Card chart>
+        <Card
+          chart
+          style={{
+            display: "flex",
+            // justifyContent: "left",
+            // flexDirection: "row",
+          }}
+        >
+          <img style={{ width: "50px" }} src={searchIcon} alt="검색창 아이콘" />
           <ComboboxInput
             className="search-bar"
             value={value}
             onChange={handleInput}
             disabled={!ready}
             placeholder="코디를 알아보고 싶은 장소를 검색하거나 지도에 클릭한 후, 현재 날씨에 설정을 눌러주세요"
-          />
+          ></ComboboxInput>
         </Card>
         <div style={{ height: "15px" }} />
 
