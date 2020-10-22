@@ -108,22 +108,6 @@ export default function TypographyPage() {
             </p>
           </div>
           <div style={div1} className={classes.typo}>
-            <div className={classes.note}>사용 예시</div>
-            <Quote
-              author=" 1-1. 현재 위치로 이동하기 버튼을 클릭하여 현재 위치 정보를 가져올 수 있습니다.
-
-            1-2. 주소창에 주소를 검색하여 원하는 위치 정보를 가져올 수 있습니다.
-            
-            2. 현재 날씨로 코디설정 버튼을 클릭하여 설정한 위치 정보에 해당하는 날씨 정보와 코디 정보를 볼 수 있습니다.
-            3. 코디 설정 탭에서 날씨에 맞는 옷차림을 확인할 수 있습니다."
-            />
-
-            <div style={{ width: "100%" }}>
-              <img style={{ width: "100%" }} src={Image} alt="이미지"></img>
-            </div>
-          </div>
-
-          <div style={div1} className={classes.typo}>
             <Primary>
               <div>코디 가이드</div>
             </Primary>
@@ -140,6 +124,21 @@ export default function TypographyPage() {
             a responsibility that I have, to push possibilities, to show people,
             this is the level that things could be at. */}
             </p>
+          </div>
+          <div style={div1} className={classes.typo}>
+            <div className={classes.note}>사용 예시</div>
+
+            <div style={{ width: "100%" }}>
+              <img style={{ width: "100%" }} src={Image} alt="이미지"></img>
+            </div>
+            <Quote
+              author=" 1-1. 현재 위치로 이동하기 버튼을 클릭하여 현재 위치 정보를 가져올 수 있습니다.
+
+            1-2. 주소창에 주소를 검색하여 원하는 위치 정보를 가져올 수 있습니다.
+            
+            2. 현재 날씨로 코디설정 버튼을 클릭하여 설정한 위치 정보에 해당하는 날씨 정보와 코디 정보를 볼 수 있습니다.
+            3. 코디 설정 탭에서 날씨에 맞는 옷차림을 확인할 수 있습니다."
+            />
           </div>
 
           <div style={div1} className={classes.typo}>
