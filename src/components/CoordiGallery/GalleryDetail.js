@@ -113,7 +113,7 @@ const GalleryDetail = (props) => {
       .then((response) => {
         console.log(response);
         alert("삭제완료");
-        props.history.push("/admin/table");
+        props.history.push("/admin/gallery");
       })
       .catch((response) => {
         console.error(response);

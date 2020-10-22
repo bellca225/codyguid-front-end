@@ -133,6 +133,7 @@ export default function UserProfile(props) {
                 <GridItem xs={12} sm={12} md={12}>
                   <CustomInput
                     // labelText={mypage.password}
+                    labelText="password"
                     id="password"
                     formControlProps={{
                       fullWidth: true,

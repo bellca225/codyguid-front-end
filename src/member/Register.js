@@ -220,11 +220,11 @@ function Register() {
                       trigger("Password");
                     }}
                   />
-                  {member.password === member.ConfirmPassword ? (
+                  {/* {member.password === member.ConfirmPassword ? (
                     ""
                   ) : (
                     <span className="error">비밀번호가 일치하지 않습니다.</span>
-                  )}
+                  )} */}
                 </Grid>
                 <Grid item xs={12}>
                   <FormControlLabel
