@@ -23,8 +23,6 @@ import Container from "@material-ui/core/Container";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
-
-
 const theme = createMuiTheme({
   palette: {
     primary: { main: "#9E38B4" },
@@ -122,6 +120,7 @@ function Register() {
       })
       .catch((response) => {
         console.error(response, "불러오지 못했습니다.");
+        alert("회원가입 실패");
       });
   };
 
