@@ -58,11 +58,12 @@ const AddGallery = (props) => {
 
   const [imgPath, setImgPath] = useState(null);
 
+  let cookies = new Cookies();
+  const userToken = cookies.get("usertoken");
+
   // const id = useSelector((state) => state.galleries.slice(-1)[0].id + 1);
 
   // const loginUser = getLoggedInUser().name;
-
-  //
 
   const onChangeHandler = (e) => {
     setGallery({
@@ -101,7 +102,15 @@ const AddGallery = (props) => {
       })
       .catch(function (response) {
         console.log(response);
-        alert("로그인 후 사용 가능합니다.");
+        if (userToken == null) {
+          alert("로그인 후 사용 가능합니다.");
+        } else if (gallery.title == "") {
+          alert("제목을 입력해주세요.");
+        } else if (gallery.content == "") {
+          alert("내용을 입력해주세요");
+        } else if (gallery.img_path == null) {
+          alert("이미지가 없습니다");
+        }
       });
   };
 

@@ -10,6 +10,7 @@ import DropDown from "../../components/DropDown/DropDown";
 import Grid from "@material-ui/core/Grid";
 import { Cookies } from "react-cookie";
 import axios from "axios";
+import cookies from "react-cookie";
 
 const inputProps = {
   step: 300,
@@ -75,6 +76,9 @@ const AddTable = (props) => {
 
   const [imgPath, setImgPath] = useState(null);
 
+  let cookies = new Cookies();
+  const userToken = cookies.get("usertoken");
+
   const onChangeHandler = (e) => {
     setPost({
       ...post,
@@ -113,7 +117,15 @@ const AddTable = (props) => {
       })
       .catch(function (response) {
         console.log(response);
-        alert("로그인 후 사용 가능합니다.");
+        if (userToken == null) {
+          alert("로그인 후 사용 가능합니다.");
+        } else if (post.category == "") {
+          alert("카테고리를 지정해주세요.");
+        } else if (post.title == "") {
+          alert("제목을 입력해주세요.");
+        } else if (post.content == "") {
+          alert("내용을 입력해주세요");
+        }
       });
   };
 
