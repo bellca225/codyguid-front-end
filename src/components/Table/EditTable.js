@@ -72,9 +72,9 @@ const useStyles = makeStyles({
   pos2: {
     marginTop: 15,
     marginBottom: 10,
-    fontWeight: "400",
+    fontWeight: "600",
     fontSize: 20,
-    color: "#666",
+    // color: "#666",
   },
 });
 
@@ -96,10 +96,10 @@ const EditPost = (props) => {
   //   return <div key={key}>{i}</div>;
   // });
 
-  const postCall = () => {
-    const postApiUrl = `http://localhost:8000/api/board/${postId}`;
+  const postUrl = () => {
+    const postApi = `http://localhost:8000/api/board/${postId}`;
     axios
-      .get(postApiUrl)
+      .get(postApi)
       .then((response) => {
         console.log("조회목록데이터:", response.data);
         setPost(response.data);
@@ -109,13 +109,13 @@ const EditPost = (props) => {
       });
   };
 
-  const myInfoCall = () => {
+  const mypageUrl = () => {
     // 로그인 유저 정보 불러오기
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const myInfoApiUrl = `http://127.0.0.1:8000/api/mypage/`;
+    const mypageApi = `http://127.0.0.1:8000/api/mypage/`;
     axios
-      .get(myInfoApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .get(mypageApi, { headers: { Authorization: `Token ${userToken}` } })
       .then((response) => {
         setMypage(response.data[0]);
         // console.log("로그인 유저", response.data[0]);
@@ -126,11 +126,11 @@ const EditPost = (props) => {
   };
 
   useEffect(() => {
-    postCall();
-    myInfoCall();
+    postUrl();
+    mypageUrl();
   }, []);
 
-  const onDataSave = () => {
+  const ModifyUrl = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
     const saveApiUrl = `http://localhost:8000/api/board/${postId}/update/`;
@@ -148,13 +148,13 @@ const EditPost = (props) => {
       });
   };
 
-  const onDelete = () => {
+  const deleteUrl = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const deleteApiUrl = `http://localhost:8000/api/board/${postId}/`;
+    const deleteApi = `http://localhost:8000/api/board/${postId}/`;
 
     axios
-      .delete(deleteApiUrl, {
+      .delete(deleteApi, {
         headers: { Authorization: `Token ${userToken}` },
       })
       .then((response) => {
@@ -217,7 +217,7 @@ const EditPost = (props) => {
             {/* <Button
               variant="contained"
               color="primary"
-              onClick={onDelete}
+              onClick={deleteUrl}
               style={{
                 backgroundColor: "#772fdd",
               }}
@@ -231,7 +231,7 @@ const EditPost = (props) => {
                   className={classes.btn}
                   variant="outlined"
                   color="white"
-                  onClick={onDataSave}
+                  onClick={ModifyUrl}
                   disabled
                   style={{
                     marginRight: "15px",
@@ -243,7 +243,7 @@ const EditPost = (props) => {
                   className={classes.btn}
                   variant="contained"
                   color="secondary"
-                  onClick={onDelete}
+                  onClick={deleteUrl}
                   // onClick={openModal}
                   style={{
                     backgroundColor: "#772fdd",

@@ -46,31 +46,8 @@ const styles = {
   },
 };
 
-export default function TableList(props) {
+export default function TableList() {
   const classes = useStyles();
-
-  const [selectedFiles, setSelectedFiles] = useState(undefined);
-  const selectFile = (event) => {
-    setSelectedFiles(event.target.files);
-  };
-
-  const onFileUpload = (e) => {
-    const formData = new FormData();
-    formData.append("file", selectedFiles[0]);
-
-    axios({
-      method: "post",
-      url: "http://localhost:8000/api/booking/upload/",
-      data: formData,
-      headers: { "Content-Type": "multipart/form-data" },
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (response) {
-        console.log(response);
-      });
-  };
 
   return (
     <div>

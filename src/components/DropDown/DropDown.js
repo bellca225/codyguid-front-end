@@ -38,9 +38,9 @@ export default function SimpleSelect(props) {
       <FormControl className={classes.formControl} disabled={props.disabled}>
           <InputLabel id="demo-simple-select-outlined-label">{props.title}</InputLabel>
           <Select onChange={handleChange} className={classes.select}>
-        {props.value.map((v) => (
-          <MenuItem value={v} className={classes.menuItem}>
-            {v}
+        {props.value.map((value, key) => (
+          <MenuItem value={value} key={key} className={classes.menuItem}>
+            {value}
           </MenuItem>
         ))}
       </Select>

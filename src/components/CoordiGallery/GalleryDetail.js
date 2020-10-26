@@ -49,10 +49,10 @@ const GalleryDetail = (props) => {
   const [gallery, setGallery] = useState({});
   const [mypage, setMypage] = useState({});
 
-  const galleryCall = () => {
-    const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+  const galleryUrl = () => {
+    const galleryApi = `http://localhost:8000/api/gallery/${galleryId}`;
     axios
-      .get(postApiUrl)
+      .get(galleryApi)
       .then((response) => {
         console.log("조회목록데이터:", response.data);
         setGallery(response.data);
@@ -62,13 +62,13 @@ const GalleryDetail = (props) => {
       });
   };
 
-  const myInfoCall = () => {
+  const mypageUrl = () => {
     // 로그인 유저 정보 불러오기
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const myInfoApiUrl = `http://127.0.0.1:8000/api/mypage/`;
+    const mypageApi = `http://127.0.0.1:8000/api/mypage/`;
     axios
-      .get(myInfoApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .get(mypageApi, { headers: { Authorization: `Token ${userToken}` } })
       .then((response) => {
         setMypage(response.data[0]);
         // console.log("로그인 유저", response.data[0]);
@@ -79,17 +79,17 @@ const GalleryDetail = (props) => {
   };
 
   useEffect(() => {
-    galleryCall();
-    myInfoCall();
+    galleryUrl();
+    mypageUrl();
   }, []);
 
-  const onDataSave = () => {
+  const ModifyUrl = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const saveApiUrl = `http://localhost:8000/api/gallery/${galleryId}/update/`;
+    const modifyApi = `http://localhost:8000/api/gallery/${galleryId}/update/`;
 
     axios
-      .patch(saveApiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .patch(modifyApi, { headers: { Authorization: `Token ${userToken}` } })
       .then((response) => {
         alert("수정완료");
         console.log(response);
@@ -101,13 +101,13 @@ const GalleryDetail = (props) => {
       });
   };
 
-  const onDelete = () => {
+  const deleteUrl = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const deleteApiUrl = `http://localhost:8000/api/gallery/${galleryId}/`;
+    const deleteApi = `http://localhost:8000/api/gallery/${galleryId}/`;
 
     axios
-      .delete(deleteApiUrl, {
+      .delete(deleteApi, {
         headers: { Authorization: `Token ${userToken}` },
       })
       .then((response) => {
@@ -173,7 +173,7 @@ const GalleryDetail = (props) => {
               <Button
                 className={classes.btn}
                 variant="outlined"
-                onClick={onDataSave}
+                onClick={ModifyUrl}
                 style={{ marginRight: "15px" }}
                 color="white"
                 disabled
@@ -184,7 +184,7 @@ const GalleryDetail = (props) => {
                 className={classes.btn}
                 variant="contained"
                 color="primary"
-                onClick={onDelete}
+                onClick={deleteUrl}
                 style={{
                   backgroundColor: "#772fdd",
                 }}

@@ -215,7 +215,7 @@ function Search({ panTo }) {
     <div>
       <Combobox onSelect={handleSelect}>
         <Card
-          chart
+          // chart
           style={{
             display: "flex",
             // justifyContent: "left",

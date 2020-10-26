@@ -79,32 +79,32 @@ const AddTable = (props) => {
   let cookies = new Cookies();
   const userToken = cookies.get("usertoken");
 
-  const onChangeHandler = (e) => {
+  const onChangeInput = (e) => {
     setPost({
       ...post,
       [e.target.name]: e.target.value,
     });
   };
 
-  const onClickHandler = () => {
+  const saveApi = () => {
     // dispatch(addPosting(post));
     // props.history.push("/admin/table");
 
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
 
-    const formData = new FormData();
+    const tableData = new FormData();
     if (imgPath != null) {
-      formData.append("img_path", imgPath[0]);
+      tableData.append("img_path", imgPath[0]);
     }
-    formData.append("title", post.title);
-    formData.append("content", post.content);
-    formData.append("category", post.category);
+    tableData.append("title", post.title);
+    tableData.append("content", post.content);
+    tableData.append("category", post.category);
 
     axios({
       method: "post",
       url: "http://localhost:8000/api/board/",
-      data: formData,
+      data: tableData,
       headers: {
         Authorization: `Token	 ${userToken}`,
         "Content-Type": "multipart/form-data",
@@ -166,7 +166,7 @@ const AddTable = (props) => {
               fullWidth
               size="small"
               value={post.title}
-              onChange={(e) => onChangeHandler(e)}
+              onChange={(e) => onChangeInput(e)}
               style={box1}
             />
           </Grid>
@@ -181,7 +181,7 @@ const AddTable = (props) => {
               fullWidth
               variant="outlined"
               rows={10}
-              onChange={(e) => onChangeHandler(e)}
+              onChange={(e) => onChangeInput(e)}
               value={post.contents}
             />
           </Grid>
@@ -206,7 +206,7 @@ const AddTable = (props) => {
             className="write-btn"
             variant="contained"
             color="primary"
-            onClick={() => onClickHandler()}
+            onClick={() => saveApi()}
           >
             등록
           </Button>

@@ -77,10 +77,10 @@ function Login() {
     // dispatch(loginUser(member));
     // window.location = "/admin/dashboard";
 
-    const apiUrl = "http://127.0.0.1:8000/api/get_token/";
+    const loginApi = "http://127.0.0.1:8000/api/get_token/";
 
     axios
-      .post(apiUrl, member)
+      .post(loginApi, member)
       .then((response) => {
         console.log("호출 결과 :", response.data);
         const token = response.data.token;

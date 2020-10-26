@@ -158,9 +158,9 @@ function Gallery(props) {
   const [open, setOpen] = React.useState(false);
 
   // const handleOpen = () => {
-  //   const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+  //   const galleryApi = `http://localhost:8000/api/gallery/${galleryId}`;
   //   axios
-  //     .get(postApiUrl)
+  //     .get(galleryApi)
   //     .then((response) => {
   //       console.log("조회목록데이터:", response.data);
   //       setGallery(response.data);
@@ -195,10 +195,10 @@ function Gallery(props) {
   // }, [allGallery]);
 
   const allGallery = () => {
-    const apiUrl = "http://localhost:8000/api/gallery";
+    const addGalleryApi = "http://localhost:8000/api/gallery";
 
     axios
-      .get(apiUrl)
+      .get(addGalleryApi)
       .then((response) => {
         console.log("조회목록데이터:", response.data);
         setAllData(response.data);
@@ -209,10 +209,10 @@ function Gallery(props) {
       });
   };
 
-  // const galleryCall = () => {
-  //   const postApiUrl = `http://localhost:8000/api/gallery/${galleryId}`;
+  // const galleryUrl = () => {
+  //   const galleryApi = `http://localhost:8000/api/gallery/${galleryId}`;
   //   axios
-  //     .get(postApiUrl)
+  //     .get(galleryApi)
   //     .then((response) => {
   //       console.log("조회목록데이터:", response.data);
   //       setGallery(response.data);
@@ -224,7 +224,7 @@ function Gallery(props) {
 
   useEffect(() => {
     allGallery();
-    // galleryCall();
+    // galleryUrl();
   }, []);
 
   const addGallery = () => {
@@ -264,11 +264,18 @@ function Gallery(props) {
                       // onClick={handleOpen}
                     >
                       <div>
-                        <Typography
+                        {/* <Typography
                           key={key}
                           className={classes.title}
                           color="textSecondary"
                           gutterBottom
+                          component={'h4'}
+                        > */}
+                        <div
+                          key={key}
+                          className={classes.title}
+                          color="textSecondary"
+                          // gutterBottom
                         >
                           <h4 className={classes.pos2}>{prop.title}</h4>
                           <div className="width-space">
@@ -280,7 +287,8 @@ function Gallery(props) {
                             ></CardMedia>
                             {/* <img src={prop.img_path} className={classes.media} /> */}
                           </div>
-                        </Typography>
+                        {/* </Typography> */}
+                        </div>
                         <Divider />
                         {/* <Typography variant="h5" component="h2">
                           {index}
@@ -344,7 +352,7 @@ function Gallery(props) {
         </div>
         <div className={classes.root}>
           <Pagination
-            count={Math.ceil(allData.length / 13)}
+            count={Math.ceil(allData.length / 12)}
             shape="rounded"
             onChange={handlePage}
           />

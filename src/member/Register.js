@@ -110,9 +110,9 @@ function Register() {
     // dispatch(registerUser(member));
     // props.history.push("/member/login");
 
-    const apiUrl = "http://127.0.0.1:8000/api/register/";
+    const registerApi = "http://127.0.0.1:8000/api/register/";
     axios
-      .post(apiUrl, member)
+      .post(registerApi, member)
       .then((response) => {
         console.log("호출 결과 :", response.data);
         alert("회원가입 완료");

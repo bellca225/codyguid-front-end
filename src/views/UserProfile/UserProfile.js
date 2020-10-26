@@ -43,12 +43,12 @@ export default function UserProfile(props) {
 
   const [mypage, setMypage] = useState({});
 
-  const userApiCall = () => {
+  const mypageUrl = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const apiUrl = `http://127.0.0.1:8000/api/mypage/`;
+    const mypageApi = `http://127.0.0.1:8000/api/mypage/`;
     axios
-      .get(apiUrl, { headers: { Authorization: `Token ${userToken}` } })
+      .get(mypageApi, { headers: { Authorization: `Token ${userToken}` } })
       .then((response) => {
         setMypage(response.data[0]);
         console.log("로그인 유저", response.data);
@@ -62,16 +62,16 @@ export default function UserProfile(props) {
   const userToken = cookies.get("usertoken");
 
   useEffect(() => {
-    userApiCall();
+    mypageUrl();
   }, []);
 
-  const onDelete = () => {
+  const deleteUrl = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const deleteApiUrl = `http://localhost:8000/api/mypage/${id}/`;
+    const deleteApi = `http://localhost:8000/api/mypage/${id}/`;
 
     axios
-      .delete(deleteApiUrl, {
+      .delete(deleteApi, {
         headers: { Authorization: `Token ${userToken}` },
       })
       .then((response) => {
@@ -145,7 +145,10 @@ export default function UserProfile(props) {
             <CardFooter>
               <Button color="primary">수정 저장하기</Button>
               <div style={{ float: "right", marginTop: "20px" }}>
-                <Button color="white" onClick={onDelete}>
+                <Button
+                  color="white"
+                  // onClick={deleteUrl}
+                  >
                   회원 탈퇴
                 </Button>
               </div>

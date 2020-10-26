@@ -4,10 +4,10 @@ import { LOGIN_USER, REGISTER_USER } from "../actions/types";
 import axios from "axios";
 
 // export function loginUser(dataToSubmit) {
-//   const apiUrl = "http://127.0.0.1:8000/api/get_token/";
+//   const loginApi = "http://127.0.0.1:8000/api/get_token/";
 
 //   const request = axios
-//     .post(apiUrl, dataToSubmit)
+//     .post(loginApi, dataToSubmit)
 //     .then((response) => {
 //       console.log("호출 결과 :", response.data);
 //       const token = response.data.token;
@@ -26,9 +26,9 @@ import axios from "axios";
 
 // export function registerUser(dataToSubmit) {
 
-//   const apiUrl = "http://127.0.0.1:8000/api/register/";
+//   const registerApi = "http://127.0.0.1:8000/api/register/";
 //   const request = axios
-//     .post(apiUrl, dataToSubmit)
+//     .post(registerApi, dataToSubmit)
 //     .then((response) => {
 //       console.log("호출 결과 :", response.data);
 //     })

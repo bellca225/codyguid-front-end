@@ -58,10 +58,10 @@ function CustomTable(props) {
   // }, [allTable]);
 
   const allTable = () => {
-    const apiUrl = "http://localhost:8000/api/board/";
+    const tableApi = "http://localhost:8000/api/board/";
 
     axios
-      .get(apiUrl)
+      .get(tableApi)
       .then((response) => {
         console.log("조회목록데이터:", response.data);
         setAllData(response.data);
@@ -90,10 +90,10 @@ function CustomTable(props) {
     if (value === "전체") {
       allTable();
     } else {
-      const apiUrl = `http://localhost:8000/api/board/${value}/`;
+      const categoryApi = `http://localhost:8000/api/board/${value}/`;
 
       axios
-        .get(apiUrl)
+        .get(categoryApi)
         .then((response) => {
           console.log("카테고리 조회:", response.data);
           setAllData(response.data);

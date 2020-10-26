@@ -71,24 +71,6 @@ function AdminNavbarLinks(props) {
     props.history.push("/admin/login");
   };
 
-  // const [mypage, setMypate] = useState("");
-
-  // const apiUrl = `http://127.0.0.1:8000/api/myinfo/`;
-  // const apiCall = () => {
-  //   // 로그인 유저 정보 불러오기
-  //   let cookies = new Cookies();
-  //   const userToken = cookies.get("usertoken");
-  //   axios
-  //     .get(apiUrl, { headers: { Authorization: `Token ${userToken}` } })
-  //     .then((response) => {
-  //       setMypate(response.data[0]);
-  //       console.log("로그인 유저", response.data[0]);
-  //     })
-  //     .catch((response) => {
-  //       console.error(response);
-  //     });
-  // };
-  // apiCall();
 
   return (
     <div>

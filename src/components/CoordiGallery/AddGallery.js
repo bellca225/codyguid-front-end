@@ -58,38 +58,37 @@ const AddGallery = (props) => {
 
   const [imgPath, setImgPath] = useState(null);
 
-  let cookies = new Cookies();
-  const userToken = cookies.get("usertoken");
-
   // const id = useSelector((state) => state.galleries.slice(-1)[0].id + 1);
 
   // const loginUser = getLoggedInUser().name;
 
-  const onChangeHandler = (e) => {
+  //
+
+  const onChangeInput = (e) => {
     setGallery({
       ...gallery,
       [e.target.name]: e.target.value,
     });
   };
 
-  const onClickHandler = () => {
+  const saveApi = () => {
     // dispatch(addGallery(gallery));
     // props.history.push("/admin/gallery");
 
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
 
-    const formData = new FormData();
+    const galleryData = new FormData();
     if (imgPath != null) {
-      formData.append("img_path", imgPath[0]);
+      galleryData.append("img_path", imgPath[0]);
     }
-    formData.append("title", gallery.title);
-    formData.append("content", gallery.content);
+    galleryData.append("title", gallery.title);
+    galleryData.append("content", gallery.content);
 
     axios({
       method: "post",
       url: "http://localhost:8000/api/gallery/",
-      data: formData,
+      data: galleryData,
       headers: {
         Authorization: `Token	 ${userToken}`,
         "Content-Type": "multipart/form-data",
@@ -102,15 +101,7 @@ const AddGallery = (props) => {
       })
       .catch(function (response) {
         console.log(response);
-        if (userToken == null) {
-          alert("로그인 후 사용 가능합니다.");
-        } else if (gallery.title == "") {
-          alert("제목을 입력해주세요.");
-        } else if (gallery.content == "") {
-          alert("내용을 입력해주세요");
-        } else if (gallery.img_path == null) {
-          alert("이미지가 없습니다");
-        }
+        alert("로그인 후 사용 가능합니다.");
       });
   };
 
@@ -141,7 +132,7 @@ const AddGallery = (props) => {
               fullWidth
               // variant="outlined"
               value={gallery.title}
-              onChange={(e) => onChangeHandler(e)}
+              onChange={(e) => onChangeInput(e)}
             />
           </Grid>
 
@@ -157,7 +148,7 @@ const AddGallery = (props) => {
               fullWidth
               variant="outlined"
               rows={5}
-              onChange={(e) => onChangeHandler(e)}
+              onChange={(e) => onChangeInput(e)}
               value={gallery.contents}
             />
           </Grid>
@@ -181,7 +172,7 @@ const AddGallery = (props) => {
             className="write-btn"
             variant="contained"
             color="primary"
-            onClick={() => onClickHandler()}
+            onClick={() => saveApi()}
           >
             등록
           </Button>
