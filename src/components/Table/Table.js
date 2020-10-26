@@ -38,7 +38,6 @@ function CustomTable(props) {
   const [tableData, setTableData] = useState([]);
   const [allData, setAllData] = useState([]);
   // const allTable = useSelector((state) => state.posts);
-  const [myPostBtn, setMyPostBtn] = useState(false);
 
   // useEffect(() => {
   //   const newTable = [];
@@ -112,7 +111,6 @@ function CustomTable(props) {
           title="전체"
           value={["전체", "Q&A", "여행 TIP", "자유 게시판"]}
           onChange={categoryChange}
-          disabled={myPostBtn}
         />
       </div>
       <Table className={classes.table}>
@@ -128,13 +126,13 @@ function CustomTable(props) {
         {tableHead !== undefined ? (
           <TableHead className={classes[tableHeaderColor + "TableHeader"]}>
             <TableRow className={classes.tableHeadRow}>
-              {tableHead.map((prop, key) => {
+              {tableHead.map((value, index) => {
                 return (
                   <TableCell
                     className={classes.tableCell + " " + classes.tableHeadCell}
-                    key={key}
+                    key={index}
                   >
-                    {prop}
+                    {value}
                   </TableCell>
                 );
               })}
@@ -142,20 +140,20 @@ function CustomTable(props) {
           </TableHead>
         ) : null}
         <TableBody>
-          {tableData.map((prop, key) => {
+          {tableData.map((prop, index) => {
             return (
-              <TableRow key={`r${key}`} className={classes.tableBodyRow}>
-                <TableCell className={classes.tableCell} key={key}>
+              <TableRow key={`r${index}`} className={classes.tableBodyRow}>
+                <TableCell className={classes.tableCell}>
                   <RouterLink to={`/admin/edittable/${prop.id}`}>
                     {prop.id}
                   </RouterLink>
                 </TableCell>
-                <TableCell className={classes.tableCell} key={key}>
+                <TableCell className={classes.tableCell}>
                   <RouterLink to={`/admin/edittable/${prop.id}`}>
                     {prop.category}
                   </RouterLink>
                 </TableCell>
-                <TableCell className={classes.tableCell} key={key}>
+                <TableCell className={classes.tableCell}>
                   <RouterLink to={`/admin/edittable/${prop.id}`}>
                     {prop.title}{" "}
                     {prop.img_path ? (
