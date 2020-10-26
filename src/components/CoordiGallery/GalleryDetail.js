@@ -66,7 +66,7 @@ const GalleryDetail = (props) => {
     // 로그인 유저 정보 불러오기
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const mypageApi = `http://127.0.0.1:8000/api/mypage/`;
+    const mypageApi = `http://localhost:8000/api/mypage/`;
     axios
       .get(mypageApi, { headers: { Authorization: `Token ${userToken}` } })
       .then((response) => {

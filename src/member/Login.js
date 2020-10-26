@@ -77,7 +77,7 @@ function Login() {
     // dispatch(loginUser(member));
     // window.location = "/admin/dashboard";
 
-    const loginApi = "http://127.0.0.1:8000/api/get_token/";
+    const loginApi = "http://localhost:8000/api/get_token/";
 
     axios
       .post(loginApi, member)

@@ -110,7 +110,7 @@ function Register() {
     // dispatch(registerUser(member));
     // props.history.push("/member/login");
 
-    const registerApi = "http://127.0.0.1:8000/api/register/";
+    const registerApi = "http://localhost:8000/api/register/";
     axios
       .post(registerApi, member)
       .then((response) => {

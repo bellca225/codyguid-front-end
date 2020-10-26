@@ -46,7 +46,7 @@ export default function UserProfile(props) {
   const mypageUrl = () => {
     let cookies = new Cookies();
     const userToken = cookies.get("usertoken");
-    const mypageApi = `http://127.0.0.1:8000/api/mypage/`;
+    const mypageApi = `http://localhost:8000/api/mypage/`;
     axios
       .get(mypageApi, { headers: { Authorization: `Token ${userToken}` } })
       .then((response) => {

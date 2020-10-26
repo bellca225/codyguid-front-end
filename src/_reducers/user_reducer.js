@@ -4,7 +4,7 @@ import { LOGIN_USER, REGISTER_USER } from "../actions/types";
 import axios from "axios";
 
 // export function loginUser(dataToSubmit) {
-//   const loginApi = "http://127.0.0.1:8000/api/get_token/";
+//   const loginApi = "http://localhost:8000/api/get_token/";
 
 //   const request = axios
 //     .post(loginApi, dataToSubmit)
@@ -26,7 +26,7 @@ import axios from "axios";
 
 // export function registerUser(dataToSubmit) {
 
-//   const registerApi = "http://127.0.0.1:8000/api/register/";
+//   const registerApi = "http://localhost:8000/api/register/";
 //   const request = axios
 //     .post(registerApi, dataToSubmit)
 //     .then((response) => {
