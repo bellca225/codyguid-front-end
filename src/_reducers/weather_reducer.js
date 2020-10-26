@@ -9,7 +9,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 function getAPI(position) {
-  console.log("호출 API 위/경도주소??????:", position);
+  console.log("호출 API 위/경도주소:", position);
 
   let Lat = position.lat; //"37.4652876"; //추후 변경 예정
   let Lon = position.lng; //"126.900341";
@@ -102,6 +102,9 @@ export default handleActions(
         },
       };
     },
+
+
+    
     [GET_WEATHER_FAILURE]: (state, action) => {
       return {
         ...state,
