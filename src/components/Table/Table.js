@@ -110,6 +110,7 @@ function CustomTable(props) {
         <DropDown
           title="전체"
           value={["전체", "Q&A", "여행 TIP", "자유 게시판"]}
+          defaultValue=""
           onChange={categoryChange}
         />
       </div>

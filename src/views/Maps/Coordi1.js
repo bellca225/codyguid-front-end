@@ -1410,18 +1410,18 @@ const Coordi = ({ data }) => {
     ],
   };
 
-  const index1 = Math.floor(Math.random() * 0);
-  const index2 = Math.floor(Math.random() * 1);
-  const index3 = Math.floor(Math.random() * 2);
-  const index4 = Math.floor(Math.random() * 3);
-  const index5 = Math.floor(Math.random() * 4);
-  const index6 = Math.floor(Math.random() * 5);
+  const index1 = Math.floor(Math.random() * 1);
+  const index2 = Math.floor(Math.random() * 2);
+  const index3 = Math.floor(Math.random() * 3);
+  const index4 = Math.floor(Math.random() * 4);
+  const index5 = Math.floor(Math.random() * 5);
+  const index6 = Math.floor(Math.random() * 6);
   //
-  const index7 = Math.floor(Math.random() * 6);
+  const index7 = Math.floor(Math.random() * 7);
   //
-  const index8 = Math.floor(Math.random() * 7);
-  const index9 = Math.floor(Math.random() * 8);
-  const index10 = Math.floor(Math.random() * 9);
+  const index8 = Math.floor(Math.random() * 8);
+  const index9 = Math.floor(Math.random() * 9);
+  const index10 = Math.floor(Math.random() * 10);
 
   const weather = data.temp;
   // console.log(data.temp);
@@ -2002,7 +2002,7 @@ const Coordi = ({ data }) => {
 
           <div style={frame}>
             <h4 style={titlefont}>아우터 : </h4>
-            {dress10.outer[index2]}
+            {dress10.outer[index3]}
           </div>
 
           <div style={frame2}>
