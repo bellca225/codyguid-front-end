@@ -124,7 +124,7 @@ const AddTable = (props) => {
         } else if (post.title == "") {
           alert("제목을 입력해주세요.");
         } else if (post.content == "") {
-          alert("내용을 입력해주세요");
+          alert("내용을 입력해주세요.");
         }
       });
   };
