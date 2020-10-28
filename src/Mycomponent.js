@@ -274,6 +274,7 @@ function Locate({ panTo }) {
           marginTop: "5px",
         }}
       >
+        <div>
         <img
           onClick={() => {
             navigator.geolocation.getCurrentPosition(
@@ -292,6 +293,7 @@ function Locate({ panTo }) {
           className="btn-hover"
           alt="현재 위치로 이동하기"
         />
+        </div>
 
         <div
           className="btn01"
