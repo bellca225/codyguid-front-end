@@ -14,6 +14,8 @@
 
 ## 파일 구조 (File Structure)
 
+```
+material-dashboard-react
 .
 ├── CHANGELOG.md
 ├── ISSUE_TEMPLATE.md
@@ -120,6 +122,7 @@
         └── UserProfile
             └── UserProfile.js
 ```
+
 
 
 team made by woopark
