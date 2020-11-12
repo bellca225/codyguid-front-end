@@ -15,7 +15,8 @@ function getAPI(position) {
   let Lon = position.lng; //"126.900341";
 
   const api2 = {
-    key: "d63c7d503cfb0a45ff09fe5274c4d2ea",
+    key: process.env.REACT_APP_API_KEY2,
+    // .env 파일에서 확인 가능하며, 이는 개발자만 볼 수 있습니다.
     base: "https://api.openweathermap.org/data/2.5/onecall",
   };
   return axios.get(

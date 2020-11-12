@@ -49,10 +49,12 @@ const options = {
 
 function Mycomonent() {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyC54MBKa78_EDw3PV0QHVU77Bo4VfOp1R4",
+    googleMapsApiKey: process.env.REACT_APP_API_KEY,
+    // .env 파일에서 확인 가능하며, 이는 개발자만 볼 수 있습니다.
     libraries,
   });
 
+ 
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
 
