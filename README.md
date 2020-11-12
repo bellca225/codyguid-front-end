@@ -6,41 +6,23 @@
 
 ![Product Gif](src/assets/github/md-react.gif)
 
-Material Dashboard React is a free Material-UI Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard React was built over the popular Material-UI framework.
+.
 
-Material Dashboard React makes use of light, surface and movement. The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious. The navigation stays mainly on the left sidebar and the content is on the right inside the main panel.
+## 사용 기술
 
-Material Dashboard React comes with 5 color filter choices for both the sidebar and the card headers (blue, green, orange, red and purple) and an option to have a background image on the sidebar.
-
-Material Dashboard React was created using [create-react-app](https://github.com/facebook/create-react-app) and it uses a framework built by our friend [Olivier - Material-UI v3.1.0](https://github.com/mui-org/material-ui), who did an amazing job creating the backbone for the material effects, animations, ripples and transitions. Big thanks to his team for the effort and forward thinking they put into it.
-
-Special thanks go to:
-+ [React-chartist](https://github.com/fraserxu/react-chartist) for the wonderful charts.
-
-We are very excited to share this dashboard with you and we look forward to hearing your feedback!
-
-You can find the Github Repo here.
-
-## Table of Contents
-
-* [Versions](#versions)
-* [Demo](#demo)
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [File Structure](#file-structure)
-* [Browser Support](#browser-support)
-* [Resources](#resources)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
-
+* React
+* redux
+* REST api
+* Django
+* Material UI
+* Googlemap api
+* openweathermap api
 
 ## Versions
 
 [<img src="src/assets/github/html.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard)
 [<img src="src/assets/github/react.svg" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-react)
-[<img src="src/assets/github/vuejs.png" width="60" height="60" />](https://www.creative-tim.com/product/vue-material-dashboard)
+[<img src="src/assets/github/django.png" width="60" height="60" />](https://www.creative-tim.com/product/vue-material-dashboard)
 [<img src="src/assets/github/angular.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-angular2)
 
 
@@ -50,16 +32,9 @@ You can find the Github Repo here.
 
 ## Demo
 
-| Dashboard | User Profile | Tables | Maps | Notification |
-| --- | --- | --- | --- | --- |
-| [![Start page](src/assets/github/dashboard.png)](https://demos.creative-tim.com/material-dashboard-react/#/dashboard) | [![User profile page](src/assets/github/user_profile.png)](https://demos.creative-tim.com/material-dashboard-react/#/user) | [![Tables page ](src/assets/github/tables.png)](https://demos.creative-tim.com/material-dashboard-react/#/table) | [![Maps Page](src/assets/github/maps.png)](https://demos.creative-tim.com/material-dashboard-react/#/maps) | [![Notification page](src/assets/github/notification.png)](https://demos.creative-tim.com/material-dashboard-react/#/notifications)
-
-[View More](https://demos.creative-tim.com/material-dashboard-react/#/dashboard).
 
 
 ## Quick start
-
-Quick start options:
 
 - `npm i material-dashboard-react`
 - Clone the repo: `git clone https://github.com/creativetimofficial/material-dashboard-react.git`.
@@ -226,14 +201,8 @@ Freebies: <https://www.creative-tim.com/products>
 
 Affiliate Program (earn money): <https://www.creative-tim.com/affiliates/new>
 
-Social Media:
 
-Twitter: <https://twitter.com/CreativeTim>
+team made by woopark
 
-Facebook: <https://www.facebook.com/CreativeTim>
-
-Dribbble: <https://dribbble.com/creativetim>
-
-Google+: <https://plus.google.com/+CreativetimPage>
-
-Instagram: <https://instagram.com/creativetimofficial>
+woonayoung : <https://github.com/Na-Young-Woo> <dn2255520@gmail.com>
+parkheejung : <https://github.com/Pheejung> <gmlwjd2116@gmail.com>
