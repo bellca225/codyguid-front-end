@@ -10,7 +10,7 @@ made by team.woopark
 
 
 
-## 사용 기술 (Using Skills)
+### 사용 기술 (Using Skills)
 
 * React
 * redux
@@ -22,7 +22,7 @@ made by team.woopark
 
 
 
-## 파일 구조 (File Structure)
+### 파일 구조 (File Structure)
 
 ```
 material-dashboard-react
