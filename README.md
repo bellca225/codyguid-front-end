@@ -1,26 +1,24 @@
 made by team.woopark
 
-### woonayoung  
-* <https://github.com/Na-Young-Woo> 
-* <dn2255520@gmail.com>
+### woonayoung
 
-### parkheejung 
-* <https://github.com/Pheejung> 
-* <gmlwjd2116@gmail.com>
+- <https://github.com/Na-Young-Woo>
+- <dn2255520@gmail.com>
 
+### parkheejung
 
+- <https://github.com/Pheejung>
+- <gmlwjd2116@gmail.com>
 
 ### 사용 기술 (Using Skills)
 
-* React
-* redux
-* REST api
-* Django
-* Material UI
-* Googlemap api
-* openweathermap api
-
-
+- React
+- redux
+- REST api
+- Django
+- Material UI
+- Googlemap api
+- openweathermap api
 
 ### 파일 구조 (File Structure)
 
@@ -133,5 +131,4 @@ material-dashboard-react
             └── UserProfile.js
 ```
 
-
-
+- Googlemap api 및 openweathermap api가 비공개된 코드입니다.
