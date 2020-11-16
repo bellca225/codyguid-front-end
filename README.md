@@ -1,21 +1,23 @@
 made by team.woopark
 
-:sunny: | :umbrella: | :cloud:
-:earth_asia: | :shirt:
-
-날씨 위치 기반
-
 ### woonayoung
 
 - <https://github.com/Na-Young-Woo>
-- <dn2255520@gmail.com>
+- :email: <dn2255520@gmail.com>
 
 ### parkheejung
 
 - <https://github.com/Pheejung>
-- <gmlwjd2116@gmail.com>
+- :email: <gmlwjd2116@gmail.com>
 
-### 사용 기술 (Using Skills)
+:sunny: | :umbrella: | :cloud:
+:earth_asia: | :shirt:
+
+날씨 위치 기반 코디 추천 웹서비스
+
+- Googlemap api 및 openweathermap api가 비공개된 코드입니다.
+
+### 사용 기술 (Using Skills) :hammer:
 
 - React
 - redux
@@ -25,7 +27,7 @@ made by team.woopark
 - Googlemap api
 - openweathermap api
 
-### 파일 구조 (File Structure)
+### 파일 구조 (File Structure) :open_file_folder:
 
 ```
 material-dashboard-react
@@ -137,4 +139,4 @@ material-dashboard-react
             └── UserProfile.js
 ```
 
-- Googlemap api 및 openweathermap api가 비공개된 코드입니다.
+Thank you :smiley:
