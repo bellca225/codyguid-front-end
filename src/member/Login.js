@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../_reducers/user_reducer";
 import axios from "axios";
 import { Cookies } from "react-cookie";
 

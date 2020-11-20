@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import searchIcon from "miniIcon/searchIcon.png";
 
 import {
@@ -20,11 +20,11 @@ import {
 } from "@reach/combobox";
 
 import "@reach/combobox/styles.css";
-// import mapStyles from "./mapStyles";
+
 
 import "mycomponent.css";
 import { Card } from "@material-ui/core";
-import GridItem from "./components/Grid/GridItem.js";
+
 import { getWeather, setMapPosition } from "./_reducers/weather_reducer";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -38,14 +38,10 @@ const mapContainerStyle = {
   margin: "0 auto",
 };
 const options = {
-  // 0s: mapStyles,
   disableDefaultUI: true,
   zoomControl: true,
 };
-// const center = {
-//   lat: 37.47979,
-//   lng: 126.88394,
-// };
+
 
 function Mycomonent() {
   const { isLoaded, loadError } = useLoadScript({
@@ -144,42 +140,12 @@ function Mycomonent() {
   );
 }
 
-// function Locate({ panTo }) {
-//   return (
-//     <button
-//       className="locate"
-//       onClick={() => {
-//         navigator.geolocation.getCurrentPosition(
-//           (position) => {
-//             console.log(position.coords.latitude, position.coords.longitude);
 
 const center = {
   lat: 37.566482,
   lng: 126.977859,
 };
 
-// function Locate({ panTo }) {
-//   return (
-//     <button
-//       className="locate"
-//       onClick={() => {
-//         navigator.geolocation.getCurrentPosition(
-//           (position) => {
-//             console.log(position.coords.latitude, position.coords.longitude);
-
-//             panTo({
-//               lat: position.coords.latitude,
-//               lng: position.coords.longitude,
-//             });
-//           },
-//           () => null
-//         );
-//       }}
-//     >
-//       <img src="/compass.svg" alt="현재위치" />
-//     </button>
-//   );
-// }
 
 function Search({ panTo }) {
   const {
@@ -217,11 +183,8 @@ function Search({ panTo }) {
     <div>
       <Combobox onSelect={handleSelect}>
         <Card
-          // chart
           style={{
             display: "flex",
-            // justifyContent: "left",
-            // flexDirection: "row",
           }}
         >
           <img style={{ width: "50px" }} src={searchIcon} alt="검색창 아이콘" />
@@ -331,8 +294,6 @@ function Locate({ panTo }) {
           </div>
         </a>
       </div>
-
-      {/* <div style={{ height: "5px" }}></div> */}
 
       <div
         id="clcikPosition"

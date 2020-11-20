@@ -66,12 +66,9 @@ export default function TableList(props) {
               <p className={classes.cardCategoryWhite}>cody gallery</p>
             </CardHeader>
             <CardBody>
-              {/* <Grid container spacing={4} className={classes.gridContainer}> */}
-              {/* <Grid item xs={12} sm={6} md={3}> */}
               <Gallery />
 
-              {/* </Grid> */}
-              {/* </Grid> */}
+            
             </CardBody>
           </Card>
         </GridItem>

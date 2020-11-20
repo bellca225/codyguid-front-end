@@ -1,11 +1,11 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-// creates a beautiful scrollbar
+import { Switch, Route } from "react-router-dom";
+
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
-// @material-ui/core components
+
 import { makeStyles } from "@material-ui/core/styles";
-// core components
+
 import Navbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
@@ -35,7 +35,7 @@ const switchRoutes = (
       }
       return null;
     })}
-    {/* <Redirect from="/admin" to="/admin/dashboard" /> */}
+
   </Switch>
 );
 
@@ -111,7 +111,7 @@ export default function Admin({ ...rest }) {
           handleDrawerToggle={handleDrawerToggle}
           {...rest}
         />
-        {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
+     
         {getRoute() ? (
           <div className={classes.content}>
             <div className={classes.container}>{switchRoutes}</div>

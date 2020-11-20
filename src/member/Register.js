@@ -4,8 +4,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 import { useDispatch } from "react-redux";
-import { registerUser } from "../_reducers/user_reducer";
-import Axios from "axios";
+
 import { withRouter } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -60,11 +59,7 @@ function Register() {
 
   const dispatch = useDispatch();
 
-  // const [userId, setUserId] = useState("");
-  // const [password, setpassword] = useState("");
-  // const [name, setName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [ConfirmPwd, setConfirmPwd] = useState("");
+
 
   const [member, SetMember] = useState({
     username: "",
@@ -76,25 +71,7 @@ function Register() {
     SetMember({ ...member, [e.target.name]: e.target.value });
   };
 
-  // const onUserIdHandler = (e) => {
-  //   setUserId(e.target.value);
-  // };
 
-  // const onPasswordHandler = (e) => {
-  //   setpassword(e.target.value);
-  // };
-
-  // const onNameHandler = (e) => {
-  //   setName(e.target.value);
-  // };
-
-  // const onEmailHandler = (e) => {
-  //   setEmail(e.target.value);
-  // };
-
-  // const onConfirmPwdHandler = (e) => {
-  //   setConfirmPwd(e.target.value);
-  // };
 
   const onSubmitHandler = (e) => {
     // e.preventDefault();

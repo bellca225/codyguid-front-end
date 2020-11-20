@@ -71,30 +71,7 @@ export default function TypographyPage() {
           </p>
         </CardHeader>
         <CardBody>
-          {/* <div className={classes.typo}>
-          <div className={classes.note}>사용 안내</div>
-          <p>The Life of Material Dashboard</p>
-        </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>코디 가이드</div>
-          <h2>The Life of Material Dashboard</h2>
-        </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>코디 갤러리</div>
-          <h3>The Life of Material Dashboard</h3>
-        </div> */}
-          {/* <div className={classes.typo}>
-          <div className={classes.note}>Header 4</div>
-          <h4>The Life of Material Dashboard</h4>
-        </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Header 5</div>
-          <h5>The Life of Material Dashboard</h5>
-        </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Header 6</div>
-          <h6>The Life of Material Dashboard</h6>
-        </div> */}
+      
           <div style={div1} className={classes.typo}>
             <div className={classes.note}>소개</div>
             <p style={{ marginTop: "30px" }}>
@@ -117,12 +94,7 @@ export default function TypographyPage() {
               날씨에 맞는 최적의 코디 가이드 라인을 제공하며, 커뮤니티와
               갤러리를 통해 다양한 지역의 사람들이 올린 코디를 확인할 수 있고,
               직접 올릴 수 있습니다
-              {/* I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers... I will be the leader of a
-            company that ends up being worth billions of dollars, because I got
-            the answers. I understand culture. I am the nucleus. I think that’s
-            a responsibility that I have, to push possibilities, to show people,
-            this is the level that things could be at. */}
+          
             </p>
           </div>
           <div style={div1} className={classes.typo}>
@@ -145,16 +117,12 @@ export default function TypographyPage() {
             <Info>
               <div>코디 커뮤니티</div>
             </Info>
-            {/* <div className={classes.note}>코디 커뮤니티</div> */}
+           
             <p>
-              {/* I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers. I understand culture. I am
-            the nucleus. I think that’s a responsibility that I have, to push
-            possibilities, to show people, this is the level that things could
-            be at. */}
+            
               사이트를 사용하는 사용자들이 올리는 코디 팁을 공유하고, 자유롭게
-              글을 올릴 수 있는 공간입니다. 여행TIP, Q&A,자유게시판으로 이루어져
-              있으며, Q&A의 경우 코디 갤러리에서 좋아요를 많이 받은 코디
+              글을 올릴 수 있는 공간입니다. 여행TIP, QnA,자유게시판으로 이루어져
+              있으며, QnA의 경우 코디 갤러리에서 좋아요를 많이 받은 코디
               전문가들이 답변을 달아줄 수 있습니다.
             </p>
           </div>
@@ -179,63 +147,13 @@ export default function TypographyPage() {
 
             <p>
               사용자의 정보를 수정하고 저장할 수 있는 프로필 수정 공간입니다.
-              {/* I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers. I understand culture. I am
-            the nucleus. I think that’s a responsibility that I have, to push
-            possibilities, to show people, this is the level that things could
-            be at. */}
+              
             </p>
 
-            {/* <Muted>
-            I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers...
-          </Muted> */}
+           
           </div>
-          {/* <div className={classes.typo}>
-          <div className={classes.note}>Primary Text</div>
-          <Primary>
-            I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers...
-          </Primary>
-        </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Info Text</div>
-          <Info>
-            I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers...
-          </Info>
-        </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Success Text</div>
-          <Success>
-            I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers...
-          </Success>
-        </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Warning Text</div>
-          <Warning>
-            I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers...
-          </Warning>
-        </div>
-        <div className={classes.typo}>
-          <div className={classes.note}>Danger Text</div>
-          <Danger>
-            I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers...
-          </Danger>
-        </div> */}
-          {/* <div className={classes.typo}>
-          <div className={classes.note}>Small Tag</div>
-          <h2>
-            Header with small subtitle
-            <br />
-            <small>
-              Use {'"'}Small{'"'} tag for the headers
-            </small>
-          </h2>
-        </div> */}
+         
+         
         </CardBody>
       </Card>
     </>

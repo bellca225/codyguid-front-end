@@ -57,7 +57,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/admin" component={Admin} />
           <Route path="/rtl" component={RTL} />
-          {/* 여기 주석처리해야 나옴 */}
+          {/* check*/}
           <Redirect from="/" to="/admin/dashboard" />
         </Switch>
       </ThemeProvider>

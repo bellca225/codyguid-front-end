@@ -1,15 +1,5 @@
 <b>made by team.woopark</b>
 
-### woonayoung
-
-- <https://github.com/Na-Young-Woo>
-- :email: <dn2255520@gmail.com>
-
-### parkheejung
-
-- <https://github.com/Pheejung>
-- :email: <gmlwjd2116@gmail.com>
-
 :sunny: | :umbrella: | :cloud:
 :earth_asia: | :shirt:
 
@@ -20,7 +10,7 @@
 ### 사용 기술 (Using Skills) :hammer:
 
 - React
-- redux
+- redux (react-redux with react-thunk)
 - REST api
 - Django
 - Material UI
@@ -29,14 +19,22 @@
 
 ### 파일 구조 (File Structure) :open_file_folder:
 
+(front)
+
 ```
-material-dashboard-react
 .
 ├── README.md
 ├── bower.json
 ├── gulpfile.js
 ├── jsconfig.json
 ├── package.json
+├── boardRoutes.js
+├── index.js
+├── logo.svg.js
+├── mapStyles.js
+├── memberRoutes.js
+├── mycomponent.js
+├── routes.js
 ├── documentation
 │   ├── assets
 │   │   ├── css
@@ -52,6 +50,14 @@ material-dashboard-react
     ├── index.js
     ├── logo.svg
     ├── routes.js
+    ├── reducers
+    │   ├── gallery_reducers.js
+    │   ├── index.js
+    │   ├── post_reducers.js
+    │   ├── user_reducers.js
+    │   └── weather_reducers.js
+    ├── actions
+    │   └── types.js
     ├── assets
     │   ├── css
     │   │   └── material-dashboard-react.css
@@ -66,6 +72,9 @@ material-dashboard-react
     │       │   ├── layouts
     │       │   └── views
     │       └── material-dashboard-react.js
+    ├── assets
+    │       └── clothesIcon
+    |           └── icons...svg
     ├── components
     │   ├── Card
     │   │   ├── Card.js
@@ -74,6 +83,12 @@ material-dashboard-react
     │   │   ├── CardFooter.js
     │   │   ├── CardHeader.js
     │   │   └── CardIcon.js
+    │   ├── CoordiGallery
+    │   │   ├── AddGallery.js
+    │   │   ├── gallery.css
+    │   │   ├── Gallery.js
+    │   │   ├── GalleryDetail.js
+    │   │   └── GalleryModal.js
     │   ├── CustomButtons
     │   │   └── Button.js
     │   ├── CustomInput
@@ -111,26 +126,42 @@ material-dashboard-react
     ├── layouts
     │   ├── Admin.js
     │   └── RTL.js
+    ├── member
+    │   ├── Login.js
+    │   └── Legister.js
+    ├── miniIcon
     ├── variables
     │   ├── charts.js
     │   └── general.js
     ├── member
     │   ├── Login.js
     │   └── Register.js
-    ├── miniIcon
     └── views
+        ├── CoordiGalllery
+        │   ├── AddGallery.js
+        │   ├── Gallery.js
+        |   └── GalleryDetail.js
         ├── Dashboard
-        │   └── Dashboard.js
+        │   ├── Dashboard.js
+        │   ├── Weather.js
+        │   └── WeatherContainer.js
         ├── Icons
         │   └── Icons.js
         ├── Maps
         │   └── Maps.js
+        │       ├── Cody.css
+        │       ├── CodyContainer.js
+        │       ├── Coordi1.js
+        │       ├── ManCoordi.js
+        │       └── Map.js
         ├── Notifications
         │   └── Notifications.js
         ├── RTLPage
         │   └── RTLPage.js
         ├── TableList
-        │   └── TableList.js
+        │   └── AddPost.js
+        │   └── EditTable.js
+        |   └── TableList.js
         ├── Typography
         │   └── Typography.js
         ├── UpgradeToPro

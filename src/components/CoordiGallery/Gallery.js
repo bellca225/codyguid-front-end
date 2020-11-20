@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import Collapse from "@material-ui/core/Collapse";
-import { red } from "@material-ui/core/colors";
+
 import FavoriteIcon from "@material-ui/icons/FavoriteBorder";
 import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
 
 import CardMedia from "@material-ui/core/CardMedia";
@@ -252,25 +247,16 @@ function Gallery(props) {
           {galleryData.map((prop, key) => {
             return (
               <Grid item xs={12} sm={6} md={3} key={`r${key}`}>
-                {/* <ButtonBase onClick={handleOpen}> */}
+
                 <Card className={classes.root} className="width-01" key={key}>
                   <CardContent key={key}>
-                    {/* <RouterLink
-                      to={`/admin/gallery/${prop.id}`}
-                      onClick={handleOpen}
-                    > */}
+              
                     <RouterLink
                       to={`/admin/gallerydetail/${prop.id}`}
                       // onClick={handleOpen}
                     >
                       <div>
-                        {/* <Typography
-                          key={key}
-                          className={classes.title}
-                          color="textSecondary"
-                          gutterBottom
-                          component={'h4'}
-                        > */}
+                    
                         <div
                           key={key}
                           className={classes.title}
@@ -285,45 +271,22 @@ function Gallery(props) {
                               image={prop.img_path}
                               title="Paella dish"
                             ></CardMedia>
-                            {/* <img src={prop.img_path} className={classes.media} /> */}
+                          
                           </div>
-                        {/* </Typography> */}
+                       
                         </div>
                         <Divider />
-                        {/* <Typography variant="h5" component="h2">
-                          {index}
-                        </Typography> */}
-                        {/* <Typography
-                          className={classes.pos}
-                          color="textSecondary"
-                        >
-                          {index}
-                        </Typography> */}
-                        {/* <CardMedia
-                          // className={classes.media}
-                          image="/picture.jpg"
-                          title="Paella dish"
-                        ></CardMedia> */}
-                        {/* <Typography
-                          className={classes.media}
-                          variant="body2"
-                          component="p"
-                        >
-                          <br />
-                        </Typography> */}
+                   
                       </div>
                     </RouterLink>
                   </CardContent>
                   <CardActions disableSpacing>
                     <IconButton
                       aria-label="add to favorites"
-                      // onClick={addColor}
-                      // style={{ color: "#ddd" }}
+                 
                       className={heart}
                     >
-                      <FavoriteIcon
-                      // style={{ width: "20px", border: "1px solid #ddd" }}
-                      />
+                      <FavoriteIcon />
                     </IconButton>
                     <IconButton>
                       <ThumbUpAltOutlinedIcon />

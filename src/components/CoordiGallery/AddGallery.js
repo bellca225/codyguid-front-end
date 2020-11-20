@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-import { useSelector, useDispatch } from "react-redux";
-import { addGallery } from "../../_reducers/gallery_reducer";
+import {  useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Button from "../../components/CustomButtons/Button.js";
-import { getLoggedInUser } from "../../helpers/authUtils";
-import DropDown from "../../components/DropDown/DropDown";
+
 import Grid from "@material-ui/core/Grid";
 import { Cookies } from "react-cookie";
 import axios from "axios";
-import AddOutlinedIcon from "@material-ui/icons/AddOutlined";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {

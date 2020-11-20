@@ -3,7 +3,6 @@ import "./Cody.css";
 
 import vest from "../../clothesIcon/02상의 정장 베스트조끼.svg";
 import suitset from "../../clothesIcon/02상의 정장세트.svg";
-
 import hoodlong from "../../clothesIcon/01상의 긴팔 후드.svg";
 import "./Cody.css";
 import shirtlong from "../../clothesIcon/01상의-긴팔 셔츠.svg";
@@ -77,14 +76,10 @@ import warmTop from "../../clothesIcon/00(추후 후가)-아웃도어용 발열�
 import superHot1 from "../../clothesIcon/00(추후 후가)-폭염지역 얇은 겉옷1.svg";
 import superHot2 from "../../clothesIcon/00(추후 후가)-폭염지역 얇은 겉옷2.svg";
 
-// <img src={rainCoat} alt="우비" />,
-// <img src={umbrella} alt="우산" />,
-// <img src={rainboots} alt="레인부츠" />,
 
 const tip = {
   fontWeight: "500",
   color: "#555",
-  // boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
 };
 
 const tip2 = {
@@ -93,7 +88,6 @@ const tip2 = {
 };
 
 const tip3 = {
-  // backgroundColor: "#9E38B4",
   backgroundColor: "#772FDD",
   color: "#fff",
   fontSize: "14px",
@@ -112,7 +106,6 @@ const titlefont = {
 
 const blank = {
   marginTop: "26px",
-  // width: "100%",
   borderRadius: "10px",
   boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
   backgroundColor: "#fff",
@@ -122,10 +115,6 @@ const blank = {
 const Coordi = ({ data }) => {
   const dress42 = {
     top: [
-      // "나시티",
-      // "민소매",
-      // "반팔티",
-      // 3
 
       <img src={Tshirt1} alt="티셔츠" title="티셔츠" />,
       <img src={Tshirt2} alt="티셔츠" title="티셔츠" />,

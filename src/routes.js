@@ -19,11 +19,7 @@
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
-import Notifications from "@material-ui/icons/Notifications";
-import Unarchive from "@material-ui/icons/Unarchive";
-import Language from "@material-ui/icons/Language";
+
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
@@ -31,7 +27,6 @@ import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
 import AddPost from "views/TableList/AddPost.js";
 import EditTable from "views/TableList/EditTable.js";
-import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 import Gallery from "views/CoordiGallery/Gallery.js";
 // import Gallery from "components/CoordiGallery/Gallery.js";
 import AddGallery from "views/CoordiGallery/AddGallery.js";
@@ -39,7 +34,6 @@ import GalleryDetail from "views/CoordiGallery/GalleryDetail.js";
 import CollectionsIcon from "@material-ui/icons/Collections";
 
 // core components/views for RTL layout
-import RTLPage from "views/RTLPage/RTLPage.js";
 import LoginPage from "member/Login.js";
 import RegisterPage from "member/Register.js";
 
@@ -74,14 +68,6 @@ const dashboardRoutes = [
     invisible: true,
   },
 
-  // {
-  //   path: "/maps",
-  //   name: "Maps",
-  //   rtlName: "خرائط",
-  //   icon: LocationOn,
-  //   component: Maps,
-  //   layout: "/admin",
-  // },
 
   {
     path: "/table",
@@ -155,39 +141,7 @@ const dashboardRoutes = [
     component: Typography,
     layout: "/admin",
   },
-  // {
-  //   path: "/icons",
-  //   name: "Icons",
-  //   rtlName: "الرموز",
-  //   icon: BubbleChart,
-  //   component: Icons,
-  //   layout: "/admin",
-  // },
 
-  // {
-  //   path: "/notifications",
-  //   name: "Notifications",
-  //   rtlName: "إخطارات",
-  //   icon: Notifications,
-  //   component: NotificationsPage,
-  //   layout: "/admin",
-  // },
-  // {
-  //   path: "/rtl-page",
-  //   name: "RTL Support",
-  //   rtlName: "پشتیبانی از راست به چپ",
-  //   icon: Language,
-  //   component: RTLPage,
-  //   layout: "/rtl"
-  // },
-  // {
-  //   path: "/upgrade-to-pro",
-  //   name: "Sns 공유하기",
-  //   rtlName: "التطور للاحترافية",
-  //   icon: Unarchive,
-  //   component: UpgradeToPro,
-  //   layout: "/admin",
-  // },
 ];
 
 export default dashboardRoutes;

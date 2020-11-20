@@ -5,19 +5,15 @@ code {
 
 .search-bar {
   width: 100%;
-  /* margin: 0 auto; */
   padding: 20 10px;
   appearance: none;
   background: none;
   border: none;
-  /* border-bottom: 1px solid #ddd; */
   outline: none;
   background-color: rgba(255, 255, 255, 0.7);
-  /* border-radius: 5px; */
 }
 
 .locate {
-  /* position: absolute; */
   top: 1em;
   right: 50%;
   background: none;

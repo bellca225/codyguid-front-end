@@ -10,40 +10,11 @@ import temfeel from "../../miniIcon/체감온도.svg";
 import tem from "../../miniIcon/현재온도.svg";
 import now from "../../miniIcon/현재날씨.svg";
 
-// react plugin for creating charts
-import ChartistGraph from "react-chartist";
-// @material-ui/core
-import { makeStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
-// @material-ui/icons
-import Store from "@material-ui/icons/Store";
-import Warning from "@material-ui/icons/Warning";
-import DateRange from "@material-ui/icons/DateRange";
-import LocalOffer from "@material-ui/icons/LocalOffer";
-import Update from "@material-ui/icons/Update";
-import ArrowUpward from "@material-ui/icons/ArrowUpward";
-import AccessTime from "@material-ui/icons/AccessTime";
-import Accessibility from "@material-ui/icons/Accessibility";
-import BugReport from "@material-ui/icons/BugReport";
-import Code from "@material-ui/icons/Code";
-import Cloud from "@material-ui/icons/Cloud";
-// core components
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import Table from "components/Table/Table.js";
-import Tasks from "components/Tasks/Tasks.js";
-import CustomTabs from "components/CustomTabs/CustomTabs.js";
-import Danger from "components/Typography/Danger.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardIcon from "components/Card/CardIcon.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
+
 
 const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
   const nowCody = {
     backgroundColor: "#9E38B4",
-    // backgroundColor: "linearGradient(60deg, #ab47bc, #8e24aa)",
     color: "#fff",
     fontWeight: "500",
     fontSize: "18px",
@@ -60,8 +31,6 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
     padding: "5%",
   };
 
-  const titlefont = { color: "#888", fontSize: "1em", fontWeight: "300" };
-
   const vertical = {
     borderRadius: "10px",
     backgroundColor: "#fff",
@@ -71,7 +40,7 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
     paddingTop: "10px",
     textAlign: "center",
-    // padding: "40px 40px 0px 40px",
+
   };
 
   const vertical2 = {
@@ -85,20 +54,9 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
     boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
 
     paddingTop: "10px",
-    // padding: "40px 40px 0px 40px",
+
   };
-  const vertical22 = {
-    borderRadius: "10px",
-    backgroundColor: "#fff",
-    width: "45%",
-    height: "120px",
-    textAlign: "center",
-    margin: "5% 0% 0 0",
-    textAlign: "center",
-    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-    paddingTop: "25px",
-    // padding: "40px 40px 0px 40px",
-  };
+
 
   const vertical3 = {
     borderRadius: "10px",
@@ -113,14 +71,12 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
     width: "45%",
     height: "130px",
     textAlign: "center",
-    // marginTop: "5px",
   };
 
   const vertical4 = {
     borderRadius: "10px",
     backgroundColor: "#fff",
     width: "95%",
-    // margin: "5%",
     height: "130px",
     paddingTop: "10px",
     margin: "5% 0 5% 0",
@@ -134,10 +90,9 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
     fontWeight: "500",
     color: "#00acc1",
     textAlign: "center",
-    // alignCotent: "center",
   };
 
-  const Countrytext = { fontSize: "1.5em", color: "#333" };
+
   const maintext = {
     marginTop: "10px",
     color: "#888",
@@ -145,12 +100,7 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
     fontSize: "0.8em",
     fontWeight: "500",
   };
-  const maintext1 = {
-    color: "#888",
-    textAlign: "center",
-    fontSize: "0.8em",
-    fontWeight: "500",
-  };
+  
   const main = {
     fontSize: "2.5em",
     fontWeight: "500",
@@ -158,18 +108,6 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
     textAlign: "center",
   };
 
-  const color = { color: "#00acc1" };
-
-  const frameOne = {
-    borderRadius: "10px",
-    backgroundColor: "#fff",
-    width: "45%",
-    height: "130px",
-    margin: "5% 0% 0 0",
-    boxShadow: "2px 2px 6px 2px rgba(0, 0, 0, .05)",
-    paddingTop: "10px",
-    textAlign: "center",
-  };
 
   const frameRight = {
     borderRadius: "10px",
@@ -209,14 +147,14 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
 
   const icons = `http://openweathermap.org/img/wn/${data.icon}@2x.png`;
 
-  // console.log(data.current.weather[0].main);
+
 
   return (
     <div>
       <div style={box}>
         <h4 style={nowCody}>NOW WEATHER</h4>
         <div>
-          {/* <h3 style={titlefont}> 현재 날씨</h3> */}
+     
           <div
             style={{
               display: "flex",
@@ -300,33 +238,19 @@ const CurrentWeather = ({ data, error, loading, getWeatherData }) => {
 
               <div style={vertical33}>
                 <div>
-                  {/* {data.icon} */}
+              
                   <img
                     src={icons}
                     alt="날씨 아이콘"
                     style={{ width: "110px" }}
                   />
-
-                  {/* <i
-                  className="wi wi-cloud"
-                  color="info"
-                  style={{
-                    fontSize: "90px",
-                    color: "#fff",
-                  }}
-                ></i> */}
-                  {/* <div style={maintext}>
-                  {data.current.weather[0].description}
-                </div> */}
+     
                 </div>
               </div>
             </div>
           </div>
 
-          {/* <h3 style={titlefont}>위치 정보</h3>
-          위도 : {data.lat} <br />
-          경도 : {data.lon} <br />
-          <span style={Countrytext}>{data.timezone} </span> */}
+        
         </div>
       </div>
     </div>

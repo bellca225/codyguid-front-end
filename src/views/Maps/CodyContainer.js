@@ -91,9 +91,7 @@ export default function Cody() {
     error: weather.error,
   }));
 
-  // const getCodyData = () => {
-  //   dispatch(getWeather());
-  // };
+
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
