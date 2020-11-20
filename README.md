@@ -11,8 +11,8 @@
 
 - React
 - redux (react-redux with react-thunk)
-- REST api
-- Django
+- react-cookie
+- axios
 - Material UI
 - Googlemap api
 - openweathermap api
