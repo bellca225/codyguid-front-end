@@ -25,6 +25,9 @@
 
 ![cody_guide_03](https://user-images.githubusercontent.com/67679081/99774859-b0978f00-2b51-11eb-911d-926d03a8fd00.PNG)
 
+### 시연 영상 및 ppt 링크
+
+- https://bit.ly/3m0zSni
 
 ### 파일 구조 (File Structure) :open_file_folder:
 
