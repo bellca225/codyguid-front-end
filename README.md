@@ -21,6 +21,11 @@
 - Googlemap api
 - openweathermap api
 
+
+### 시연 영상 및 ppt 링크
+
+- https://bit.ly/3m0zSni
+
 ### UI
 
 ![cody_guide_01](https://user-images.githubusercontent.com/67679081/99774633-6a423000-2b51-11eb-8245-d981f6937c92.PNG)
@@ -29,10 +34,8 @@
 
 ![cody_guide_03](https://user-images.githubusercontent.com/67679081/99774859-b0978f00-2b51-11eb-911d-926d03a8fd00.PNG)
 
-### 시연 영상 및 ppt 링크
 
-- https://bit.ly/3m0zSni
-
+## made by..
 
 woonayoung
 - https://github.com/Na-Young-Woo
