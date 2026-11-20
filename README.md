@@ -9,7 +9,8 @@
 2) 코디 커뮤니티로 로그인이 가능하며 사용자의 코디 이미지를 업로드 할 수 있습니다.
 3) 자유롭게 게시판 이용이 가능합니다.
 
-- Googlemap api 및 openweathermap api가 비공개된 코드입니다.
+- Google Maps·OpenWeatherMap API 키는 `.env`로 분리했습니다. `.env.example`을 복사해 키를 넣고 실행하세요.
+- 2020년 2인 팀 프로젝트로, 더 이상 유지보수하지 않는 보관용 저장소입니다.
 
 ### 사용 기술 (Using Skills) :hammer:
 
@@ -37,8 +38,8 @@
 
 ## made by..
 
-woonayoung
-- https://github.com/Na-Young-Woo
+woonayoung (우나영)
+- https://github.com/bellca225
 
 parkheejung
 - https://github.com/Pheejung
